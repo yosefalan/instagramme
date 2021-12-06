@@ -14,4 +14,4 @@ class Photo(db.Model):
     updatedAt = db.Column(db.DateTime, nullable=False)
 
     user = db.relationship('User', back_populates='photos')
-    post = db.relationship('Post', back_populates='photos')
+    posts = db.relationship('Post', back_populates='photos')

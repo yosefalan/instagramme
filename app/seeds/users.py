@@ -5,11 +5,11 @@ import datetime
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo = User(
-        first_name='Demo', last_name='User', user_name='Demo', email='demo@aa.io', password='password', created_at=datetime.datetime.now(), updated_at=datetime.datetime.now())
+        username='Demo', email='demo@aa.io', password='password', createdAt=datetime.datetime.now(), updatedAt=datetime.datetime.now())
     marnie = User(
-        first_name='Marnie', last_name='Marnerson', user_name='marnie', email='marnie@aa.io', password='password', created_at=datetime.datetime.now(), updated_at=datetime.datetime.now())
+        username='marnie', email='marnie@aa.io', password='password', createdAt=datetime.datetime.now(), updatedAt=datetime.datetime.now())
     bobbie = User(
-        first_name='Bobbie', last_name='Bobberson', user_name='bobbie', email='bobbie@aa.io', password='password', created_at=datetime.datetime.now(), updated_at=datetime.datetime.now())
+        username='bobbie', email='bobbie@aa.io', password='password', createdAt=datetime.datetime.now(), updatedAt=datetime.datetime.now())
 
     db.session.add(demo)
     db.session.add(marnie)

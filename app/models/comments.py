@@ -14,4 +14,4 @@ class Comment(db.Model):
     updatedAt = db.Column(db.DateTime, nullable=False)
 
     user = db.relationship('User', back_populates='comments')
-    post = db.relationship('Post', back_populates='comments')
+    posts = db.relationship('Post', back_populates='comments')

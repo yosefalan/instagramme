@@ -2,23 +2,31 @@ from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
+from .follows import follows
+from .post import Post
+from .photos import Photo
+from .likes import Like
+from .comments import Comment
 
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(255), nullable=False)
-    last_name = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
-    user_name = db.Column(db.String(40), nullable=False, unique=True)
+    username = db.Column(db.String(40), nullable=False, unique=True)
     profile_image = db.Column(db.String(255))
-    password = db.Column(db.String(255), nullable=False)
-    createdA = db.Column(db.DateTime, nullable=False)
-    updatedAt = db.Column(db.DateTime, nullable=False)
+    hashed_password = db.Column(db.String(255), nullable=False)
 
-    followers = db.relationship('Follower', back_populates='user')
-    follows = db.relationship('Follow', back_populates='user')
+    followers = db.relationship(
+        'User',
+        secondary=follows,
+        primaryjoin=(follows.c.follower_id==id),
+        secondaryjoin=(follows.c.followed_id==id),
+        backref=db.backref('following', lazy='dynamic'),
+        lazy='dynamic'
+    )
+
     likes = db.relationship('Like', back_populates='user')
     posts = db.relationship('Post', back_populates='user')
     comments = db.relationship('Comment', back_populates='user')

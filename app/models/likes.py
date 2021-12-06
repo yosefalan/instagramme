@@ -15,5 +15,4 @@ class Like(db.Model):
     updatedAt = db.Column(db.DateTime, nullable=False)
 
     user = db.relationship('User', back_populates='likes')
-    post = db.relationship('Post', back_populates='likes')
-    comment = db.relationship('Comment', back_populates='likes')
+    posts = db.relationship('Post', back_populates='likes')
