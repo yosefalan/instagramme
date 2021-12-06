@@ -9,8 +9,8 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     description = db.Column(db.String(255), nullable=False)
-    created_at = db.Column(db.Timestamp, nullable=False)
-    updated_at = db.Column(db.Timestamp, nullable=False)
+    createdAt = db.Column(db.DateTime, nullable=False)
+    updatedAt = db.Column(db.DateTime, nullable=False)
 
     user = db.relationship('User', back_populates='posts')
     like = db.relationship('Like', back_populates='posts')

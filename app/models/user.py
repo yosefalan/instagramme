@@ -1,6 +1,7 @@
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from flask_sqlalchemy import SQLAlchemy
 
 
 class User(db.Model, UserMixin):
@@ -12,9 +13,9 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     user_name = db.Column(db.String(40), nullable=False, unique=True)
     profile_image = db.Column(db.String(255))
-    hashed_password = db.Column(db.String(255), nullable=False)
-    created_at = db.Column(db.Timestamp, nullable=False)
-    updated_at = db.Column(db.Timestamp, nullable=False)
+    password = db.Column(db.String(255), nullable=False)
+    createdA = db.Column(db.DateTime, nullable=False)
+    updatedAt = db.Column(db.DateTime, nullable=False)
 
     followers = db.relationship('Follower', back_populates='user')
     follows = db.relationship('Follow', back_populates='user')
