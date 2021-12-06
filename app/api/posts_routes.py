@@ -8,4 +8,4 @@ posts_routes = Blueprint('posts', __name__)
 @login_required
 def get_posts():
     # posts = Post.query.filter(Post.user_id == )
-    return {'users': [user.to_dict() for user in users]}
+    pass

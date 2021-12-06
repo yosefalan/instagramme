@@ -7,11 +7,23 @@ class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(40), nullable=False, unique=True)
+    first_name = db.Column(db.String(255), nullable=False)
+    last_name = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
+    user_name = db.Column(db.String(40), nullable=False, unique=True)
+    profile_image = db.Column(db.String(255))
     hashed_password = db.Column(db.String(255), nullable=False)
+    created_at = db.Column(db.Timestamp, nullable=False)
+    updated_at = db.Column(db.Timestamp, nullable=False)
 
+    followers = db.relationship('Follower', back_populates='user')
+    follows = db.relationship('Follow', back_populates='user')
+    likes = db.relationship('Like', back_populates='user')
     posts = db.relationship('Post', back_populates='user')
+    comments = db.relationship('Comment', back_populates='user')
+    photos = db.relationship('Photo', back_populates='user')
+
+
 
     @property
     def password(self):
