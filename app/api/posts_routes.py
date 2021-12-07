@@ -1,8 +1,8 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, session
 from flask_login import login_required
-from app.models import Post, Photo
+from app.models import Post, Photo, User
 from wtforms.validators import DataRequired
-from forms.post_form import PostForm
+from app.forms.post_form import PostForm
 from datetime import datetime
 from app.models import db
 
@@ -21,13 +21,16 @@ def validation_errors_to_error_messages(validation_errors):
     return errorMessages
 
 
-@posts_routes.route('/all')
+@posts_routes.route('/')
 @login_required
 def posts():
-    posts = Post.query.all()
-    photo = Photo.query.filter_by(post_id=1).all()
-    print("********", Photo.query.filter_by(post_id=1).all())
-    return posts[0].description
+    userId = session['_user_id']
+    user = User.query.get(userId).to_dict()
+    # print("#####", user["following"])
+    results = Post.query.filter(Post.user_id.in_(user["following"])).all() #{anything in the list user["following"]}   ).all()
+    results_dict = {post.id: post.to_dict() for post in results}
+    # print("*********", results_dict)
+    return results_dict
 
     # userId = session['_user_id']
     # # res = session.query(db.User).get(userId)
@@ -65,6 +68,35 @@ def create_post():
         return post.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
-@posts_routes.route("/:id", methods=["DELETE"])
+@posts_routes.route("/<int:id>")
 @login_required
-def delete_post():
+def get_one_post(id):
+    post = Post.query.get(id)
+    if post:
+        return post.to_dict()
+    else:
+        return "Post not found", 404
+
+@posts_routes.route("/<int:id>", methods=["PUT"])
+@login_required
+def update_post(id):
+    post = Post.query.get(id)
+    if post:
+        for key, value in request.form:
+          setattr(post, key, value)
+        db.session.commit()
+        return post.to_dict()
+    else:
+        return "Post not found", 404
+
+@posts_routes.route("/<int:id>", methods=["DELETE"])
+@login_required
+def delete_post(id):
+    post = Post.query.get(id)
+    if post:
+        db.session.delete(post)
+        db.session.commit()
+        return "Ok", 200
+    else:
+        return "Post not found", 404
+
