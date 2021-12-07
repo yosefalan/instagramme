@@ -1,8 +1,8 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, session
 from flask_login import login_required
-from app.models import Post, Photo
+from app.models import Post, Photo, User
 from wtforms.validators import DataRequired
-from forms.post_form import PostForm
+from app.forms.post_form import PostForm
 from datetime import datetime
 from app.models import db
 
@@ -26,7 +26,9 @@ def validation_errors_to_error_messages(validation_errors):
 def posts():
     userId = session['_user_id']
     user = User.query.get(userId)
-    print(user.following)
+    print("#####", user.following)
+    # results = Post.query.filter(Post.user_id in user.following).all().to_dict()
+    # print("*********", results)
     return "Ok", 200
 
     # userId = session['_user_id']
@@ -64,6 +66,15 @@ def create_post():
         db.session.commit()
         return post.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+
+@posts_routes.route("/<int:id>")
+@login_required
+def get_one_post(id):
+    post = Post.query.get(id)
+    if post:
+        return post.to_dict()
+    else:
+        return "Post not found", 404
 
 @posts_routes.route("/<int:id>", methods=["PUT"])
 @login_required
