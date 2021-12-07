@@ -25,11 +25,12 @@ def validation_errors_to_error_messages(validation_errors):
 @login_required
 def posts():
     userId = session['_user_id']
-    user = User.query.get(userId)
-    print("#####", user.following)
-    # results = Post.query.filter(Post.user_id in user.following).all().to_dict()
-    # print("*********", results)
-    return "Ok", 200
+    user = User.query.get(userId).to_dict()
+    # print("#####", user["following"])
+    results = Post.query.filter(Post.user_id.in_(user["following"])).all() #{anything in the list user["following"]}   ).all()
+    results_dict = {post.id: post.to_dict() for post in results}
+    # print("*********", results_dict)
+    return results_dict
 
     # userId = session['_user_id']
     # # res = session.query(db.User).get(userId)
