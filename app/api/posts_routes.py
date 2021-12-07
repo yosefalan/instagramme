@@ -64,3 +64,7 @@ def create_post():
         db.session.commit()
         return post.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+
+@posts_routes.route("/:id", methods=["DELETE"])
+@login_required
+def delete_post():
