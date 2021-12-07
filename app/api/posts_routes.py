@@ -1,6 +1,8 @@
 from flask import Blueprint
 from flask_login import login_required
 from app.models import Post, Photo
+from wtforms.validators import DataRequired
+
 
 
 posts_routes = Blueprint('posts', __name__)
@@ -13,7 +15,6 @@ def posts():
     print("********", Photo.query.filter_by(post_id=1).all())
     return posts[0].description
 
-
     # userId = session['_user_id']
     # # res = session.query(db.User).get(userId)
     # # res = follows.query.filter(follows.follower_id == userId)
@@ -22,3 +23,7 @@ def posts():
     # print(res)
     # posts = db.Post.query.join(db.Like).join(db.Photo).filter(db.Post.user_id)
     # return dict.fromkeys(posts, "#")
+
+@posts_routes.route('/', methods=["POST"])
+@login_required
+def create_post():
