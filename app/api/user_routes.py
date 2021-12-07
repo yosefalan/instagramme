@@ -17,3 +17,12 @@ def users():
 def user(id):
     user = User.query.get(id)
     return user.to_dict()
+
+@user_routes.route('/<int:id>/posts')
+@login_required
+def get_user_posts(id):
+    posts = Post.query.filter(Post.user_id == id)
+    if posts:
+        return {post.to_dict() for post in posts}
+    else:
+        return "Posts not found", 404 
