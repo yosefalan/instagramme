@@ -21,13 +21,13 @@ def validation_errors_to_error_messages(validation_errors):
     return errorMessages
 
 
-@posts_routes.route('/all')
+@posts_routes.route('/')
 @login_required
 def posts():
-    posts = Post.query.all()
-    photo = Photo.query.filter_by(post_id=1).all()
-    print("********", Photo.query.filter_by(post_id=1).all())
-    return posts[0].description
+    userId = session['_user_id']
+    user = User.query.get(userId)
+    print(user.following)
+    return "Ok", 200
 
     # userId = session['_user_id']
     # # res = session.query(db.User).get(userId)
@@ -65,6 +65,26 @@ def create_post():
         return post.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
-@posts_routes.route("/:id", methods=["DELETE"])
+@posts_routes.route("/<int:id>", methods=["PUT"])
 @login_required
-def delete_post():
+def update_post(id):
+    post = Post.query.get(id)
+    if post:
+        for key, value in request.form:
+          setattr(post, key, value)
+        db.session.commit()
+        return post.to_dict()
+    else:
+        return "Post not found", 404
+
+@posts_routes.route("/<int:id>", methods=["DELETE"])
+@login_required
+def delete_post(id):
+    post = Post.query.get(id)
+    if post:
+        db.session.delete(post)
+        db.session.commit()
+        return "Ok", 200
+    else:
+        return "Post not found", 404
+

@@ -30,6 +30,8 @@ class User(db.Model, UserMixin):
         lazy='dynamic'
     )
 
+    # use a User query to get the signed in user and on that user object can we directly access "following"
+
     likes = db.relationship('Like', back_populates='user')
     posts = db.relationship('Post', back_populates='user')
     comments = db.relationship('Comment', back_populates='user')
