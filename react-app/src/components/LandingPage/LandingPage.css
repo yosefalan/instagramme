@@ -11,14 +11,17 @@
 }
 .snowImg{
   position: absolute;
-  top: 97px;
-  right: 107px;
+  top: 96px;
+  right: 60px;
   width: 245px;
-  height: 433px;
+  height: 434px;
 }
-
+.storeImg{
+  width: 50%;
+  margin-top: 20px;
+}
 .centerContainer {
-  width: 1000px;
+  width: 100;
   height: 70vw;
   display: flex;
   flex-direction: row;
@@ -26,6 +29,8 @@
 }
 
 .landingImgContainer {
+  display: flex;
+  justify-content: flex-end;
   width: 500px;
   position: relative;
 }
@@ -34,7 +39,7 @@
   display: flex;
   flex-direction: column;
   width: 500px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .upperFormContainer {
@@ -72,10 +77,22 @@
   width: 350px;
   height: 63px;
   padding: 10px 0px;
-
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-
+.signUpLink{
+  color: rgb(60,142,230);
+  padding: 5px;
+}
 .fullContainer {
   display: flex;
   flex-direction: column;
+}
+.appStoreContainer{
+  display: flex;
+  flex-direction: column;
+  color: slategray;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 20px;
+  width: 350px;
+  align-items: center;
 }

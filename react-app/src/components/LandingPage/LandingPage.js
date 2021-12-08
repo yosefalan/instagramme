@@ -7,6 +7,7 @@ import phones from "./phones.png";
 import instagramme_logo from "./instagramme_logo_black.png";
 import profile_image from "./profileImage.jpg";
 import snow_pic from './snow.jpeg'
+import app_store_logos from './app_store_logos.png'
 
 const LandingPage = () => {
   return (
@@ -27,11 +28,14 @@ const LandingPage = () => {
             </div>
             <div className="lowerFormContainer">
               Don't have an account?
-              <NavLink exact to="/signup">
+              <NavLink className='signUpLink' exact to="/signup">
                 Sign up
               </NavLink>
             </div>
-
+            <div className='appStoreContainer'>
+              We don't have an app, but if we did, you still couldn't get it.
+              <img className='storeImg' src={app_store_logos}></img>
+            </div>
           </div>
         </div>
       </div>
