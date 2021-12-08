@@ -1,0 +1,27 @@
+.mainNavContainer {
+  background-color: cornflowerblue;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.centerNavContainer {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.homeLogo {
+  width: 1100px;
+  justify-self: flex-start;
+}
+
+.navLogo {
+  height: 60px;
+}
+.sessionLinks {
+  justify-self: flex-end;
+}

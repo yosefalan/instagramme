@@ -2,6 +2,7 @@ import LoginForm from '../auth/LoginForm';
 import { NavLink } from 'react-router-dom';
 import '../LandingPage/LandingPage.css'
 
+
 const LandingPage = () => {
   return (
     <div className="mainContainer">

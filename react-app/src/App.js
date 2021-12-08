@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -11,7 +11,7 @@ import { authenticate } from './store/session';
 import LandingPage from './components/LandingPage/LandingPage';
 import SignupPage from './components/SignupPage/SignupPage'
 import LoginPage from './components/LoginPage/Login';
-import NavigationBar from './components/NavBar/NavBar';
+import NavigationBar from './components/NavigationBar/NavigationBar';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
