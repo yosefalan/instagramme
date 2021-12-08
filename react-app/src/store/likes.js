@@ -23,7 +23,7 @@ const removeLike = (id) => ({
 export const fetchLikes = () => async (dispatch) => {
   const res = await csrfFetch('/api/likes')
   if (res.ok) {
-    const spots = await res.json();
+    const likes = await res.json();
     dispatch(getLikes(likes));
   } else {
     throw res;
@@ -37,9 +37,9 @@ export const addNewReview = (data, postId) => async (dispatch) => {
     body: JSON.stringify(data)
   })
   if(res.ok) {
-    const review = await res.json();
+    const like = await res.json();
     dispatch(addLike(like))
-    return review
+    return like
 }
 
 }

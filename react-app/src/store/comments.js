@@ -21,7 +21,7 @@ const updateComment = (payload) => ({
 
 const deleteComment = (id) => ({
   type: REMOVE_COMMENT,
-  payload,
+  id,
 });
 
 export const getAllComments = (id) => async (dispatch) => {
