@@ -5,6 +5,7 @@ import "../LandingPage/LandingPage.css";
 import phones from "./phones.png";
 import instagramme_logo from "./instagramme_logo_black.png";
 import profile_image from "./profileImage.jpg";
+import snow_pic from './snow.jpeg'
 
 const LandingPage = () => {
   return (
@@ -13,7 +14,9 @@ const LandingPage = () => {
         {/* <h1>Landing Page</h1> */}
         <div className="centerContainer">
           <div className="landingImgContainer">
-            <img src={phones}></img>
+
+            <img className='phoneImg' src={phones}></img>
+            <img className='snowImg' src={snow_pic}></img>
           </div>
           <div className="mainFormContainer">
             <div className="upperFormContainer">

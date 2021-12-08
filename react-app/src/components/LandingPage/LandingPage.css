@@ -6,6 +6,16 @@
   display: flex;
   justify-content: center;
 }
+.phoneImg{
+  position: relative;
+}
+.snowImg{
+  position: absolute;
+  top: 97px;
+  right: 107px;
+  width: 245px;
+  height: 433px;
+}
 
 .centerContainer {
   width: 1000px;
@@ -17,6 +27,7 @@
 
 .landingImgContainer {
   width: 500px;
+  position: relative;
 }
 
 .mainFormContainer {
