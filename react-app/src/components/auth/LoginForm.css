@@ -1,0 +1,16 @@
+.loginForm {
+  display:flex;
+  flex-direction: column;
+}
+
+.LoginFormInput {
+  width: 260px;
+  height: 36px;
+}
+
+.loginBtn {
+  width: 268px;
+  height: 30px;
+}
+
+/* padding 14 0 2 8  */

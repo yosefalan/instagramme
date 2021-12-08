@@ -1,0 +1,53 @@
+/* 350 x 381.5 */
+
+.mainContainer {
+  background-color: #FAFAFA;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.centerContainer {
+  width: 1000px;
+  height: 70vw;
+  display: flex;
+  flex-direction: row;
+  align-items:center
+}
+
+.landingImgContainer {
+  width: 500px;
+}
+
+.mainFormContainer {
+  width: 500px;
+}
+
+.upperFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: #FFFFFF;
+  width: 350px;
+  height: 381.5px;
+  border: 1px solid #DBDBDB;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+}
+
+.formLogo {
+  width: 350px;
+  height: auto;
+}
+
+.lowerFormContainer {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #DBDBDB;
+  width: 350px;
+  height: 63px;
+  padding: 10px 0px;
+
+}
