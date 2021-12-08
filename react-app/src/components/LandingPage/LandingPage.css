@@ -24,6 +24,9 @@
 }
 
 .upperFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   background-color: #FFFFFF;
   width: 350px;
   height: 381.5px;
@@ -34,15 +37,17 @@
 
 .formLogo {
   width: 350px;
+  height: auto;
 }
 
 .lowerFormContainer {
   display:flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #DBDBDB;
   width: 350px;
   height: 63px;
   padding: 10px 0px;
+
 }
