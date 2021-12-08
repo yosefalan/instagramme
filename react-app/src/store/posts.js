@@ -88,7 +88,9 @@ const postsReducer = (state = initialState, action) => {
   let newState = {};
   switch (action.type) {
     case LOAD_POSTS:
-      action.posts.forEach((post) => {
+      console.log("the action", action.posts);
+      let posts = Object.values(action.posts);
+      posts.forEach((post) => {
         newState[post.id] = post;
       });
       return newState;
