@@ -6,6 +6,7 @@ import postsReducer from './posts'
 const rootReducer = combineReducers({
   session,
   posts: postsReducer,
+  likes: likesReducer
 });
 
 
