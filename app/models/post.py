@@ -6,6 +6,8 @@ from .comments import Comment
 import datetime
 
 
+
+
 class Post(db.Model):
     __tablename__ = 'posts'
 
@@ -20,9 +22,14 @@ class Post(db.Model):
     comments = db.relationship('Comment', back_populates='posts')
     photos = db.relationship('Photo', back_populates='posts')
 
+
     def to_dict(self):
         return {
             'id': self.id,
             'user_id': self.user_id,
-            'description': self.description
+            'username': self.user.username,
+            'description': self.description,
+            # 'photos': self.photos,
+            'likes': len(self.likes),
+            'comments': len(self.comments)
         }
