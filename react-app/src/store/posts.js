@@ -30,7 +30,7 @@ const remove = (postId) => ({
 // //thunk action creators
 
 export const getPosts = () => async (dispatch) => {
-  const response = await csrfFetch("/api/posts");
+  const response = await csrfFetch("/api/posts/");
 
   if (response.ok) {
     const posts = await response.json();
@@ -39,7 +39,7 @@ export const getPosts = () => async (dispatch) => {
 };
 
 export const getOnePost = (postId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${postId}`);
+  const response = await csrfFetch(`/api/posts/${postId}/`);
 
   if (response.ok) {
     const post = await response.json();
@@ -48,7 +48,7 @@ export const getOnePost = (postId) => async (dispatch) => {
 };
 
 export const createPost = (postData) => async (dispatch) => {
-  const response = await csrfFetch("/api/posts", {
+  const response = await csrfFetch("/api/posts/", {
     method: "POST",
     body: JSON.stringify(postData),
   });
@@ -60,7 +60,7 @@ export const createPost = (postData) => async (dispatch) => {
 };
 
 export const editPost = (postData) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${postData.id}`, {
+  const response = await csrfFetch(`/api/posts/${postData.id}/`, {
     method: "PUT",
     body: JSON.stringify(postData),
   });
@@ -73,7 +73,7 @@ export const editPost = (postData) => async (dispatch) => {
 };
 
 export const deletePost = (postId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${postId}`, {
+  const response = await csrfFetch(`/api/posts/${postId}/`, {
     method: "DELETE",
   });
 
