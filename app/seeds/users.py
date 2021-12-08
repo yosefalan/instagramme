@@ -1,19 +1,19 @@
 from app.models import db, User
-import datetime
+
 
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
+    natgeo = User(
+        username='Nat Geo', email='natgeo@mail.com', password='password')
     demo = User(
-        username='Demo', email='demo@aa.io', password='password', createdAt=datetime.datetime.now(), updatedAt=datetime.datetime.now())
-    marnie = User(
-        username='marnie', email='marnie@aa.io', password='password', createdAt=datetime.datetime.now(), updatedAt=datetime.datetime.now())
-    bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password', createdAt=datetime.datetime.now(), updatedAt=datetime.datetime.now())
+        username='Demo', email='demo@aa.io', password='password')
+    nasa = User(
+        username='NASA', email='nasa@mail.com', password='password')
 
     db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
+    db.session.add(natgeo)
+    db.session.add(nasa)
 
     db.session.commit()
 
