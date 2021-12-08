@@ -22,7 +22,7 @@ def validation_errors_to_error_messages(validation_errors):
 
 
 @posts_routes.route('/')
-@login_required
+# @login_required
 def posts():
     userId = session['_user_id']
     user = User.query.get(userId).to_dict()
@@ -99,4 +99,3 @@ def delete_post(id):
         return "Ok", 200
     else:
         return "Post not found", 404
-
