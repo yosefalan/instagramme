@@ -7,38 +7,111 @@
 // const REMOVE_POST = 'posts/REMOVE_POST'
 
 
-// //action creators
-// // const load = ()
 
-// const update = (post) => ({
-//     type: UPDATE_POST,
-//     payload: post
-// })
+//action creators
+const load = (posts) => ({
+    type: LOAD_POSTS,
+    posts
+})
 
-// const add = (post) => ({
-//     type: ADD_POST,
-//     payload: post
-// })
+const update = (post) => ({
+    type: UPDATE_POST,
+    post
+})
 
-// const remove = (postId) => ({
-//     type: REMOVE_POST,
-//     payload: postId
-// })
+const add = (post) => ({
+    type: ADD_POST,
+    post
+})
+
+const remove = (postId) => ({
+    type: REMOVE_POST,
+    postId
+})
+
 
 // //thunk action creators
 
-// // const getPosts =
 
-// // const getOnePost =
+export const getPosts = () => async (dispatch) => {
+    const response = await csrfFetch('/api/posts');
 
-// // const addPost =
+    if (response.ok) {
+        const posts = await response.json();
+        dispatch(load(posts));
+    }
+}
 
-// // const editPost =
+export const getOnePost = (postId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/posts/${postId}`);
 
-// // const deletePost =
+    if (response.ok) {
+        const post = await response.json();
+        dispatch(add(post));
+    }
+}
+
+export const createPost = (postData) => async (dispatch) => {
+    const response = await csrfFetch("/api/posts", {
+        method: "POST",
+        body: JSON.stringify(postData)
+    })
+
+    if (response.ok) {
+        const post = await response.json();
+        dispatch(add(post));
+    }
+}
+
+export const editPost = (postData) => async (dispatch) => {
+    const response = await csrfFetch(`/api/posts/${postData.id}`, {
+        method: "PUT",
+        body: JSON.stringify(postData)
+    })
+
+    if (response.ok) {
+        const editedPost = await response.json();
+        dispatch(update(editedPost));
+        return editedPost;
+    }
+}
+
+export const deletePost = (postId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/posts/${postId}`, {
+        method: "DELETE"
+    })
+
+    if (response.ok) {
+        dispatch(remove(postId));
+    }
+}
+
 
 // // // postsReducer
 
 // // const initialState = {}
 
-// // const postsReducer
+
+const postsReducer = (state = initialState, action) => {
+    let newState;
+    switch (action.type) {
+        case LOAD_POSTS:
+            const allPosts = {}
+            action.posts.forEach(post => {
+                allPosts[post.id] = post;
+            })
+            return {...allPosts};
+        case ADD_POST:
+            return { ...state, [action.post.id]: action.post };
+        case UPDATE_POST:
+            return { ...state, [action.post.id]: action.post };
+        case REMOVE_POST:
+            newState = { ...state };
+            delete newState[action.postId];
+            return newState;
+        default:
+            return state;
+    }
+}
+
+export default postsReducer;
