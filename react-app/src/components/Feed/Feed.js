@@ -21,7 +21,7 @@ const Feed = () => {
 
   return (
     <div>
-      {posts?.map(({ id, user_id, description, username, likes, comments }) => (
+      {posts?.map(({ id, user_id, description, username, likes, comments, photos }) => (
         <Post id={id} user_id={user_id} description={description} username={username} likes={likes} comments={comments} />
       ))}
     </div>

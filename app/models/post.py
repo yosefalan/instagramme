@@ -29,7 +29,7 @@ class Post(db.Model):
             'user_id': self.user_id,
             'username': self.user.username,
             'description': self.description,
-            # 'photos': self.photos,
+            'photos': self.photos[0].url,
             'likes': len(self.likes),
             'comments': len(self.comments)
         }
