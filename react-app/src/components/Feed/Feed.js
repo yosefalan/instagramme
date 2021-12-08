@@ -21,19 +21,21 @@ const Feed = () => {
 
   return (
     <div>
-      {posts?.map(
-        ({ id, user_id, description, username, likes, comments, photos }) => (
-          <Post
-            id={id}
-            user_id={user_id}
-            description={description}
-            username={username}
-            likes={likes}
-            comments={comments}
-            photos={photos}
-          />
-        )
-      )}
+      {posts
+        ?.reverse()
+        .map(
+          ({ id, user_id, description, username, likes, comments, photos }) => (
+            <Post
+              id={id}
+              user_id={user_id}
+              description={description}
+              username={username}
+              likes={likes}
+              comments={comments}
+              photos={photos}
+            />
+          )
+        )}
     </div>
   );
 };
