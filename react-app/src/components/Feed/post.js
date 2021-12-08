@@ -14,7 +14,7 @@ const Post = ({
     <div className="post-box">
       <div>{username}</div>
       <div className="photo">
-        <img src={photos} />
+        <img src={photos} alt-text="post-photo" />
       </div>
       <div className="description">{description}</div>
       <div className="likes">{likes}</div>
