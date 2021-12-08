@@ -1,10 +1,10 @@
-// import { csrfFetch } from "./csrf"
+import { csrfFetch } from "./csrf"
 
-// // action types
-// const LOAD_POSTS = 'posts/LOAD_POSTS'
-// const ADD_POST = 'posts/ADD_POST'
-// const UPDATE_POST = 'posts/UPDATE_POST'
-// const REMOVE_POST = 'posts/REMOVE_POST'
+// action types
+const LOAD_POSTS = 'posts/LOAD_POSTS'
+const ADD_POST = 'posts/ADD_POST'
+const UPDATE_POST = 'posts/UPDATE_POST'
+const REMOVE_POST = 'posts/REMOVE_POST'
 
 
 
@@ -87,9 +87,8 @@ export const deletePost = (postId) => async (dispatch) => {
 }
 
 
-// // // postsReducer
 
-// // const initialState = {}
+const initialState = {}
 
 
 const postsReducer = (state = initialState, action) => {
