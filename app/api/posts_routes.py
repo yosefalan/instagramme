@@ -22,13 +22,15 @@ def validation_errors_to_error_messages(validation_errors):
 
 
 @posts_routes.route('/')
-@login_required
+# @login_required
 def posts():
     userId = session['_user_id']
     user = User.query.get(userId).to_dict()
-    # print("#####", user["following"])
+    print("#####", user["following"])
     results = Post.query.filter(Post.user_id.in_(user["following"])).all() #{anything in the list user["following"]}   ).all()
+
     results_dict = {post.id: post.to_dict() for post in results}
+    print("results", results_dict)
     # print("*********", results_dict)
     return results_dict
 
@@ -99,4 +101,3 @@ def delete_post(id):
         return "Ok", 200
     else:
         return "Post not found", 404
-
