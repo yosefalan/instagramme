@@ -8,6 +8,7 @@ import {
   deletePost,
 } from "../../store/posts";
 import Post from "./post";
+import "./Feed.css";
 
 const Feed = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -20,7 +21,7 @@ const Feed = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="feed-container">
       {posts
         ?.reverse()
         .map(

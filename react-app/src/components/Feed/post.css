@@ -1,0 +1,5 @@
+.post-box {
+  display: flex;
+  flex-direction: column;
+  width: 614px;
+}
