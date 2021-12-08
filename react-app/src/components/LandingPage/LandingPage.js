@@ -1,4 +1,5 @@
 import LoginForm from "../auth/LoginForm";
+
 import Footer from "../Footer";
 import { NavLink } from "react-router-dom";
 import "../LandingPage/LandingPage.css";
@@ -30,6 +31,7 @@ const LandingPage = () => {
                 Sign up
               </NavLink>
             </div>
+
           </div>
         </div>
       </div>
