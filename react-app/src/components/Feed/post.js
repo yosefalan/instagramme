@@ -15,8 +15,10 @@ const Post = ({
   console.log("url", photos);
   return (
     <div className="post-box">
-      <div>
-        <NavLink to={`/api/users/${user_id}/profile`}>{username}</NavLink>
+      <div className="username_link">
+        <NavLink className="username_link" to={`/api/users/${user_id}/profile`}>
+          {username}
+        </NavLink>
       </div>
       <div className="photo">
         <img src={photos} alt="post-photo" />

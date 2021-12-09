@@ -3,3 +3,11 @@
   flex-direction: column;
   width: 614px;
 }
+.username_link {
+  text-decoration: none;
+  color: black;
+}
+.username_link:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
