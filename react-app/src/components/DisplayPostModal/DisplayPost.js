@@ -4,12 +4,12 @@ import { useSelector } from 'react-redux';
 // import { getOnePost } from "../../store/posts";
 import './DisplayPost.css'
 
-function DisplayPost() {
+function DisplayPost({postId}) {
     const sessionUser = useSelector((state) => state.session.user);
     const posts = useSelector((state) => state.posts);
     console.log(sessionUser);
     console.log(posts);
-    const post = posts["1"];
+    const post = posts[postId];
     console.log(post.comments);
     console.log(post.likes);
     
@@ -34,8 +34,8 @@ function DisplayPost() {
                     </div>
                     <div className="right-column-div">Hello from Comments</div>
                     <div className="right-column-div">Button Bar</div>
-                    <div className="right-column-div">Like Count</div>
-                    <div className="right-column-div-bottom">New Comment Form</div>
+                    <div className="right-column-div">{post.likes} {post.likes === 1 ? "like" : "likes"}</div>
+                    <div className="right-column-div">New Comment Form</div>
                 </div>
             </div>
         </>

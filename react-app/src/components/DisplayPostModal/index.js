@@ -3,18 +3,17 @@ import { Modal } from '../../context/modal'
 import DisplayPost from './DisplayPost';
 import './DisplayPost.css'
 
-function DisplayPostModal() {
-    const [showModal, setShowModal] = useState(false);
+function DisplayPostModal({postId, setShowModal}) {
+    // const [showModal, setShowModal] = useState(false);
 
     return (
         <>
-            {/* HTML ELEMENT */}
-            <button onClick={() => setShowModal(true)}>Show Post</button>
-            {showModal && (
+            {/* HTML ELEMENT
+            <button onClick={() => setShowModal(true)}>Show Post</button> */}
                 <Modal onClose={() => setShowModal(false)}>
-                    <DisplayPost />
+                    <DisplayPost postId={postId}/>
                 </Modal>
-            )}
+            )
         </>
     );
 }

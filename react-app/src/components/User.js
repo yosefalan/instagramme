@@ -8,6 +8,8 @@ import DisplayPostModal from "./DisplayPostModal/index"
 
 function User() {
   const [user, setUser] = useState({});
+  const [showModal, setShowModal] = useState(false);
+  const [postId, setPostId] = useState("");
   const { userId } = useParams();
   const dispatch = useDispatch();
   const posts = useSelector((state) => Object.values(state.posts));
@@ -30,6 +32,12 @@ function User() {
     dispatch(getUserPosts(userId));
   }, [dispatch, userId]);
 
+  const handleClick = () => {
+    // setPostId(id)
+    setShowModal(true)
+    
+  }
+
   if (!user) {
     return null;
   }
@@ -38,7 +46,6 @@ function User() {
     <>
       <main className="profile-main-container">
         <div className="profile-content-container">
-          <DisplayPostModal />
           <header className="profile-header">
             <div className="profile-image-container">
               <div className="profile-image-wrapper">
@@ -85,12 +92,13 @@ function User() {
             {posts?.map((post) => {
               return (
                 <div className="profile-postpic-container" key={post.id}>
-                  <a href={`/posts/${post.id}`}>
+                  <div>
                     <div className="profile-postpic-wrapper">
-                      <img className="profile-postpic-img" src={post.photos} alt=""></img>
+                      <img className="profile-postpic-img" src={post.photos} alt="" onClick={handleClick}></img>
+                      {showModal && (<DisplayPostModal postId={post.id} setShowModal={setShowModal} />)}
                     </div>
                     <div className="postpic-wrapper-peer"></div>
-                  </a>
+                  </div>
                 </div>
               );
             })}
