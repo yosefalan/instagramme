@@ -16,7 +16,7 @@ const Post = ({
   return (
     <div className="post-box">
       <div className="username_link">
-        <NavLink className="username_link" to={`/api/users/${user_id}/profile`}>
+        <NavLink className="username_link" to={`/api/users/${user_id}`}>
           {username}
         </NavLink>
       </div>
@@ -25,7 +25,7 @@ const Post = ({
       </div>
       <div className="description">{description}</div>
       <div className="likes">{likes}</div>
-      <div className="comments">{comments}</div>
+      <div className="comments">{comments} comments</div>
     </div>
   );
 };
