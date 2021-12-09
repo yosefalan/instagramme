@@ -31,5 +31,6 @@ class Post(db.Model):
             'description': self.description,
             'photos': self.photos[0].url,
             'likes': len(self.likes),
-            'comments': len(self.comments)
+            'comments': len(self.comments),
+            'profile_image': self.user.profile_image,
         }

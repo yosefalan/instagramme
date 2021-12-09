@@ -25,7 +25,16 @@ const Feed = () => {
       {posts
         ?.reverse()
         .map(
-          ({ id, user_id, description, username, likes, comments, photos }) => (
+          ({
+            id,
+            user_id,
+            description,
+            username,
+            likes,
+            comments,
+            photos,
+            profile_image,
+          }) => (
             <Post
               id={id}
               user_id={user_id}
@@ -34,6 +43,7 @@ const Feed = () => {
               likes={likes}
               comments={comments}
               photos={photos}
+              profile_image={profile_image}
             />
           )
         )}
