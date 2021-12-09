@@ -30,9 +30,9 @@ function User() {
 
   return (
     <>
-      <div>
-        <img src={user.profile_image} alt=""></img>
-      </div>
+      {user.profile_image && <div>
+        <img src={`${user.profile_image}`} alt=""></img>
+      </div>}
       <div>
         { user.username }
       </div>
