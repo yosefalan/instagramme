@@ -10,10 +10,16 @@ def seed_users():
         username='Demo', email='demo@aa.io', password='password')
     nasa = User(
         username='NASA', email='nasa@mail.com', password='password')
+    oneUser = User(
+        username='OneUser', email='oneuser@mail.com', password='password')
+    twoUser = User(
+        username='TwoUser', email='twouser@mail.com', password='password')
 
     db.session.add(demo)
     db.session.add(natgeo)
     db.session.add(nasa)
+    db.session.add(oneUser)
+    db.session.add(twoUser)
 
     db.session.commit()
 

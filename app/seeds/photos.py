@@ -11,11 +11,24 @@ def seed_photos():
         url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/NatGeo/Screenshot+2021-12-06+122336.jpg', user_id=2, post_id=3)
     photo4 = Photo(
         url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/NatGeo/Screenshot+2021-12-06+122318.jpg', user_id=1, post_id=4)
+    photo5 = Photo(
+        url='https://i.imgur.com/UY4Yr4S.jpeg', user_id=4, post_id=5)
+    photo6 = Photo(
+        url='https://i.imgur.com/sjpa0Gg.jpeg', user_id=5, post_id=6)
+    photo7 = Photo(
+        url='https://i.imgur.com/EEa6C6i.jpeg', user_id=5, post_id=7)
+    photo8 = Photo(
+        url='https://i.imgur.com/fWN5W4v.jpeg', user_id=3, post_id=8)
+
 
     db.session.add(photo1)
     db.session.add(photo2)
     db.session.add(photo3)
     db.session.add(photo4)
+    db.session.add(photo5)
+    db.session.add(photo6)
+    db.session.add(photo7)
+    db.session.add(photo8)
 
     db.session.commit()
 

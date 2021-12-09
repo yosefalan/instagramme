@@ -17,11 +17,26 @@ def seed_posts():
     p4 = Post(
         user_id=1, description="""TEST POST!!.""")
 
+    p5 = Post(
+        user_id=4, description="""OMG adorable!""")
+    p6 = Post(
+        user_id=5, description="""Cute Doggo"""
+    )
+    p7 = Post(
+        user_id=5, description="""Happy Cat"""
+    )
+    p8 = Post(
+        user_id=3, description="""Hobbit Kitties""")
+
 
     db.session.add(p1)
     db.session.add(p2)
     db.session.add(p3)
     db.session.add(p4)
+    db.session.add(p5)
+    db.session.add(p6)
+    db.session.add(p7)
+    db.session.add(p8)
 
     db.session.commit()
 
