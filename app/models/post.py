@@ -28,6 +28,7 @@ class Post(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'username': self.user.username,
+            'profile_image': self.user.profile_image,
             'description': self.description,
             'photos': self.photos[0].url,
             'likes': len(self.likes),

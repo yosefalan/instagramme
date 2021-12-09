@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
 import './User.css';
-import Footer from "./Footer";
+import Footer from "./Footer/Footer";
+import DisplayPostModal from "./DisplayPostModal/index"
 
 function User() {
   const [user, setUser] = useState({});
@@ -37,6 +38,7 @@ function User() {
     <>
       <main className="profile-main-container">
         <div className="profile-content-container">
+          <DisplayPostModal />
           <header className="profile-header">
             <div className="profile-image-container">
               <div className="profile-image-wrapper">
@@ -58,12 +60,12 @@ function User() {
                   <span><span className="profile-data-bold">{posts?.length || 0}</span> {posts.length == 1 ? "post" : "posts"}</span>
                 </li>
                 <li className="profile-posts-data">
-                  <a class="profile-posts-data-text" href="">
+                  <a className="profile-posts-data-text" href="">
                     <span className="profile-data-bold">{user.followers?.length || 0}</span> {user.followers == 1 ? "follower" : "followers"}
                   </a>
                 </li>
                 <li className="profile-posts-data">
-                  <a class="profile-posts-data-text" href="">
+                  <a className="profile-posts-data-text" href="">
                     <span className="profile-data-bold">{user.following?.length || 0}</span> following
                   </a>
                 </li>
