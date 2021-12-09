@@ -32,10 +32,7 @@ const LandingPage = () => {
                 Sign up
               </NavLink>
             </div>
-            <div className='appStoreContainer'>
-              We don't have an app, but if we did, you still couldn't get it.
-              <img className='storeImg' src={app_store_logos}></img>
-            </div>
+            
           </div>
         </div>
       </div>

@@ -14,6 +14,7 @@
   }
   input{
       width: 260px;
+      height: 25px;
   }
   .LoginFormInput {
     display: flex;
