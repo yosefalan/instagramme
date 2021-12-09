@@ -132,41 +132,41 @@ def create_comment(id):
         return comment.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
-# # UPDATE ONE COMMENT
-# @posts_routes.route("/<int:id>/comments/<int:comment_id>", methods=["PUT"])
-# @login_required
-# def update_post(id, comment_id):
+# UPDATE ONE COMMENT
+@posts_routes.route("/<int:id>/comments/<int:comment_id>", methods=["PUT"])
+@login_required
+def update_comment(id, comment_id):
 
-#     ################### Is there a need to query for Post before deleting a comment?
+    ################### Is there a need to query for Post before deleting a comment?
 
-#     # post = Post.query.get(id)
-#     # if post:
-#     #     for key, value in request.form:
-#     #         setattr(post, key, value)
-#     #     db.session.commit()
-#     #     return post.to_dict()
-#     comment = Comment.query.get(comment_id)
-#     if comment:
-#         for key, value in request.form:
-#             setattr(comment, key, value)
-#         db.session.commit()
-#         return comment.to_dict()
-#     else:
-#         return "Comment not found", 404
+    # post = Post.query.get(id)
+    # if post:
+    #     for key, value in request.form:
+    #         setattr(post, key, value)
+    #     db.session.commit()
+    #     return post.to_dict()
+    comment = Comment.query.get(comment_id)
+    if comment:
+        for key, value in request.form:
+            setattr(comment, key, value)
+        db.session.commit()
+        return comment.to_dict()
+    else:
+        return "Comment not found", 404
 
-# # DELETE ONE COMMENT ON ONE POST
-# @posts_routes.route("/<int:id>/comments/<int:comment_id>", methods=["DELETE"])
-# @login_required
-# def delete_comment(id, comment_id):
-#     # post = Post.query.get(id)
-#     # if post:
-#     #     db.session.delete(post)
-#     #     db.session.commit()
-#     #     return "Ok", 200
-#     comment = Comment.query.get(comment_id)
-#     if comment:
-#         db.session.delete(comment)
-#         db.session.commit()
-#         return 'Ok', 200
-#     else:
-#         return "Post not found", 404
+# DELETE ONE COMMENT ON ONE POST
+@posts_routes.route("/<int:id>/comments/<int:comment_id>", methods=["DELETE"])
+@login_required
+def delete_comment(id, comment_id):
+    # post = Post.query.get(id)
+    # if post:
+    #     db.session.delete(post)
+    #     db.session.commit()
+    #     return "Ok", 200
+    comment = Comment.query.get(comment_id)
+    if comment:
+        db.session.delete(comment)
+        db.session.commit()
+        return 'Ok', 200
+    else:
+        return "Post not found", 404
