@@ -5,47 +5,79 @@ import { Redirect } from "react-router-dom";
 import { createPost } from "../../store/posts";
 import  './UploadModal.css'
 import media from './images/media.png'
+import { uploadFile } from 'react-s3';
+const AWS = require("aws-sdk");
+const multer = require("multer");
 
 function UploadForm() {
   const sessionUser = useSelector(state => state.session.user);
-  const userId = sessionUser.id
-  console.log("**********", userId)
-  const form = new FormData()
-  form.append('user_id', userId)
-  // form.append('file', file)
+  const user_id = sessionUser.id
+  const dispatch = useDispatch();
+  // const [image, setImage] = useState(null);
+  const [description, setDescription] = useState("");
+  const [url, setUrl] = useState("");
+  const [errors, setErrors] = useState([]);
 
-  const [image, setImage] = useState(null);
+const handleSubmit = (e) => {
+  console.log("HANDLE SUBMIT!!!!!")
+  e.preventDefault();
+  let newErrors = [];
+  dispatch(createPost({ user_id, description, url }))
+    .then(() => {
+      setDescription("");
+      setUrl("");
+    })
+    .catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) {
+        newErrors = data.errors;
+        setErrors(newErrors);
+      }
+    });
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  }
-  //   dispatch(signup({ username, email, password, image }))
-  //     .then(() => {
-  //       setUsername("");
-  //       setEmail("");
-  //       setPassword("");
-  //       setImage(null);
-  //     })
-  //     .catch(async (res) => {
-  //       const data = await res.json();
-  //       if (data && data.errors) {
-  //         newErrors = data.errors;
-  //         setErrors(newErrors);
-  //       }
-  //     });
+
+
+///ATTEMPT TO DIRECTLY UPLOAD FILE
+
+// const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
+
+
+   // const storage = multer.memoryStorage({
+  //   destination: function (req, file, callback) {
+  //     callback(null, "");
+  //   },
+  // });
+
+  // const singleMulterUpload = (nameOfKey) =>
+  // multer({ storage: storage }).single(nameOfKey);
+
+  // const passFile = (e, file=image) => {
+  //   e.preventDefault();
+  //   console.log("IMAGE IN PASS FUNCTION:", file)
+  //   imageUpload(file)
+  // }
+
+  // const imageUpload = async (file) => {
+
+  //   console.log("IMAGE UPLOAD FUNCTION BEING CALLED")
+  //   console.log("FILE IN UPLOAD FUNCTION:", file)
+  //   const { originalname, mimetype, buffer } = await file;
+  //   const path = require("path");
+  //   const Key = new Date().getTime().toString() + path.extname(originalname);
+  //   const uploadParams = {
+  //     Bucket: 'mamba-instagramme',
+  //     Key,
+  //     Body: buffer,
+  //     ACL: "public-read",
+  //   };
+  //   const result = await s3.upload(uploadParams).promise();
+
+  //   console.log("!!!!!!!!!!!!!!!", result.Location)
+  //   return result.Location;
   // };
 
-  // const updateFile = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) setImage(file);
-  // };
-  const updateFile = (e) => {
-    const file = e.target.files[0];
-    if (file) setImage(file);
-  };
-
-  const handleFile = document.getElementById('getFile')
-
+// const handleFile = document.getElementById('getFile')
 
   return (
     <div className="uploadFormMain">
@@ -54,18 +86,40 @@ function UploadForm() {
       <div className="upoadFormBtm">
         <div className="mediaImgContainer"><img src={media} className="mediaImg"></img></div>
         <div className="uploadTextContainer"><p>Upload photos here</p></div>
-        <form onSubmit={handleSubmit} className="form"></form>
-        <div className="uploadBtnContainer">
 
-        <button
-        onclick={handleFile}
-        className="uploadBtn">
-        Select from computer</button>
-        {/* <input
-        type="file" onChange={updateFile}
-        id="getFile"
-        style="display:none"
-        /> */}
+
+        <div>
+          <form
+          className='formContainer'
+          onSubmit={handleSubmit} className="form">
+            {/* <div className="uploadBtnContainer"> */}
+            {/* <input
+            type="file" onChange={handleFileInput}
+            id="getFile"
+            /> */}
+
+            {/* </div> */}
+
+            <textarea
+            className="field"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+            />
+            <input
+            type="text"
+            className="field"
+            placeholder="Image URL"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            required
+            />
+             <button
+            type="submit"
+            className="uploadBtn">
+            Submit</button>
+          </form>
         </div>
       </div>
 

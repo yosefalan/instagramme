@@ -49,6 +49,11 @@
 
 }
 
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .uploadBtn {
   width: 166px;
   height: 30px;
@@ -72,4 +77,8 @@
   height: 38px;
   display: flex;
   justify-content: center;
+}
+
+.field {
+  width: 250px;
 }

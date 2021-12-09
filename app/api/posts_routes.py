@@ -30,18 +30,18 @@ def posts():
     results_dict = {post.id: post.to_dict() for post in results}
     return results_dict
 
-@posts_routes.route('/new', methods=["POST"])
+@posts_routes.route('/', methods=["POST"])
 @login_required
 def create_post():
     form=PostForm()
-
+    print("&&&&&&&&&&&&&&&&", form.data)
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         post = Post(
             user_id=form.data['user_id'],
             description=form.data['description'],
-            createdAt= datetime.datetime.now,
-            updatedAt= datetime.datetime.now
+            createdAt= datetime.now(),
+            updatedAt= datetime.now()
         )
         db.session.add(post)
         db.session.commit()
@@ -49,9 +49,8 @@ def create_post():
             url=form.data['url'],
             user_id=form.data['user_id'],
             post_id=post.id,
-            createdAt= datetime.datetime.now,
-            updatedAt= datetime.datetime.now
-        )
+            createdAt= datetime.now(),
+            updatedAt= datetime.now())
         db.session.add(photo)
         db.session.commit()
         return post.to_dict()
