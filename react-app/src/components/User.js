@@ -3,13 +3,9 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
 import './User.css';
-<<<<<<< HEAD
-import Footer from './Footer/Footer'
-=======
 import Footer from "./Footer/Footer";
 import DisplayPostModal from "./DisplayPostModal/index"
 
->>>>>>> c54e2017400926d497fcd421c1e295e03a2e0fb0
 
 function User() {
   const [user, setUser] = useState({});
@@ -40,7 +36,7 @@ function User() {
   const handleClick = (postId) => {
     setPostId(postId)
     setShowModal(true)
-    
+
   }
 
   if (!user) {
