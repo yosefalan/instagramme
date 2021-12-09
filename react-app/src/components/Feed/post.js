@@ -16,7 +16,7 @@ const Post = ({
   return (
     <div className="post-box">
       <div className="username_link">
-        <NavLink className="username_link" to={`/api/users/${user_id}`}>
+        <NavLink className="username_link" to={`/users/${user_id}`}>
           {username}
         </NavLink>
       </div>
