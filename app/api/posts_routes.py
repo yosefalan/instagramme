@@ -5,6 +5,7 @@ from wtforms.validators import DataRequired
 from app.forms.post_form import PostForm
 from datetime import datetime
 from app.models import db
+from sqlalchemy import asc, desc
 
 
 
@@ -27,7 +28,7 @@ def posts():
     userId = session['_user_id']
     user = User.query.get(userId).to_dict()
     print("#####", user["following"])
-    results = Post.query.filter(Post.user_id.in_(user["following"])).all() #{anything in the list user["following"]}   ).all()
+    results = Post.query.filter(Post.user_id.in_(user["following"])).order_by(Post.createdAt.desc()).all() #{anything in the list user["following"]}   ).all()
 
     results_dict = {post.id: post.to_dict() for post in results}
     print("results", results_dict)

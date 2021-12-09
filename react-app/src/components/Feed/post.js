@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import "./post.css";
 
 const Post = ({
   id,
@@ -13,13 +15,17 @@ const Post = ({
   console.log("url", photos);
   return (
     <div className="post-box">
-      <div>{username}</div>
+      <div className="username_link">
+        <NavLink className="username_link" to={`/api/users/${user_id}`}>
+          {username}
+        </NavLink>
+      </div>
       <div className="photo">
         <img src={photos} alt="post-photo" />
       </div>
       <div className="description">{description}</div>
       <div className="likes">{likes}</div>
-      <div className="comments">{comments}</div>
+      <div className="comments">{comments} comments</div>
     </div>
   );
 };
