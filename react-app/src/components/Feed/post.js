@@ -11,20 +11,21 @@ const Post = ({
   likes,
   comments,
   photos,
+  profile_image,
 }) => {
-  console.log("url", photos);
   return (
     <div className="post-box">
-      <div className="username_link">
+      <div className="user">
+        <img className="profile-image-post" src={profile_image} />
         <NavLink className="username_link" to={`/users/${user_id}`}>
           {username}
         </NavLink>
       </div>
-      <div className="photo">
-        <img src={photos} alt="post-photo" />
+      <div className="photo-holder">
+        <img className="photo" src={photos} alt="post-photo" />
       </div>
       <div className="description">{description}</div>
-      <div className="likes">{likes}</div>
+      <div className="likes">{likes} likes</div>
       <div className="comments">{comments} comments</div>
     </div>
   );

@@ -6,6 +6,7 @@ import './User.css';
 import Footer from "./Footer/Footer";
 import DisplayPostModal from "./DisplayPostModal/index"
 
+
 function User() {
   const [user, setUser] = useState({});
   const [showModal, setShowModal] = useState(false);
