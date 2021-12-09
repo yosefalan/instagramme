@@ -9,6 +9,7 @@ import profile_image from "./profileImage.jpg";
 import snow_pic from './snow.jpeg'
 import app_store_logos from './app_store_logos.png'
 
+
 const LandingPage = () => {
   return (
     <div className="fullContainer">

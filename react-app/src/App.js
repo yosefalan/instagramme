@@ -12,6 +12,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import SignupPage from "./components/SignupPage/SignupPage";
 import LoginPage from "./components/LoginPage/Login";
 import Feed from "./components/Feed/Feed";
+import NavigationBar from './components/NavigationBar/NavigationBar';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -45,7 +46,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavigationBar />
       <Switch>
         <Route path="/login" exact={true}>
           <LoginForm />
