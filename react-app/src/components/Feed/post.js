@@ -11,10 +11,12 @@ const Post = ({
   likes,
   comments,
   photos,
+  profile_image,
 }) => {
   return (
     <div className="post-box">
-      <div className="username_link">
+      <div className="user">
+        <img className="profile-image-post" src={profile_image} />
         <NavLink className="username_link" to={`/users/${user_id}`}>
           {username}
         </NavLink>
