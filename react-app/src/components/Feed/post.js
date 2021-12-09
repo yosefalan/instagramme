@@ -24,7 +24,7 @@ const Post = ({
         <img className="photo" src={photos} alt="post-photo" />
       </div>
       <div className="description">{description}</div>
-      <div className="likes">{likes}</div>
+      <div className="likes">{likes} likes</div>
       <div className="comments">{comments} comments</div>
     </div>
   );

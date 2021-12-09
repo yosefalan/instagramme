@@ -6,7 +6,7 @@
   background: #fff;
   border: 1px solid #dfdfdf;
   margin-top: 20px;
-  height: 800px;
+  height: fit-content;
 }
 .username_link {
   text-decoration: none;
