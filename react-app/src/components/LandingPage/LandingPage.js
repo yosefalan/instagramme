@@ -1,6 +1,6 @@
 import LoginForm from "../auth/LoginForm";
 
-import Footer from "../Footer";
+import Footer from "../../components/Footer/Footer";
 import { NavLink } from "react-router-dom";
 import "../LandingPage/LandingPage.css";
 import phones from "./phones.png";
@@ -13,7 +13,6 @@ const LandingPage = () => {
   return (
     <div className="fullContainer">
       <div className="mainContainer">
-        {/* <h1>Landing Page</h1> */}
         <div className="centerContainer">
           <div className="landingImgContainer">
 
@@ -32,7 +31,7 @@ const LandingPage = () => {
                 Sign up
               </NavLink>
             </div>
-            
+
           </div>
         </div>
       </div>

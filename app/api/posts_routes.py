@@ -5,8 +5,6 @@ from wtforms.validators import DataRequired
 from app.forms.post_form import PostForm
 from datetime import datetime
 from app.models import db
-from sqlalchemy import asc, desc
-
 
 
 posts_routes = Blueprint('posts', __name__)
@@ -27,22 +25,10 @@ def validation_errors_to_error_messages(validation_errors):
 def posts():
     userId = session['_user_id']
     user = User.query.get(userId).to_dict()
-    print("#####", user["following"])
-    results = Post.query.filter(Post.user_id.in_(user["following"])).order_by(Post.createdAt.desc()).all() #{anything in the list user["following"]}   ).all()
+    results = Post.query.filter(Post.user_id.in_(user["following"])).order_by(Post.createdAt.desc()).all()
 
     results_dict = {post.id: post.to_dict() for post in results}
-    print("results", results_dict)
-    # print("*********", results_dict)
     return results_dict
-
-    # userId = session['_user_id']
-    # # res = session.query(db.User).get(userId)
-    # # res = follows.query.filter(follows.follower_id == userId)
-    # # follows = db.User.query.join(db.follows).filter(userId == db.follows.follower_id)
-    # res = User.query.join(follows).all()
-    # print(res)
-    # posts = db.Post.query.join(db.Like).join(db.Photo).filter(db.Post.user_id)
-    # return dict.fromkeys(posts, "#")
 
 @posts_routes.route('/new', methods=["POST"])
 @login_required
