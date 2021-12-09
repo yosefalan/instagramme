@@ -4,9 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
 import './User.css';
 import Footer from "./Footer/Footer";
+import DisplayPostModal from "./DisplayPostModal/index"
+
 
 function User() {
   const [user, setUser] = useState({});
+  const [showModal, setShowModal] = useState(false);
+  const [postId, setPostId] = useState("");
   const { userId } = useParams();
   const dispatch = useDispatch();
   const posts = useSelector((state) => Object.values(state.posts));
@@ -28,6 +32,12 @@ function User() {
   useEffect(() => {
     dispatch(getUserPosts(userId));
   }, [dispatch, userId]);
+
+  const handleClick = () => {
+    // setPostId(id)
+    setShowModal(true)
+    
+  }
 
   if (!user) {
     return null;
@@ -58,12 +68,12 @@ function User() {
                   <span><span className="profile-data-bold">{posts?.length || 0}</span> {posts.length == 1 ? "post" : "posts"}</span>
                 </li>
                 <li className="profile-posts-data">
-                  <a class="profile-posts-data-text" href="">
+                  <a className="profile-posts-data-text" href="">
                     <span className="profile-data-bold">{user.followers?.length || 0}</span> {user.followers == 1 ? "follower" : "followers"}
                   </a>
                 </li>
                 <li className="profile-posts-data">
-                  <a class="profile-posts-data-text" href="">
+                  <a className="profile-posts-data-text" href="">
                     <span className="profile-data-bold">{user.following?.length || 0}</span> following
                   </a>
                 </li>
@@ -83,12 +93,13 @@ function User() {
             {posts?.map((post) => {
               return (
                 <div className="profile-postpic-container" key={post.id}>
-                  <a href={`/posts/${post.id}`}>
+                  <div>
                     <div className="profile-postpic-wrapper">
-                      <img className="profile-postpic-img" src={post.photos} alt=""></img>
+                      <img className="profile-postpic-img" src={post.photos} alt="" onClick={handleClick}></img>
+                      {showModal && (<DisplayPostModal postId={post.id} setShowModal={setShowModal} />)}
                     </div>
                     <div className="postpic-wrapper-peer"></div>
-                  </a>
+                  </div>
                 </div>
               );
             })}

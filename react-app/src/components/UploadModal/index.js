@@ -12,6 +12,7 @@ return (
     <img className="navIcon"
     src={add}
     onClick={() => setShowModal(true)}
+    alt=""
     ></img>
     {showModal && (
       <Modal onClose={() => setShowModal(false)}>
