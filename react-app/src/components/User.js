@@ -33,8 +33,8 @@ function User() {
     dispatch(getUserPosts(userId));
   }, [dispatch, userId]);
 
-  const handleClick = () => {
-    // setPostId(id)
+  const handleClick = (postId) => {
+    setPostId(postId)
     setShowModal(true)
     
   }
@@ -58,6 +58,7 @@ function User() {
               </div>
             </div>
             <section className="profile-section">
+              {showModal && (<DisplayPostModal postId={postId} setShowModal={setShowModal} />)}
               <div className="profile-name-wrapper">
                 <h2 className="profile-name"> {user.username}</h2>
                 <div><div>{user.id === sessionUser.id && <a href="">Edit Profile</a>}</div></div>
@@ -95,8 +96,7 @@ function User() {
                 <div className="profile-postpic-container" key={post.id}>
                   <div>
                     <div className="profile-postpic-wrapper">
-                      <img className="profile-postpic-img" src={post.photos} alt="" onClick={handleClick}></img>
-                      {showModal && (<DisplayPostModal postId={post.id} setShowModal={setShowModal} />)}
+                      <img className="profile-postpic-img" src={post.photos} alt="" onClick={() => handleClick(post.id)}></img>
                     </div>
                     <div className="postpic-wrapper-peer"></div>
                   </div>

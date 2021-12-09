@@ -12,6 +12,7 @@ function DisplayPost({postId}) {
     const post = posts[postId];
     console.log(post.comments);
     console.log(post.likes);
+    console.log(post.photos);
     
     return (
         <>
@@ -29,7 +30,8 @@ function DisplayPost({postId}) {
                         <div><div id="profile-pic-holder"><img id="profile-pic" src={post.profile_image} alt=""></img></div></div>
                         <div>{post.username}</div>
                         <div>
-                            {post.user_id === sessionUser.id && <button>Delete Post</button>}
+                            {post.user_id === sessionUser.id && <button>Edit</button>}{" "}
+                            {post.user_id === sessionUser.id && <button>Delete</button>}
                         </div>
                     </div>
                     <div className="right-column-div">Hello from Comments</div>
