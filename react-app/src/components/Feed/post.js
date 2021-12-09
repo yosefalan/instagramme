@@ -20,8 +20,8 @@ const Post = ({
           {username}
         </NavLink>
       </div>
-      <div className="photo">
-        <img src={photos} alt="post-photo" />
+      <div className="photo-holder">
+        <img className="photo" src={photos} alt="post-photo" />
       </div>
       <div className="description">{description}</div>
       <div className="likes">{likes}</div>
