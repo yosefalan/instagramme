@@ -12,7 +12,6 @@ const Post = ({
   comments,
   photos,
 }) => {
-  console.log("url", photos);
   return (
     <div className="post-box">
       <div className="username_link">
@@ -20,11 +19,11 @@ const Post = ({
           {username}
         </NavLink>
       </div>
-      <div className="photo">
-        <img src={photos} alt="post-photo" />
+      <div className="photo-holder">
+        <img className="photo" src={photos} alt="post-photo" />
       </div>
       <div className="description">{description}</div>
-      <div className="likes">{likes}</div>
+      <div className="likes">{likes} likes</div>
       <div className="comments">{comments} comments</div>
     </div>
   );
