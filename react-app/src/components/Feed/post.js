@@ -12,7 +12,6 @@ const Post = ({
   comments,
   photos,
 }) => {
-  console.log("url", photos);
   return (
     <div className="post-box">
       <div className="username_link">
