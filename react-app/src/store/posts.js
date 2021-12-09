@@ -27,7 +27,7 @@ const remove = (postId) => ({
   postId,
 });
 
-// //thunk action creators
+//thunk action dispatchers
 
 export const getPosts = () => async (dispatch) => {
   const response = await csrfFetch("/api/posts/");
@@ -35,6 +35,15 @@ export const getPosts = () => async (dispatch) => {
   if (response.ok) {
     const posts = await response.json();
     dispatch(load(posts));
+  }
+};
+
+export const getUserPosts = (userId) => async (dispatch) => {
+  const response = await csrfFetch(`/api/users/${userId}/posts`);
+
+  if (response.ok) {
+    const posts = await response.json();
+    dispatch(load(posts))
   }
 };
 
@@ -88,7 +97,6 @@ const postsReducer = (state = initialState, action) => {
   let newState = {};
   switch (action.type) {
     case LOAD_POSTS:
-      console.log("the action", action.posts);
       let posts = Object.values(action.posts);
       posts.forEach((post) => {
         newState[post.id] = post;

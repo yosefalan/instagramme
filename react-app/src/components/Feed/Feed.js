@@ -8,6 +8,7 @@ import {
   deletePost,
 } from "../../store/posts";
 import Post from "./post";
+import "./Feed.css";
 
 const Feed = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -20,10 +21,22 @@ const Feed = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      {posts?.map(({ id, user_id, description, username, likes, comments, photos }) => (
-        <Post id={id} user_id={user_id} description={description} username={username} likes={likes} comments={comments} />
-      ))}
+    <div className="feed-container">
+      {posts
+        ?.reverse()
+        .map(
+          ({ id, user_id, description, username, likes, comments, photos }) => (
+            <Post
+              id={id}
+              user_id={user_id}
+              description={description}
+              username={username}
+              likes={likes}
+              comments={comments}
+              photos={photos}
+            />
+          )
+        )}
     </div>
   );
 };

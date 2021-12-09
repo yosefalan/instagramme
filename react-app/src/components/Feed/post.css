@@ -1,0 +1,14 @@
+.post-box {
+  display: flex;
+  flex-direction: column;
+  width: 614px;
+  padding-top: 4rem;
+}
+.username_link {
+  text-decoration: none;
+  color: black;
+}
+.username_link:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
