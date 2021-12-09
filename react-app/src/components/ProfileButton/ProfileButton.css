@@ -5,62 +5,43 @@
   cursor: pointer;
 } */
 
-
 .buttonContainer {
-  /* position: relative; */
+  position: relative;
   display: flex;
-  height: 40px;
-  width: 100px;
-  background-color: #FFFFFF;
-  height: 44px;
-  cursor: pointer;
-  border-radius: 25px;
-  overflow: hidden;
   justify-content: center;
-  border: 2px solid #D9D9D9;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 30px;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
-}
-
-.hamburgerMenuContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  width: 100px;
-  background-color: #FFFFFF;
-  width: 60%;
-  font-size: 20px;
-  margin-top: 3px;
-  margin-right: -5px;
 }
 
 .profileImageContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  font-size: 35px;
+  position: relative;
 }
 
 .profileImage {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
 }
 
 .dropdownContent {
-  margin-top: 45px;
-  display: none;
+  margin-top: 10px;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 100px;
+  top: 100%;
+  background-color: #FFFFFF;
+  width: 230px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .dropdownContent a {
-  width: 150px;
+  width: 198px;
   color: #333333;
   padding: 12px 16px;
   text-decoration: none;
@@ -68,12 +49,15 @@
 }
 
 .dropdownContent a:hover {
-  background-color: #333333;
-  color: #999999;
+  cursor: pointer;
+  background-color: #FAFAFA;
+  color: #272727;
 }
 
-
-.buttonContainer:hover
+.profileLink {
+  border-bottom: 1px solid #FAFAFA;
+}
+/* .buttonContainer:hover
 .dropdownContent {
   display: block;
-}
+} */

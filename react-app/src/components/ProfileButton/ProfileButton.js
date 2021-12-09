@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
 import '../ProfileButton/ProfileButton.css'
-
+import profileImage from './images/profile.jpg'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function ProfileButton({ user }) {
   // }, [dispatch]);
 
   const openMenu = () => {
-    if (showMenu) return;
+    // if (showMenu) return;
     setShowMenu(true);
   };
 
@@ -36,34 +36,30 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <div className="buttonContainer"
-    onClick={openMenu}
-    >
-      <div className="hamburgerMenuContainer">
-      <i class="fas fa-bars"></i>
-      </div>
-      <div className="profileImageContainer">
+    <div className="buttonContainer">
+      <div className="profileImageContainer"
+      onClick={openMenu}>
       {user
-      ? user.imageURL
-      ? <img src={user.imageURL} className="profileImage"></img>
-      : <i className="fas fa-user-circle"></i>
-      : <i className="fas fa-user-circle"></i>
+      ? user.profile_image
+      ? <img src={user.profile_image} className="profileImage"
+      ></img>
+      : <img src={profileImage} className="profileImage"
+      ></img>
+      : <img src={profileImage} className="profileImage"
+      ></img>
       }
       </div>
+        {showMenu &&
         <div className="dropdownContent">
-          {user ?
-          <>
+            <a
+            href={`/users/${user.id}`}
+            className="profileLink">Profile
+            </a>
             <a onClick={logout} href="/">
             Log Out
             </a>
-
-
-            </> :
-            <div className="modalLinks">
-
-            </div>
-          }
         </div>
+        }
     </div>
   );
 }

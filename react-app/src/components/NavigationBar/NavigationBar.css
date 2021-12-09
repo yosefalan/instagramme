@@ -1,13 +1,14 @@
 .mainNavContainer {
-  background-color: cornflowerblue;
   width: 100vw;
+  height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border-bottom: 1px solid #DBDBDB;
 }
 
 .centerNavContainer {
-  width: 1200px;
+  width: 935px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -15,13 +16,31 @@
 }
 
 .homeLogo {
-  width: 1100px;
+  width: 335px;
   justify-self: flex-start;
+
 }
 
 .navLogo {
-  height: 60px;
+  height: 40px;
+  margin-left: -40px;
+
 }
-.sessionLinks {
+
+.searchBarContainer {
+  height: 100%;
+  width: 268px;
+}
+.navIcons {
   justify-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  width: 301px;
+
+}
+
+.navIcon {
+  height: 20px;
+  width: 20px;
+  margin-left: 30px;
 }

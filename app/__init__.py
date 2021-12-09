@@ -15,6 +15,7 @@ from .seeds import seed_commands
 from .config import Config
 
 app = Flask(__name__)
+CORS(app)
 
 # Setup login manager
 login = LoginManager(app)
@@ -37,7 +38,6 @@ db.init_app(app)
 Migrate(app, db)
 
 # Application Security
-CORS(app)
 
 
 # Since we are deploying with Docker and Flask,
