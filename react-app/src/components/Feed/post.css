@@ -3,12 +3,25 @@
   flex-direction: column;
   width: 614px;
   padding-top: 4rem;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  margin-top: 20px;
 }
 .username_link {
   text-decoration: none;
   color: black;
+  width: auto;
+  font-weight: bold;
+  color: #000;
+  font-size: 14px;
+  margin-left: 10px;
 }
 .username_link:hover {
-  text-decoration: underline;
-  font-weight: bold;
+  font-weight: bolder;
+}
+.photo {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  background: none;
 }
