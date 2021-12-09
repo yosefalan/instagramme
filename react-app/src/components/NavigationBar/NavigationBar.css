@@ -18,13 +18,11 @@
 .homeLogo {
   width: 335px;
   justify-self: flex-start;
-
 }
 
 .navLogo {
   height: 40px;
   margin-left: -40px;
-
 }
 
 .searchBarContainer {
@@ -36,7 +34,6 @@
   display: flex;
   flex-direction: row;
   width: 301px;
-
 }
 
 .navIcon {

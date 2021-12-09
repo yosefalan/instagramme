@@ -2,11 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from '../ProfileButton/ProfileButton';
+import UploadModal from '../UploadModal/index'
 import './NavigationBar.css';
 import instagramme_logo from './images/instagramme_logo_black.png';
 import like from './images/like.png';
 import explore from './images/explore.png';
-import add from './images/add.png';
 import home from './images/home.png';
 
 
@@ -22,7 +22,7 @@ const NavigationBar = () => {
         <div className="searchBarContainer"></div>
         <div className="navIcons">
           <img className="navLogo" className="navIcon" src={home}></img>
-          <img className="navLogo" className="navIcon" src={add}></img>
+          <UploadModal/>
           <img className="navLogo" className="navIcon" src={explore}></img>
           <img className="navLogo" className="navIcon" src={like}></img>
           <div className="sessionLinks">
