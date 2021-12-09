@@ -52,7 +52,7 @@ function ProfileButton({ user }) {
             href={`/users/${user.id}`}
             className="profileLink">Profile
             </a>
-            <a onClick={logout} href="/">
+            <a href="/" onClick={logout} >
             Log Out
             </a>
         </div>
