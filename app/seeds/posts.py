@@ -14,9 +14,14 @@ def seed_posts():
     p3 = Post(
         user_id=2, description="""Firefighters with Cal Fire conduct an operation to contain the Dixie fire south of Highway 44 in Lassen National Forest, on August 27. The fire started on July 13. At the time of this image, on October 2, it had burned roughly 965,000 acres (400,000 ha) and was 94% contained. Now it's fully secured. Shot on assignment with the help of a grant from the National Geographic Society.""")
 
+    p4 = Post(
+        user_id=1, description="""TEST POST!!.""")
+
+
     db.session.add(p1)
     db.session.add(p2)
     db.session.add(p3)
+    db.session.add(p4)
 
     db.session.commit()
 
