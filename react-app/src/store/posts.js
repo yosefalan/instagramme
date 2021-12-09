@@ -57,6 +57,7 @@ export const getOnePost = (postId) => async (dispatch) => {
 };
 
 export const createPost = (postData) => async (dispatch) => {
+  console.log("***************", postData)
   const response = await csrfFetch("/api/posts/", {
     method: "POST",
     body: JSON.stringify(postData),
