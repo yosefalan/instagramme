@@ -99,38 +99,38 @@ def delete_post(id):
         return "Post not found", 404
 
 
-# # READ ALL COMMENTS ON ONE POST
-# @posts_routes.route('/<int:id>/comments')
-# @login_required
-# def get_comments(id):
-#     post = Post.query.get(id)
-#     if post:
-#         comments = Comment.query.filter(
-#             Comment.post_id == id).order_by(Comment.id.desc()).all()
-#         comments_dict = {comment.id: comment.to_dict() for comment in comments}
+# READ ALL COMMENTS ON ONE POST
+@posts_routes.route('/<int:id>/comments')
+@login_required
+def get_comments(id):
+    post = Post.query.get(id)
+    if post:
+        comments = Comment.query.filter(
+            Comment.post_id == id).order_by(Comment.id.desc()).all()
+        comments_dict = {comment.id: comment.to_dict() for comment in comments}
 
-#         return comments_dict
+        return comments_dict
 
-# # CREATE NEW COMMENT ON ONE POST
-# @posts_routes.route('/<int:id>/comments', methods=["POST"])
-# @login_required
-# def create_comment(id):
-#     form = CommentForm()
+# CREATE NEW COMMENT ON ONE POST
+@posts_routes.route('/<int:id>/comments', methods=["POST"])
+@login_required
+def create_comment(id):
+    form = CommentForm()
 
-#     form['csrf_token'].data = request.cookies['csrf_token']
-#     if form.validate_on_submit():
-#         comment = Comment(
-#             user_id=form.data['user_id'],
-#             content=form.data['content'],
-#             post_id=form.data['post_id'],
-#             createdAt=datetime.datetime.now,
-#             updatedAt=datetime.datetime.now
-#         )
-#         db.session.add(comment)
-#         db.session.commit()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        comment = Comment(
+            user_id=form.data['user_id'],
+            content=form.data['content'],
+            post_id=form.data['post_id'],
+            createdAt=datetime.datetime.now,
+            updatedAt=datetime.datetime.now
+        )
+        db.session.add(comment)
+        db.session.commit()
 
-#         return comment.to_dict()
-#     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+        return comment.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
 # # UPDATE ONE COMMENT
 # @posts_routes.route("/<int:id>/comments/<int:comment_id>", methods=["PUT"])
