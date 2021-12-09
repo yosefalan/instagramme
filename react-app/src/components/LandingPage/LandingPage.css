@@ -20,9 +20,10 @@
   width: 50%;
   margin-top: 20px;
 }
+
 .centerContainer {
-  width: 100;
-  height: 70vw;
+  width: 900px;
+  height: 90vh;
   display: flex;
   flex-direction: row;
   align-items:center
