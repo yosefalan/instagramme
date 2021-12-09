@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
 import './User.css';
-import Footer from "./Footer";
+import Footer from "./Footer/Footer";
 
 function User() {
   const [user, setUser] = useState({});

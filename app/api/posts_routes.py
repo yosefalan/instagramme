@@ -1,8 +1,9 @@
 from flask import Blueprint, request, session
 from flask_login import login_required
-from app.models import Post, Photo, User
+from app.models import Post, Photo, User, Comment
 from wtforms.validators import DataRequired
 from app.forms.post_form import PostForm
+from app.forms.comment_form import CommentForm
 from datetime import datetime
 from app.models import db
 
@@ -88,3 +89,33 @@ def delete_post(id):
         return "Ok", 200
     else:
         return "Post not found", 404
+
+@posts_routes.route('/<int:id>/comments')
+@login_required
+def get_comments(id):
+    post = Post.query.get(id)
+    if post:
+        comments = Comment.query.filter(Comment.post_id == id).order_by(Comment.id.desc()).all()
+        comments_dict = {comment.id: comment.to_dict() for comment in comments}
+
+        return comments_dict
+
+@posts_routes.route('/<int:id>/comments', methods=["POST"])
+@login_required
+def create_comment(id):
+    form=CommentForm()
+
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        comment = Comment(
+            user_id=form.data['user_id'],
+            content=form.data['content'],
+            post_id=form.data['post_id'],
+            createdAt= datetime.datetime.now,
+            updatedAt= datetime.datetime.now
+        )
+        db.session.add(comment)
+        db.session.commit()
+
+        return comment.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 400
