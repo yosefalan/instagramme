@@ -56,18 +56,41 @@ export const getOnePost = (postId) => async (dispatch) => {
   }
 };
 
-export const createPost = (postData) => async (dispatch) => {
-  console.log("***************", postData)
-  const response = await csrfFetch("/api/posts/", {
-    method: "POST",
-    body: JSON.stringify(postData),
-  });
+// export const createPost = (postData) => async (dispatch) => {
+//   console.log("***************", postData)
+//   const response = await csrfFetch("/api/posts/", {
+//     method: "POST",
+//     body: JSON.stringify(postData),
+//   });
 
-  if (response.ok) {
-    const post = await response.json();
-    dispatch(add(post));
-  }
+//   if (response.ok) {
+
+//     const post = await response.json();
+//     dispatch(add(post));
+//   }
+// };
+
+/************************************************** */
+
+export const createPost = (postData) => async (dispatch) => {
+  console.log("))))))))))))))))", postData)
+  const {
+      user_id,
+      description,
+      file
+  } = postData;
+
+  const form = new FormData();
+  form.append('user_id', user_id);
+  form.append('description', description)
+  form.append('file', file);
+
+  const res = await fetch('/api/posts/', {
+      method: "POST",
+      body: form
+  });
 };
+
 
 export const editPost = (postData) => async (dispatch) => {
   const response = await csrfFetch(`/api/posts/${postData.id}/`, {

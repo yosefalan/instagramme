@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { signup, demoLogin } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { createPost } from "../../store/posts";
@@ -13,7 +12,7 @@ function UploadForm() {
   const sessionUser = useSelector(state => state.session.user);
   const user_id = sessionUser.id
   const dispatch = useDispatch();
-  // const [image, setImage] = useState(null);
+  const [file, setFile] = useState(null);
   const [description, setDescription] = useState("");
   const [url, setUrl] = useState("");
   const [errors, setErrors] = useState([]);
@@ -22,7 +21,7 @@ const handleSubmit = (e) => {
   console.log("HANDLE SUBMIT!!!!!")
   e.preventDefault();
   let newErrors = [];
-  dispatch(createPost({ user_id, description, url }))
+  dispatch(createPost({ user_id, description, file }))
     .then(() => {
       setDescription("");
       setUrl("");
@@ -36,6 +35,9 @@ const handleSubmit = (e) => {
     });
 };
 
+const handleFile = (e) => {
+  setFile(e.target.files[0]);
+}
 
 
 ///ATTEMPT TO DIRECTLY UPLOAD FILE
@@ -91,12 +93,13 @@ const handleSubmit = (e) => {
         <div>
           <form
           className='formContainer'
-          onSubmit={handleSubmit} className="form">
+          onSubmit={handleSubmit}
+          className="form">
             {/* <div className="uploadBtnContainer"> */}
-            {/* <input
-            type="file" onChange={handleFileInput}
+            <input
+            type="file" onChange={handleFile}
             id="getFile"
-            /> */}
+            />
 
             {/* </div> */}
 
@@ -107,14 +110,14 @@ const handleSubmit = (e) => {
             onChange={(e) => setDescription(e.target.value)}
             required
             />
-            <input
+            {/* <input
             type="text"
             className="field"
             placeholder="Image URL"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             required
-            />
+            /> */}
              <button
             type="submit"
             className="uploadBtn">
