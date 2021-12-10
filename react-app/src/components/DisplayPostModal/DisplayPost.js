@@ -17,7 +17,6 @@ function DisplayPost({ postId }) {
             <div id="inner-div">
               <img src={post["photos"]} alt=""></img>
             </div>
-            {/* <div id="inner-div-two">Hello from other inner div!</div> */}
           </div>
         </div>
         <div id="post-modal-right-container">
