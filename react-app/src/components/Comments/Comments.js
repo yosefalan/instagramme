@@ -3,7 +3,7 @@ import { getAllComments } from "../../store/comments";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "../Feed/post.css";
-import CommentForm from "../../../api/forms/comment-form.py";
+import CommentForm from "./CommentForm";
 
 const Comment = ({ post_id }) => {
   const sessionUser = useSelector((state) => statesession.user);

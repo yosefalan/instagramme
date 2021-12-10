@@ -2,7 +2,11 @@
 // import { useSelector } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "./DisplayPost.css";
+
 import {deletePost} from '../../store/posts'
+
+import Comment from "../Comments/CommentForm";
+
 
 
 function DisplayPost({ postId, setShowModal }) {
@@ -43,10 +47,14 @@ function DisplayPost({ postId, setShowModal }) {
               {post.user_id === sessionUser.id && <button onClick={() => handleDelete(postId)}>Delete</button>}
             </div>
           </div>
+
           <div className='right-column-div' contentEditable='false' >
               {post.description}
           </div>
-          <div className="right-column-div">Hello from Comments</div>
+          
+          <div className="right-column-div">
+            <Comment post_id={postId} />
+          </div>
           <div className="right-column-div">Button Bar</div>
           <div className="right-column-div">
             {post.likes} {post.likes === 1 ? "like" : "likes"}
