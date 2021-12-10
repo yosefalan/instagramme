@@ -26,3 +26,14 @@ def get_user_posts(id):
         return {post.id: post.to_dict() for post in posts}
     else:
         return {}
+
+@user_routes.route('/<int:id>/followers')
+def get_followers(id):
+    user = User.query.get(id).to_dict()
+    followers = User.query.filter(User.id.in_(user["followers"])).all()
+    followers_dict = {}
+    for follower in followers:
+        followers_dict[follower.to_dict()["id"]] = follower.to_dict()
+    return followers_dict
+    # followers = User.query.filter(User.id.in_.user["followers"]).all()
+    # return {follower.id: follower.to_dict() for follower in followers}
