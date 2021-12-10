@@ -57,5 +57,7 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'profile_image': self.profile_image,
             'followers': [user.id for user in self.followers],
-            'following': [user.id for user in self.following]
+            'following': [user.id for user in self.following],
+            'followers_names': [user.id for user in self.followers],
+            'following_names': [user.id for user in self.followers]
         }

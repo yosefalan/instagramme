@@ -13,6 +13,7 @@ function User() {
   const { userId } = useParams();
   const dispatch = useDispatch();
   const posts = useSelector((state) => Object.values(state.posts));
+  const [showFollow, setShowFollow] = useState(false);
 
   let sessionUser = {};
   sessionUser["id"] = 0;
