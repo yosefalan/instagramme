@@ -7,12 +7,7 @@ import "./DisplayPost.css";
 function DisplayPost({ postId }) {
   const sessionUser = useSelector((state) => state.session.user);
   const posts = useSelector((state) => state.posts);
-  console.log(sessionUser);
-  console.log(posts);
   const post = posts[postId];
-  console.log(post.comments);
-  console.log(post.likes);
-  console.log(post.photos);
 
   return (
     <>

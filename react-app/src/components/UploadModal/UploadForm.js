@@ -19,7 +19,6 @@ function UploadForm() {
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = (e) => {
-    console.log("HANDLE SUBMIT!!!!!");
     e.preventDefault();
     let newErrors = [];
     dispatch(createPost({ user_id, description, url }))
