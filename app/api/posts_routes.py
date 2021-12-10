@@ -114,16 +114,16 @@ def get_comments(id):
 @login_required
 def create_comment(id):
     form = CommentForm()
-
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         comment = Comment(
             user_id=form.data['user_id'],
             content=form.data['content'],
-            post_id=form.data['post_id'],
+            post_id=id,
             createdAt=datetime.datetime.now,
             updatedAt=datetime.datetime.now
         )
+
         db.session.add(comment)
         db.session.commit()
 

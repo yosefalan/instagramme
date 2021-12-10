@@ -44,5 +44,4 @@ function DisplayPost({ postId }) {
     </>
   );
 }
-
 export default DisplayPost;
