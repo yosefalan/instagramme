@@ -4,22 +4,22 @@ from app.models import db, User
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    natgeo = User(
-        username='Nat Geo', email='natgeo@mail.com', password='password')
-    demo = User(
-        username='Demo', email='demo@aa.io', password='password')
-    nasa = User(
-        username='NASA', email='nasa@mail.com', password='password')
-    oneUser = User(
-        username='OneUser', email='oneuser@mail.com', password='password')
-    twoUser = User(
-        username='TwoUser', email='twouser@mail.com', password='password')
+    f1 = User(
+        followed=2, follower=1)
+    f2 = User(
+        followed=3, follower=1)
+    f3 = User(
+        followed=4, follower=1)
+    f4 = User(
+        followed=3, follower=2)
+    f5 = User(
+        followed=4, follower=2)
 
-    db.session.add(demo)
-    db.session.add(natgeo)
-    db.session.add(nasa)
-    db.session.add(oneUser)
-    db.session.add(twoUser)
+    db.session.add(f1)
+    db.session.add(f2)
+    db.session.add(f3)
+    db.session.add(f4)
+    db.session.add(f5)
 
     db.session.commit()
 
