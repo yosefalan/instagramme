@@ -11,7 +11,7 @@ function DisplayPostModal({postId, setShowModal}) {
             {/* HTML ELEMENT
             <button onClick={() => setShowModal(true)}>Show Post</button> */}
                 <Modal onClose={() => setShowModal(false)}>
-                    <DisplayPost postId={postId}/>
+                    <DisplayPost postId={postId} setShowModal={setShowModal}/>
                 </Modal>
             )
         </>
