@@ -3,47 +3,43 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { createPost } from "../../store/posts";
-import  './UploadModal.css'
-import media from './images/media.png'
+import "./UploadModal.css";
+import media from "./images/media.png";
 // import { uploadFile } from 'react-s3';
 // const AWS = require("aws-sdk");
 // const multer = require("multer");
 
 function UploadForm() {
-  const sessionUser = useSelector(state => state.session.user);
-  const user_id = sessionUser.id
+  const sessionUser = useSelector((state) => state.session.user);
+  const user_id = sessionUser.id;
   const dispatch = useDispatch();
   // const [image, setImage] = useState(null);
   const [description, setDescription] = useState("");
   const [url, setUrl] = useState("");
   const [errors, setErrors] = useState([]);
 
-const handleSubmit = (e) => {
-  console.log("HANDLE SUBMIT!!!!!")
-  e.preventDefault();
-  let newErrors = [];
-  dispatch(createPost({ user_id, description, url }))
-    .then(() => {
-      setDescription("");
-      setUrl("");
-    })
-    .catch(async (res) => {
-      const data = await res.json();
-      if (data && data.errors) {
-        newErrors = data.errors;
-        setErrors(newErrors);
-      }
-    });
-};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let newErrors = [];
+    dispatch(createPost({ user_id, description, url }))
+      .then(() => {
+        setDescription("");
+        setUrl("");
+      })
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) {
+          newErrors = data.errors;
+          setErrors(newErrors);
+        }
+      });
+  };
 
+  ///ATTEMPT TO DIRECTLY UPLOAD FILE
 
+  // const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
 
-///ATTEMPT TO DIRECTLY UPLOAD FILE
-
-// const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
-
-
-   // const storage = multer.memoryStorage({
+  // const storage = multer.memoryStorage({
   //   destination: function (req, file, callback) {
   //     callback(null, "");
   //   },
@@ -77,21 +73,28 @@ const handleSubmit = (e) => {
   //   return result.Location;
   // };
 
-// const handleFile = document.getElementById('getFile')
+  // const handleFile = document.getElementById('getFile')
 
   return (
     <div className="uploadFormMain">
-      <div className="upoadFormTop"><p>Create new post</p></div>
+      <div className="upoadFormTop">
+        <p>Create new post</p>
+      </div>
       <div className="uploadFormSpacer"></div>
       <div className="upoadFormBtm">
-        <div className="mediaImgContainer"><img src={media} className="mediaImg"></img></div>
-        <div className="uploadTextContainer"><p>Upload photos here</p></div>
-
+        <div className="mediaImgContainer">
+          <img src={media} className="mediaImg"></img>
+        </div>
+        <div className="uploadTextContainer">
+          <p>Upload photos here</p>
+        </div>
 
         <div>
           <form
-          className='formContainer'
-          onSubmit={handleSubmit} className="form">
+            className="formContainer"
+            onSubmit={handleSubmit}
+            className="form"
+          >
             {/* <div className="uploadBtnContainer"> */}
             {/* <input
             type="file" onChange={handleFileInput}
@@ -101,28 +104,26 @@ const handleSubmit = (e) => {
             {/* </div> */}
 
             <textarea
-            className="field"
-            placeholder="Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
+              className="field"
+              placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
             />
             <input
-            type="text"
-            className="field"
-            placeholder="Image URL"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            required
+              type="text"
+              className="field"
+              placeholder="Image URL"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              required
             />
-             <button
-            type="submit"
-            className="uploadBtn">
-            Submit</button>
+            <button type="submit" className="uploadBtn">
+              Submit
+            </button>
           </form>
         </div>
       </div>
-
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getPosts,
@@ -8,20 +8,30 @@ import {
   deletePost,
 } from "../../store/posts";
 import Post from "./post";
+import DisplayPostModal from "../DisplayPostModal/index";
 import "./Feed.css";
 
 const Feed = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const posts = useSelector((state) => Object.values(state.posts));
+  const [showModal, setShowModal] = useState(false);
+  const [postId, setPostId] = useState("");
+
   // const photos = useSelector((state) => Object.values(state.photos));
-  console.log("posts", posts);
+  const handleClick = (id) => {
+    setPostId(id);
+    setShowModal(true);
+  };
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
 
   return (
     <div className="feed-container">
+      {showModal && (
+        <DisplayPostModal postId={postId} setShowModal={setShowModal} />
+      )}
       {posts
         ?.reverse()
         .map(
@@ -35,16 +45,18 @@ const Feed = () => {
             photos,
             profile_image,
           }) => (
-            <Post
-              id={id}
-              user_id={user_id}
-              description={description}
-              username={username}
-              likes={likes}
-              comments={comments}
-              photos={photos}
-              profile_image={profile_image}
-            />
+            <div onClick={() => handleClick(id)}>
+              <Post
+                id={id}
+                user_id={user_id}
+                description={description}
+                username={username}
+                likes={likes}
+                comments={comments}
+                photos={photos}
+                profile_image={profile_image}
+              />
+            </div>
           )
         )}
     </div>

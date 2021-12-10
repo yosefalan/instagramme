@@ -25,4 +25,4 @@ def get_user_posts(id):
     if posts:
         return {post.id: post.to_dict() for post in posts}
     else:
-        return {} 
+        return {}

@@ -1,12 +1,12 @@
 import React from "react";
-import { getAllComments } from "../../store.Comment";
+import { getAllComments } from "../../store/comments";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "../Feed/post.css";
-import CommentForm from '../../../api/forms/comment-form.py'
+import CommentForm from "../../../api/forms/comment-form.py";
 
-const Comment = ({ post_id }) => {
-  const sessionUser = useSelector((state) => state.session.user);
+const Comment = ({ post_id }) => {.
+  const sessionUser = useSelector((state) => statesession.user);
   const comments = useSelector((state) => Object.values(state.comments));
   const dispatch = useDispatch();
   useEffect(() => {
@@ -24,8 +24,7 @@ const Comment = ({ post_id }) => {
           <div className="commentContent">{content}</div>
         </div>
       ))}
-      <CommentForm post_id={post_id} user_id={sessionUser.id}/>
-
+      <CommentForm post_id={post_id} user_id={sessionUser.id} />
     </div>
   );
 };
