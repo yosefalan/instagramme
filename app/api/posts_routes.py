@@ -6,6 +6,10 @@ from app.forms.post_form import PostForm
 from app.forms.comment_form import CommentForm
 from datetime import datetime
 from app.models import db
+import boto3
+import botocore
+from app.config import Config
+from app.aws_s3 import upload_file_to_s3
 
 
 posts_routes = Blueprint('posts', __name__)
@@ -43,31 +47,60 @@ def posts():
     results_dict = {post.id: post.to_dict() for post in results}
     return results_dict
 
+
+#POST ROUTE WITHOUT AWS UPLOAD
+# @posts_routes.route('/', methods=["POST"])
+# @login_required
+# def create_post():
+#     form=PostForm()
+#     form['csrf_token'].data = request.cookies['csrf_token']
+#     if form.validate_on_submit():
+#         post = Post(
+#             user_id=form.data['user_id'],
+#             description=form.data['description'],
+#             createdAt= datetime.now(),
+#             updatedAt= datetime.now()
+#         )
+#         db.session.add(post)
+#         db.session.commit()
+#         photo = Photo(
+#             url=form.data['url'],
+#             user_id=form.data['user_id'],
+#             post_id=post.id,
+#             createdAt= datetime.now(),
+#             updatedAt= datetime.now())
+#         db.session.add(photo)
+#         db.session.commit()
+#         return post.to_dict()
+#     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+
+
 @posts_routes.route('/', methods=["POST"])
 @login_required
 def create_post():
     form=PostForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        post = Post(
-            user_id=form.data['user_id'],
-            description=form.data['description'],
-            createdAt= datetime.now(),
-            updatedAt= datetime.now()
-        )
-        db.session.add(post)
-        db.session.commit()
-        photo = Photo(
-            url=form.data['url'],
-            user_id=form.data['user_id'],
-            post_id=post.id,
-            createdAt= datetime.now(),
-            updatedAt= datetime.now())
-        db.session.add(photo)
-        db.session.commit()
-        return post.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 400
-
+    # if form.validate_on_submit():
+    file = request.files["file"]
+    file_url = upload_file_to_s3(file, Config.S3_BUCKET)
+    post = Post(
+        user_id=form.data['user_id'],
+        description=form.data['description'],
+        createdAt= datetime.now(),
+        updatedAt= datetime.now()
+    )
+    db.session.add(post)
+    db.session.commit()
+    photo = Photo(
+        url=file_url,
+        user_id=form.data['user_id'],
+        post_id=post.id,
+        createdAt= datetime.now(),
+        updatedAt= datetime.now())
+    db.session.add(photo)
+    db.session.commit()
+    return post.to_dict()
+    # return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
 
 # UPDATE ONE POST

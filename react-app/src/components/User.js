@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
-import "./User.css";
+
+import './User.css';
 import Footer from "./Footer/Footer";
-import DisplayPostModal from "./DisplayPostModal/index";
+import DisplayPostModal from "./DisplayPostModal/index"
+
 
 function User() {
   const [user, setUser] = useState({});
@@ -34,9 +36,12 @@ function User() {
   }, [dispatch, userId]);
 
   const handleClick = (postId) => {
-    setPostId(postId);
-    setShowModal(true);
-  };
+
+    setPostId(postId)
+    setShowModal(true)
+
+  }
+
 
   if (!user) {
     return null;
