@@ -5,6 +5,7 @@ import { getUserPosts } from "../store/posts";
 import "./User.css";
 import Footer from "./Footer/Footer";
 import DisplayPostModal from "./DisplayPostModal/index";
+import DisplayFollowersModal from "./DisplayFollowersModal";
 
 function User() {
   const [user, setUser] = useState({});
@@ -13,7 +14,7 @@ function User() {
   const { userId } = useParams();
   const dispatch = useDispatch();
   const posts = useSelector((state) => Object.values(state.posts));
-  const [showFollow, setShowFollow] = useState(false);
+  const [showFollowersModal, setShowFollowersModal] = useState(false);
 
   let sessionUser = {};
   sessionUser["id"] = 0;
@@ -37,6 +38,10 @@ function User() {
     setPostId(postId);
     setShowModal(true);
   };
+
+  const handleFollowersClick = (userId) => {
+    setShowFollowersModal(true);
+  }
 
   if (!user) {
     return null;
@@ -63,6 +68,9 @@ function User() {
               </div>
             </div>
             <section className="profile-section">
+              {showFollowersModal && (
+                <DisplayFollowersModal userId={userId} setShowFollowersModal={setShowFollowersModal}/>
+              )}
               {showModal && (
                 <DisplayPostModal postId={postId} setShowModal={setShowModal} />
               )}
@@ -89,12 +97,12 @@ function User() {
                   </span>
                 </li>
                 <li className="profile-posts-data">
-                  <a className="profile-posts-data-text" href="">
+                  <div className="profile-posts-data-text" onClick = {() => {handleFollowersClick(userId)}}>
                     <span className="profile-data-bold">
                       {user.followers?.length || 0}
                     </span>{" "}
                     {user.followers == 1 ? "follower" : "followers"}
-                  </a>
+                  </div>
                 </li>
                 <li className="profile-posts-data">
                   <a className="profile-posts-data-text" href="">
