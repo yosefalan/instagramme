@@ -17,10 +17,11 @@ class Post(db.Model):
     createdAt = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
     updatedAt = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
 
+# add cascade deletes to photos comments and likes
     user = db.relationship('User', back_populates='posts')
-    likes = db.relationship('Like', back_populates='posts')
-    comments = db.relationship('Comment', back_populates='posts')
-    photos = db.relationship('Photo', back_populates='posts')
+    likes = db.relationship('Like', back_populates='posts', cascade='all, delete')
+    comments = db.relationship('Comment', back_populates='posts', cascade='all, delete')
+    photos = db.relationship('Photo', back_populates='posts', cascade='all, delete')
 
 
     def to_dict(self):

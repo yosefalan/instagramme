@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost } from "../../store/posts";
+
 import  './UploadModal.css'
 import media from './images/media.png'
 import DisplayForm from "./DisplayForm";
@@ -9,6 +10,7 @@ import DisplayForm from "./DisplayForm";
 function UploadForm({ hideForm }) {
   const sessionUser = useSelector(state => state.session.user);
   const user_id = sessionUser.id
+
   const dispatch = useDispatch();
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState()
@@ -65,16 +67,22 @@ const handleSubmit = (e) => {
     <div className="uploadFormMain">
       <div className="uploadFormTop"><p>Create new post</p></div>
       <div className="uploadFormSpacer">{file &&  <img src={preview} /> }</div>
-      <div className="upoadFormBtm">
-        <div className="mediaImgContainer"><img src={media} className="mediaImg"></img></div>
-        <div className="uploadTextContainer"><p>Upload photos here</p></div>
 
+      <div className="upoadFormBtm">
+        <div className="mediaImgContainer">
+          <img src={media} className="mediaImg"></img>
+        </div>
+        <div className="uploadTextContainer">
+          <p>Upload photos here</p>
+        </div>
 
         <div>
           <form
+
           className='formContainer'
           onSubmit={handleSubmit}
           className="form">
+
             {/* <div className="uploadBtnContainer"> */}
             <input
             type="file" onChange={handleFile}
@@ -82,6 +90,7 @@ const handleSubmit = (e) => {
             />
 
             {/* </div> */}
+
 
             {/* <textarea
             className="field"
@@ -102,10 +111,10 @@ const handleSubmit = (e) => {
             type="submit"
             className="uploadBtn">
             Submit</button> */}
+
           </form>
         </div>
       </div>
-
     </div>
   );
 }

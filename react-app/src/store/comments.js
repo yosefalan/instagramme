@@ -6,7 +6,7 @@ const REMOVE_COMMENT = "/comments/removeComment";
 
 const getComments = (payload) => ({
   type: GET_COMMENTS,
-  payload,
+  payload: [payload],
 });
 
 const addComment = (payload) => ({
@@ -33,12 +33,12 @@ export const getAllComments = (id) => async (dispatch) => {
 };
 
 export const addAComment = (id, comment) => async (dispatch) => {
+  console.log("************", comment);
   const response = await csrfFetch(`/api/posts/${id}/comments`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(comment),
+    body: JSON.stringify(id, comment),
   });
-
   if (response.ok) {
     const data = await response.json();
     dispatch(addComment(data));
