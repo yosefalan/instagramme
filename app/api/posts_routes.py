@@ -47,7 +47,6 @@ def posts():
 @login_required
 def create_post():
     form=PostForm()
-    print("&&&&&&&&&&&&&&&&", form.data)
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         post = Post(
@@ -86,9 +85,11 @@ def update_post(id):
 
 # DELETE ONE POST
 @posts_routes.route("/<int:id>", methods=["DELETE"])
-@login_required
+# @login_required
 def delete_post(id):
+    print('id', id)
     post = Post.query.get(id)
+    print("******************", post)
     if post:
         db.session.delete(post)
         db.session.commit()
@@ -154,7 +155,7 @@ def update_comment(id, comment_id):
 
 # DELETE ONE COMMENT ON ONE POST
 @posts_routes.route("/<int:id>/comments/<int:comment_id>", methods=["DELETE"])
-@login_required
+# @login_required
 def delete_comment(id, comment_id):
     # post = Post.query.get(id)
     # if post:
