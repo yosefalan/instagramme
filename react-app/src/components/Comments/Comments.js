@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { getAllComments } from "../../store/comments";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "../Feed/post.css";
-import CommentForm from "./CommentForm";
 
 const Comment = ({ post_id }) => {
-  const sessionUser = useSelector((state) => statesession.user);
+  const sessionUser = useSelector((state) => state.session.user);
   const comments = useSelector((state) => Object.values(state.comments));
   const dispatch = useDispatch();
+  console.log("the id of the post", post_id);
   useEffect(() => {
     dispatch(getAllComments(post_id));
   }, [dispatch]);
@@ -24,7 +24,6 @@ const Comment = ({ post_id }) => {
           <div className="commentContent">{content}</div>
         </div>
       ))}
-      <CommentForm post_id={post_id} user_id={sessionUser.id} />
     </div>
   );
 };

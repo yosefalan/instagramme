@@ -1,4 +1,4 @@
-from flask import Blueprint, request, session
+from flask import Blueprint, request, session, jsonify
 from flask_login import login_required
 from app.models import Post, Photo, User, Comment
 from wtforms.validators import DataRequired
@@ -47,7 +47,6 @@ def posts():
 @login_required
 def create_post():
     form=PostForm()
-    print("&&&&&&&&&&&&&&&&", form.data)
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         post = Post(
@@ -76,9 +75,9 @@ def create_post():
 @login_required
 def update_post(id):
     post = Post.query.get(id)
+    req = request.get_json()
     if post:
-        for key, value in request.form:
-            setattr(post, key, value)
+        post.description = req
         db.session.commit()
         return post.to_dict()
     else:
@@ -104,8 +103,10 @@ def get_comments(id):
     post = Post.query.get(id)
     if post:
         comments = Comment.query.filter(
-            Comment.post_id == id).order_by(Comment.id.desc()).all()
+            Comment.post_id == id).all()
+        print("1111112222222", comments)
         comments_dict = {comment.id: comment.to_dict() for comment in comments}
+        print("2351235312445123", comments_dict)
 
         return comments_dict
 

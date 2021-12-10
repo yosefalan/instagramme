@@ -59,7 +59,6 @@ export const getUserPosts = (userId) => async (dispatch) => {
 // };
 
 export const createPost = (postData) => async (dispatch) => {
-  console.log("***************", postData);
   const response = await csrfFetch("/api/posts/", {
     method: "POST",
     body: JSON.stringify(postData),
@@ -74,7 +73,6 @@ export const createPost = (postData) => async (dispatch) => {
 export const editPost = (id, postData) => async (dispatch) => {
   const response = await csrfFetch(`/api/posts/${id}`, {
     method: "PUT",
-    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(postData),
   });
 

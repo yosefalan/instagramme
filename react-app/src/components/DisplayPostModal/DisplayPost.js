@@ -5,7 +5,8 @@ import "./DisplayPost.css";
 
 import { deletePost, editPost } from "../../store/posts";
 
-import Comment from "../Comments/CommentForm";
+import Comment from "../Comments/Comments";
+import CommentForm from "../Comments/CommentForm";
 
 function DisplayPost({ postId, setShowModal }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -16,10 +17,15 @@ function DisplayPost({ postId, setShowModal }) {
   const [description, setDescription] = useState(post.description);
   const dispatch = useDispatch();
 
-  const handleEdit = (id, description) => {
+  const handleEdit = async (id, description) => {
     dispatch(editPost(id, description));
+    isEditable(false);
   };
 
+  const handleDelete = async (id) => {
+    dispatch(deletePost(id));
+    setShowModal(false);
+  };
   // if (isPostLoaded) {
   //   const editableDescription = document.getElementById(
   //     "post-description-edit"
@@ -32,10 +38,6 @@ function DisplayPost({ postId, setShowModal }) {
   //   });
   // }
 
-  const handleDelete = (id) => {
-    dispatch(deletePost(id));
-    setShowModal(false);
-  };
   // useEffect(() => {
   //   setIsPostLoaded(true);
   // }, []);
@@ -94,7 +96,9 @@ function DisplayPost({ postId, setShowModal }) {
           <div className="right-column-div">
             {post.likes} {post.likes === 1 ? "like" : "likes"}
           </div>
-          <div className="right-column-div">New Comment Form</div>
+          <div className="right-column-div">
+            <CommentForm />
+          </div>
         </div>
       </div>
     </>
