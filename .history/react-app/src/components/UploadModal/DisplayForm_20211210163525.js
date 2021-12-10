@@ -49,11 +49,12 @@ function DisplayForm({ preview, file, hideForm }) {
                 <div id="post-modal-right-container">
                     <div className="displayFormContainer">
                         <form
+                        className='displayFormContainer'
                         onSubmit={handleSubmit}
-                        className="displayForm">
+                        className="form">
                             <div className="textAreaContainer"><textarea
-                            className="displayTextArea"
-                            placeholder="Add a description..."
+                            className="textArea"
+                            placeholder="Description"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             required

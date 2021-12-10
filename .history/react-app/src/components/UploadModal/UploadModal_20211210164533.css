@@ -95,6 +95,7 @@
 }
 
 .displayFormContainer {
+  background-color: aqua;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -108,18 +109,16 @@
   height: 100%;
 }
 .textAreaContainer {
+  background-color: chartreuse;
   width: 100%;
   height: 200px;
   display: flex;
   justify-content: center;
 }
 
-.displayTextArea {
-  width: 80%;
-  height: 80%;
-}
 
 .submitBtnContainer {
+  background-color: brown;
   width: 100%;
   display: flex;
   justify-content: center;

@@ -53,7 +53,7 @@ function DisplayForm({ preview, file, hideForm }) {
                         className="displayForm">
                             <div className="textAreaContainer"><textarea
                             className="displayTextArea"
-                            placeholder="Add a description..."
+                            placeholder="Description"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             required

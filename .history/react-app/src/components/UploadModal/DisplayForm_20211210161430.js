@@ -47,23 +47,22 @@ function DisplayForm({ preview, file, hideForm }) {
                     </div>
                 </div>
                 <div id="post-modal-right-container">
-                    <div className="displayFormContainer">
-                        <form
-                        onSubmit={handleSubmit}
-                        className="displayForm">
-                            <div className="textAreaContainer"><textarea
-                            className="displayTextArea"
-                            placeholder="Add a description..."
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
-                            required
-                            /></div>
-                            <div className="submitBtnContainer"><button
-                            type="submit"
-                            className="submitFormBtn">
-                            Submit</button></div>
-                        </form>
-                    </div>
+                    <form
+                    className='displayFormContainer'
+                    onSubmit={handleSubmit}
+                    className="form">
+                        <div className="textAreaContainer"><textarea
+                        className="field"
+                        placeholder="Description"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        required
+                        /></div>
+                        <div className="submitBtnContainer"><button
+                        type="submit"
+                        className="uploadBtn">
+                        Submit</button></div>
+                    </form>
                 </div>
             </div>
         </>

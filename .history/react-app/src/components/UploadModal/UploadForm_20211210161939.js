@@ -63,7 +63,7 @@ const handleSubmit = (e) => {
 
   return(
     <div className="uploadFormMain">
-      <div className="uploadFormTop"><p>Create new post</p></div>
+      <div className="up;oadFormTop"><p>Create new post</p></div>
       <div className="uploadFormSpacer">{file &&  <img src={preview} /> }</div>
       <div className="upoadFormBtm">
         <div className="mediaImgContainer"><img src={media} className="mediaImg"></img></div>

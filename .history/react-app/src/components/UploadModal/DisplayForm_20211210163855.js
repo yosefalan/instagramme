@@ -50,10 +50,10 @@ function DisplayForm({ preview, file, hideForm }) {
                     <div className="displayFormContainer">
                         <form
                         onSubmit={handleSubmit}
-                        className="displayForm">
+                        className="form">
                             <div className="textAreaContainer"><textarea
-                            className="displayTextArea"
-                            placeholder="Add a description..."
+                            className="textArea"
+                            placeholder="Description"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             required

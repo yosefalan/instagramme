@@ -97,33 +97,9 @@
 .displayFormContainer {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width:
 }
 
-.displayForm {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
-.textAreaContainer {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-}
-
-.displayTextArea {
-  width: 80%;
-  height: 80%;
-}
-
-.submitBtnContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 .submitFormBtn {
   width: 166px;
   height: 30px;
@@ -132,7 +108,6 @@
   border: none;
   border-radius: 2px;
   font-weight: 700;
-  width: 80%
 }
 
 .uploadBtnContainer {
