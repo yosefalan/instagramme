@@ -13,6 +13,7 @@ import "./Feed.css";
 
 const Feed = () => {
   const sessionUser = useSelector((state) => state.session.user);
+  console.log("user info", sessionUser);
   const dispatch = useDispatch();
   const posts = useSelector((state) => Object.values(state.posts));
   const [showModal, setShowModal] = useState(false);
