@@ -3,6 +3,7 @@
 import { useSelector } from "react-redux";
 // import { getOnePost } from "../../store/posts";
 import "./DisplayPost.css";
+import Comment from "../Comments/CommentForm";
 
 function DisplayPost({ postId }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -32,7 +33,9 @@ function DisplayPost({ postId }) {
               {post.user_id === sessionUser.id && <button>Delete</button>}
             </div>
           </div>
-          <div className="right-column-div">Hello from Comments</div>
+          <div className="right-column-div">
+            <Comment post_id={postId} />
+          </div>
           <div className="right-column-div">Button Bar</div>
           <div className="right-column-div">
             {post.likes} {post.likes === 1 ? "like" : "likes"}
