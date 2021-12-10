@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import "../Feed/post.css";
 import CommentForm from "../../../api/forms/comment-form.py";
 
-const Comment = ({ post_id }) => {.
+const Comment = ({ post_id }) => {
   const sessionUser = useSelector((state) => statesession.user);
   const comments = useSelector((state) => Object.values(state.comments));
   const dispatch = useDispatch();
