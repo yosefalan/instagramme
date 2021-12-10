@@ -5,9 +5,9 @@ import { Redirect } from "react-router-dom";
 import { createPost } from "../../store/posts";
 import  './UploadModal.css'
 import media from './images/media.png'
-import { uploadFile } from 'react-s3';
-const AWS = require("aws-sdk");
-const multer = require("multer");
+// import { uploadFile } from 'react-s3';
+// const AWS = require("aws-sdk");
+// const multer = require("multer");
 
 function UploadForm() {
   const sessionUser = useSelector(state => state.session.user);

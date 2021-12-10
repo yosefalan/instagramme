@@ -3,6 +3,7 @@
 import { useSelector } from 'react-redux';
 // import { getOnePost } from "../../store/posts";
 import './DisplayPost.css'
+import CommentForm from '../Comments/CommentForm'
 
 function DisplayPost({postId}) {
     const sessionUser = useSelector((state) => state.session.user);
@@ -13,7 +14,7 @@ function DisplayPost({postId}) {
     console.log(post.comments);
     console.log(post.likes);
     console.log(post.photos);
-    
+
     return (
         <>
             <div id="post-modal-container">
@@ -37,7 +38,7 @@ function DisplayPost({postId}) {
                     <div className="right-column-div">Hello from Comments</div>
                     <div className="right-column-div">Button Bar</div>
                     <div className="right-column-div">{post.likes} {post.likes === 1 ? "like" : "likes"}</div>
-                    <div className="right-column-div">New Comment Form</div>
+                    <div className="right-column-div"><CommentForm /></div>
                 </div>
             </div>
         </>
