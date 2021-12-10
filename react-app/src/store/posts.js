@@ -30,7 +30,7 @@ const remove = (postId) => ({
 //thunk action dispatchers
 
 export const getPosts = () => async (dispatch) => {
-  console.log('############', 'this is regular get')
+  console.log("############", "this is regular get");
   const response = await csrfFetch("/api/posts/");
 
   if (response.ok) {
@@ -40,12 +40,12 @@ export const getPosts = () => async (dispatch) => {
 };
 
 export const getUserPosts = (userId) => async (dispatch) => {
-  console.log('############', 'this is user get')
+  console.log("############", "this is user get");
   const response = await csrfFetch(`/api/users/${userId}/posts`);
 
   if (response.ok) {
     const posts = await response.json();
-    dispatch(load(posts))
+    dispatch(load(posts));
   }
 };
 
@@ -59,7 +59,7 @@ export const getUserPosts = (userId) => async (dispatch) => {
 // };
 
 export const createPost = (postData) => async (dispatch) => {
-  console.log("***************", postData)
+  console.log("***************", postData);
   const response = await csrfFetch("/api/posts/", {
     method: "POST",
     body: JSON.stringify(postData),
@@ -71,16 +71,16 @@ export const createPost = (postData) => async (dispatch) => {
   }
 };
 
-export const editPost = (postData) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${postData.id}/`, {
+export const editPost = (id, postData) => async (dispatch) => {
+  const response = await csrfFetch(`/api/posts/${id}`, {
     method: "PUT",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(postData),
   });
 
   if (response.ok) {
     const editedPost = await response.json();
     dispatch(update(editedPost));
-    return editedPost;
   }
 };
 
@@ -98,7 +98,7 @@ const initialState = {};
 
 const postsReducer = (state = initialState, action) => {
   let newState = {};
-  console.log("########", action)
+  console.log("########", action);
   switch (action.type) {
     case LOAD_POSTS:
       let posts = Object.values(action.posts);
