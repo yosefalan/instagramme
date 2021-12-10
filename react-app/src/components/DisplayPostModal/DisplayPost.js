@@ -1,11 +1,11 @@
 // import React, { useEffect } from 'react';
 // import { useSelector } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-// import { getOnePost } from "../../store/posts";
 import "./DisplayPost.css";
-import deletePost from '../../store/posts'
+import {deletePost} from '../../store/posts'
 
-function DisplayPost({ postId }) {
+
+function DisplayPost({ postId, setShowModal }) {
   const sessionUser = useSelector((state) => state.session.user);
   const posts = useSelector((state) => state.posts);
   const post = posts[postId];
@@ -13,7 +13,12 @@ function DisplayPost({ postId }) {
 
   const handleDelete = (id) => {
     dispatch(deletePost(id));
+    setShowModal(false);
   };
+
+//   const handleEdit = (id) => {
+//       dispatch(editPost(id));
+//   }
 
   return (
     <>
@@ -35,8 +40,11 @@ function DisplayPost({ postId }) {
             <div>{post.username}</div>
             <div>
               {post.user_id === sessionUser.id && <button>Edit</button>}{" "}
-              {post.user_id === sessionUser.id && <button onClick={handleDelete}>Delete</button>}
+              {post.user_id === sessionUser.id && <button onClick={() => handleDelete(postId)}>Delete</button>}
             </div>
+          </div>
+          <div className='right-column-div' contentEditable='false' >
+              {post.description}
           </div>
           <div className="right-column-div">Hello from Comments</div>
           <div className="right-column-div">Button Bar</div>

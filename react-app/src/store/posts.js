@@ -30,6 +30,7 @@ const remove = (postId) => ({
 //thunk action dispatchers
 
 export const getPosts = () => async (dispatch) => {
+  console.log('############', 'this is regular get')
   const response = await csrfFetch("/api/posts/");
 
   if (response.ok) {
@@ -39,6 +40,7 @@ export const getPosts = () => async (dispatch) => {
 };
 
 export const getUserPosts = (userId) => async (dispatch) => {
+  console.log('############', 'this is user get')
   const response = await csrfFetch(`/api/users/${userId}/posts`);
 
   if (response.ok) {
@@ -47,14 +49,14 @@ export const getUserPosts = (userId) => async (dispatch) => {
   }
 };
 
-export const getOnePost = (postId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${postId}/`);
+// export const getOnePost = (postId) => async (dispatch) => {
+//   const response = await csrfFetch(`/api/posts/${postId}/`);
 
-  if (response.ok) {
-    const post = await response.json();
-    dispatch(add(post));
-  }
-};
+//   if (response.ok) {
+//     const post = await response.json();
+//     dispatch(add(post));
+//   }
+// };
 
 export const createPost = (postData) => async (dispatch) => {
   console.log("***************", postData)
@@ -83,7 +85,7 @@ export const editPost = (postData) => async (dispatch) => {
 };
 
 export const deletePost = (postId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${postId}/`, {
+  const response = await csrfFetch(`/api/posts/${postId}`, {
     method: "DELETE",
   });
 
@@ -96,6 +98,7 @@ const initialState = {};
 
 const postsReducer = (state = initialState, action) => {
   let newState = {};
+  console.log("########", action)
   switch (action.type) {
     case LOAD_POSTS:
       let posts = Object.values(action.posts);
