@@ -1,86 +1,73 @@
-import React, { useState } from "react";
-// import { signup, demoLogin } from "../../store/session";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
 import { createPost } from "../../store/posts";
-import "./UploadModal.css";
-import media from "./images/media.png";
-// import { uploadFile } from 'react-s3';
-// const AWS = require("aws-sdk");
-// const multer = require("multer");
 
-function UploadForm() {
-  const sessionUser = useSelector((state) => state.session.user);
-  const user_id = sessionUser.id;
+import  './UploadModal.css'
+import media from './images/media.png'
+import DisplayForm from "./DisplayForm";
+
+
+function UploadForm({ hideForm }) {
+  const sessionUser = useSelector(state => state.session.user);
+  const user_id = sessionUser.id
+
   const dispatch = useDispatch();
-  // const [image, setImage] = useState(null);
+  const [file, setFile] = useState(null);
+  const [preview, setPreview] = useState()
   const [description, setDescription] = useState("");
   const [url, setUrl] = useState("");
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let newErrors = [];
-    dispatch(createPost({ user_id, description, url }))
-      .then(() => {
-        setDescription("");
-        setUrl("");
-      })
-      .catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) {
-          newErrors = data.errors;
-          setErrors(newErrors);
-        }
-      });
-  };
+useEffect(() => {
+  if (!file) {
+      setPreview(undefined)
+      return
+  }
+  const objectUrl = URL.createObjectURL(file)
+    setPreview(objectUrl)
+    return () => URL.revokeObjectURL(objectUrl)
+  }, [file])
 
-  ///ATTEMPT TO DIRECTLY UPLOAD FILE
 
-  // const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
+  const handleFile = (e) => {
+    setFile(e.target.files[0]);
+  }
 
-  // const storage = multer.memoryStorage({
-  //   destination: function (req, file, callback) {
-  //     callback(null, "");
-  //   },
-  // });
+/************************************************************************************** */
+const handleSubmit = (e) => {
+  console.log("HANDLE SUBMIT!!!!!")
+  e.preventDefault();
+  let newErrors = [];
+  dispatch(createPost({ user_id, description, file }))
+    .then(() => {
+      setDescription("");
+      setUrl("");
+    })
+    .catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) {
+        newErrors = data.errors;
+        setErrors(newErrors);
+      }
+    });
+};
 
-  // const singleMulterUpload = (nameOfKey) =>
-  // multer({ storage: storage }).single(nameOfKey);
+  if(file){
+    return (
+      <>
+        <DisplayForm
+        preview={preview}
+        file={file}
+        hideForm={hideForm} />
+      </>
+    )
+  }
 
-  // const passFile = (e, file=image) => {
-  //   e.preventDefault();
-  //   console.log("IMAGE IN PASS FUNCTION:", file)
-  //   imageUpload(file)
-  // }
-
-  // const imageUpload = async (file) => {
-
-  //   console.log("IMAGE UPLOAD FUNCTION BEING CALLED")
-  //   console.log("FILE IN UPLOAD FUNCTION:", file)
-  //   const { originalname, mimetype, buffer } = await file;
-  //   const path = require("path");
-  //   const Key = new Date().getTime().toString() + path.extname(originalname);
-  //   const uploadParams = {
-  //     Bucket: 'mamba-instagramme',
-  //     Key,
-  //     Body: buffer,
-  //     ACL: "public-read",
-  //   };
-  //   const result = await s3.upload(uploadParams).promise();
-
-  //   console.log("!!!!!!!!!!!!!!!", result.Location)
-  //   return result.Location;
-  // };
-
-  // const handleFile = document.getElementById('getFile')
-
-  return (
+  return(
     <div className="uploadFormMain">
-      <div className="upoadFormTop">
-        <p>Create new post</p>
-      </div>
-      <div className="uploadFormSpacer"></div>
+      <div className="uploadFormTop"><p>Create new post</p></div>
+      <div className="uploadFormSpacer">{file &&  <img src={preview} /> }</div>
+
       <div className="upoadFormBtm">
         <div className="mediaImgContainer">
           <img src={media} className="mediaImg"></img>
@@ -91,36 +78,40 @@ function UploadForm() {
 
         <div>
           <form
-            className="formContainer"
-            onSubmit={handleSubmit}
-            className="form"
-          >
+
+          className='formContainer'
+          onSubmit={handleSubmit}
+          className="form">
+
             {/* <div className="uploadBtnContainer"> */}
-            {/* <input
-            type="file" onChange={handleFileInput}
+            <input
+            type="file" onChange={handleFile}
             id="getFile"
-            /> */}
+            />
 
             {/* </div> */}
 
-            <textarea
-              className="field"
-              placeholder="Description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              required
-            />
-            <input
-              type="text"
-              className="field"
-              placeholder="Image URL"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              required
-            />
-            <button type="submit" className="uploadBtn">
-              Submit
-            </button>
+
+            {/* <textarea
+            className="field"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+            /> */}
+            {/* <input
+            type="text"
+            className="field"
+            placeholder="Image URL"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            required
+            /> */}
+             {/* <button
+            type="submit"
+            className="uploadBtn">
+            Submit</button> */}
+
           </form>
         </div>
       </div>

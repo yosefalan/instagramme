@@ -1,4 +1,4 @@
-from flask import Blueprint, request, session
+from flask import Blueprint, request, session, jsonify
 from flask_login import login_required
 from app.models import Post, Photo, User, Comment
 from wtforms.validators import DataRequired
@@ -6,6 +6,10 @@ from app.forms.post_form import PostForm
 from app.forms.comment_form import CommentForm
 from datetime import datetime
 from app.models import db
+import boto3
+import botocore
+from app.config import Config
+from app.aws_s3 import upload_file_to_s3
 
 
 posts_routes = Blueprint('posts', __name__)
@@ -43,32 +47,60 @@ def posts():
     results_dict = {post.id: post.to_dict() for post in results}
     return results_dict
 
+
+#POST ROUTE WITHOUT AWS UPLOAD
+# @posts_routes.route('/', methods=["POST"])
+# @login_required
+# def create_post():
+#     form=PostForm()
+#     form['csrf_token'].data = request.cookies['csrf_token']
+#     if form.validate_on_submit():
+#         post = Post(
+#             user_id=form.data['user_id'],
+#             description=form.data['description'],
+#             createdAt= datetime.now(),
+#             updatedAt= datetime.now()
+#         )
+#         db.session.add(post)
+#         db.session.commit()
+#         photo = Photo(
+#             url=form.data['url'],
+#             user_id=form.data['user_id'],
+#             post_id=post.id,
+#             createdAt= datetime.now(),
+#             updatedAt= datetime.now())
+#         db.session.add(photo)
+#         db.session.commit()
+#         return post.to_dict()
+#     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+
+
 @posts_routes.route('/', methods=["POST"])
 @login_required
 def create_post():
     form=PostForm()
-    print("&&&&&&&&&&&&&&&&", form.data)
     form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        post = Post(
-            user_id=form.data['user_id'],
-            description=form.data['description'],
-            createdAt= datetime.now(),
-            updatedAt= datetime.now()
-        )
-        db.session.add(post)
-        db.session.commit()
-        photo = Photo(
-            url=form.data['url'],
-            user_id=form.data['user_id'],
-            post_id=post.id,
-            createdAt= datetime.now(),
-            updatedAt= datetime.now())
-        db.session.add(photo)
-        db.session.commit()
-        return post.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 400
-
+    # if form.validate_on_submit():
+    file = request.files["file"]
+    file_url = upload_file_to_s3(file, Config.S3_BUCKET)
+    post = Post(
+        user_id=form.data['user_id'],
+        description=form.data['description'],
+        createdAt= datetime.now(),
+        updatedAt= datetime.now()
+    )
+    db.session.add(post)
+    db.session.commit()
+    photo = Photo(
+        url=file_url,
+        user_id=form.data['user_id'],
+        post_id=post.id,
+        createdAt= datetime.now(),
+        updatedAt= datetime.now())
+    db.session.add(photo)
+    db.session.commit()
+    return post.to_dict()
+    # return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
 
 # UPDATE ONE POST
@@ -76,9 +108,9 @@ def create_post():
 @login_required
 def update_post(id):
     post = Post.query.get(id)
+    req = request.get_json()
     if post:
-        for key, value in request.form:
-            setattr(post, key, value)
+        post.description = req
         db.session.commit()
         return post.to_dict()
     else:
@@ -86,9 +118,11 @@ def update_post(id):
 
 # DELETE ONE POST
 @posts_routes.route("/<int:id>", methods=["DELETE"])
-@login_required
+# @login_required
 def delete_post(id):
+    print('id', id)
     post = Post.query.get(id)
+    print("******************", post)
     if post:
         db.session.delete(post)
         db.session.commit()
@@ -104,8 +138,10 @@ def get_comments(id):
     post = Post.query.get(id)
     if post:
         comments = Comment.query.filter(
-            Comment.post_id == id).order_by(Comment.id.desc()).all()
+            Comment.post_id == id).all()
+        print("1111112222222", comments)
         comments_dict = {comment.id: comment.to_dict() for comment in comments}
+        print("2351235312445123", comments_dict)
 
         return comments_dict
 
@@ -154,7 +190,7 @@ def update_comment(id, comment_id):
 
 # DELETE ONE COMMENT ON ONE POST
 @posts_routes.route("/<int:id>/comments/<int:comment_id>", methods=["DELETE"])
-@login_required
+# @login_required
 def delete_comment(id, comment_id):
     # post = Post.query.get(id)
     # if post:
