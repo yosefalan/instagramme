@@ -55,7 +55,15 @@
     justify-content: flex-start;
     align-items: stretch;
     position: relative;
-    border: 1px solid gray;
+    border-radius: 50%;
+    overflow:hidden;
+}
+
+#followed-profile-pic {
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+    background-color:rgb(219,219,219);
 }
 
 .follows-modal-username {

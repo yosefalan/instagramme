@@ -52,7 +52,7 @@ function DisplayFollowing({ userId, setShowFollowingModal }) {
                     {following?.map((followee) => {
                         return (
                             <div className="follows-modal-list-row" key={followee.id}>
-                                <div className="follows-modal-profile-pic-container">Pic</div>
+                                <div className="follows-modal-profile-pic-container"><img id="followed-profile-pic" src={followee.profile_image} alt=""></img></div>
                                 <div className="follows-modal-username"><div className="follows-modal-username-link" onClick={() => { handleClick(followee.id) }}>{followee.username}</div></div>
                                 <div className="follows-modal-list-button-container">
                                     {sessionUser.id == userId && <button className="follows-modal-remove-button" onClick={() => {handleUnfollowClick(followee.id, followee.username)}}>Following</button>}
