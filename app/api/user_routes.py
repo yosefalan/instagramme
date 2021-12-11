@@ -52,3 +52,16 @@ def delete_follower(id, followerId):
     user = User.query.get(id)
     return
     #still working on this
+
+@user_routes.route('/<int:id>/following/<int:followedId>')
+def delete_followed(id, followedId):
+    user = User.query.get(id)
+    return
+    #still working on this
+
+@user_routes.route('/<int:id>/following/<int:followedId>')
+def add_followed(id, followedId):
+    user = User.query.get(id)
+    return
+    #still working on this
+

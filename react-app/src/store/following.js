@@ -1,19 +1,51 @@
 import { csrfFetch } from "./csrf";
 
 //action types
-const LOAD_FOLLOWING = "followers/LOAD_FOLLOWING"
+const LOAD_FOLLOWING = "following/LOAD_FOLLOWING";
+const REMOVE_ONE_FOLLOWED = "following/REMOVE_ONE_FOLLOWED";
+const ADD_ONE_FOLLOWED = "following/ADD_ONE_FOLLOWED";
 
 const load = (following) => ({
     type: LOAD_FOLLOWING,
     following
 });
 
+const removeOne = (followedId) => ({
+    type: REMOVE_ONE_FOLLOWED,
+    followedId
+})
+
+const addOne = (followedId) => ({
+    type: ADD_ONE_FOLLOWED,
+    followedId
+})
+
 export const getFollowing = (id) => async (dispatch) => {
     const response = await csrfFetch(`/api/users/${id}/following`);
-
+    
     if (response.ok) {
         const following = await response.json();
         dispatch(load(following));
+    }
+}
+
+export const removeOneFollowed = (userId, followedId) => async (dispatch) => {
+    const response = await csrfFetch(`api/users/${userId}/following/${followedId}`, {
+        method: "DELETE"
+    })
+
+    if (response.ok) {
+        dispatch(removeOne(followedId));
+    }
+}
+
+export const addFollowed = (userId, followedId) => async (dispatch) => {
+    const response = await csrfFetch(`api/users/${userId}/following/${followedId}`, {
+        method: "PUT"
+    })
+
+    if (response.ok) {
+        dispatch(addOne(followedId));
     }
 }
 
@@ -26,6 +58,11 @@ const followingReducer = (state = initialState, action) => {
             let following = Object.values(action.following);
             newState = [...following];
             return newState;
+        case REMOVE_ONE_FOLLOWED: {
+            let following = state.filter(following => following["id"] != action.followedId);
+            newState = [...following];
+            return newState;
+        }
         default:
             return state;
     }

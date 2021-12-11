@@ -35,9 +35,13 @@
     justify-content: center;
     box-sizing: border-box;
     padding: 1.5em;
+    color: red;
+    font-weight: bold;
+    cursor:pointer;
 }
 
 #cancel-block-follower-button {
     height: 100%;
     padding: 1.5em;
+    cursor:pointer;
 }
