@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { Modal } from '../../context/modal'
 import DisplayFollowers from './DisplayFollowers';
 import './DisplayFollowers.css';

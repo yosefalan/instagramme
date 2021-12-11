@@ -68,7 +68,7 @@ const followingReducer = (state = initialState, action) => {
             newState = [...following];
             return newState;
         case REMOVE_ONE_FOLLOWED: {
-            let following = state.filter(following => following["id"] != action.followedId);
+            let following = state.filter(following => following["id"] !== action.followedId);
             newState = [...following];
             return newState;
         }

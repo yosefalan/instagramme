@@ -53,7 +53,7 @@ const followersReducer = (state = initialState, action) => {
             return newState;
         }
         case REMOVE_FOLLOWER: {
-            let followers = state.filter(follower => follower["id"] != action.followerId);
+            let followers = state.filter(follower => follower["id"] !== action.followerId);
             newState = [...followers];
             return newState;
         }

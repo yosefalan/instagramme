@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // import { useSelector } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "./DisplayPost.css";
@@ -12,7 +12,7 @@ function DisplayPost({ postId, setShowModal }) {
   const sessionUser = useSelector((state) => state.session.user);
   const posts = useSelector((state) => state.posts);
   const [editable, isEditable] = useState(false);
-  const [isPostLoaded, setIsPostLoaded] = useState(false);
+  // const [isPostLoaded, setIsPostLoaded] = useState(false);
   const post = posts[postId];
   const [description, setDescription] = useState(post.description);
   const dispatch = useDispatch();

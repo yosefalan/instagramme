@@ -312,6 +312,7 @@ body {
     max-height: 293px;
     align-items: center;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .profile-postpic-img {

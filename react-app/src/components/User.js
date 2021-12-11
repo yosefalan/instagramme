@@ -105,7 +105,7 @@ function User() {
                       <span className="profile-data-bold">
                         {posts?.length}
                       </span>{" "}
-                      {posts.length == 1 ? "post" : "posts"}
+                      {posts.length === 1 ? "post" : "posts"}
                   </div>
                 </li>
                 <li className="profile-posts-data">
@@ -113,7 +113,7 @@ function User() {
                     <span className="profile-data-bold">
                       {user.followers?.length}
                     </span>{" "}
-                    {user.followers == 1 ? "follower" : "followers"}
+                    {user.followers === 1 ? "follower" : "followers"}
                   </div>
                 </li>
                 <li className="profile-posts-data">
