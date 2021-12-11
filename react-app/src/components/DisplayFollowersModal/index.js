@@ -3,7 +3,7 @@ import { Modal } from '../../context/modal'
 import DisplayFollowers from './DisplayFollowers';
 import './DisplayFollowers.css';
 
-function DisplayFollowersModal({ userId, blockFollowerId, setBlockFollowerId, setShowFollowersModal }) {
+function DisplayFollowersModal({ userId, setShowFollowersModal }) {
     // const [showModal, setShowModal] = useState(false);
 
     return (
@@ -11,7 +11,7 @@ function DisplayFollowersModal({ userId, blockFollowerId, setBlockFollowerId, se
             {/* HTML ELEMENT
             <button onClick={() => setShowModal(true)}>Show Post</button> */}
             <Modal onClose={() => setShowFollowersModal(false)}>
-                <DisplayFollowers userId={userId} blockFollowerId={blockFollowerId} setBlockFollowerId={setBlockFollowerId} setShowFollowersModal={setShowFollowersModal} />
+                <DisplayFollowers userId={userId} setShowFollowersModal={setShowFollowersModal} />
             </Modal>
         </>
     );

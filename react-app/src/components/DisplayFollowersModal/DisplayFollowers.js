@@ -38,7 +38,7 @@ function DisplayFollowers({userId, setShowFollowersModal}) {
                 <div className='follows-modal-heading'>
                     <div className='follows-modal-heading-text'>Followers</div>
                     {showBlockFollowerModal && (
-                    <DisplayBlockFollowerModal userId={userId} blockFollowerId={blockFollowerId} setBlockFollowerId={setBlockFollowerId} blockFollowerName={blockFollowerName} setBlockFollowerName={setBlockFollowerName} setShowBlockFollerModal={setShowBlockFollowerModal} />
+                    <DisplayBlockFollowerModal userId={userId} blockFollowerId={blockFollowerId} setBlockFollowerId={setBlockFollowerId} blockFollowerName={blockFollowerName} setBlockFollowerName={setBlockFollowerName} setShowBlockFollowerModal={setShowBlockFollowerModal} />
                     )}
                 </div>
                 <div className="follows-modal-list">
