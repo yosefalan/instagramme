@@ -8,6 +8,7 @@ import Footer from "./Footer/Footer";
 
 import DisplayPostModal from "./DisplayPostModal/index";
 import DisplayFollowersModal from "./DisplayFollowersModal";
+import DisplayFollowingModal from "./DisplayFollowingModal";
 
 
 function User() {
@@ -18,6 +19,7 @@ function User() {
   const dispatch = useDispatch();
   const posts = useSelector((state) => Object.values(state.posts));
   const [showFollowersModal, setShowFollowersModal] = useState(false);
+  const [showFollowingModal, setShowFollowingModal] = useState(false);
 
   let sessionUser = {};
   sessionUser["id"] = 0;
@@ -44,6 +46,9 @@ function User() {
 
   }
 
+  const handleFollowingClick = (userId) => {
+    setShowFollowingModal(true)
+  }
 
   const handleFollowersClick = (userId) => {
     setShowFollowersModal(true);
@@ -74,12 +79,13 @@ function User() {
               </div>
             </div>
             <section className="profile-section">
-              {showFollowersModal && (
-                <DisplayFollowersModal userId={userId} setShowFollowersModal={setShowFollowersModal}/>
+              {showFollowingModal && (
+                <DisplayFollowingModal userId={userId} setShowFollowingModal={setShowFollowingModal} />
               )}
-              {showModal && (
-                <DisplayPostModal postId={postId} setShowModal={setShowModal} />
-              )}
+              {showFollowersModal && 
+                <DisplayFollowersModal userId={userId} setShowFollowersModal={setShowFollowersModal} />}
+              {showModal && 
+                <DisplayPostModal postId={postId} setShowModal={setShowModal} />}
               <div className="profile-name-wrapper">
                 <h2 className="profile-name"> {user.username}</h2>
                 <div>
@@ -95,12 +101,12 @@ function User() {
               </div>
               <ul className="profile-data-list">
                 <li className="profile-posts-data">
-                  <span>
-                    <span className="profile-data-bold">
-                      {posts?.length || 0}
-                    </span>{" "}
-                    {posts.length == 1 ? "post" : "posts"}
-                  </span>
+                  <div className="profile-posts-data-text">
+                      <span className="profile-data-bold">
+                        {posts?.length || 0}
+                      </span>{" "}
+                      {posts.length == 1 ? "post" : "posts"}
+                  </div>
                 </li>
                 <li className="profile-posts-data">
                   <div className="profile-posts-data-text" onClick = {() => {handleFollowersClick(userId)}}>
@@ -111,12 +117,12 @@ function User() {
                   </div>
                 </li>
                 <li className="profile-posts-data">
-                  <a className="profile-posts-data-text" href="">
+                  <div className="profile-posts-data-text" onClick = {() => {handleFollowingClick(userId)}}>
                     <span className="profile-data-bold">
                       {user.following?.length || 0}
                     </span>{" "}
                     following
-                  </a>
+                  </div>
                 </li>
               </ul>
               <div>

@@ -13,7 +13,6 @@ function DisplayFollowersModal({ userId, setShowFollowersModal }) {
             <Modal onClose={() => setShowFollowersModal(false)}>
                 <DisplayFollowers userId={userId} setShowFollowersModal={setShowFollowersModal} />
             </Modal>
-            )
         </>
     );
 }

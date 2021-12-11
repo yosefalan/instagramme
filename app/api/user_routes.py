@@ -37,3 +37,12 @@ def get_followers(id):
     return followers_dict
     # followers = User.query.filter(User.id.in_.user["followers"]).all()
     # return {follower.id: follower.to_dict() for follower in followers}
+
+@user_routes.route('/<int:id>/following')
+def get_following(id):
+    user = User.query.get(id).to_dict()
+    following = User.query.filter(User.id.in_(user["following"])).all()
+    following_dict = {}
+    for followee in following:
+        following_dict[followee.to_dict()["id"]] = followee.to_dict()
+    return following_dict

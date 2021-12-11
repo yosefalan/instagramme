@@ -21,7 +21,7 @@
 #follows-modal-heading-text {
     width:fit-content;
     font-weight: bold;
-    color: rgb(38,38,38);
+    color:rgb(38, 38, 38);
 }
 
 .follows-modal-list {
@@ -73,10 +73,6 @@
     cursor: pointer;
 }
 
-.follows-modal-username-link {
-    width:fit-content;
-}
-
 .follows-modal-list-button-container {
     margin-left: auto;
     flex-basis: auto;
@@ -119,7 +115,7 @@
 .follows-modal-following-button {
     display: block;
     background-color: #fff;
-    color: rgb(38,38,38);
+    color: rgb(38, 38, 38);
     font-weight: 500;
     border-radius: 4px;
     padding: 5px 9px;
