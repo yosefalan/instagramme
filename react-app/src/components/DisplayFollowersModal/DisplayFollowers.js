@@ -1,13 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import { getFollowers } from "../../store/followers";
+import DisplayBlockFollowerModal from '../DisplayBlockFollowerModal'; 
 import "./DisplayFollowers.css";
 
 // import { } from '../../store/followers'
 
 function DisplayFollowers({userId, setShowFollowersModal}) {
     // const [isLoaded, setIsLoaded] = useState(false);
+    const [showBlockFollowerModal, setShowBlockFollowerModal] = useState(false);
+    const [blockFollowerId, setBlockFollowerId] = useState("");
+    const [blockFollowerName, setBlockFollowerName] = useState("");
     const sessionUser = useSelector((state) => state.session.user);
     const followers = useSelector(state => state.followers);
     const dispatch = useDispatch();
@@ -22,11 +26,20 @@ function DisplayFollowers({userId, setShowFollowersModal}) {
         history.push(`/users/${followerId}`);
     }
 
+    const handleRemoveClick = (followerId, followerName) => {
+        setBlockFollowerId(followerId);
+        setBlockFollowerName(followerName);
+        setShowBlockFollowerModal(true);
+    }
+
     return (
         <>
             <div className="follows-modal-container">
                 <div className='follows-modal-heading'>
                     <div className='follows-modal-heading-text'>Followers</div>
+                    {showBlockFollowerModal && (
+                    <DisplayBlockFollowerModal userId={userId} blockFollowerId={blockFollowerId} setBlockFollowerId={setBlockFollowerId} blockFollowerName={blockFollowerName} setBlockFollowerName={setBlockFollowerName} setShowBlockFollerModal={setShowBlockFollowerModal} />
+                    )}
                 </div>
                 <div className="follows-modal-list">
                     {followers?.map((follower) => {
@@ -35,7 +48,7 @@ function DisplayFollowers({userId, setShowFollowersModal}) {
                                 <div className="follows-modal-profile-pic-container">Pic</div>
                                 <div className="follows-modal-username"><div className="follows-modal-username-link" onClick={(e) => {handleClick(follower.id)}}>{follower.username}</div></div>
                                 <div className="follows-modal-list-button-container">
-                                    {sessionUser.id == userId && <button className="follows-modal-remove-button">Remove</button>}
+                                    {sessionUser.id == userId && <button className="follows-modal-remove-button" onClick={() => {handleRemoveClick(follower.id, follower.username)}}>Remove</button>}
                                     {sessionUser.id != userId && (sessionUser.followers.length === 0 || sessionUser.followers.indexOf(follower.id) == -1) && sessionUser.id != follower.id && <button className="follows-modal-follow-button">Follow</button>}
                                     {sessionUser.id != userId && (sessionUser.followers.indexOf(follower.id) >= 0) && sessionUser.id != follower.id && <button className="follows-modal-following-button">Following</button>}
                                 </div>

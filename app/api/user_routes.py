@@ -46,3 +46,9 @@ def get_following(id):
     for followee in following:
         following_dict[followee.to_dict()["id"]] = followee.to_dict()
     return following_dict
+
+@user_routes.route('/<int:id>/followers/<int:followerId>')
+def delete_follower(id, followerId):
+    user = User.query.get(id)
+    return
+    #still working on this
