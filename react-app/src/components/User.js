@@ -21,8 +21,8 @@ function User() {
   const [showFollowersModal, setShowFollowersModal] = useState(false);
   const [showFollowingModal, setShowFollowingModal] = useState(false);
 
-  let sessionUser = {};
-  sessionUser["id"] = 0;
+  // let sessionUser = {};
+  // sessionUser["id"] = 0;
 
   useEffect(() => {
     if (!userId) {
@@ -88,11 +88,11 @@ function User() {
                 <DisplayPostModal postId={postId} setShowModal={setShowModal} />}
               <div className="profile-name-wrapper">
                 <h2 className="profile-name"> {user.username}</h2>
-                <div>
+                {/* <div>
                   <div>
                     {user.id === sessionUser.id && <a href="">Edit Profile</a>}
                   </div>
-                </div>
+                </div> */}
                 <div className="cog-container">
                   <div>
                     <div></div>
@@ -101,9 +101,9 @@ function User() {
               </div>
               <ul className="profile-data-list">
                 <li className="profile-posts-data">
-                  <div className="profile-posts-data-text">
+                  <div className="profile-posts-data-text" id="posts-data-text">
                       <span className="profile-data-bold">
-                        {posts?.length || 0}
+                        {posts?.length}
                       </span>{" "}
                       {posts.length == 1 ? "post" : "posts"}
                   </div>
@@ -111,7 +111,7 @@ function User() {
                 <li className="profile-posts-data">
                   <div className="profile-posts-data-text" onClick = {() => {handleFollowersClick(userId)}}>
                     <span className="profile-data-bold">
-                      {user.followers?.length || 0}
+                      {user.followers?.length}
                     </span>{" "}
                     {user.followers == 1 ? "follower" : "followers"}
                   </div>
@@ -119,7 +119,7 @@ function User() {
                 <li className="profile-posts-data">
                   <div className="profile-posts-data-text" onClick = {() => {handleFollowingClick(userId)}}>
                     <span className="profile-data-bold">
-                      {user.following?.length || 0}
+                      {user.following?.length}
                     </span>{" "}
                     following
                   </div>
@@ -132,9 +132,9 @@ function User() {
             </section>
           </header>
           <div className="profile-posts-table-list">
-            <a className="profile-posts-table-item" href="">
+            <div className="profile-posts-table-item" href="">
               <span className="profile-posts-table-span">Posts</span>
-            </a>
+            </div>
           </div>
           <div className="profile-gallery-container">
             {posts?.map((post) => {

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
-import { getFollowers } from "../../store/followers";
-import { addFollowed } from "../../store/following";
+import { getFollowers, resetFollowers } from "../../store/followers";
+import { addFollowed, resetFollowing } from "../../store/following";
 import DisplayBlockFollowerModal from '../DisplayBlockFollowerModal';
 import DisplayUnfollowModal from '../DisplayUnfollowModal';
 import "./DisplayFollowers.css";
@@ -27,6 +27,8 @@ function DisplayFollowers({userId, setShowFollowersModal}) {
     }, [dispatch, userId]);
 
     const handleClick = (followerId) => {
+        dispatch(resetFollowers());
+        dispatch(resetFollowing());
         setShowFollowersModal(false);
         history.push(`/users/${followerId}`);
     }

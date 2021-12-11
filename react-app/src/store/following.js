@@ -4,6 +4,7 @@ import { csrfFetch } from "./csrf";
 const LOAD_FOLLOWING = "following/LOAD_FOLLOWING";
 const REMOVE_ONE_FOLLOWED = "following/REMOVE_ONE_FOLLOWED";
 const ADD_ONE_FOLLOWED = "following/ADD_ONE_FOLLOWED";
+const RESET_FOLLOWING = "following/RESET_FOLLOWING"
 
 const load = (following) => ({
     type: LOAD_FOLLOWING,
@@ -18,6 +19,10 @@ const removeOne = (followedId) => ({
 const addOne = (followedId) => ({
     type: ADD_ONE_FOLLOWED,
     followedId
+})
+
+const reset = () => ({
+    type: RESET_FOLLOWING
 })
 
 export const getFollowing = (id) => async (dispatch) => {
@@ -49,6 +54,10 @@ export const addFollowed = (userId, followedId) => async (dispatch) => {
     }
 }
 
+export const resetFollowing = () => async (dispatch) => {
+    dispatch(reset());
+}
+
 const initialState = [];
 
 const followingReducer = (state = initialState, action) => {
@@ -62,6 +71,9 @@ const followingReducer = (state = initialState, action) => {
             let following = state.filter(following => following["id"] != action.followedId);
             newState = [...following];
             return newState;
+        }
+        case RESET_FOLLOWING: {
+            return [];
         }
         default:
             return state;

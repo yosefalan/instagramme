@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 //action types
 const LOAD_FOLLOWERS = "followers/LOAD_FOLLOWERS";
 const REMOVE_FOLLOWER = "followers/REMOVE_FOLLOWER";
+const RESET_FOLLOWERS = "followers/RESET_FOLLOWERS"
 
 const load = (followers) => ({
     type: LOAD_FOLLOWERS,
@@ -12,6 +13,10 @@ const load = (followers) => ({
 const removeOne = (followerId) => ({
     type: REMOVE_FOLLOWER,
     followerId
+})
+
+const reset = () => ({
+    type: RESET_FOLLOWERS
 })
 
 export const getFollowers = (id) => async (dispatch) => {
@@ -33,6 +38,10 @@ export const removeFollower = (userId, followerId) => async (dispatch) => {
     }
 }
 
+export const resetFollowers = () => async (dispatch) => {
+    dispatch(reset());
+}
+
 const initialState = [];
 
 const followersReducer = (state = initialState, action) => {
@@ -47,6 +56,9 @@ const followersReducer = (state = initialState, action) => {
             let followers = state.filter(follower => follower["id"] != action.followerId);
             newState = [...followers];
             return newState;
+        }
+        case RESET_FOLLOWERS: {
+            return [];
         }
         default:
             return state;
