@@ -105,10 +105,11 @@ def create_post():
 
 # UPDATE ONE POST
 @posts_routes.route("/<int:id>", methods=["PUT"])
-@login_required
+# @login_required
 def update_post(id):
     post = Post.query.get(id)
     req = request.get_json()
+    print("!!!!!!", req)
     if post:
         post.description = req
         db.session.commit()

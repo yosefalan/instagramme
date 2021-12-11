@@ -75,32 +75,25 @@ export const getUserPosts = (userId) => async (dispatch) => {
 /************************************************** */
 
 export const createPost = (postData) => async (dispatch) => {
-
-  console.log("))))))))))))))))", postData)
-  const {
-      user_id,
-      description,
-      file
-  } = postData;
+  console.log("))))))))))))))))", postData);
+  const { user_id, description, file } = postData;
 
   const form = new FormData();
-  form.append('user_id', user_id);
-  form.append('description', description)
-  form.append('file', file);
+  form.append("user_id", user_id);
+  form.append("description", description);
+  form.append("file", file);
 
-  const res = await fetch('/api/posts/', {
-      method: "POST",
-      body: form
-
+  const res = await fetch("/api/posts/", {
+    method: "POST",
+    body: form,
   });
 };
 
-
-
-export const editPost = (postData) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${postData.id}/`, {
-
+export const editPost = (id, postData) => async (dispatch) => {
+  console.log("post", postData);
+  const response = await csrfFetch(`/api/posts/${id}`, {
     method: "PUT",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(postData),
   });
 
