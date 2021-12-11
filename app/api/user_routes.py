@@ -47,21 +47,27 @@ def get_following(id):
         following_dict[followee.to_dict()["id"]] = followee.to_dict()
     return following_dict
 
-@user_routes.route('/<int:id>/followers/<int:followerId>')
+@user_routes.route('/<int:id>/followers/<int:followerId>', methods=["DELETE"])
 def delete_follower(id, followerId):
     user = User.query.get(id)
-    return
+    user.folloers.remove(followerId)
+    db.session.commit()
+    return "ok", 200
     #still working on this
 
-@user_routes.route('/<int:id>/following/<int:followedId>')
+@user_routes.route('/<int:id>/following/<int:followedId>', methods=["DELETE"])
 def delete_followed(id, followedId):
     user = User.query.get(id)
-    return
+    user.following.remove(followedId)
+    db.session.commit()
+    return "ok", 200
     #still working on this
 
-@user_routes.route('/<int:id>/following/<int:followedId>')
+@user_routes.route('/<int:id>/following/<int:followedId>', methods=["PUT"])
 def add_followed(id, followedId):
     user = User.query.get(id)
-    return
+    user.following.append(followedId)
+    db.session.commit()
+    return "ok", 200
     #still working on this
 
