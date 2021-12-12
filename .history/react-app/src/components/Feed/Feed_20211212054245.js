@@ -8,7 +8,7 @@ import {
 } from "../../store/posts";
 import Post from "./post";
 import DisplayPostModal from "../DisplayPostModal/index";
-import FollowingFeed from "../FollowingFeed/FollowingFeed";
+import Fol
 import "./Feed.css";
 
 const Feed = () => {

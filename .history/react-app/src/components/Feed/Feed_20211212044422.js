@@ -8,7 +8,7 @@ import {
 } from "../../store/posts";
 import Post from "./post";
 import DisplayPostModal from "../DisplayPostModal/index";
-import FollowingFeed from "../FollowingFeed/FollowingFeed";
+impo
 import "./Feed.css";
 
 const Feed = () => {
@@ -34,8 +34,7 @@ const Feed = () => {
         <DisplayPostModal postId={postId} setShowModal={setShowModal} />
         )}
       <div className="feed-center-container">
-        <FollowingFeed />
-        {posts
+      {posts
         ?.reverse()
         .map(
           ({
@@ -60,9 +59,9 @@ const Feed = () => {
                 profile_image={profile_image}
                 />
             </div>
-            )
-            )}
-        </div>
+          )
+          )}
+          </div>
     </div>
   );
 };

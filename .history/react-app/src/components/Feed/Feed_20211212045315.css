@@ -19,3 +19,8 @@
   padding-top: 30px;
 }
 
+.following-feed-container {
+  width: 600px;
+  height: 118px;
+  background-color: #FFFFFF;
+}
