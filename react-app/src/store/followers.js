@@ -10,10 +10,10 @@ const load = (followers) => ({
     type: LOAD_FOLLOWERS,
     followers
 });
-const add = (follower) => ({
-    type: ADD_FOLLOWER,
-    follower,
-})
+// const add = (follower) => ({
+//     type: ADD_FOLLOWER,
+//     follower,
+// })
 
 const removeOne = (followerId) => ({
     type: REMOVE_FOLLOWER,

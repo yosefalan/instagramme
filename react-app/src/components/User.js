@@ -95,9 +95,9 @@ function User() {
                 <DisplayFollowingModal userId={userId} setShowFollowingModal={setShowFollowingModal} />
 
               )}
-              {showFollowersModal && 
+              {showFollowersModal &&
                 <DisplayFollowersModal userId={userId} setShowFollowersModal={setShowFollowersModal} />}
-              {showModal && 
+              {showModal &&
                 <DisplayPostModal postId={postId} setShowModal={setShowModal} />}
               <div className="profile-name-wrapper">
                 <h2 className="profile-name"> {user.username}</h2>
@@ -145,7 +145,7 @@ function User() {
                 </li>
               </ul>
               <div>
-                <h1 className="profile-first-last-name">Firstname Lastname</h1>
+                {/* <h1 className="profile-first-last-name">Firstname Lastname</h1> */}
                 <br></br>
               </div>
             </section>
