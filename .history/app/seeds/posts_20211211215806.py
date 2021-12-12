@@ -60,40 +60,40 @@ def seed_posts():
 
         Martian sunsets typically stand out for their distinctive blue color. Fine dust in the atmosphere permits blue light to penetrate the atmosphere more efficiently than colors with longer wavelengths. But this sunset looks different: less dust in the atmosphere resulted in a more muted color than average. The color has been calibrated and white-balanced to remove camera artifacts.""")
     p15 = Post(
-        user_id=3, description="""Did someone order a dark ‘n stormy? 🌌
+        user_id=1, description="""Did someone order a dark ‘n stormy? 🌌
 
         About 1,400 light-years from Earth lies the largest star-forming cluster in the constellation of Orion, the Flame Nebula. The dark and dusty heart of nebula, pictured here, is where star a cluster resides, mostly hidden from view.
 
         Nearby (but not visible in this image), is the bright star Alnitak, the easternmost star in the Belt of Orion. Radiation from Alnitak ionizes the Flame Nebula’s hydrogen gas. As the gas begins to cool from its higher-energy state to a lower-energy state, it emits energy in the form of light, causing the visible glow behind the swirled wisps of dust.""")
     p16 = Post(
-        user_id=3, description="""Our Curiosity Mars rover was thinking of you and decided to send you a postcard of its most recent perch on the side of Mars’ Mount Sharp. Keeping in touch with loved ones is important!
+        user_id=1, description="""Our Curiosity Mars rover was thinking of you and decided to send you a postcard of its most recent perch on the side of Mars’ Mount Sharp. Keeping in touch with loved ones is important!
 
         Curiosity captures a 360-degree view of its surroundings with its black-and-white navigation cameras each time it completes a drive. To make the resulting panorama easier to send to Earth, the rover keeps it in a compressed, low-quality format. But when Curiostiy saw the view from its most recent stopping point, the scene was just too pretty not to capture it in the highest quality that the navigation cameras are capable of.
 
         The beauty of the landscape was so inspiring, in fact, that the mission team decided to add a little flair: they combined two versions of the black-and-white images from different times of the day and added colors to create a rare postcard from the Red Planet.""")
     p17 = Post(
-        user_id=3, description="""We're on our way to nudge an asteroid!
+        user_id=1, description="""We're on our way to nudge an asteroid!
 
         Our DART spacecraft lifted off at 1:21 a.m. EST (6:21 UTC) this morning, beginning its 10-month journey to the small "moonlet" Dimorphos. Late next year, the vending machine-sized ship will smash into Dimorphos at more than 15,000 miles an hour (24,000 kph), altering its orbit very slightly around the larger asteroid Didymos.
 
         Dimorphos does not pose a threat to Earth, either before or after DART's impact, but the data we collect from DART's collision will help us design spacecraft to deflect any future asteroids or near-Earth objects that ever threaten our home planet. Designed by @JohnsHopkinsAPL, DART lifted off on a @SpaceX Falcon 9 rocket from @Vandenberg_SFB in California.""")
     p18 = Post(
-        user_id=3, description="""Mounded, luminous clouds of gas and dust glow in this @NASAHubble image of a Herbig-Haro object known as HH 45. Herbig-Haro objects are a rarely seen type of nebula that occurs when hot gas ejected by a newborn star collides with the gas and dust around it at hundreds of miles per second, creating bright shock waves.
+        user_id=1, description="""Mounded, luminous clouds of gas and dust glow in this @NASAHubble image of a Herbig-Haro object known as HH 45. Herbig-Haro objects are a rarely seen type of nebula that occurs when hot gas ejected by a newborn star collides with the gas and dust around it at hundreds of miles per second, creating bright shock waves.
 
         HH 45 is located in the nebula NGC 1977, which itself is part of a complex of three nebulae called The Running Man. These three nebulae are reflection nebulae, which means that reflect light from nearby stars instead of emitting light on their own, like a streetlight illuminating fog.""")
     p19 = Post(
-        user_id=3, description="""
+        user_id=1, description="""
         TFW your office is outer space.
-
+        ⁣
         Here are photos of @JAXAJP astronaut Aki Hoshide and @EuropeanSpaceAgency astronaut @Thom_Astro from last weekend’s spacewalk to prepare upgrades for the @ISS solar arrays. The duo finished all spacewalk tasks in just under 7 hours while orbiting 263 miles (421 kilometers) above, bringing the concept of """)
     p20 = Post(
-        user_id=3, description="""For the first time, astronomers may have detected an exoplanet candidate outside of the Milky Way galaxy. Exoplanets are defined as planets outside of our solar system. All other known exoplanets and exoplanet candidates have been found in the Milky Way, almost all of them less than about 3,000 light-years from Earth.
+        user_id=1, description="""For the first time, astronomers may have detected an exoplanet candidate outside of the Milky Way galaxy. Exoplanets are defined as planets outside of our solar system. All other known exoplanets and exoplanet candidates have been found in the Milky Way, almost all of them less than about 3,000 light-years from Earth.
 
         This new result is based on transits, events in which the passage of a planet in front of a star blocks some of the star's light and produces a characteristic dip. Researchers used our @NASAChandraXray Observatory to search for dips in the brightness of X-rays received from X-ray bright binaries in the spiral galaxy Messier 51, also called the Whirlpool Galaxy (pictured here). These luminous systems typically contain a neutron star or black hole pulling in gas from a closely orbiting companion star. They estimate the exoplanet candidate would be roughly the size of Saturn, and orbit the neutron star or black hole at about twice the distance of Saturn from the Sun.
 
         This composite image of the Whirlpool Galaxy was made with X-ray data from Chandra and optical light from our @NASAHubble Space Telescope.""")
     p21 = Post(
-        user_id=3, description="""Have you ever seen a total solar eclipse? How about seeing a total solar eclipse FROM SPACE?
+        user_id=1, description="""Have you ever seen a total solar eclipse? How about seeing a total solar eclipse FROM SPACE?
 
         Our robotic and human explorers are here to help. On Dec. 4, 2021, the Deep Space Climate Observatory (DSCOVR) spacecraft captured the Moon's shadow as it passed over Antarctica, home to penguins and a handful of scientists. Shaped like a cone extending into space, the shadow has a circular cross-section most easily seen during a solar eclipse. People in parts of Namibia, South Africa, New Zealand, and the Falkland Islands were treated to a partial eclipse.
 
@@ -104,7 +104,7 @@ def seed_posts():
         A joint NASA-@NOAA observatory, DSCOVR orbits about a million miles from Earth and takes a new picture of Earth every two hours with its camera called EPIC – the Earth Polychromatic Imaging Camera. Launched in 2009, DSCOVR monitors changes in the solar wind and provides space weather forecasts and alerts for solar storms that could temporarily disrupt power grids and GPS.
         """)
     p22 = Post(
-        user_id=3, description="""One ring to rule them all? Not on Saturn!
+        user_id=1, description="""One ring to rule them all? Not on Saturn!
 
         Our Cassini spacecraft made 294 orbits around Saturn over 13 years before ending its mission on the ringed planet on Sept. 15, 2017.
 
@@ -112,120 +112,15 @@ def seed_posts():
 
         This artist rendering shows a wondrous view of Cassini orbiting the ringed planet.""")
     p23 = Post(
-        user_id=3, description="""This complex nebula is filled with glowing gases, lanes of dust, and stars of all ages—but what interests astronomers the most is what ISN'T there. One of its most distinctive features is the dark, starry gap called a “superbubble,” visible in this @NASAHubble image in the upper central region.
+        user_id=1, description="""This complex nebula is filled with glowing gases, lanes of dust, and stars of all ages—but what interests astronomers the most is what ISN'T there. One of its most distinctive features is the dark, starry gap called a “superbubble,” visible in this @NASAHubble image in the upper central region.
 
         The hole is about 250 light-years wide and its presence is still something of a mystery. Stellar winds expelled by massive stars in the bubble's interior may have driven away the gas, but this is inconsistent with measured wind velocities in the bubble. Another possibility, since the nebula is filled with massive stars that would expire in titanic explosions, is that the expanding shells of old supernovae sculpted the cosmic cavern.""")
     p24 = Post(
-        user_id=3, description="""Ready for a grand tour? Our Hubble Space Telescope completed its annual view of the outer planets, revealing both extreme and subtle changes to these distant worlds. In order, we see Jupiter, Saturn, Uranus (no jokes), and Neptune.
+        user_id=1, description="""Ready for a grand tour? Our Hubble Space Telescope completed its annual view of the outer planets, revealing both extreme and subtle changes to these distant worlds. In order, we see Jupiter, Saturn, Uranus (no jokes), and Neptune.
 
         Want to know what Hubble discovered? Head over to the @NASAHubble page.""")
 
-    p25 = Post(user_id=0, description='')
-    p26 = Post(user_id=0, description='')
-    p27 = Post(user_id=0, description='')
-    p28 = Post(user_id=0, description='')
-    p29 = Post(user_id=0, description='')
-    p30 = Post(user_id=0, description='')
-    p31 = Post(user_id=0, description='')
-    p32 = Post(user_id=0, description='')
-    p33 = Post(user_id=0, description='')
-    p34 = Post(user_id=0, description='')
-    p35 = Post(user_id=0, description='')
-    p36 = Post(user_id=0, description='')
 
-
-
-    p37 = Post(user_id=0, description='')
-    p38 = Post(user_id=0, description='')
-    p39 = Post(user_id=0, description='')
-    p40 = Post(user_id=0, description='')
-    p41 = Post(user_id=0, description='')
-    p42 = Post(user_id=0, description='')
-    p43 = Post(user_id=0, description='')
-    p44 = Post(user_id=0, description='')
-    p45 = Post(user_id=0, description='')
-    p46 = Post(user_id=0, description='')
-    p47 = Post(user_id=0, description='')
-    p48 = Post(user_id=0, description='')
-
-
-    p49 = Post(user_id=0, description='')
-    p50 = Post(user_id=0, description='')
-    p51 = Post(user_id=0, description='')
-    p52 = Post(user_id=0, description='')
-    p53 = Post(user_id=0, description='')
-    p54= Post(user_id=0, description='')
-    p55 = Post(user_id=0, description='')
-    p56 = Post(user_id=0, description='')
-    p57 = Post(user_id=0, description='')
-    p58 = Post(user_id=0, description='')
-    p59 = Post(user_id=0, description='')
-    p60 = Post(user_id=0, description='')
-
-    p61 = Post(user_id=0, description='')
-    p62 = Post(user_id=0, description='')
-    p63 = Post(user_id=0, description='')
-    p64 = Post(user_id=0, description='')
-    p65 = Post(user_id=0, description='')
-    p66 = Post(user_id=0, description='')
-    p67 = Post(user_id=0, description='')
-    p = Post(user_id=0, description='')
-    p68 = Post(user_id=0, description='')
-    p69 = Post(user_id=0, description='')
-    p70 = Post(user_id=0, description='')
-    p71 = Post(user_id=0, description='')
-
-    p73 = Post(user_id=0, description='')
-    p74 = Post(user_id=0, description='')
-    p75 = Post(user_id=0, description='')
-    p76 = Post(user_id=0, description='')
-    p77 = Post(user_id=0, description='')
-    p78 = Post(user_id=0, description='')
-    p79 = Post(user_id=0, description='')
-    p80 = Post(user_id=0, description='')
-    p81 = Post(user_id=0, description='')
-    p82 = Post(user_id=0, description='')
-    p83 = Post(user_id=0, description='')
-    p84 = Post(user_id=0, description='')
-
-    p85 = Post(user_id=0, description='')
-    p86 = Post(user_id=0, description='')
-    p87 = Post(user_id=0, description='')
-    p88 = Post(user_id=0, description='')
-    p89 = Post(user_id=0, description='')
-    p90 = Post(user_id=0, description='')
-    p91 = Post(user_id=0, description='')
-    p92 = Post(user_id=0, description='')
-    p93 = Post(user_id=0, description='')
-    p94 = Post(user_id=0, description='')
-    p95 = Post(user_id=0, description='')
-    p96 = Post(user_id=0, description='')
-
-    p97 = Post(user_id=0, description='')
-    p98 = Post(user_id=0, description='')
-    p99 = Post(user_id=0, description='')
-    p100 = Post(user_id=0, description='')
-    p101 = Post(user_id=0, description='')
-    p102 = Post(user_id=0, description='')
-    p103 = Post(user_id=0, description='')
-    p104 = Post(user_id=0, description='')
-    p105 = Post(user_id=0, description='')
-    p106 = Post(user_id=0, description='')
-    p107 = Post(user_id=0, description='')
-    p108 = Post(user_id=0, description='')
-
-    p109 = Post(user_id=0, description='')
-    p110 = Post(user_id=0, description='')
-    p111 = Post(user_id=0, description='')
-    p112 = Post(user_id=0, description='')
-    p113 = Post(user_id=0, description='')
-    p114 = Post(user_id=0, description='')
-    p115 = Post(user_id=0, description='')
-    p116 = Post(user_id=0, description='')
-    p117 = Post(user_id=0, description='')
-    p118 = Post(user_id=0, description='')
-    p119 = Post(user_id=0, description='')
-    p120 = Post(user_id=0, description='')
 
 
     db.session.add(p1)
@@ -252,103 +147,6 @@ def seed_posts():
     db.session.add(p22)
     db.session.add(p23)
     db.session.add(p24)
-    db.session.add(p25)
-    db.session.add(p26)
-    db.session.add(p27)
-    db.session.add(p28)
-    db.session.add(p29)
-    db.session.add(p30)
-    db.session.add(p31)
-    db.session.add(p32)
-    db.session.add(p33)
-    db.session.add(p34)
-    db.session.add(p35)
-    db.session.add(p36)
-    db.session.add(p37)
-    db.session.add(p38)
-    db.session.add(p39)
-    db.session.add(p40)
-    db.session.add(p41)
-    db.session.add(p42)
-    db.session.add(p43)
-    db.session.add(p44)
-    db.session.add(p45)
-    db.session.add(p46)
-    db.session.add(p47)
-    db.session.add(p48)
-    db.session.add(p49)
-    db.session.add(p50)
-    db.session.add(p51)
-    db.session.add(p52)
-    db.session.add(p53)
-    db.session.add(p54)
-    db.session.add(p55)
-    db.session.add(p56)
-    db.session.add(p57)
-    db.session.add(p58)
-    db.session.add(p59)
-    db.session.add(p60)
-    db.session.add(p61)
-    db.session.add(p62)
-    db.session.add(p63)
-    db.session.add(p64)
-    db.session.add(p65)
-    db.session.add(p66)
-    db.session.add(p67)
-    db.session.add(p68)
-    db.session.add(p69)
-    db.session.add(p70)
-    db.session.add(p71)
-    db.session.add(p72)
-    db.session.add(p73)
-    db.session.add(p74)
-    db.session.add(p75)
-    db.session.add(p76)
-    db.session.add(p77)
-    db.session.add(p78)
-    db.session.add(p79)
-    db.session.add(p80)
-    db.session.add(p81)
-    db.session.add(p82)
-    db.session.add(p83)
-    db.session.add(p84)
-    db.session.add(p85)
-    db.session.add(p86)
-    db.session.add(p87)
-    db.session.add(p88)
-    db.session.add(p89)
-    db.session.add(p90)
-    db.session.add(p91)
-    db.session.add(p92)
-    db.session.add(p93)
-    db.session.add(p94)
-    db.session.add(p95)
-    db.session.add(p96)
-    db.session.add(p97)
-    db.session.add(p98)
-    db.session.add(p99)
-    db.session.add(p100)
-    db.session.add(p101)
-    db.session.add(p102)
-    db.session.add(p103)
-    db.session.add(p104)
-    db.session.add(p105)
-    db.session.add(p106)
-    db.session.add(p107)
-    db.session.add(p108)
-    db.session.add(p109)
-    db.session.add(p110)
-    db.session.add(p111)
-    db.session.add(p112)
-    db.session.add(p113)
-    db.session.add(p114)
-    db.session.add(p115)
-    db.session.add(p116)
-    db.session.add(p117)
-    db.session.add(p118)
-    db.session.add(p119)
-    db.session.add(p120)
-
 
     db.session.commit()
 
