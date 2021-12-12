@@ -47,14 +47,16 @@ export const addAComment = (pid, id, comment) => async (dispatch) => {
 };
 
 export const updateAComment = (id, cid, content) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${id}/comment/${cid}`, {
+  console.log("the trio", id, cid, content);
+  const response = await csrfFetch(`/api/posts/${id}/comments/${cid}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(content),
+    body: JSON.stringify({ content }),
   });
-
+  console.log("response", response);
   if (response.ok) {
     const data = await response.json();
+    console.log(data);
     dispatch(updateComment(data));
     return data;
   }
@@ -75,15 +77,11 @@ const commentReducer = (state = initialState, action) => {
   let newState = {};
   switch (action.type) {
     case GET_COMMENTS:
-      console.log("id", action.payload);
       for (let comment in action.payload) {
-        console.log("da comment 2", comment);
         newState[comment] = action.payload[comment];
       }
-      console.log("da state", newState);
       return newState;
     case ADD_COMMENT:
-      console.log("payload", action.payload);
       newState = {
         ...state,
         [action.payload.id]: action.payload,
@@ -91,7 +89,8 @@ const commentReducer = (state = initialState, action) => {
       return newState;
     case UPDATE_COMMENT:
       newState = { ...state };
-      newState[action.payload.comment.id] = action.payload.comment;
+      console.log("da state", action);
+      newState[[action.payload.id]] = action.payload;
       return newState;
     case REMOVE_COMMENT:
       newState = { ...state };

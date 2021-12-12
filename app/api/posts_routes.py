@@ -171,6 +171,7 @@ def create_comment(id):
 @login_required
 def update_comment(id, comment_id):
     req = request.get_json()
+    print("rob", req)
 
     ################### Is there a need to query for Post before deleting a comment?
 
@@ -182,7 +183,7 @@ def update_comment(id, comment_id):
     #     return post.to_dict()
     comment = Comment.query.get(comment_id)
     if comment:
-        comment.content = req.content
+        comment.content = req['content']
         db.session.commit()
         return comment.to_dict()
     else:
