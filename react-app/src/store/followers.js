@@ -29,7 +29,7 @@ export const getFollowers = (id) => async (dispatch) => {
 }
 
 export const removeFollower = (userId, followerId) => async (dispatch) => {
-    const response = await csrfFetch(`api/users/${userId}/followers/${followerId}`, {
+    const response = await csrfFetch(`/api/users/${userId}/followers/${followerId}`, {
         method: "DELETE"
     });
 

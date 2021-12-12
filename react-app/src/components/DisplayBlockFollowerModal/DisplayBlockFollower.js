@@ -1,10 +1,10 @@
 // import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
-import { removeFollower } from "../../store/followers";
+import { removeFollower, getFollowers } from "../../store/followers";
 // import DisplayBlockFollowerModal from '../DisplayBlockFollowerModal';
 import "./DisplayBlockFollower.css";
 
-function DisplayBlockFollower({ userId, blockFollowerId, setBlockFollowerId, blockFollowerName, setBlockFollowerName, setShowBlockFollowerModal }) {
+function DisplayBlockFollower({ userId, sessionUserId, blockFollowerId, setBlockFollowerId, blockFollowerName, setBlockFollowerName, setShowBlockFollowerModal }) {
     const dispatch = useDispatch();
 
     
@@ -14,8 +14,9 @@ function DisplayBlockFollower({ userId, blockFollowerId, setBlockFollowerId, blo
         setShowBlockFollowerModal(false);
     }
 
-    const handleRemoveClick = (userId, blockFollowerId) => {
-        dispatch(removeFollower(userId, blockFollowerId));
+    const handleRemoveClick = (userId, sessionUserId, blockFollowerId) => {
+        dispatch(removeFollower(sessionUserId, blockFollowerId));
+        dispatch(getFollowers(userId));
         setBlockFollowerId("");
         setBlockFollowerName("");
         setShowBlockFollowerModal(false);
@@ -31,7 +32,7 @@ function DisplayBlockFollower({ userId, blockFollowerId, setBlockFollowerId, blo
                     <div>{blockFollowerName}</div>
                 </div>
                 <div className="block-follower-buttons-container">
-                    <div className="button-row"><div id="block-follower-button" onClick={() => handleRemoveClick(userId, blockFollowerId)}>Remove</div></div>
+                    <div className="button-row"><div id="block-follower-button" onClick={() => handleRemoveClick(userId, sessionUserId, blockFollowerId)}>Remove</div></div>
                     <div className="button-row"><div id="cancel-block-follower-button" onClick={() => handleCancelClick()}>Cancel</div></div>
                 </div>
             </div>

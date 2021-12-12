@@ -34,8 +34,8 @@ function DisplayFollowing({ userId, setShowFollowingModal }) {
         setShowUnfollowModal(true);
     }
 
-    const handleFollowClick = (userId, followedId) => {
-        dispatch(addFollowed(userId, followedId));
+    const handleFollowClick = (userId, sessionUserId, followedId) => {
+        dispatch(addFollowed(sessionUserId, followedId));
         dispatch(getFollowing(userId));
     }
 
@@ -45,7 +45,7 @@ function DisplayFollowing({ userId, setShowFollowingModal }) {
                 <div className='follows-modal-heading'>
                     <div className='follows-modal-heading-text'>Following</div>
                     {showUnfollowModal && (
-                        <DisplayUnfollowModal userId={userId} unfollowId={unfollowId} setUnfollowId={setUnfollowId} unfollowName={unfollowName} setUnfollowName={setUnfollowName} setShowUnfollowModal={setShowUnfollowModal} />
+                        <DisplayUnfollowModal userId={userId} sessionUserId={sessionUser.id} unfollowId={unfollowId} setUnfollowId={setUnfollowId} unfollowName={unfollowName} setUnfollowName={setUnfollowName} setShowUnfollowModal={setShowUnfollowModal} />
                     )}
                 </div>
                 <div className="follows-modal-list">
@@ -56,7 +56,7 @@ function DisplayFollowing({ userId, setShowFollowingModal }) {
                                 <div className="follows-modal-username"><div className="follows-modal-username-link" onClick={() => { handleClick(followee.id) }}>{followee.username}</div></div>
                                 <div className="follows-modal-list-button-container">
                                     {sessionUser.id === userId && <button className="follows-modal-remove-button" onClick={() => {handleUnfollowClick(followee.id, followee.username)}}>Following</button>}
-                                    {sessionUser.id !== userId && (sessionUser.following.length === 0 || sessionUser.following.indexOf(followee.id) === -1) && sessionUser.id !== followee.id && <button className="follows-modal-follow-button" onClick={() => { handleFollowClick(userId, followee.id) }}>Follow</button>}
+                                    {sessionUser.id !== userId && (sessionUser.following.length === 0 || sessionUser.following.indexOf(followee.id) === -1) && sessionUser.id !== followee.id && <button className="follows-modal-follow-button" onClick={() => { handleFollowClick(userId, sessionUser.id, followee.id) }}>Follow</button>}
                                     {sessionUser.id !== userId && (sessionUser.following.indexOf(followee.id) >= 0) && sessionUser.id !== followee.id && <button className="follows-modal-following-button" onClick={() => { handleUnfollowClick(followee.id, followee.username) }}>Following</button>}
                                 </div>
                             </div>

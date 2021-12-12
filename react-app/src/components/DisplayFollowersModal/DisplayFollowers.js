@@ -45,8 +45,8 @@ function DisplayFollowers({userId, setShowFollowersModal}) {
         setShowUnfollowModal(true);
     }
 
-    const handleFollowClick = (userId, followedId) => {
-        dispatch(addFollowed(userId, followedId));
+    const handleFollowClick = (userId, sessionUserId, followedId) => {
+        dispatch(addFollowed(sessionUserId, followedId));
         dispatch(getFollowers(userId));
     }
 
@@ -56,10 +56,10 @@ function DisplayFollowers({userId, setShowFollowersModal}) {
                 <div className='follows-modal-heading'>
                     <div className='follows-modal-heading-text'>Followers</div>
                     {showBlockFollowerModal && (
-                        <DisplayBlockFollowerModal userId={userId} blockFollowerId={blockFollowerId} setBlockFollowerId={setBlockFollowerId} blockFollowerName={blockFollowerName} setBlockFollowerName={setBlockFollowerName} setShowBlockFollowerModal={setShowBlockFollowerModal} />
+                        <DisplayBlockFollowerModal userId={userId} sessionUserId={sessionUser.id} blockFollowerId={blockFollowerId} setBlockFollowerId={setBlockFollowerId} blockFollowerName={blockFollowerName} setBlockFollowerName={setBlockFollowerName} setShowBlockFollowerModal={setShowBlockFollowerModal} />
                     )}
                     {showUnfollowModal && (
-                        <DisplayUnfollowModal userId={userId} unfollowId={unfollowId} setUnfollowId={setUnfollowId} unfollowName={unfollowName} setUnfollowName={setUnfollowName} setShowUnfollowModal={setShowUnfollowModal} />
+                        <DisplayUnfollowModal userId={userId} sessionUserId={sessionUser.id} unfollowId={unfollowId} setUnfollowId={setUnfollowId} unfollowName={unfollowName} setUnfollowName={setUnfollowName} setShowUnfollowModal={setShowUnfollowModal} />
                     )}
                 </div>
                 <div className="follows-modal-list">
@@ -69,9 +69,9 @@ function DisplayFollowers({userId, setShowFollowersModal}) {
                                 <div className="follows-modal-profile-pic-container"><img id="follower-profile-pic" src={follower.profile_image} alt=""></img></div>
                                 <div className="follows-modal-username"><div className="follows-modal-username-link" onClick={() => {handleClick(follower.id)}}>{follower.username}</div></div>
                                 <div className="follows-modal-list-button-container">
-                                    {sessionUser.id === userId && <button className="follows-modal-remove-button" onClick={() => {handleRemoveClick(follower.id, follower.username)}}>Remove</button>}
-                                    {sessionUser.id !== userId && (sessionUser.followers.length === 0 || sessionUser.followers.indexOf(follower.id) === -1) && sessionUser.id !== follower.id && <button className="follows-modal-follow-button" onClick={() => { handleFollowClick(userId, follower.id)}}>Follow</button>}
-                                    {sessionUser.id !== userId && (sessionUser.followers.indexOf(follower.id) >= 0) && sessionUser.id !== follower.id && <button className="follows-modal-following-button" onClick={() => { handleUnfollowClick(follower.id, follower.username) }}>Following</button>}
+                                    {sessionUser.id == userId && <button className="follows-modal-remove-button" onClick={() => {handleRemoveClick(sessionUser.id, follower.username)}}>Remove</button>}
+                                    {sessionUser.id != userId && (sessionUser.followers.length == 0 || sessionUser.followers.indexOf(follower.id) === -1) && sessionUser.id !== follower.id && <button className="follows-modal-follow-button" onClick={() => { handleFollowClick(userId, sessionUser.id, follower.id)}}>Follow</button>}
+                                    {sessionUser.id != userId && (sessionUser.followers.indexOf(follower.id) >= 0) && sessionUser.id != follower.id && <button className="follows-modal-following-button" onClick={() => { handleUnfollowClick(follower.id, follower.username) }}>Following</button>}
                                 </div>
                             </div>
                         )

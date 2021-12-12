@@ -1,10 +1,10 @@
 // import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
-import { removeOneFollowed } from "../../store/following";
+import { removeOneFollowed, getFollowing } from "../../store/following";
 // import DisplayBlockFollowerModal from '../DisplayBlockFollowerModal';
 import "./DisplayUnfollow.css";
 
-function DisplayUnfollow({ userId, unfollowId, setUnfollowId, unfollowName, setUnfollowName, setShowUnfollowModal }) {
+function DisplayUnfollow({ userId, sessionUserId, unfollowId, setUnfollowId, unfollowName, setUnfollowName, setShowUnfollowModal }) {
     const dispatch = useDispatch();
 
 
@@ -14,8 +14,9 @@ function DisplayUnfollow({ userId, unfollowId, setUnfollowId, unfollowName, setU
         setShowUnfollowModal(false);
     }
 
-    const handleRemoveClick = (userId, blockFollowerId) => {
-        dispatch(removeOneFollowed(userId, blockFollowerId));
+    const handleRemoveClick = async (userId, sessionUserId, blockFollowerId) => {
+        await dispatch(removeOneFollowed(sessionUserId, blockFollowerId));
+        dispatch(getFollowing(userId));
         setUnfollowId("");
         setUnfollowName("");
         setShowUnfollowModal(false);
@@ -30,7 +31,7 @@ function DisplayUnfollow({ userId, unfollowId, setUnfollowId, unfollowName, setU
                     <br></br>
                 </div>
                 <div className="block-follower-buttons-container">
-                    <div className="button-row"><div id="block-follower-button" onClick={() => handleRemoveClick(userId, unfollowId)}>Unfollow</div></div>
+                    <div className="button-row"><div id="block-follower-button" onClick={() => handleRemoveClick(userId, sessionUserId, unfollowId)}>Unfollow</div></div>
                     <div className="button-row"><div id="cancel-block-follower-button" onClick={() => handleCancelClick()}>Cancel</div></div>
                 </div>
             </div>

@@ -35,7 +35,7 @@ export const getFollowing = (id) => async (dispatch) => {
 }
 
 export const removeOneFollowed = (userId, followedId) => async (dispatch) => {
-    const response = await csrfFetch(`api/users/${userId}/following/${followedId}`, {
+    const response = await csrfFetch(`/api/users/${userId}/following/${followedId}`, {
         method: "DELETE"
     })
 
@@ -45,7 +45,7 @@ export const removeOneFollowed = (userId, followedId) => async (dispatch) => {
 }
 
 export const addFollowed = (userId, followedId) => async (dispatch) => {
-    const response = await csrfFetch(`api/users/${userId}/following/${followedId}`, {
+    const response = await csrfFetch(`/api/users/${userId}/following/${followedId}`, {
         method: "PUT"
     })
 
