@@ -6,7 +6,7 @@ const REMOVE_COMMENT = "/comments/removeComment";
 
 const getComments = (payload) => ({
   type: GET_COMMENTS,
-  payload: [payload],
+  payload: payload,
 });
 
 const addComment = (payload) => ({
@@ -25,6 +25,7 @@ const deleteComment = (id) => ({
 });
 
 export const getAllComments = (id) => async (dispatch) => {
+  console.log("id", id);
   const response = await csrfFetch(`/api/posts/${id}/comments`);
   if (response.ok) {
     const data = await response.json();
@@ -32,12 +33,11 @@ export const getAllComments = (id) => async (dispatch) => {
   }
 };
 
-export const addAComment = (id, comment) => async (dispatch) => {
-  console.log("************", comment);
-  const response = await csrfFetch(`/api/posts/${id}/comments`, {
+export const addAComment = (pid, id, comment) => async (dispatch) => {
+  const response = await csrfFetch(`/api/posts/${pid}/comments`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(id, comment),
+    body: JSON.stringify({ id, comment }),
   });
   if (response.ok) {
     const data = await response.json();
@@ -46,11 +46,11 @@ export const addAComment = (id, comment) => async (dispatch) => {
   }
 };
 
-export const updateAComment = (comment, id) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${id}/comment/${comment.id}`, {
+export const updateAComment = (id, cid, content) => async (dispatch) => {
+  const response = await csrfFetch(`/api/posts/${id}/comment/${cid}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(comment),
+    body: JSON.stringify(content),
   });
 
   if (response.ok) {
@@ -75,12 +75,18 @@ const commentReducer = (state = initialState, action) => {
   let newState = {};
   switch (action.type) {
     case GET_COMMENTS:
-      action.payload.forEach((comment) => (newState[comment.id] = comment));
+      console.log("id", action.payload);
+      for (let comment in action.payload) {
+        console.log("da comment 2", comment);
+        newState[comment] = action.payload[comment];
+      }
+      console.log("da state", newState);
       return newState;
     case ADD_COMMENT:
+      console.log("payload", action.payload);
       newState = {
         ...state,
-        [action.payload.comment.id]: action.payload.comment,
+        [action.payload.id]: action.payload,
       };
       return newState;
     case UPDATE_COMMENT:

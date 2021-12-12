@@ -62,7 +62,9 @@ function DisplayPost({ postId, setShowModal }) {
             <div>{post.username}</div>
             <div>
               {post.user_id === sessionUser.id && (
-                <button className='postBtn' onClick={() => isEditable(true)}>Edit</button>
+                <button className="postBtn" onClick={() => isEditable(true)}>
+                  Edit
+                </button>
               )}{" "}
               {editable && (
                 <div className="edit-post">
@@ -70,24 +72,26 @@ function DisplayPost({ postId, setShowModal }) {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     className="edit-description-input"
-                    className='textarea'
+                    className="textarea"
                   />
                   <button
-                    className='postBtn'
+                    className="postBtn"
                     onClick={() => handleEdit(postId, description)}
                   >
                     Submit
                   </button>
-                  <button
-                    className='postBtn'
-                    onClick={() => isEditable(false)}
-                  >
+                  <button className="postBtn" onClick={() => isEditable(false)}>
                     Cancel
                   </button>
                 </div>
               )}
               {post.user_id === sessionUser.id && (
-                <button className='postBtn' onClick={() => handleDelete(postId)}>Delete</button>
+                <button
+                  className="postBtn"
+                  onClick={() => handleDelete(postId)}
+                >
+                  Delete
+                </button>
               )}
             </div>
           </div>
@@ -104,7 +108,7 @@ function DisplayPost({ postId, setShowModal }) {
             {post.likes} {post.likes === 1 ? "like" : "likes"}
           </div>
           <div className="right-column-div">
-            <CommentForm />
+            <CommentForm pid={post.id} />
           </div>
         </div>
       </div>
