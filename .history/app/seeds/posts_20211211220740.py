@@ -228,7 +228,6 @@ def seed_posts():
     p120 = Post(user_id=0, description='')
 
 
-
     db.session.add(p1)
     db.session.add(p2)
     db.session.add(p3)
