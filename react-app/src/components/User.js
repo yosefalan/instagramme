@@ -11,8 +11,6 @@ import DisplayPostModal from "./DisplayPostModal/index";
 import DisplayFollowersModal from "./DisplayFollowersModal";
 import DisplayFollowingModal from "./DisplayFollowingModal";
 
-
-
 function User() {
   const [user, setUser] = useState({});
   const [showModal, setShowModal] = useState(false);
@@ -29,8 +27,6 @@ function User() {
   // sessionUser["id"] = 0;
 
   const checkProfile = () => {
-    console.log("sessionUser", suser);
-    console.log(userId);
     if (suser[3] !== +userId && !suser[2].includes(+userId)) {
       setAllowFollow(true);
     }
@@ -53,20 +49,17 @@ function User() {
   }, [dispatch, userId]);
 
   const handleClick = (postId) => {
-
-    setPostId(postId)
-    setShowModal(true)
-
-  }
+    setPostId(postId);
+    setShowModal(true);
+  };
 
   const handleFollow = (id) => {
     dispatch(addFollower(id));
   };
 
   const handleFollowingClick = (userId) => {
-    setShowFollowingModal(true)
-  }
-
+    setShowFollowingModal(true);
+  };
 
   const handleFollowersClick = (userId) => {
     setShowFollowersModal(true);
@@ -97,19 +90,26 @@ function User() {
             </div>
             <section className="profile-section">
               {showFollowingModal && (
-                <DisplayFollowingModal userId={userId} setShowFollowingModal={setShowFollowingModal} />
-
+                <DisplayFollowingModal
+                  userId={userId}
+                  setShowFollowingModal={setShowFollowingModal}
+                />
               )}
-              {showFollowersModal &&
-                <DisplayFollowersModal userId={userId} setShowFollowersModal={setShowFollowersModal} />}
-              {showModal &&
-                <DisplayPostModal postId={postId} setShowModal={setShowModal} />}
+              {showFollowersModal && (
+                <DisplayFollowersModal
+                  userId={userId}
+                  setShowFollowersModal={setShowFollowersModal}
+                />
+              )}
+              {showModal && (
+                <DisplayPostModal postId={postId} setShowModal={setShowModal} />
+              )}
               <div className="profile-name-wrapper">
                 <h2 className="profile-name"> {user.username}</h2>
                 {allowFollow && (
                   <button
                     onClick={() => {
-                      handleFollow(sessionUser.id);
+                      handleFollow(suser.id);
                     }}
                   >
                     Follow
@@ -130,10 +130,8 @@ function User() {
               <ul className="profile-data-list">
                 <li className="profile-posts-data">
                   <div className="profile-posts-data-text" id="posts-data-text">
-                      <span className="profile-data-bold">
-                        {posts?.length}
-                      </span>{" "}
-                      {posts.length === 1 ? "post" : "posts"}
+                    <span className="profile-data-bold">{posts?.length}</span>{" "}
+                    {posts.length === 1 ? "post" : "posts"}
                   </div>
                 </li>
                 <li className="profile-posts-data">
@@ -150,7 +148,12 @@ function User() {
                   </div>
                 </li>
                 <li className="profile-posts-data">
-                  <div className="profile-posts-data-text" onClick = {() => {handleFollowingClick(userId)}}>
+                  <div
+                    className="profile-posts-data-text"
+                    onClick={() => {
+                      handleFollowingClick(userId);
+                    }}
+                  >
                     <span className="profile-data-bold">
                       {user.following?.length}
                     </span>{" "}
