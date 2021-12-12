@@ -49,7 +49,7 @@ return (
                     name="body"
                     placeholder="Add a comment"
                 ></textarea>
-                <button type="submit">Submit</button>
+                <button className='postBtn' type="submit">Submit</button>
             </form>
         </div>
     </>
