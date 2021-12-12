@@ -21,7 +21,6 @@ def user(id):
     return user.to_dict()
 
 @user_routes.route('/<int:id>/posts')
-# @login_required
 def get_user_posts(id):
     posts = Post.query.filter(Post.user_id == id).all()
     if posts:
@@ -37,8 +36,6 @@ def get_followers(id):
     for follower in followers:
         followers_dict[follower.to_dict()["id"]] = follower.to_dict()
     return followers_dict
-    # followers = User.query.filter(User.id.in_.user["followers"]).all()
-    # return {follower.id: follower.to_dict() for follower in followers}
 
 
 @user_routes.route('/<int:id>/following')
@@ -79,5 +76,3 @@ def add_followed(id, followedId):
     db.session.commit()
     return "ok", 200
     #still working on this
-
-
