@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import githubLogo from "../Footer/githubLogo.png";
 import linkedInLogo from "../Footer/linkedInLogo.png";
 import '../Footer/Footer.css'
