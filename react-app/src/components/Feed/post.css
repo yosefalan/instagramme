@@ -1,11 +1,12 @@
 .post-box {
   display: flex;
   flex-direction: column;
-  width: 614px;
+  width: 600px;
   background: #fff;
   border: 1px solid #dfdfdf;
   margin-top: 20px;
   height: fit-content;
+  box-sizing: border-box;
 }
 .username_link {
   text-decoration: none;

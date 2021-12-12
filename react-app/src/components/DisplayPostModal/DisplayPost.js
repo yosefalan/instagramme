@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // import { useSelector } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "./DisplayPost.css";
@@ -12,7 +12,7 @@ function DisplayPost({ postId, setShowModal }) {
   const sessionUser = useSelector((state) => state.session.user);
   const posts = useSelector((state) => state.posts);
   const [editable, isEditable] = useState(false);
-  const [isPostLoaded, setIsPostLoaded] = useState(false);
+  // const [isPostLoaded, setIsPostLoaded] = useState(false);
   const post = posts[postId];
   const [description, setDescription] = useState(post.description);
   const dispatch = useDispatch();
@@ -62,7 +62,9 @@ function DisplayPost({ postId, setShowModal }) {
             <div>{post.username}</div>
             <div>
               {post.user_id === sessionUser.id && (
-                <button onClick={() => isEditable(true)}>Edit</button>
+                <button className="postBtn" onClick={() => isEditable(true)}>
+                  Edit
+                </button>
               )}{" "}
               {editable && (
                 <div className="edit-post">
@@ -70,17 +72,26 @@ function DisplayPost({ postId, setShowModal }) {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     className="edit-description-input"
+                    className="textarea"
                   />
                   <button
-                    className="submit-edit"
+                    className="postBtn"
                     onClick={() => handleEdit(postId, description)}
                   >
                     Submit
                   </button>
+                  <button className="postBtn" onClick={() => isEditable(false)}>
+                    Cancel
+                  </button>
                 </div>
               )}
               {post.user_id === sessionUser.id && (
-                <button onClick={() => handleDelete(postId)}>Delete</button>
+                <button
+                  className="postBtn"
+                  onClick={() => handleDelete(postId)}
+                >
+                  Delete
+                </button>
               )}
             </div>
           </div>
@@ -92,12 +103,12 @@ function DisplayPost({ postId, setShowModal }) {
           <div className="right-column-div">
             <Comment post_id={postId} />
           </div>
-          <div className="right-column-div">Button Bar</div>
+          {/* <div className="right-column-div">Button Bar</div> */}
           <div className="right-column-div">
             {post.likes} {post.likes === 1 ? "like" : "likes"}
           </div>
           <div className="right-column-div">
-            <CommentForm />
+            <CommentForm pid={post.id} />
           </div>
         </div>
       </div>

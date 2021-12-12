@@ -78,7 +78,7 @@ const handleSubmit = (e) => {
               type="file" onChange={handleFile}
               id="getFile"
               />
-              <button className="fileUploadBtn">Select from Computer</button>
+              {/* <button className="fileUploadBtn">Select from Computer</button> */}
             </div>
           </form>
         </div>

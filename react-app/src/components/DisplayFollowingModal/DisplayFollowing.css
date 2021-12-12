@@ -21,7 +21,7 @@
 #follows-modal-heading-text {
     width:fit-content;
     font-weight: bold;
-    color: rgb(38,38,38);
+    color:rgb(38, 38, 38);
 }
 
 .follows-modal-list {
@@ -59,11 +59,11 @@
     overflow:hidden;
 }
 
-#follower-profile-pic {
-    object-fit:cover;
+#followed-profile-pic {
+    object-fit: cover;
     width: 40px;
     height: 40px;
-    background-color: rgb(219, 219, 219);
+    background-color:rgb(219,219,219);
 }
 
 .follows-modal-username {
@@ -79,10 +79,6 @@
     position: relative;
     width: 200px;
     cursor: pointer;
-}
-
-.follows-modal-username-link {
-    width:fit-content;
 }
 
 .follows-modal-list-button-container {
@@ -127,7 +123,7 @@
 .follows-modal-following-button {
     display: block;
     background-color: #fff;
-    color: rgb(38,38,38);
+    color: rgb(38, 38, 38);
     font-weight: 500;
     border-radius: 4px;
     padding: 5px 9px;
