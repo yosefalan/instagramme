@@ -89,7 +89,7 @@ def seed_photos():
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/8853076_image9986.jpg', user_id=5, post_id=2)
     photo39 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/92fk02zyy2d21.jpg', user_id=5, post_id=3)
-    photo40 = Photo(
+    photo49 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/9542f2982a5aa71b842802970a964f9b--abu-dhabi-amazing-architecture.jpg', user_id=5, post_id=4)
     photo41 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/awesome-architecture-wallpaper-1.jpg', user_id=5, post_id=5)
@@ -206,65 +206,65 @@ def seed_photos():
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/photified/8.jpg', user_id=9, post_id=8)
     photo93 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/photified/9.jpg', user_id=9, post_id=9)
-    photo94 = Photo(
+    photo = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/photified/10.jpg', user_id=9, post_id=10)
-    photo95 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/photified/11.jpg', user_id=9, post_id=11)
-    photo96 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/photified/12.jpg', user_id=9, post_id=12)
 
         #**********************************street_art 10**************************************
-    photo97 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/1.jpg', user_id=10, post_id=1)
-    photo98 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/2.jpg', user_id=10, post_id=2)
-    photo99 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/3.jpg', user_id=10, post_id=3)
-    photo100 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/4.jpg', user_id=10, post_id=4)
-    photo101 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/5.jpg', user_id=10, post_id=5)
-    photo102 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/6.jpg', user_id=10, post_id=6)
-    photo103 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/7.jpg', user_id=10, post_id=7)
-    photo104 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/8.jpg', user_id=10, post_id=8)
-    photo105 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/9.jpg', user_id=10, post_id=9)
-    photo106 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/10.jpg', user_id=10, post_id=10)
-    photo107 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/11.jpg', user_id=10, post_id=11)
-    photo108 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/streetart/12.jpg', user_id=10, post_id=12)
 
         #**********************************toshi**************************************
-
-    photo109 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/1.jpg', user_id=11, post_id=1)
-    photo110 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/2.jpg', user_id=11, post_id=2)
-    photo111 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/3.jpg', user_id=11, post_id=3)
-    photo112 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/4.jpg', user_id=11, post_id=4)
-    photo113 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/5.jpg', user_id=11, post_id=5)
-    photo114 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/6.jpg', user_id=11, post_id=6)
-    photo115 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/7.jpg', user_id=11, post_id=7)
-    photo116 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/8.jpg', user_id=11, post_id=8)
-    photo117 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/9.jpg', user_id=11, post_id=9)
-    photo118 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/10.jpg', user_id=11, post_id=10)
-    photo119 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/11.jpg', user_id=11, post_id=11)
-    photo120 = Photo(
+    photo24 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/tobishinobi/12.jpg', user_id=11, post_id=12)
+
 
     db.session.add(photo1)
     db.session.add(photo2)
@@ -278,118 +278,10 @@ def seed_photos():
     db.session.add(photo10)
     db.session.add(photo11)
     db.session.add(photo12)
-    db.session.add(photo13)
-    db.session.add(photo14)
-    db.session.add(photo15)
-    db.session.add(photo16)
-    db.session.add(photo17)
-    db.session.add(photo18)
-    db.session.add(photo19)
-    db.session.add(photo20)
-    db.session.add(photo21)
-    db.session.add(photo22)
-    db.session.add(photo23)
-    db.session.add(photo24)
-    db.session.add(photo25)
-    db.session.add(photo26)
-    db.session.add(photo27)
-    db.session.add(photo28)
-    db.session.add(photo29)
-    db.session.add(photo30)
-    db.session.add(photo31)
-    db.session.add(photo32)
-    db.session.add(photo33)
-    db.session.add(photo34)
-    db.session.add(photo35)
-    db.session.add(photo36)
-    db.session.add(photo37)
-    db.session.add(photo38)
-    db.session.add(photo39)
-    db.session.add(photo40)
-    db.session.add(photo41)
-    db.session.add(photo42)
-    db.session.add(photo43)
-    db.session.add(photo44)
-    db.session.add(photo45)
-    db.session.add(photo46)
-    db.session.add(photo47)
-    db.session.add(photo48)
-    db.session.add(photo49)
-    db.session.add(photo50)
-    db.session.add(photo51)
-    db.session.add(photo52)
-    db.session.add(photo53)
-    db.session.add(photo54)
-    db.session.add(photo55)
-    db.session.add(photo56)
-    db.session.add(photo57)
-    db.session.add(photo58)
-    db.session.add(photo59)
-    db.session.add(photo60)
-    db.session.add(photo61)
-    db.session.add(photo62)
-    db.session.add(photo63)
-    db.session.add(photo64)
-    db.session.add(photo65)
-    db.session.add(photo66)
-    db.session.add(photo67)
-    db.session.add(photo68)
-    db.session.add(photo69)
-    db.session.add(photo70)
-    db.session.add(photo71)
-    db.session.add(photo72)
-    db.session.add(photo73)
-    db.session.add(photo74)
-    db.session.add(photo75)
-    db.session.add(photo76)
-    db.session.add(photo77)
-    db.session.add(photo78)
-    db.session.add(photo79)
-    db.session.add(photo80)
-    db.session.add(photo81)
-    db.session.add(photo82)
-    db.session.add(photo83)
-    db.session.add(photo84)
-    db.session.add(photo85)
-    db.session.add(photo86)
-    db.session.add(photo87)
-    db.session.add(photo88)
-    db.session.add(photo89)
-    db.session.add(photo90)
-    db.session.add(photo91)
-    db.session.add(photo92)
-    db.session.add(photo93)
-    db.session.add(photo94)
-    db.session.add(photo95)
-    db.session.add(photo96)
-    db.session.add(photo97)
-    db.session.add(photo98)
-    db.session.add(photo99)
-    db.session.add(photo100)
-    db.session.add(photo101)
-    db.session.add(photo102)
-    db.session.add(photo103)
-    db.session.add(photo104)
-    db.session.add(photo105)
-    db.session.add(photo106)
-    db.session.add(photo107)
-    db.session.add(photo108)
-    db.session.add(photo109)
-    db.session.add(photo110)
-    db.session.add(photo111)
-    db.session.add(photo112)
-    db.session.add(photo113)
-    db.session.add(photo114)
-    db.session.add(photo115)
-    db.session.add(photo116)
-    db.session.add(photo117)
-    db.session.add(photo118)
-    db.session.add(photo119)
-    db.session.add(photo120)
-
 
 
     db.session.commit()
+
 
 # Uses a raw SQL query to TRUNCATE the users table.
 # SQLAlchemy doesn't have a built in function to do this

@@ -93,16 +93,7 @@ def seed_posts():
 
         This composite image of the Whirlpool Galaxy was made with X-ray data from Chandra and optical light from our @NASAHubble Space Telescope.""")
     p21 = Post(
-        user_id=1, description="""Have you ever seen a total solar eclipse? How about seeing a total solar eclipse FROM SPACE?
-
-        Our robotic and human explorers are here to help. On Dec. 4, 2021, the Deep Space Climate Observatory (DSCOVR) spacecraft captured the Moon's shadow as it passed over Antarctica, home to penguins and a handful of scientists. Shaped like a cone extending into space, the shadow has a circular cross-section most easily seen during a solar eclipse. People in parts of Namibia, South Africa, New Zealand, and the Falkland Islands were treated to a partial eclipse.
-
-        How about seeing it from another perspective? Astronaut Kayla Barron snapped images of the eclipse from inside the International Space Station (@ISS). Visible in the foreground is a Russian segment of the orbiting laboratory.
-
-        A solar eclipse happens when the Moon moves between the Sun and Earth, casting a shadow on Earth, fully or partially blocking the Sun’s light in some areas. For a total solar eclipse to take place, the Sun, Moon, and Earth must line up exactly.
-
-        A joint NASA-@NOAA observatory, DSCOVR orbits about a million miles from Earth and takes a new picture of Earth every two hours with its camera called EPIC – the Earth Polychromatic Imaging Camera. Launched in 2009, DSCOVR monitors changes in the solar wind and provides space weather forecasts and alerts for solar storms that could temporarily disrupt power grids and GPS.
-        """)
+        user_id=1, description="""""")
     p22 = Post(
         user_id=1, description="""One ring to rule them all? Not on Saturn!
 

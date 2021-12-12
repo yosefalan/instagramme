@@ -58,67 +58,38 @@ def seed_posts():
 
         While this is the first sunset imaged by Perseverance, Our robotic explorers have been looking up at the Sun from the surface of the Red Planet since the 1970s. Vikings 1 and 2; the Pathfinder and Phoenix landers; Spirit, Opportunity and Curiosity rovers have sent back sunrise and sunset scenes.
 
-        Martian sunsets typically stand out for their distinctive blue color. Fine dust in the atmosphere permits blue light to penetrate the atmosphere more efficiently than colors with longer wavelengths. But this sunset looks different: less dust in the atmosphere resulted in a more muted color than average. The color has been calibrated and white-balanced to remove camera artifacts.""")
+        Martian sunsets typically stand out for their distinctive blue color. Fine dust in the atmosphere permits blue light to penetrate the atmosphere more efficiently than colors with longer wavelengths. But this sunset looks different: less dust in the atmosphere resulted in a more muted color than average. The color has been calibrated and white-balanced to remove camera artifacts.
+        """)
     p15 = Post(
         user_id=1, description="""Did someone order a dark ‘n stormy? 🌌
 
         About 1,400 light-years from Earth lies the largest star-forming cluster in the constellation of Orion, the Flame Nebula. The dark and dusty heart of nebula, pictured here, is where star a cluster resides, mostly hidden from view.
 
-        Nearby (but not visible in this image), is the bright star Alnitak, the easternmost star in the Belt of Orion. Radiation from Alnitak ionizes the Flame Nebula’s hydrogen gas. As the gas begins to cool from its higher-energy state to a lower-energy state, it emits energy in the form of light, causing the visible glow behind the swirled wisps of dust.""")
+        Nearby (but not visible in this image), is the bright star Alnitak, the easternmost star in the Belt of Orion. Radiation from Alnitak ionizes the Flame Nebula’s hydrogen gas. As the gas begins to cool from its higher-energy state to a lower-energy state, it emits energy in the form of light, causing the visible glow behind the swirled wisps of dust.
+        """)
     p16 = Post(
         user_id=1, description="""Our Curiosity Mars rover was thinking of you and decided to send you a postcard of its most recent perch on the side of Mars’ Mount Sharp. Keeping in touch with loved ones is important!
 
-        Curiosity captures a 360-degree view of its surroundings with its black-and-white navigation cameras each time it completes a drive. To make the resulting panorama easier to send to Earth, the rover keeps it in a compressed, low-quality format. But when Curiostiy saw the view from its most recent stopping point, the scene was just too pretty not to capture it in the highest quality that the navigation cameras are capable of.
+Curiosity captures a 360-degree view of its surroundings with its black-and-white navigation cameras each time it completes a drive. To make the resulting panorama easier to send to Earth, the rover keeps it in a compressed, low-quality format. But when Curiostiy saw the view from its most recent stopping point, the scene was just too pretty not to capture it in the highest quality that the navigation cameras are capable of.
 
-        The beauty of the landscape was so inspiring, in fact, that the mission team decided to add a little flair: they combined two versions of the black-and-white images from different times of the day and added colors to create a rare postcard from the Red Planet.""")
+The beauty of the landscape was so inspiring, in fact, that the mission team decided to add a little flair: they combined two versions of the black-and-white images from different times of the day and added colors to create a rare postcard from the Red Planet.
+""")
     p17 = Post(
-        user_id=1, description="""We're on our way to nudge an asteroid!
-
-        Our DART spacecraft lifted off at 1:21 a.m. EST (6:21 UTC) this morning, beginning its 10-month journey to the small "moonlet" Dimorphos. Late next year, the vending machine-sized ship will smash into Dimorphos at more than 15,000 miles an hour (24,000 kph), altering its orbit very slightly around the larger asteroid Didymos.
-
-        Dimorphos does not pose a threat to Earth, either before or after DART's impact, but the data we collect from DART's collision will help us design spacecraft to deflect any future asteroids or near-Earth objects that ever threaten our home planet. Designed by @JohnsHopkinsAPL, DART lifted off on a @SpaceX Falcon 9 rocket from @Vandenberg_SFB in California.""")
+        user_id=1, description="""""")
     p18 = Post(
-        user_id=1, description="""Mounded, luminous clouds of gas and dust glow in this @NASAHubble image of a Herbig-Haro object known as HH 45. Herbig-Haro objects are a rarely seen type of nebula that occurs when hot gas ejected by a newborn star collides with the gas and dust around it at hundreds of miles per second, creating bright shock waves.
-
-        HH 45 is located in the nebula NGC 1977, which itself is part of a complex of three nebulae called The Running Man. These three nebulae are reflection nebulae, which means that reflect light from nearby stars instead of emitting light on their own, like a streetlight illuminating fog.""")
+        user_id=1, description="""""")
     p19 = Post(
-        user_id=1, description="""
-        TFW your office is outer space.
-        ⁣
-        Here are photos of @JAXAJP astronaut Aki Hoshide and @EuropeanSpaceAgency astronaut @Thom_Astro from last weekend’s spacewalk to prepare upgrades for the @ISS solar arrays. The duo finished all spacewalk tasks in just under 7 hours while orbiting 263 miles (421 kilometers) above, bringing the concept of """)
+        user_id=1, description="""""")
     p20 = Post(
-        user_id=1, description="""For the first time, astronomers may have detected an exoplanet candidate outside of the Milky Way galaxy. Exoplanets are defined as planets outside of our solar system. All other known exoplanets and exoplanet candidates have been found in the Milky Way, almost all of them less than about 3,000 light-years from Earth.
-
-        This new result is based on transits, events in which the passage of a planet in front of a star blocks some of the star's light and produces a characteristic dip. Researchers used our @NASAChandraXray Observatory to search for dips in the brightness of X-rays received from X-ray bright binaries in the spiral galaxy Messier 51, also called the Whirlpool Galaxy (pictured here). These luminous systems typically contain a neutron star or black hole pulling in gas from a closely orbiting companion star. They estimate the exoplanet candidate would be roughly the size of Saturn, and orbit the neutron star or black hole at about twice the distance of Saturn from the Sun.
-
-        This composite image of the Whirlpool Galaxy was made with X-ray data from Chandra and optical light from our @NASAHubble Space Telescope.""")
+        user_id=1, description="""""")
     p21 = Post(
-        user_id=1, description="""Have you ever seen a total solar eclipse? How about seeing a total solar eclipse FROM SPACE?
-
-        Our robotic and human explorers are here to help. On Dec. 4, 2021, the Deep Space Climate Observatory (DSCOVR) spacecraft captured the Moon's shadow as it passed over Antarctica, home to penguins and a handful of scientists. Shaped like a cone extending into space, the shadow has a circular cross-section most easily seen during a solar eclipse. People in parts of Namibia, South Africa, New Zealand, and the Falkland Islands were treated to a partial eclipse.
-
-        How about seeing it from another perspective? Astronaut Kayla Barron snapped images of the eclipse from inside the International Space Station (@ISS). Visible in the foreground is a Russian segment of the orbiting laboratory.
-
-        A solar eclipse happens when the Moon moves between the Sun and Earth, casting a shadow on Earth, fully or partially blocking the Sun’s light in some areas. For a total solar eclipse to take place, the Sun, Moon, and Earth must line up exactly.
-
-        A joint NASA-@NOAA observatory, DSCOVR orbits about a million miles from Earth and takes a new picture of Earth every two hours with its camera called EPIC – the Earth Polychromatic Imaging Camera. Launched in 2009, DSCOVR monitors changes in the solar wind and provides space weather forecasts and alerts for solar storms that could temporarily disrupt power grids and GPS.
-        """)
+        user_id=1, description="""""")
     p22 = Post(
-        user_id=1, description="""One ring to rule them all? Not on Saturn!
-
-        Our Cassini spacecraft made 294 orbits around Saturn over 13 years before ending its mission on the ringed planet on Sept. 15, 2017.
-
-        Cassini opened our eyes to the mysteries of Saturn, and to Saturn's moons containing methane rivers, jets of ice and gas blasting material into space, and a liquid water ocean that may harbor the ingredients for life.
-
-        This artist rendering shows a wondrous view of Cassini orbiting the ringed planet.""")
+        user_id=1, description="""""")
     p23 = Post(
-        user_id=1, description="""This complex nebula is filled with glowing gases, lanes of dust, and stars of all ages—but what interests astronomers the most is what ISN'T there. One of its most distinctive features is the dark, starry gap called a “superbubble,” visible in this @NASAHubble image in the upper central region.
-
-        The hole is about 250 light-years wide and its presence is still something of a mystery. Stellar winds expelled by massive stars in the bubble's interior may have driven away the gas, but this is inconsistent with measured wind velocities in the bubble. Another possibility, since the nebula is filled with massive stars that would expire in titanic explosions, is that the expanding shells of old supernovae sculpted the cosmic cavern.""")
+        user_id=1, description="""""")
     p24 = Post(
-        user_id=1, description="""Ready for a grand tour? Our Hubble Space Telescope completed its annual view of the outer planets, revealing both extreme and subtle changes to these distant worlds. In order, we see Jupiter, Saturn, Uranus (no jokes), and Neptune.
-
-        Want to know what Hubble discovered? Head over to the @NASAHubble page.""")
+        user_id=1, description="""""")
 
 
 

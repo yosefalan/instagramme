@@ -102,7 +102,7 @@ def seed_posts():
         A solar eclipse happens when the Moon moves between the Sun and Earth, casting a shadow on Earth, fully or partially blocking the Sun’s light in some areas. For a total solar eclipse to take place, the Sun, Moon, and Earth must line up exactly.
 
         A joint NASA-@NOAA observatory, DSCOVR orbits about a million miles from Earth and takes a new picture of Earth every two hours with its camera called EPIC – the Earth Polychromatic Imaging Camera. Launched in 2009, DSCOVR monitors changes in the solar wind and provides space weather forecasts and alerts for solar storms that could temporarily disrupt power grids and GPS.
-        """)
+""")
     p22 = Post(
         user_id=1, description="""One ring to rule them all? Not on Saturn!
 

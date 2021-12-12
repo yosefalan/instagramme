@@ -89,7 +89,7 @@ def seed_photos():
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/8853076_image9986.jpg', user_id=5, post_id=2)
     photo39 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/92fk02zyy2d21.jpg', user_id=5, post_id=3)
-    photo40 = Photo(
+    photo49 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/9542f2982a5aa71b842802970a964f9b--abu-dhabi-amazing-architecture.jpg', user_id=5, post_id=4)
     photo41 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/awesome-architecture-wallpaper-1.jpg', user_id=5, post_id=5)

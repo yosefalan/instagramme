@@ -89,7 +89,7 @@ def seed_photos():
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/8853076_image9986.jpg', user_id=5, post_id=2)
     photo39 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/92fk02zyy2d21.jpg', user_id=5, post_id=3)
-    photo40 = Photo(
+    photo49 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/9542f2982a5aa71b842802970a964f9b--abu-dhabi-amazing-architecture.jpg', user_id=5, post_id=4)
     photo41 = Photo(
     url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/awesome-architecture-wallpaper-1.jpg', user_id=5, post_id=5)
@@ -345,7 +345,7 @@ def seed_photos():
     db.session.add(photo77)
     db.session.add(photo78)
     db.session.add(photo79)
-    db.session.add(photo80)
+    db.session.add(photo10)
     db.session.add(photo81)
     db.session.add(photo82)
     db.session.add(photo83)
@@ -355,7 +355,7 @@ def seed_photos():
     db.session.add(photo87)
     db.session.add(photo88)
     db.session.add(photo89)
-    db.session.add(photo90)
+    db.session.add(photo10)
     db.session.add(photo91)
     db.session.add(photo92)
     db.session.add(photo93)
@@ -365,7 +365,7 @@ def seed_photos():
     db.session.add(photo97)
     db.session.add(photo98)
     db.session.add(photo99)
-    db.session.add(photo100)
+    db.session.add(photo10)
     db.session.add(photo101)
     db.session.add(photo102)
     db.session.add(photo103)
@@ -385,7 +385,7 @@ def seed_photos():
     db.session.add(photo117)
     db.session.add(photo118)
     db.session.add(photo119)
-    db.session.add(photo120)
+    db.session.add(photo10)
 
 
 

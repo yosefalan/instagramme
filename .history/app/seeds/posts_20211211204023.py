@@ -82,43 +82,17 @@ def seed_posts():
 
         HH 45 is located in the nebula NGC 1977, which itself is part of a complex of three nebulae called The Running Man. These three nebulae are reflection nebulae, which means that reflect light from nearby stars instead of emitting light on their own, like a streetlight illuminating fog.""")
     p19 = Post(
-        user_id=1, description="""
-        TFW your office is outer space.
-        ⁣
-        Here are photos of @JAXAJP astronaut Aki Hoshide and @EuropeanSpaceAgency astronaut @Thom_Astro from last weekend’s spacewalk to prepare upgrades for the @ISS solar arrays. The duo finished all spacewalk tasks in just under 7 hours while orbiting 263 miles (421 kilometers) above, bringing the concept of """)
+        user_id=1, description="""""")
     p20 = Post(
-        user_id=1, description="""For the first time, astronomers may have detected an exoplanet candidate outside of the Milky Way galaxy. Exoplanets are defined as planets outside of our solar system. All other known exoplanets and exoplanet candidates have been found in the Milky Way, almost all of them less than about 3,000 light-years from Earth.
-
-        This new result is based on transits, events in which the passage of a planet in front of a star blocks some of the star's light and produces a characteristic dip. Researchers used our @NASAChandraXray Observatory to search for dips in the brightness of X-rays received from X-ray bright binaries in the spiral galaxy Messier 51, also called the Whirlpool Galaxy (pictured here). These luminous systems typically contain a neutron star or black hole pulling in gas from a closely orbiting companion star. They estimate the exoplanet candidate would be roughly the size of Saturn, and orbit the neutron star or black hole at about twice the distance of Saturn from the Sun.
-
-        This composite image of the Whirlpool Galaxy was made with X-ray data from Chandra and optical light from our @NASAHubble Space Telescope.""")
+        user_id=1, description="""""")
     p21 = Post(
-        user_id=1, description="""Have you ever seen a total solar eclipse? How about seeing a total solar eclipse FROM SPACE?
-
-        Our robotic and human explorers are here to help. On Dec. 4, 2021, the Deep Space Climate Observatory (DSCOVR) spacecraft captured the Moon's shadow as it passed over Antarctica, home to penguins and a handful of scientists. Shaped like a cone extending into space, the shadow has a circular cross-section most easily seen during a solar eclipse. People in parts of Namibia, South Africa, New Zealand, and the Falkland Islands were treated to a partial eclipse.
-
-        How about seeing it from another perspective? Astronaut Kayla Barron snapped images of the eclipse from inside the International Space Station (@ISS). Visible in the foreground is a Russian segment of the orbiting laboratory.
-
-        A solar eclipse happens when the Moon moves between the Sun and Earth, casting a shadow on Earth, fully or partially blocking the Sun’s light in some areas. For a total solar eclipse to take place, the Sun, Moon, and Earth must line up exactly.
-
-        A joint NASA-@NOAA observatory, DSCOVR orbits about a million miles from Earth and takes a new picture of Earth every two hours with its camera called EPIC – the Earth Polychromatic Imaging Camera. Launched in 2009, DSCOVR monitors changes in the solar wind and provides space weather forecasts and alerts for solar storms that could temporarily disrupt power grids and GPS.
-        """)
+        user_id=1, description="""""")
     p22 = Post(
-        user_id=1, description="""One ring to rule them all? Not on Saturn!
-
-        Our Cassini spacecraft made 294 orbits around Saturn over 13 years before ending its mission on the ringed planet on Sept. 15, 2017.
-
-        Cassini opened our eyes to the mysteries of Saturn, and to Saturn's moons containing methane rivers, jets of ice and gas blasting material into space, and a liquid water ocean that may harbor the ingredients for life.
-
-        This artist rendering shows a wondrous view of Cassini orbiting the ringed planet.""")
+        user_id=1, description="""""")
     p23 = Post(
-        user_id=1, description="""This complex nebula is filled with glowing gases, lanes of dust, and stars of all ages—but what interests astronomers the most is what ISN'T there. One of its most distinctive features is the dark, starry gap called a “superbubble,” visible in this @NASAHubble image in the upper central region.
-
-        The hole is about 250 light-years wide and its presence is still something of a mystery. Stellar winds expelled by massive stars in the bubble's interior may have driven away the gas, but this is inconsistent with measured wind velocities in the bubble. Another possibility, since the nebula is filled with massive stars that would expire in titanic explosions, is that the expanding shells of old supernovae sculpted the cosmic cavern.""")
+        user_id=1, description="""""")
     p24 = Post(
-        user_id=1, description="""Ready for a grand tour? Our Hubble Space Telescope completed its annual view of the outer planets, revealing both extreme and subtle changes to these distant worlds. In order, we see Jupiter, Saturn, Uranus (no jokes), and Neptune.
-
-        Want to know what Hubble discovered? Head over to the @NASAHubble page.""")
+        user_id=1, description="""""")
 
 
 
