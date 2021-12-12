@@ -1,4 +1,4 @@
-from app.models import db, Follow
+from app.models import db, User
 
 
 
@@ -34,6 +34,6 @@ def seed_follows():
 # TRUNCATE Removes all the data from the table, and RESET IDENTITY
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
-def undo_follows():
-    db.session.execute('TRUNCATE follows RESTART IDENTITY CASCADE;')
+def undo_users():
+    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
     db.session.commit()

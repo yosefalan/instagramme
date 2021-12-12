@@ -35,5 +35,5 @@ def seed_follows():
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
 def undo_follows():
-    db.session.execute('TRUNCATE follows RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
     db.session.commit()

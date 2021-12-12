@@ -1,21 +1,21 @@
-from app.models import db, Follow
+from app.models import db, User
 
 
 
 # Adds a demo user, you can add other users here if you want
-def seed_follows():
-    f1 = Follow(
-        followed_id=1, follower_id=2)
-    f2 = Follow(
-        followed_id=1, follower_id=3)
-    f3 = Follow(
-        followed_id=1, follower_id=4)
-    f4 = Follow(
-        followed_id=1, follower_id=5)
-    f5 = Follow(
-        followed_id=1, follower_id=6)
-    f6 = Follow(
-        followed_id=1, follower_id=7)
+def seed_users():
+    f1 = User(
+        followed_id=1, follower_id=1)
+    f2 = User(
+        followed_id=1, follower_id=1)
+    f3 = User(
+        followed_id=1, follower_id=1)
+    f4 = User(
+        followed_id=1, follower_id=1)
+    f5 = User(
+        followed_id=1, follower_id=1)
+    f6 = User(
+        followed_id=7, follower_id=1)
 
 
     db.session.add(f1)
@@ -34,6 +34,6 @@ def seed_follows():
 # TRUNCATE Removes all the data from the table, and RESET IDENTITY
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
-def undo_follows():
-    db.session.execute('TRUNCATE follows RESTART IDENTITY CASCADE;')
+def undo_users():
+    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
     db.session.commit()
