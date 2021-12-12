@@ -14,7 +14,7 @@ function DisplayUnfollow({ userId, sessionUserId, unfollowId, setUnfollowId, unf
         setShowUnfollowModal(false);
     }
 
-    const handleRemoveClick = async (userId, sessionUserId, blockFollowerId) => {
+    const handleUnfollowClick = async (userId, sessionUserId, blockFollowerId) => {
         await dispatch(removeOneFollowed(sessionUserId, blockFollowerId));
         dispatch(getFollowing(userId));
         setUnfollowId("");
@@ -31,7 +31,7 @@ function DisplayUnfollow({ userId, sessionUserId, unfollowId, setUnfollowId, unf
                     <br></br>
                 </div>
                 <div className="block-follower-buttons-container">
-                    <div className="button-row"><div id="block-follower-button" onClick={() => handleRemoveClick(userId, sessionUserId, unfollowId)}>Unfollow</div></div>
+                    <div className="button-row"><div id="block-follower-button" onClick={() => handleUnfollowClick(userId, sessionUserId, unfollowId)}>Unfollow</div></div>
                     <div className="button-row"><div id="cancel-block-follower-button" onClick={() => handleCancelClick()}>Cancel</div></div>
                 </div>
             </div>

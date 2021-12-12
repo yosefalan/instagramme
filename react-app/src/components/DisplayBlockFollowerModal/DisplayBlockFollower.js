@@ -14,8 +14,8 @@ function DisplayBlockFollower({ userId, sessionUserId, blockFollowerId, setBlock
         setShowBlockFollowerModal(false);
     }
 
-    const handleRemoveClick = (userId, sessionUserId, blockFollowerId) => {
-        dispatch(removeFollower(sessionUserId, blockFollowerId));
+    const handleRemoveClick = async (userId, sessionUserId, blockFollowerId) => {
+        await dispatch(removeFollower(sessionUserId, blockFollowerId));
         dispatch(getFollowers(userId));
         setBlockFollowerId("");
         setBlockFollowerName("");
