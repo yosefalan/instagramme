@@ -23,7 +23,7 @@ def user(id):
 def get_user_posts(id):
     posts = Post.query.filter(Post.user_id == id).all()
     if posts:
-        return {post.id: post.to_dict() for post in posts}
+        return {post.id: post.to_dict() for post in range(0, len(posts))}
     else:
         return {}
 
@@ -37,3 +37,5 @@ def get_followers(id):
     return followers_dict
     # followers = User.query.filter(User.id.in_.user["followers"]).all()
     # return {follower.id: follower.to_dict() for follower in followers}
+
+

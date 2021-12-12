@@ -23,7 +23,7 @@ def user(id):
 def get_user_posts(id):
     posts = Post.query.filter(Post.user_id == id).all()
     if posts:
-        return {post.id: post.to_dict() for post in posts}
+        return {post.id: post.to_dict() for post in range(0posts}
     else:
         return {}
 
