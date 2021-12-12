@@ -150,27 +150,27 @@ def get_comments(id):
 @posts_routes.route('/<int:id>/comments', methods=["POST"])
 @login_required
 def create_comment(id):
-    form = CommentForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
+    req = request.get_json()
+    if req:
+        print("request", req)
         comment = Comment(
-            user_id=form.data['user_id'],
-            content=form.data['content'],
+            user_id=req['id'],
+            content=req['comment'],
             post_id=id,
-            createdAt=datetime.datetime.now,
-            updatedAt=datetime.datetime.now
+            createdAt=datetime.now(),
+            updatedAt=datetime.now()
         )
 
         db.session.add(comment)
         db.session.commit()
 
         return comment.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
 # UPDATE ONE COMMENT
 @posts_routes.route("/<int:id>/comments/<int:comment_id>", methods=["PUT"])
 @login_required
 def update_comment(id, comment_id):
+    req = request.get_json()
 
     ################### Is there a need to query for Post before deleting a comment?
 
@@ -182,8 +182,7 @@ def update_comment(id, comment_id):
     #     return post.to_dict()
     comment = Comment.query.get(comment_id)
     if comment:
-        for key, value in request.form:
-            setattr(comment, key, value)
+        comment.content = req.content
         db.session.commit()
         return comment.to_dict()
     else:
