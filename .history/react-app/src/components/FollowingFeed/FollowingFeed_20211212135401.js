@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { getFollowing } from "../../store/following";
+import { getFollowing } from "../../store/followers";
 import './FollowingFeed.css'
 
 
