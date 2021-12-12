@@ -1,7 +1,8 @@
 from flask import Blueprint, jsonify
 from flask_login import login_required
-from app.models import User, Post
-from app.models import db
+
+from app.models import db, User, Post
+
 
 user_routes = Blueprint('users', __name__)
 
@@ -38,12 +39,45 @@ def get_followers(id):
     return followers_dict
     # followers = User.query.filter(User.id.in_.user["followers"]).all()
     # return {follower.id: follower.to_dict() for follower in followers}
-@user_routes.route('/<int:id>/follow')
-def become_follower(id):
+
+
+@user_routes.route('/<int:id>/following')
+def get_following(id):
     user = User.query.get(id).to_dict()
-    if user:
-        user.followers.append(id)
-        db.session.commit()
-        return user.to_dict()
-    else:
-        return "User not found", 404
+    following = User.query.filter(User.id.in_(user["following"])).all()
+    following_dict = {}
+    for followee in following:
+        following_dict[followee.to_dict()["id"]] = followee.to_dict()
+    return following_dict
+
+# DELETE ONE FOLLOWER
+@user_routes.route('/<int:id>/followers/<int:followerId>', methods=["DELETE"])
+def delete_follower(id, followerId):
+    user = User.query.get(id)
+    follower = User.query.get(followerId)
+    user.followers.remove(follower)
+    db.session.commit()
+    return "ok", 200
+    #still working on this
+
+# UNFOLLOW ONE
+@user_routes.route('/<int:id>/following/<int:followedId>', methods=["DELETE"])
+def delete_followed(id, followedId):
+    user = User.query.get(id)
+    followed = User.query.get(followedId)
+    user.following.remove(followed)
+    db.session.commit()
+    return "ok", 200
+    #still working on this
+
+# FOLLOW ONE
+@user_routes.route('/<int:id>/following/<int:followedId>', methods=["PUT"])
+def add_followed(id, followedId):
+    user = User.query.get(id)
+    followed = User.query.get(followedId)
+    user.following.append(followed)
+    db.session.commit()
+    return "ok", 200
+    #still working on this
+
+

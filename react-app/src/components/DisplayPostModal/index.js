@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal } from '../../context/modal'
 import DisplayPost from './DisplayPost';
 import './DisplayPost.css'

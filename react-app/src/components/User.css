@@ -200,10 +200,15 @@ body {
     color:rgb(38,38,38);
 }
 
+#posts-data-text {
+    cursor:text;
+}
+
 .profile-posts-data-text {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color:rgb(38,38,38);
+    cursor:pointer;
 }
 
 .profile-data-bold {
@@ -307,6 +312,7 @@ body {
     max-height: 293px;
     align-items: center;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .profile-postpic-img {
