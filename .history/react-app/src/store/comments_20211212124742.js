@@ -92,10 +92,24 @@ const commentReducer = (state = initialState, action) => {
       console.log("da state", action);
       newState[[action.payload.id]] = action.payload;
       return newState;
-    case REMOVE_COMMENT:
-      delete state[action.id]
-      newState = {...state};
-      return newState
+    case REMOVE_COMMENT: {
+      consoloe.log("ACTION")
+      //   return {
+      //     ...state,
+      //     [action.id]: {
+      //       ...state[action.id],
+      //       items: state[action.id].items.filter(
+      //         (item) => item.id !== action.itemId
+      //       ),
+      //     },
+      //   };
+      // }
+
+
+    // case REMOVE_COMMENT:
+    //   newState = { ...state };
+    //   // delete newState[action.payload.comment.id];
+    //   return newState;
     default:
       return state;
   }

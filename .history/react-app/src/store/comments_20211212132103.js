@@ -96,6 +96,21 @@ const commentReducer = (state = initialState, action) => {
       delete state[action.id]
       newState = {...state};
       return newState
+      //   return {
+        //     ...state,
+        //     [action.id]: {
+          //       ...state[action.id],
+          //       items: state[action.id].items.filter(
+            //         (item) => item.id !== action.itemId
+            //       ),
+            //     },
+            //   };
+            // }
+
+    // case REMOVE_COMMENT:
+      //       newState = { ...state };
+      // delete newState[action.id];
+      // return newState;
     default:
       return state;
   }
