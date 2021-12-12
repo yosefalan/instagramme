@@ -18,7 +18,7 @@ const Comment = ({ post_id }) => {
   };
   useEffect(() => {
     dispatch(getAllComments(post_id));
-  }, [dispatch]);
+  }, [dispatch, post_id]);
   return (
     <div className="commentContainer">
       {comments?.reverse().map(({ id, user_id, content, username }) => (
@@ -31,11 +31,15 @@ const Comment = ({ post_id }) => {
             </div>
             <div className="commentContent">{content}</div>
           </div>
-          <button onClick={setEditableComment(true)}>Edit</button>
+          {sessionUser.id === user_id && (
+            <button onClick={() => setEditableComment(true)}>Edit</button>
+          )}
           {editableComment && (
             <>
               <input
-                value={content}
+                className="edit-comment-field"
+                defaultValue={content}
+                type="text"
                 onChange={(e) => setCommContent(e.target.value)}
               ></input>
               <button onClick={() => handleEdit(post_id, id, commContent)}>
