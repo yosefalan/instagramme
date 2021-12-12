@@ -46,8 +46,105 @@ def seed_users():
     db.session.add(u11)
 
     db.session.commit()
-    u2.followers.append(u1)
+
+
+    u1.following.append(u2)
+    u1.following.append(u3)
+    u1.following.append(u4)
+    u1.following.append(u5)
+    u1.following.append(u6)
+    # u1.followers.append(u3)
+    # u1.followers.append(u4)
+    # u1.followers.append(u7)
+    # u1.followers.append(u8)
+    # u1.followers.append(u9)
+
+    u2.following.append(u3)
+    u2.following.append(u5)
+    u2.following.append(u7)
+    u2.following.append(u9)
+    u2.following.append(u10)
+
+    u3.following.append(u1)
+    u3.following.append(u2)
+    u3.following.append(u4)
+    u3.following.append(u5)
+    u3.following.append(u6)
+    u3.following.append(u7)
+    u3.following.append(u8)
+    u3.following.append(u9)
+    u3.following.append(u10)
+    u3.following.append(u11)
+
+    u4.following.append(u1)
+    u4.following.append(u3)
+    u4.following.append(u7)
+    u4.following.append(u9)
+    u4.following.append(u10)
+
+    u5.following.append(u3)
+    u5.following.append(u4)
+    u5.following.append(u6)
+    u5.following.append(u8)
+    u5.following.append(u10)
+    u5.following.append(u11)
+
+    u6.following.append(u2)
+    u6.following.append(u3)
+    u6.following.append(u7)
+    u6.following.append(u8)
+    u6.following.append(u9)
+    u6.following.append(u11)
+
+    u7.following.append(u1)
+    u7.following.append(u2)
+    u7.following.append(u3)
+    u7.following.append(u4)
+    u7.following.append(u6)
+    u7.following.append(u8)
+    u7.following.append(u9)
+    u7.following.append(u10)
+
+    u8.following.append(u2)
+    u8.following.append(u3)
+    u8.following.append(u5)
+    u8.following.append(u7)
+    u8.following.append(u9)
+    u8.following.append(u11)
+
+    u9.following.append(u1)
+    u9.following.append(u5)
+    u9.following.append(u6)
+    u9.following.append(u7)
+    u9.following.append(u10)
+    u9.following.append(u11)
+
+    u10.following.append(u1)
+    u10.following.append(u2)
+    u10.following.append(u3)
+    u10.following.append(u4)
+    u10.following.append(u5)
+    u10.following.append(u6)
+    u10.following.append(u7)
+    u10.following.append(u8)
+    u10.following.append(u9)
+    u10.following.append(u11)
+
+    u11.following.append(u1)
+    u11.following.append(u2)
+    u11.following.append(u3)
+    u11.following.append(u4)
+    u11.following.append(u5)
+    u11.following.append(u6)
+    u11.following.append(u7)
+    u11.following.append(u8)
+    u11.following.append(u9)
+    u11.following.append(u10)
+
     db.session.commit()
+
+
+    
 
 
 # Uses a raw SQL query to TRUNCATE the users table.
