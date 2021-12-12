@@ -109,7 +109,7 @@ function User() {
               <div className="profile-name-wrapper">
                 <h2 className="profile-name"> {user.username}</h2>
                 {allowFollow && (
-                  <button
+                  <button id="profile-page-follow-button"
                     onClick={() => {
                       console.log(suser[3]);
                       handleFollow(suser[3], userId);
