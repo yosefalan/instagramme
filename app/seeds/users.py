@@ -41,6 +41,8 @@ def seed_users():
     db.session.add(u11)
 
     db.session.commit()
+    u2.followers.append(u1)
+    db.session.commit()
 
 
 # Uses a raw SQL query to TRUNCATE the users table.
