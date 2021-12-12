@@ -27,8 +27,8 @@ const NavigationBar = () => {
               <img className="navLogo" className="navIcon" src={home}></img>
             </NavLink>
             <UploadModal />
-            <img className="navLogo" className="navIcon" src={explore}></img>
-            <img className="navLogo" className="navIcon" src={like}></img>
+            {/* <img className="navLogo" className="navIcon" src={explore}></img> */}
+            {/* <img className="navLogo" className="navIcon" src={like}></img> */}
             <div className="sessionLinks">
               <ProfileButton user={sessionUser} />
             </div>

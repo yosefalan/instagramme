@@ -12,6 +12,7 @@ const load = (followers) => ({
     followers
 });
 
+
 const add = (follower) => ({
     type: ADD_FOLLOWER,
     follower,
