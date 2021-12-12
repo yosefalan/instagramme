@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
-import { addFollower } from "../store/followers";
+import { addFollowed } from "../store/following";
+import { authenticate } from "../store/session";
 
 import "./User.css";
 import Footer from "./Footer/Footer";
@@ -53,8 +54,9 @@ function User() {
     setShowModal(true);
   };
 
-  const handleFollow = (id) => {
-    dispatch(addFollower(id));
+  const handleFollow = async (sessionUserId, followedId) => {
+    dispatch(addFollowed(sessionUserId, followedId));
+    window.location.reload(false);
   };
 
   const handleFollowingClick = (userId) => {
@@ -109,7 +111,8 @@ function User() {
                 {allowFollow && (
                   <button
                     onClick={() => {
-                      handleFollow(suser.id);
+                      console.log(suser[3]);
+                      handleFollow(suser[3], userId);
                     }}
                   >
                     Follow
