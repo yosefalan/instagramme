@@ -1,0 +1,18 @@
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(250, 250, 250);
+  width: 100vw;
+}
+
+.feed-center-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(250, 250, 250)
+}

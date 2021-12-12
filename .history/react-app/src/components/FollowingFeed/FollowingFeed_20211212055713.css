@@ -1,0 +1,21 @@
+.following-feed-container {
+  display: flex;
+  width: 600px;
+  height: 118px;
+  background-color: #FFFFFF;
+  border: 1px solid #dfdfdf;
+}
+
+
+.following-feed-pic-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+#following-feed-heading-text {
+object-fit:cover;
+width: 70px;
+height: 40px;
+
+}
