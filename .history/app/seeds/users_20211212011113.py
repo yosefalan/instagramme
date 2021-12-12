@@ -14,8 +14,6 @@ def seed_users():
         username='8thdamon', email='8thdamon@mail.com', profile_image='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/profile_pics/8thdamon_44631416_1758020310991589_2015343799408001024_n.jpg', password='password')
     u5 = User(
         username='architecture_hunter', email='architecture_hunter@mail.com', profile_image='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/profile_pics/Screenshot+2021-12-11+161959.png', password='password')
-    u6 = User(
-        username='beatifuldestinations', email='beatifuldestinations@mail.com', profile_image='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/profile_pics/beautifuldestinations_70407954_391397441514568_6341081271908696064_n.jpg', password='password')
     u7 = User(
         username='coryrichards', email='coryrichards@mail.com', profile_image='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/profile_pics/coryrichards_160305831_460242368407794_6869638752963182742_n.jpg', password='password')
     u8 = User(
@@ -26,6 +24,8 @@ def seed_users():
         username='streetart', email='streetart@mail.com', profile_image='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/profile_pics/streetart_47693045_138353037100636_8955888861003644928_n.jpg', password='password')
     u11 = User(
         username='tobishinobi', email='tobishinobi@mail.com', profile_image='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/profile_pics/tobishinobi_58950168_338527316861296_1427657913853280256_n.jpg', password='password')
+    u6 = User(
+        username='beatifuldestinations', email='beatifuldestinations@mail.com', profile_image='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/profile_pics/beautifuldestinations_70407954_391397441514568_6341081271908696064_n.jpg', password='password')
 
 #   u5 = User(
 #         username='coryrichards', email='coryrichards@mail.com', profile_image='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/profile_pics/coryrichards_160305831_460242368407794_6869638752963182742_n.jpg', password='password')
