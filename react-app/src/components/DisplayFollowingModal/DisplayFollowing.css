@@ -1,0 +1,133 @@
+.follows-modal-container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.follows-modal-heading {
+    display: flex;
+    padding-bottom: .5em;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: .5em;
+    margin-top: .5em;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+#follows-modal-heading-text {
+    width:fit-content;
+    font-weight: bold;
+    color:rgb(38, 38, 38);
+}
+
+.follows-modal-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.follows-modal-list-row {
+    align-content: stretch;
+    align-items:center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: flex-start;
+    height: 46px;
+    width: 100%;
+    padding: 8px 16px 8px 16px;
+    font-size: 14px;
+}
+
+.follows-modal-profile-pic-container {
+    display: block;
+    box-sizing: border-box;
+    height: 40px;
+    width: 40px;
+    margin-right: 12px;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: relative;
+    border-radius: 50%;
+    overflow:hidden;
+}
+
+#followed-profile-pic {
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+    background-color:rgb(219,219,219);
+}
+
+.follows-modal-username {
+    flex-basis: auto;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: stretch;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    width: 200px;
+    cursor: pointer;
+}
+
+.follows-modal-list-button-container {
+    margin-left: auto;
+    flex-basis: auto;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    align-content: stretch;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+}
+
+.follows-modal-remove-button {
+    display: block;
+    background-color: #fff;
+    color: rgb(38,38,38);
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 5px 9px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgb(219, 219, 219);
+}
+
+.follows-modal-follow-button {
+    display: block;
+    background-color: #0095F6;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 5px 9px;
+    position: relative;
+    cursor: pointer;
+    border: none;
+}
+
+.follows-modal-following-button {
+    display: block;
+    background-color: #fff;
+    color: rgb(38, 38, 38);
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 5px 9px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgb(219, 219, 219);
+}

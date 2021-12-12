@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { Modal } from '../../context/modal'
 import DisplayFollowers from './DisplayFollowers';
 import './DisplayFollowers.css';
@@ -13,7 +13,6 @@ function DisplayFollowersModal({ userId, setShowFollowersModal }) {
             <Modal onClose={() => setShowFollowersModal(false)}>
                 <DisplayFollowers userId={userId} setShowFollowersModal={setShowFollowersModal} />
             </Modal>
-            )
         </>
     );
 }

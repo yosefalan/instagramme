@@ -2,25 +2,35 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
+import { addFollower } from "../store/followers";
 
-import './User.css';
+import "./User.css";
 import Footer from "./Footer/Footer";
 
 import DisplayPostModal from "./DisplayPostModal/index";
 import DisplayFollowersModal from "./DisplayFollowersModal";
-
+import DisplayFollowingModal from "./DisplayFollowingModal";
 
 function User() {
   const [user, setUser] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [postId, setPostId] = useState("");
+  const [allowFollow, setAllowFollow] = useState(false);
   const { userId } = useParams();
   const dispatch = useDispatch();
+  const suser = useSelector((state) => Object.values(state.session.user));
   const posts = useSelector((state) => Object.values(state.posts));
   const [showFollowersModal, setShowFollowersModal] = useState(false);
+  const [showFollowingModal, setShowFollowingModal] = useState(false);
 
-  let sessionUser = {};
-  sessionUser["id"] = 0;
+  // let sessionUser = {};
+  // sessionUser["id"] = 0;
+
+  const checkProfile = () => {
+    if (suser[3] !== +userId && !suser[2].includes(+userId)) {
+      setAllowFollow(true);
+    }
+  };
 
   useEffect(() => {
     if (!userId) {
@@ -34,25 +44,30 @@ function User() {
   }, [userId]);
 
   useEffect(() => {
+    checkProfile();
     dispatch(getUserPosts(userId));
   }, [dispatch, userId]);
 
   const handleClick = (postId) => {
+    setPostId(postId);
+    setShowModal(true);
+  };
 
-    setPostId(postId)
-    setShowModal(true)
+  const handleFollow = (id) => {
+    dispatch(addFollower(id));
+  };
 
-  }
-
+  const handleFollowingClick = (userId) => {
+    setShowFollowingModal(true);
+  };
 
   const handleFollowersClick = (userId) => {
     setShowFollowersModal(true);
-  }
+  };
 
   if (!user) {
     return null;
   }
-
   return (
     <>
       <main className="profile-main-container">
@@ -74,19 +89,38 @@ function User() {
               </div>
             </div>
             <section className="profile-section">
+              {showFollowingModal && (
+                <DisplayFollowingModal
+                  userId={userId}
+                  setShowFollowingModal={setShowFollowingModal}
+                />
+              )}
               {showFollowersModal && (
-                <DisplayFollowersModal userId={userId} setShowFollowersModal={setShowFollowersModal}/>
+                <DisplayFollowersModal
+                  userId={userId}
+                  setShowFollowersModal={setShowFollowersModal}
+                />
               )}
               {showModal && (
                 <DisplayPostModal postId={postId} setShowModal={setShowModal} />
               )}
               <div className="profile-name-wrapper">
                 <h2 className="profile-name"> {user.username}</h2>
-                <div>
+                {allowFollow && (
+                  <button
+                    onClick={() => {
+                      handleFollow(suser.id);
+                    }}
+                  >
+                    Follow
+                  </button>
+                )}
+                {/* <div>
+
                   <div>
                     {user.id === sessionUser.id && <a href="">Edit Profile</a>}
                   </div>
-                </div>
+                </div> */}
                 <div className="cog-container">
                   <div>
                     <div></div>
@@ -95,40 +129,48 @@ function User() {
               </div>
               <ul className="profile-data-list">
                 <li className="profile-posts-data">
-                  <span>
-                    <span className="profile-data-bold">
-                      {posts?.length || 0}
-                    </span>{" "}
-                    {posts.length == 1 ? "post" : "posts"}
-                  </span>
-                </li>
-                <li className="profile-posts-data">
-                  <div className="profile-posts-data-text" onClick = {() => {handleFollowersClick(userId)}}>
-                    <span className="profile-data-bold">
-                      {user.followers?.length || 0}
-                    </span>{" "}
-                    {user.followers == 1 ? "follower" : "followers"}
+                  <div className="profile-posts-data-text" id="posts-data-text">
+                    <span className="profile-data-bold">{posts?.length}</span>{" "}
+                    {posts.length === 1 ? "post" : "posts"}
                   </div>
                 </li>
                 <li className="profile-posts-data">
-                  <a className="profile-posts-data-text" href="">
+                  <div
+                    className="profile-posts-data-text"
+                    onClick={() => {
+                      handleFollowersClick(userId);
+                    }}
+                  >
                     <span className="profile-data-bold">
-                      {user.following?.length || 0}
+                      {user.followers?.length}
+                    </span>{" "}
+                    {user.followers === 1 ? "follower" : "followers"}
+                  </div>
+                </li>
+                <li className="profile-posts-data">
+                  <div
+                    className="profile-posts-data-text"
+                    onClick={() => {
+                      handleFollowingClick(userId);
+                    }}
+                  >
+                    <span className="profile-data-bold">
+                      {user.following?.length}
                     </span>{" "}
                     following
-                  </a>
+                  </div>
                 </li>
               </ul>
               <div>
-                <h1 className="profile-first-last-name">Firstname Lastname</h1>
+                {/* <h1 className="profile-first-last-name">Firstname Lastname</h1> */}
                 <br></br>
               </div>
             </section>
           </header>
           <div className="profile-posts-table-list">
-            <a className="profile-posts-table-item" href="">
+            <div className="profile-posts-table-item" href="">
               <span className="profile-posts-table-span">Posts</span>
-            </a>
+            </div>
           </div>
           <div className="profile-gallery-container">
             {posts?.map((post) => {
