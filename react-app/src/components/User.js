@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
 
-import './User.css';
+import "./User.css";
 import Footer from "./Footer/Footer";
 
 import DisplayPostModal from "./DisplayPostModal/index";
@@ -11,18 +11,29 @@ import DisplayFollowersModal from "./DisplayFollowersModal";
 import DisplayFollowingModal from "./DisplayFollowingModal";
 
 
+
 function User() {
   const [user, setUser] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [postId, setPostId] = useState("");
+  const [allowFollow, setAllowFollow] = useState(false);
   const { userId } = useParams();
   const dispatch = useDispatch();
+  const suser = useSelector((state) => Object.values(state.session.user));
   const posts = useSelector((state) => Object.values(state.posts));
   const [showFollowersModal, setShowFollowersModal] = useState(false);
   const [showFollowingModal, setShowFollowingModal] = useState(false);
 
   // let sessionUser = {};
   // sessionUser["id"] = 0;
+
+  const checkProfile = () => {
+    console.log("sessionUser", suser);
+    console.log(userId);
+    if (suser[3] !== +userId && !suser[2].includes(+userId)) {
+      setAllowFollow(true);
+    }
+  };
 
   useEffect(() => {
     if (!userId) {
@@ -36,6 +47,7 @@ function User() {
   }, [userId]);
 
   useEffect(() => {
+    checkProfile();
     dispatch(getUserPosts(userId));
   }, [dispatch, userId]);
 
@@ -50,14 +62,14 @@ function User() {
     setShowFollowingModal(true)
   }
 
+
   const handleFollowersClick = (userId) => {
     setShowFollowersModal(true);
-  }
+  };
 
   if (!user) {
     return null;
   }
-
   return (
     <>
       <main className="profile-main-container">
@@ -81,6 +93,7 @@ function User() {
             <section className="profile-section">
               {showFollowingModal && (
                 <DisplayFollowingModal userId={userId} setShowFollowingModal={setShowFollowingModal} />
+
               )}
               {showFollowersModal && 
                 <DisplayFollowersModal userId={userId} setShowFollowersModal={setShowFollowersModal} />}
@@ -89,6 +102,7 @@ function User() {
               <div className="profile-name-wrapper">
                 <h2 className="profile-name"> {user.username}</h2>
                 {/* <div>
+
                   <div>
                     {user.id === sessionUser.id && <a href="">Edit Profile</a>}
                   </div>
@@ -109,7 +123,12 @@ function User() {
                   </div>
                 </li>
                 <li className="profile-posts-data">
-                  <div className="profile-posts-data-text" onClick = {() => {handleFollowersClick(userId)}}>
+                  <div
+                    className="profile-posts-data-text"
+                    onClick={() => {
+                      handleFollowersClick(userId);
+                    }}
+                  >
                     <span className="profile-data-bold">
                       {user.followers?.length}
                     </span>{" "}

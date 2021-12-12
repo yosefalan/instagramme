@@ -5,10 +5,15 @@ const LOAD_FOLLOWERS = "followers/LOAD_FOLLOWERS";
 const REMOVE_FOLLOWER = "followers/REMOVE_FOLLOWER";
 const RESET_FOLLOWERS = "followers/RESET_FOLLOWERS"
 
+
 const load = (followers) => ({
     type: LOAD_FOLLOWERS,
     followers
 });
+const add = (follower) => ({
+    type: ADD_FOLLOWER,
+    follower,
+})
 
 const removeOne = (followerId) => ({
     type: REMOVE_FOLLOWER,
@@ -41,6 +46,7 @@ export const removeFollower = (userId, followerId) => async (dispatch) => {
 export const resetFollowers = () => async (dispatch) => {
     dispatch(reset());
 }
+
 
 const initialState = [];
 

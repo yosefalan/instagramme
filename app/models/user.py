@@ -51,13 +51,15 @@ class User(db.Model, UserMixin):
         return check_password_hash(self.password, password)
 
     def to_dict(self):
+        followers = [user.id for user in self.followers]
+        followers.append(self.id)
+        following = [user.id for user in self.following]
+        following.append(self.id)
         return {
             'id': self.id,
             'username': self.username,
             'email': self.email,
             'profile_image': self.profile_image,
-            'followers': [user.id for user in self.followers],
-            'following': [user.id for user in self.following],
-            'followers_names': [user.id for user in self.followers],
-            'following_names': [user.id for user in self.followers]
+            'followers': followers,
+            'following': following,
         }

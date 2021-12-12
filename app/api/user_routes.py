@@ -1,6 +1,8 @@
 from flask import Blueprint, jsonify
 from flask_login import login_required
+
 from app.models import db, User, Post
+
 
 user_routes = Blueprint('users', __name__)
 
@@ -37,6 +39,7 @@ def get_followers(id):
     return followers_dict
     # followers = User.query.filter(User.id.in_.user["followers"]).all()
     # return {follower.id: follower.to_dict() for follower in followers}
+
 
 @user_routes.route('/<int:id>/following')
 def get_following(id):
@@ -76,4 +79,5 @@ def add_followed(id, followedId):
     db.session.commit()
     return "ok", 200
     #still working on this
+
 
