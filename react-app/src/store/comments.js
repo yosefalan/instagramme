@@ -25,7 +25,6 @@ const deleteComment = (id) => ({
 });
 
 export const getAllComments = (id) => async (dispatch) => {
-  console.log("id", id);
   const response = await csrfFetch(`/api/posts/${id}/comments`);
   if (response.ok) {
     const data = await response.json();
@@ -47,16 +46,14 @@ export const addAComment = (pid, id, comment) => async (dispatch) => {
 };
 
 export const updateAComment = (id, cid, content) => async (dispatch) => {
-  console.log("the trio", id, cid, content);
   const response = await csrfFetch(`/api/posts/${id}/comments/${cid}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ content }),
   });
-  console.log("response", response);
+
   if (response.ok) {
     const data = await response.json();
-    console.log(data);
     dispatch(updateComment(data));
     return data;
   }
@@ -89,7 +86,6 @@ const commentReducer = (state = initialState, action) => {
       return newState;
     case UPDATE_COMMENT:
       newState = { ...state };
-      console.log("da state", action);
       newState[[action.payload.id]] = action.payload;
       return newState;
     case REMOVE_COMMENT:

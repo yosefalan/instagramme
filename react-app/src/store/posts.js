@@ -18,10 +18,10 @@ const update = (post) => ({
   post,
 });
 
-const add = (post) => ({
-  type: ADD_POST,
-  post,
-});
+// const add = (post) => ({
+//   type: ADD_POST,
+//   post,
+// });
 
 const remove = (postId) => ({
   type: REMOVE_POST,
@@ -31,7 +31,6 @@ const remove = (postId) => ({
 //thunk action dispatchers
 
 export const getPosts = () => async (dispatch) => {
-  console.log("############", "this is regular get");
   const response = await csrfFetch("/api/posts/");
 
   if (response.ok) {
@@ -41,7 +40,6 @@ export const getPosts = () => async (dispatch) => {
 };
 
 export const getUserPosts = (userId) => async (dispatch) => {
-  console.log("############", "this is user get");
   const response = await csrfFetch(`/api/users/${userId}/posts`);
 
   if (response.ok) {
@@ -76,7 +74,6 @@ export const getUserPosts = (userId) => async (dispatch) => {
 /************************************************** */
 
 export const createPost = (postData) => async (dispatch) => {
-  console.log("))))))))))))))))", postData);
   const { user_id, description, file } = postData;
 
   const form = new FormData();
@@ -91,7 +88,6 @@ export const createPost = (postData) => async (dispatch) => {
 };
 
 export const editPost = (id, postData) => async (dispatch) => {
-  console.log("post", postData);
   const response = await csrfFetch(`/api/posts/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -118,7 +114,6 @@ const initialState = {};
 
 const postsReducer = (state = initialState, action) => {
   let newState = {};
-  console.log("########", action);
   switch (action.type) {
     case LOAD_POSTS:
       let posts = Object.values(action.posts);
@@ -137,7 +132,6 @@ const postsReducer = (state = initialState, action) => {
     case ADD_LIKE:
       newState = { ...state };
       newState[action.payload.post_id].likes.push([action.payload.user_id, action.payload.post_id, action.payload.like]);
-      console.log("123456*****", action.payload);
       return newState;
     default:
       return state;

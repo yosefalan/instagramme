@@ -110,7 +110,6 @@ function User() {
                 {allowFollow && (
                   <button id="profile-page-follow-button"
                     onClick={() => {
-                      console.log(suser[3]);
                       handleFollow(suser[3], userId);
                     }}
                   >
