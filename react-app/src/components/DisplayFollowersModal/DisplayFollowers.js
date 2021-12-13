@@ -48,6 +48,7 @@ function DisplayFollowers({userId, setShowFollowersModal}) {
     const handleFollowClick = (userId, sessionUserId, followedId) => {
         dispatch(addFollowed(sessionUserId, followedId));
         dispatch(getFollowers(userId));
+        window.location.reload(false);
     }
 
     return (
