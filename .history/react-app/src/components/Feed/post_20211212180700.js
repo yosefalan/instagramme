@@ -16,9 +16,10 @@ const Post = ({
   comments,
   photos,
   profile_image,
-}) => {
+}) => {}
 
 
+{
   return (
     <div className="post-box">
       <div className="user">

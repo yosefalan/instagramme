@@ -18,6 +18,8 @@ const Post = ({
   profile_image,
 }) => {
 
+console.log("@@@@@@@@@@@@@@", id)
+
 
   return (
     <div className="post-box">

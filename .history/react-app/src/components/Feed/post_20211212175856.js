@@ -17,8 +17,6 @@ const Post = ({
   photos,
   profile_image,
 }) => {
-
-
   return (
     <div className="post-box">
       <div className="user">
@@ -33,7 +31,7 @@ const Post = ({
       <div className="description">{description}</div>
       <div className="post-icons">
       <img src={like} className="like-icon"></img>
-      <img src={comment} className="comment-icon"></img>
+      <img src={comment}></img>
       </div>
       <div className="likes">{likes} likes</div>
       <div className="comments">{comments} comments</div>

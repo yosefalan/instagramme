@@ -19,6 +19,8 @@ const Post = ({
 }) => {
 
 
+
+  
   return (
     <div className="post-box">
       <div className="user">

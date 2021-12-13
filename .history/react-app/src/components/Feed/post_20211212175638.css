@@ -46,14 +46,10 @@
 }
 
 .post-icons {
-  width: 568px;
   height: 40px;
-  padding: 6px 16px 8px 16px;
+  
 }
 
-.like-icon {
-  margin-right: 10px;
-}
 .profile-image-post {
   width: 40px;
   margin: 10px;
