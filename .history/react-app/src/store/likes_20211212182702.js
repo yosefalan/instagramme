@@ -30,11 +30,23 @@ export const fetchLikes = () => async (dispatch) => {
   }
 };
 
+export const likePost = (postId) => async (dispatch) => {
+  const res = await fetch(`/api/likes/${postId}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data = await res.json();
+  dispatch(getFollowingPosts(data));
+};
 
-export const addLike = (data, postId) => async (dispatch) => {
+
+export const addNewReview = (data, postId) => async (dispatch) => {
   const res = await csrfFetch(`/api/posts/${postId}/likes`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
   });
   if (res.ok) {
     const like = await res.json();

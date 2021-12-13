@@ -31,6 +31,7 @@ export const fetchLikes = () => async (dispatch) => {
 };
 
 
+
 export const addLike = (data, postId) => async (dispatch) => {
   const res = await csrfFetch(`/api/posts/${postId}/likes`, {
     method: "POST",

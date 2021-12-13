@@ -205,5 +205,3 @@ def delete_comment(id, comment_id):
         return 'Ok', 200
     else:
         return "Post not found", 404
-
-

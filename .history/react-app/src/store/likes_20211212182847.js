@@ -30,6 +30,17 @@ export const fetchLikes = () => async (dispatch) => {
   }
 };
 
+// export const addLike = (postId) => async (dispatch) => {
+//   const res = await fetch(`/api/posts/${postId}/likes`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   });
+//   const data = await res.json();
+//   dispatch(getFollowingPosts(data));
+// };
+
 
 export const addLike = (data, postId) => async (dispatch) => {
   const res = await csrfFetch(`/api/posts/${postId}/likes`, {
