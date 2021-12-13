@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getPosts,
-  createPost,
-  editPost,
-  deletePost,
 } from "../../store/posts";
 import Post from "./post";
 import DisplayPostModal from "../DisplayPostModal/index";
@@ -13,7 +10,6 @@ import "./Feed.css";
 
 const Feed = () => {
   const sessionUser = useSelector((state) => state.session.user);
-  console.log("user info", sessionUser);
   const dispatch = useDispatch();
   const posts = useSelector((state) => Object.values(state.posts));
   const [showModal, setShowModal] = useState(false);
@@ -49,6 +45,7 @@ const Feed = () => {
             profile_image,
           }) => (
             // <div onClick={() => handleClick(id)}>
+
               <Post
                 id={id}
                 user_id={user_id}

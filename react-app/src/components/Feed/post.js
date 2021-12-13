@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./post.css";
+
 import DisplayPostModal from "../User";
 import like_empty from './images/likes.png'
+
 import liked from './images/likes_filled_red.png'
 import comment from './images/comment.png'
 import { addLike } from "../../store/likes";
+import like_empty from "./images/likes.png"
 
 const Post = ({
   id,
@@ -37,13 +40,12 @@ const sessionUser = useSelector((state) => state.session.user)
 
 
 
-console.log("LIKES:", likes)
 const dispatch = useDispatch();
 
 const like = (id, user_id) => {
-  console.log(sessionUser.id);
   dispatch(addLike(id, sessionUser.id))
 };
+
 
 
   return (

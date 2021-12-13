@@ -31,7 +31,7 @@ const Comment = ({ post_id }) => {
   return (
     <div className="commentContainer">
       {comments?.reverse().map(({ id, user_id, content, username }) => (
-        <>
+        <div key={id}>
           <div className="commentBox">
             <div className="username_link">
               <NavLink className="comment-username" to={`/users/${user_id}`}>
@@ -59,7 +59,7 @@ const Comment = ({ post_id }) => {
               </button>
             </>
           )}
-        </>
+        </div>
       ))}
     </div>
   );
