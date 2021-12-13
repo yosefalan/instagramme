@@ -333,3 +333,16 @@ body {
     left: 0px;
     position: absolute; */
 }
+
+#profile-page-follow-button {
+    display: block;
+    background-color: #0095F6;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 5px 9px;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    margin-left: 1em;
+}
