@@ -17,17 +17,46 @@ const Post = ({
   comments,
   photos,
   profile_image,
+
+  // openPost
 }) => {
 
 
-// const like = (id) => {
-//   dispatch(likePost(id))
-// };
+// const [showModal, setShowModal] = useState(false);
+// const [postId, setPostId] = useState(id);
+// const handleClick = (id) => {
+//   setPostId(id);
+//   setShowModal(true);
+// }
+
+const post_likes = useSelector((state) => state.posts[id].likes)
+
+const total_likes = new Set(post_likes.filter((like) => like[2] === true).map((like) => like[0]))
+
+const sessionUser = useSelector((state) => state.session.user)
+
+
+
+console.log("LIKES:", likes)
+const dispatch = useDispatch();
+
+const like = (id, user_id) => {
+  console.log(sessionUser.id);
+  dispatch(addLike(id, sessionUser.id))
+};
+
+const unlike = (id) => {
+  dispatch(addUnlike(id))
+};
+
 
   return (
     <div className="post-box">
+      {/* {showModal && (
+        <DisplayPostModal postId={postId} setShowModal={setShowModal} />
+      )} */}
       <div className="user">
-        <img className="profile-image-post" src={profile_image} />
+        <img className="profile-image-post" src={profile_image}/>
         <NavLink className="username_link" to={`/users/${user_id}`}>
           {username}
         </NavLink>
@@ -38,10 +67,13 @@ const Post = ({
       </div>
       <div className="description">{description}</div>
       <div className="post-icons">
-      <img src={like} className="like-icon"></img>
-      <img src={comment} className="comment-icon"></img>
+
+        {total_likes.has(sessionUser.id) ? <img src={liked} className="like-icon"></img> : <img src={like_empty}
+      className="like-icon" onClick={() => like(id, user_id)}></img>}
+      {/* <img src={liked} className="like-icon"></img> */}
+        <img src={comment} className="comment-icon"></img>
       </div>
-      <div className="likes">{likes} likes</div>
+      <div className="likes">{total_likes.size} likes</div>
       <div className="comments">{comments} comments</div>
     </div>
   );

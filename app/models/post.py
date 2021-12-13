@@ -32,7 +32,7 @@ class Post(db.Model):
             'profile_image': self.user.profile_image,
             'description': self.description,
             'photos': self.photos[0].url,
-            'likes': len(self.likes),
+            'likes': [list((like.user_id, like.post_id, like.like)) for like in self.likes],
             'comments': len(self.comments),
             'profile_image': self.user.profile_image,
         }

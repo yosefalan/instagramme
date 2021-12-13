@@ -58,6 +58,7 @@ const Feed = () => {
                 comments={comments}
                 photos={photos}
                 profile_image={profile_image}
+                // openPost={handleClick}
                 />
             </div>
             )

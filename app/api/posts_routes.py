@@ -1,6 +1,6 @@
 from flask import Blueprint, request, session, jsonify
 from flask_login import login_required
-from app.models import Post, Photo, User, Comment
+from app.models import Post, Photo, User, Comment, Like
 from wtforms.validators import DataRequired
 from app.forms.post_form import PostForm
 from app.forms.comment_form import CommentForm
@@ -167,4 +167,18 @@ def delete_comment(id, comment_id):
     else:
         return "Post not found", 404
 
+
+# CREATE A LIKE
+@posts_routes.route("/<int:pid>/likes/<int:uid>", methods=["POST"])
+def add_like(uid, pid):
+    req = request.get_json()
+    print("##########", req["like"])
+    like = Like(
+        like=req['like'],
+        user_id=uid,
+        post_id=pid,
+    )
+    db.session.add(like)
+    db.session.commit()
+    return like.to_dict()
 
