@@ -106,12 +106,14 @@ function DisplayPost({ postId, setShowModal }) {
             {post.description}
           </div>
 
-          <div className="right-column-div">
+          <div className="right-column-div" id="comments-row">
             <Comment post_id={postId} />
           </div>
           {/* <div className="right-column-div">Button Bar</div> */}
+
           <div className="right-column-div">
             {total_likes.size} {total_likes.size === 1 ? "like" : "likes"}
+
           </div>
           <div className="right-column-div">
             <CommentForm pid={post.id} />

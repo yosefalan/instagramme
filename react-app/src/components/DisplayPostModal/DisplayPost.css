@@ -46,6 +46,8 @@
 #top-right-container {
   display: flex;
   justify-content: space-between;
+  height: 50px;
+  box-sizing: border-box;
 }
 
 
@@ -56,6 +58,22 @@
 }
 .right-column-div {
   padding: 1em;
+}
+
+#post-description-edit {
+  min-height: 20%;
+  max-height: 30%;
+  overflow-y: scroll;
+}
+
+#comments-row {
+  max-height: 30%;
+  overflow-y: scroll;
+}
+
+#likes-button-bar {
+  height:fit-content;
+  padding: .8em;
 }
 
 #profile-pic-holder {
@@ -70,6 +88,7 @@
   width: 28px;
   height: 28px;
 }
+
 .postBtn {
   border: none;
   color: rgb(60, 142, 230);

@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./post.css";
 import DisplayPostModal from "../User";
-import like_empty from './images/likes.png'
+import like from './images/likes.png'
 import liked from './images/likes_filled_red.png'
 import comment from './images/comment.png'
-import { addLike, addUnlike } from "../../store/likes";
+import { addLike } from "../../store/likes";
 
 const Post = ({
   id,
@@ -20,6 +20,7 @@ const Post = ({
 
   // openPost
 }) => {
+
 
 // const [showModal, setShowModal] = useState(false);
 // const [postId, setPostId] = useState(id);
@@ -66,6 +67,7 @@ const unlike = (id) => {
       </div>
       <div className="description">{description}</div>
       <div className="post-icons">
+
         {total_likes.has(sessionUser.id) ? <img src={liked} className="like-icon"></img> : <img src={like_empty}
       className="like-icon" onClick={() => like(id, user_id)}></img>}
       {/* <img src={liked} className="like-icon"></img> */}

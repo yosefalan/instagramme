@@ -10,7 +10,7 @@ import boto3
 import botocore
 from app.config import Config
 from app.aws_s3 import upload_file_to_s3
-from  sqlalchemy.sql.expression import func
+
 
 posts_routes = Blueprint('posts', __name__)
 
@@ -45,7 +45,7 @@ def posts():
     userId = session['_user_id']
     user = User.query.get(userId).to_dict()
     results = Post.query.filter(Post.user_id.in_(
-        user["following"])).order_by(func.random()).limit(50).all()
+        user["following"])).order_by(Post.createdAt.desc()).all()
 
     results_dict = {post.id: post.to_dict() for post in results}
     return results_dict
@@ -167,6 +167,7 @@ def delete_comment(id, comment_id):
     else:
         return "Post not found", 404
 
+
 # CREATE A LIKE
 @posts_routes.route("/<int:pid>/likes/<int:uid>", methods=["POST"])
 def add_like(uid, pid):
@@ -180,3 +181,4 @@ def add_like(uid, pid):
     db.session.add(like)
     db.session.commit()
     return like.to_dict()
+

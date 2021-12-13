@@ -31,6 +31,7 @@ export const fetchLikes = () => async (dispatch) => {
 };
 
 
+
 export const addLike = (id, user_id) => async (dispatch) => {
   const data = { id, user_id}
   const res = await csrfFetch(`/api/posts/${id}/likes/${user_id}`, {
@@ -46,7 +47,7 @@ export const addLike = (id, user_id) => async (dispatch) => {
   }
 };
 
-export const addUnlike = (postId, id) => async (dispatch) => {
+export const deleteLike = (postId, id) => async (dispatch) => {
   const response = await csrfFetch(`/api/posts/${postId}/likes/${id}`, {
     method: "PUT",
   });

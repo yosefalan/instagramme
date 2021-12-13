@@ -76,6 +76,7 @@ export const getUserPosts = (userId) => async (dispatch) => {
 /************************************************** */
 
 export const createPost = (postData) => async (dispatch) => {
+  console.log("))))))))))))))))", postData);
   const { user_id, description, file } = postData;
 
   const form = new FormData();

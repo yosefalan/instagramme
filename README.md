@@ -1,4 +1,5 @@
 # Mambas - Instagramme (Instagram) - Flask React Group Project
+<img src='https://i.imgur.com/OBiiMKY.png'>
 
 This is the README for the final group project from App Academy.
 The project was inspired by Instagram and build using Javascript,
@@ -66,18 +67,29 @@ React.js and Redux for the front end and Python with Flask for the backend.
 >The live link for this project is located here: https://instagramme-mambas.herokuapp.com/
 
 # What You Can Do
->Your objective is to test the functionality of all features, buttons and links.
 
 >You can log in as a demo user with the `Demo Login` button on the login form or landing page.
+
 >You can log in as a user of your choice, using the credentials you selected when creating an account.
 
->You can add posts with the `Add` button.
->You can edit your posts with the `Edit` button.
->You can delete your posts with the `Delete` button.
+<img src='https://i.imgur.com/dsJ79cF.png'>
 
->You can add comments with the `Add` button.
+>You can add posts with the `Add` button in the Navigation Component
+<img src='https://i.imgur.com/LdNQmEc.png'>
+
+>You can edit your posts with the `Edit` button.
+<img src='https://i.imgur.com/Ri5V7yh.png'>
+
+>You can delete your posts with the `Delete` button.
+<img src='https://i.imgur.com/PdHDfXd.png'>
+
+>You can add comments in the `Add a comment` block with the `Submit` button.
+<img src='https://i.imgur.com/abb8aPr.png'>
+
 >You can edit your comments with the `Edit` button.
+
 >You can delete your comments with the `Delete` button.
+<img src='https://i.imgur.com/Hvm2uEp.png'>
 
 # Technical Details
 >This project was done during the week of December 6th - 12th, 2021.
@@ -186,8 +198,16 @@ React.js and Redux for the front end and Python with Flask for the backend.
 # To-Do List
 >Like/unlike posts and comments
 
->Report questions or answers for offensiveness
-
 >Continously refine css to look modern
 
 >Search feature
+
+>Explore feature
+
+# Screen Candy
+<img src='https://i.imgur.com/lvFusuh.png'>
+<img src='https://i.imgur.com/JfMl4ez.png'>
+<img src='https://i.imgur.com/5gYDYdr.png'>
+<img src='https://i.imgur.com/QiwmMzc.png'>
+<img src='https://i.imgur.com/DAuh3IA.png'>
+<img src='https://i.imgur.com/5dEhv4X.jpg'>

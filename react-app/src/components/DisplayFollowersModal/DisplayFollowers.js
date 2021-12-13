@@ -48,6 +48,7 @@ function DisplayFollowers({userId, setShowFollowersModal}) {
     const handleFollowClick = (userId, sessionUserId, followedId) => {
         dispatch(addFollowed(sessionUserId, followedId));
         dispatch(getFollowers(userId));
+        window.location.reload(false);
     }
 
     return (
@@ -69,7 +70,7 @@ function DisplayFollowers({userId, setShowFollowersModal}) {
                                 <div className="follows-modal-profile-pic-container"><img id="follower-profile-pic" src={follower.profile_image} alt=""></img></div>
                                 <div className="follows-modal-username"><div className="follows-modal-username-link" onClick={() => {handleClick(follower.id)}}>{follower.username}</div></div>
                                 <div className="follows-modal-list-button-container">
-                                    {sessionUser.id == userId && <button className="follows-modal-remove-button" onClick={() => {handleRemoveClick(follower.id, follower.username)}}>Remove</button>}
+                                    {sessionUser.id == userId && follower.id != sessionUser.id && <button className="follows-modal-remove-button" onClick={() => {handleRemoveClick(follower.id, follower.username)}}>Remove</button>}
                                     {sessionUser.id != userId && (sessionUser.following.length == 0 || sessionUser.following.indexOf(follower.id) === -1) && sessionUser.id !== follower.id && <button className="follows-modal-follow-button" onClick={() => { handleFollowClick(userId, sessionUser.id, follower.id)}}>Follow</button>}
                                     {sessionUser.id != userId && (sessionUser.following.indexOf(follower.id) >= 0) && sessionUser.id != follower.id && <button className="follows-modal-following-button" onClick={() => { handleUnfollowClick(follower.id, follower.username) }}>Following</button>}
                                 </div>
