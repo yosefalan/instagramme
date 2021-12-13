@@ -1,4 +1,5 @@
 # Mambas - Instagramme (Instagram) - Flask React Group Project
+<img src='https://i.imgur.com/OBiiMKY.png'>
 
 This is the README for the final group project from App Academy.
 The project was inspired by Instagram and build using Javascript,
@@ -69,15 +70,27 @@ React.js and Redux for the front end and Python with Flask for the backend.
 >Your objective is to test the functionality of all features, buttons and links.
 
 >You can log in as a demo user with the `Demo Login` button on the login form or landing page.
+
 >You can log in as a user of your choice, using the credentials you selected when creating an account.
 
->You can add posts with the `Add` button.
->You can edit your posts with the `Edit` button.
->You can delete your posts with the `Delete` button.
+<img src='https://i.imgur.com/dsJ79cF.png'>
 
->You can add comments with the `Add` button.
+>You can add posts with the `Add` button in the Navigation Component
+<img src='https://i.imgur.com/LdNQmEc.png'>
+
+>You can edit your posts with the `Edit` button.
+<img src='https://i.imgur.com/Ri5V7yh.png'>
+
+>You can delete your posts with the `Delete` button.
+<img src='https://i.imgur.com/PdHDfXd.png'>
+
+>You can add comments in the `Add a comment` block with the `Submit` button.
+<img src='https://i.imgur.com/abb8aPr.png'>
+
 >You can edit your comments with the `Edit` button.
+
 >You can delete your comments with the `Delete` button.
+<img src='https://i.imgur.com/Hvm2uEp.png'>
 
 # Technical Details
 >This project was done during the week of December 6th - 12th, 2021.
