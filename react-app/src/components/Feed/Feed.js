@@ -20,10 +20,10 @@ const Feed = () => {
   const [postId, setPostId] = useState("");
 
   // const photos = useSelector((state) => Object.values(state.photos));
-  // const handleClick = (id) => {
-  //   setPostId(id);
-  //   setShowModal(true);
-  // };
+  const handleClick = (id) => {
+    setPostId(id);
+    setShowModal(true);
+  };
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
@@ -48,7 +48,7 @@ const Feed = () => {
             photos,
             profile_image,
           }) => (
-            // <div onClick={() => handleClick(id)}>
+            <div onClick={() => handleClick(id)}>
               <Post
                 id={id}
                 user_id={user_id}
@@ -59,7 +59,7 @@ const Feed = () => {
                 photos={photos}
                 profile_image={profile_image}
                 />
-            // </div>
+            </div>
             )
             )}
         </div>
