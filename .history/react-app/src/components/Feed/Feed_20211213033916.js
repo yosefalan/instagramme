@@ -59,7 +59,6 @@ const Feed = () => {
                 photos={photos}
                 profile_image={profile_image}
                 showPost={() => setShowModal(true)}
-                passId={() =>setPostId(id)}
                 />
             // </div>
             )

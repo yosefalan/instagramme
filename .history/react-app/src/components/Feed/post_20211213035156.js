@@ -60,7 +60,7 @@ const like = (id, user_id) => {
       <div className="photo-holder">
         <img className="photo"
         src={photos} alt="post-photo"
-        onClick={handleClick}/>
+        onClick={openPost}/>
       </div>
       <div className="description">{description}</div>
       <div className="post-icons">
@@ -70,7 +70,7 @@ const like = (id, user_id) => {
       {/* <img src={liked} className="like-icon"></img> */}
         <img src={comment}
         className="comment-icon"
-        onClick={handleClick}></img>
+        onClick={openPost}></img>
       </div>
       <div className="likes">{total_likes.size} likes</div>
       <div className="comments">{comments} comments</div>

@@ -17,17 +17,17 @@ const Post = ({
   comments,
   photos,
   profile_image,
-  showPost,
-  passId
+
+  // openPost
 }) => {
 
 
 // const [showModal, setShowModal] = useState(false);
 // const [postId, setPostId] = useState(id);
-const handleClick = () => {
-  showPost();
-  passId();
-}
+// const handleClick = (id) => {
+//   setPostId(id);
+//   setShowModal(true);
+// }
 
 const post_likes = useSelector((state) => state.posts[id].likes)
 
@@ -59,8 +59,7 @@ const like = (id, user_id) => {
       </div>
       <div className="photo-holder">
         <img className="photo"
-        src={photos} alt="post-photo"
-        onClick={handleClick}/>
+        src={photos} alt="post-photo" />
       </div>
       <div className="description">{description}</div>
       <div className="post-icons">
@@ -68,9 +67,7 @@ const like = (id, user_id) => {
         {total_likes.has(sessionUser.id) ? <img src={liked} className="like-icon"></img> : <img src={like_empty}
       className="like-icon" onClick={() => like(id, user_id)}></img>}
       {/* <img src={liked} className="like-icon"></img> */}
-        <img src={comment}
-        className="comment-icon"
-        onClick={handleClick}></img>
+        <img src={comment} className="comment-icon"></img>
       </div>
       <div className="likes">{total_likes.size} likes</div>
       <div className="comments">{comments} comments</div>
