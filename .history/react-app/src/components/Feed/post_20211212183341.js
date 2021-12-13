@@ -20,10 +20,6 @@ const Post = ({
 }) => {
 
 
-// const like = (id) => {
-//   dispatch(likePost(id))
-// };
-
   return (
     <div className="post-box">
       <div className="user">
@@ -33,8 +29,7 @@ const Post = ({
         </NavLink>
       </div>
       <div className="photo-holder">
-        <img className="photo"
-        src={photos} alt="post-photo" />
+        <img className="photo" src={photos} alt="post-photo" />
       </div>
       <div className="description">{description}</div>
       <div className="post-icons">
