@@ -6,8 +6,7 @@ import DisplayPostModal from "../User";
 import like from './images/likes.png'
 import liked from './images/likes_filled_red.png'
 import comment from './images/comment.png'
-import { addLike } from "../../store/likes";
-
+import 
 const Post = ({
   id,
   user_id,
@@ -20,10 +19,6 @@ const Post = ({
 }) => {
 
 
-// const like = (id) => {
-//   dispatch(likePost(id))
-// };
-
   return (
     <div className="post-box">
       <div className="user">
@@ -33,8 +28,7 @@ const Post = ({
         </NavLink>
       </div>
       <div className="photo-holder">
-        <img className="photo"
-        src={photos} alt="post-photo" />
+        <img className="photo" src={photos} alt="post-photo" />
       </div>
       <div className="description">{description}</div>
       <div className="post-icons">

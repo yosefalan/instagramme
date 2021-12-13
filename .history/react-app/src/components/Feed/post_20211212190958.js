@@ -34,6 +34,7 @@ const Post = ({
       </div>
       <div className="photo-holder">
         <img className="photo"
+        
         src={photos} alt="post-photo" />
       </div>
       <div className="description">{description}</div>

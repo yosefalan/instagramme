@@ -58,9 +58,7 @@ function DisplayPost({ postId, setShowModal }) {
           <div id="top-right-container" className="right-column-div">
             <div>
               <div id="profile-pic-holder">
-                <img id="profile-pic"
-                className="display-profile-pic"
-                src={post.profile_image} alt=""></img>
+                <img id="profile-pic" src={post.profile_image} alt=""></img>
               </div>
             </div>
             <div>{post.username}</div>

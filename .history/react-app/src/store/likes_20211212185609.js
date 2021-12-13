@@ -38,7 +38,7 @@ export const addLike = (data, postId) => async (dispatch) => {
   });
   if (res.ok) {
     const like = await res.json();
-    dispatch(addALike(like));
+    dispatch(addLike(like));
     return like;
   }
 };
