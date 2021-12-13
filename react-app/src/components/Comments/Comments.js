@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { getAllComments } from "../../store/comments";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import "../Feed/post.css";
+import './CommentForm.css'
 import { updateAComment, deleteAComment } from "../../store/comments";
+import CommentForm from "./CommentForm";
 
 const Comment = ({ post_id }) => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -33,18 +34,18 @@ const Comment = ({ post_id }) => {
         <div key={id}>
           <div className="commentBox">
             <div className="username_link">
-              <NavLink className="username_link" to={`/users/${user_id}`}>
+              <NavLink className="comment-username" to={`/users/${user_id}`}>
                 {username}
               </NavLink>
             </div>
             <div className="commentContent">{content}</div>
-          </div>
           {sessionUser.id === user_id && (
             <div>
             <button className='postBtn' onClick={() => setEditableComment(true)}>Edit</button>
             <button className='postBtn' onClick={() => {handleDelete(post_id, id,)}}>Delete</button>
             </div>
           )}
+          </div>
           {editableComment && (
             <>
               <input

@@ -1,0 +1,9 @@
+#comment-form-form {
+  position: absolute;
+  bottom: 1;
+}
+
+#comment-form-textarea {
+  border: none;
+  width: 350px;
+}

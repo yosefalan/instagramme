@@ -1,0 +1,24 @@
+#comment-form-form {
+  position: absolute;
+  bottom: 1.5px;;
+}
+
+#comment-form-textarea {
+  border: none;
+  width: 330px;
+}
+
+
+.commentBox {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  word-wrap: break-word;
+}
+
+
+.commentContent {
+  max-width: 330px;
+}

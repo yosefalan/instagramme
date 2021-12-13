@@ -1,0 +1,11 @@
+#comment-form-form {
+  background-color: aqua;
+  position: absolute;
+  bottom: 0;
+  width 100%;
+}
+
+#comment-from-textarea {
+  border: none
+  width 80%;
+}

@@ -44,7 +44,8 @@ const Feed = () => {
             photos,
             profile_image,
           }) => (
-            <div onClick={() => handleClick(id)} key={id}>
+            // <div onClick={() => handleClick(id)}>
+
               <Post
                 id={id}
                 user_id={user_id}
@@ -54,9 +55,10 @@ const Feed = () => {
                 comments={comments}
                 photos={photos}
                 profile_image={profile_image}
-                // openPost={handleClick}
+                showPost={() => setShowModal(true)}
+                passId={() =>setPostId(id)}
                 />
-            </div>
+            // </div>
             )
             )}
         </div>
