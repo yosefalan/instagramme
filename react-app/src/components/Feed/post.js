@@ -9,7 +9,6 @@ import like_empty from './images/likes.png'
 import liked from './images/likes_filled_red.png'
 import comment from './images/comment.png'
 import { addLike } from "../../store/likes";
-import like_empty from "./images/likes.png"
 
 const Post = ({
   id,
