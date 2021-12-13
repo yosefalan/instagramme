@@ -1,26 +1,27 @@
-# Flask React Project
+# Mambas - Instagramme (Instagram) - Flask React Group Project
 
-This is the starter for the Flask React project.
+This is the README for the final group project from App Academy
+The project was inspired by Instagram and build using Javascript,
+React.js and Redux for the front end and Python with Flask for the backend.
 
-## Getting started
 
-1. Clone this repository (only this branch)
+# Project Installation
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
+1. Clone the project repository from https://github.com/hauck29/PythonGroupProject.git
 
-2. Install dependencies
+2. Rename the folder to whatever you want.
+
+3. Install dependencies
 
       ```bash
       pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
       ```
 
-3. Create a **.env** file based on the example with proper settings for your
+4. Create a **.env** file based on the example with proper settings for your
    development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+5. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+6. Get into your pipenv, migrate your database, seed your database, and run your flask app
 
    ```bash
    pipenv shell
@@ -38,7 +39,7 @@ This is the starter for the Flask React project.
    flask run
    ```
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+7. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory OR `cd` into the `react-app` folder and run `npm install` to install node package manager dependencies.
 
 ***
 *IMPORTANT!*
@@ -54,81 +55,138 @@ This is the starter for the Flask React project.
    There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
 ***
 
-## Deploy to Heroku
 
-1. Before you deploy, don't forget to run the following command in order to
-ensure that your production environment has all of your up-to-date
-dependencies. You only have to run this command when you have installed new
-Python packages since your last deployment, but if you aren't sure, it won't
-hurt to run it again.
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
+# Running Locally
+>To start the server, run `flask run` from the root directory, then run `npm start` from the `react-app` directory. This will allow you to make requests to http://localhost:3000 using any client (browser and Postman).
+>To stop the server from listening to requests, press CTRL + c for Windows/Linux or CMD + c for MacOS in the terminal that you started the server (wherever you >ran npm start).
 
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
+# Running Live
+>The live link for this project is located here: https://instagramme-mambas.herokuapp.com/
 
-   ```bash
-   heroku login
-   ```
+# What You Can Do
+>Your objective is to test the functionality of all features, buttons and links.
 
-6. Login to the heroku container registry
+>You can log in as a demo user with the `Demo Login` button on the login form or landing page.
+>You can log in as a user of your choice, using the credentials you selected when creating an account.
 
-   ```bash
-   heroku container:login
-   ```
+>You can add posts with the `Add` button.
+>You can edit your posts with the `Edit` button.
+>You can delete your posts with the `Delete` button.
 
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
+>You can add comments with the `Add` button.
+>You can edit your comments with the `Edit` button.
+>You can delete your comments with the `Delete` button.
 
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
+# Technical Details
+>This project was done during the week of December 6th - 12th, 2021.
 
-9. Release your docker container to heroku
 
-      ```bash
-      heroku container:release web -a {NAME_OF_HEROKU_APP}
-      ```
 
-10. set up your database
+# Features
+>Sign up/Login with credentials
 
-      ```bash
-      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-      ```
+>Read, add, edit and remove posts from the posts feed (full CRUD)
 
-11. Under Settings find "Config Vars" and add any additional/secret .env
-variables.
+>Read, add, edit and remove comments from the comments feed of a particular post (full CRUD)
 
-12. profit
+>Read, add, and remove a user that is being followed (full CRUD, edit/update is nonsensical here, as the combination of add and remove is the edit)
+<!-- >Read, add and remove a like from a post (full CRUD, edit/update is nonsensical here, as the combination of add and remove is the edit) -->
 
-### For M1 Mac users
+# React Components
+>Comments - Commetns feed and CommentForm for comment creation
 
-(Replaces **Step 8**)
+>DisplayBlockFollowers - Displays a block with your followers
 
-1. Build image with linux platform for heroku servers. Replace
-{NAME_OF_HEROKU_APP} with your own tag:
+>DisplayFollowers - Shows who your current followers are on profile page
 
-   ```bash=
-   docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-   ```
+>DisplayFollowing - Shows who you are followiung on your profile page
 
-2. Tag your app with the url for your apps registry. Make sure to use the name
-of your Heroku app in the url and tag name:
+>DisplayUnfollow - Provides a button to allow a user to unfollow another user
 
-   ```bash=2
-   docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
+>DisplayPostModal - Modal for displaying a single post and its comments
 
-3. Use docker to push the image to the Heroku container registry:
+>Feed - This is where all the posts load into
 
-   ```bash=3
-   docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
+>FollowingFeed - This is the feed for the users the current user is following
+
+>Footer - This is where developer links live
+
+>LandingPage - This is the page that most closely emulates Instagram
+
+>LoginPage - Allows for a user to login using credentials
+
+>NavigationBar - Provides icon links to different routes on the site
+
+>ProfileButton - Allows functionality of profile options
+
+>SignupPage - Provides a form to allow a user to signup for Instagramme
+
+>UploadModal - Modal for uploading a photo and adding a caption
+
+>auth - Provided with starter
+
+>NavBar - Provided with starter
+
+>User - Provided with starter
+
+>UserList - Provided with starter
+
+# Front End Routes - Logged In
+```
+<>
+      <BrowserRouter>
+      <NavigationBar />
+      <Switch>
+        <Route path="/login" exact={true}>
+          <LoginForm />
+        </Route>
+        <Route path="/sign-up" exact={true}>
+          <SignUpForm />
+        </Route>
+        <ProtectedRoute path="/users" exact={true}>
+          <UsersList />
+        </ProtectedRoute>
+        <ProtectedRoute path="/users/:userId" exact={true}>
+          <User />
+        </ProtectedRoute>
+        <ProtectedRoute path="/" exact={true}>
+          <Feed />
+        </ProtectedRoute>
+      </Switch>
+    </BrowserRouter>
+    </>
+```
+
+# Back End Routes
+
+>-- Posts
+
+>Read One: ```
+    posts_router.post('/<int:id>')
+    ```
+
+>Read All: ```
+    posts_router.post('/')
+    ```
+
+>Create: ```
+    posts_router.post('/')
+    ```
+
+>Update: ```
+    posts_router.post('/')
+    ```
+
+>Delete: ```
+    posts_router.post('/<int:id>')
+    ```
+
+# To-Do List
+>Like/unlike posts and comments
+
+>Report questions or answers for offensiveness
+
+>Continously refine css to look modern
+
+>Search feature
