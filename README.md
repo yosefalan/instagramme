@@ -67,7 +67,6 @@ React.js and Redux for the front end and Python with Flask for the backend.
 >The live link for this project is located here: https://instagramme-mambas.herokuapp.com/
 
 # What You Can Do
->Your objective is to test the functionality of all features, buttons and links.
 
 >You can log in as a demo user with the `Demo Login` button on the login form or landing page.
 
