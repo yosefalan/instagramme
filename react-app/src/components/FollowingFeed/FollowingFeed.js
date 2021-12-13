@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { getFollowing } from "../../store/following";
+import { getFollowing, resetFollowing } from "../../store/following";
 import './FollowingFeed.css'
 
 
@@ -17,6 +17,7 @@ function FollowingFeed () {
   }, [dispatch, userId]);
 
   const handleClick = (followeeId) => {
+    dispatch(resetFollowing());
     history.push(`/users/${followeeId}`);
   }
     return (
