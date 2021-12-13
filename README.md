@@ -1,9 +1,10 @@
 # Mambas - Instagramme (Instagram) - Flask React Group Project
 
-This is the README for the final group project from App Academy
+This is the README for the final group project from App Academy.
 The project was inspired by Instagram and build using Javascript,
 React.js and Redux for the front end and Python with Flask for the backend.
 
+<img src='https://i.imgur.com/SI5Pov1.png'>
 
 # Project Installation
 
