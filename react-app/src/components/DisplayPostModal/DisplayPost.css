@@ -46,7 +46,6 @@
 #top-right-container {
   display: flex;
   justify-content: space-between;
-  height: 50px;
   box-sizing: border-box;
 }
 
