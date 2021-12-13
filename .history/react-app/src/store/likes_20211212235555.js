@@ -39,7 +39,7 @@ export const addLike = (id, user_id) => async (dispatch) => {
     body: JSON.stringify({like: true}),
   });
   if (res.ok) {
-    console.log("!!!!!!!!!!!!!!!!!!!!!!")
+    console.log("!!!!!!!!!!!!!!!!!!!!!!", data)
     const like = await res.json();
     dispatch(addALike(like));
     return like;
@@ -70,8 +70,7 @@ const likesReducer = (state = initialState, action) => {
     }
 
     case ADD_LIKE:
-      console.log("ADD:", action.payload)
-      newState = { ...state, [action.payload.post_id]: action.payload.like};
+      newState = { ...state, [action.payload.like.id]: action.payload.like };
       return newState;
 
     case REMOVE_LIKE:

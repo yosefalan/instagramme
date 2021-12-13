@@ -171,12 +171,12 @@ def delete_comment(id, comment_id):
 @posts_routes.route("/<int:pid>/likes/<int:uid>", methods=["POST"])
 def add_like(uid, pid):
     req = request.get_json()
-    print("##########", req["like"])
+    print(req["like"])
     like = Like(
         like=req['like'],
         user_id=uid,
         post_id=pid,
     )
     db.session.add(like)
-    db.session.commit()
+    db.session.commit
     return like.to_dict()

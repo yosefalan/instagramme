@@ -36,10 +36,10 @@ export const addLike = (id, user_id) => async (dispatch) => {
   const res = await csrfFetch(`/api/posts/${id}/likes/${user_id}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({like: true}),
+    body: data,
   });
+  console.log("!!!!!!!!!!!!!!!!!!!!!!", data)
   if (res.ok) {
-    console.log("!!!!!!!!!!!!!!!!!!!!!!")
     const like = await res.json();
     dispatch(addALike(like));
     return like;
@@ -70,8 +70,7 @@ const likesReducer = (state = initialState, action) => {
     }
 
     case ADD_LIKE:
-      console.log("ADD:", action.payload)
-      newState = { ...state, [action.payload.post_id]: action.payload.like};
+      newState = { ...state, [action.payload.like.id]: action.payload.like };
       return newState;
 
     case REMOVE_LIKE:

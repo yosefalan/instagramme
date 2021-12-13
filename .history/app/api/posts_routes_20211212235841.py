@@ -178,5 +178,5 @@ def add_like(uid, pid):
         post_id=pid,
     )
     db.session.add(like)
-    db.session.commit()
+    db.session.commit
     return like.to_dict()

@@ -19,7 +19,7 @@ const Post = ({
   profile_image,
 }) => {
 
-const post_likes = useSelector((state) => Object.values(state.posts[id].likes))
+const post_likes = useSelector((state) => Object.values(state.poslikes))
 
 const total_likes = post_likes.filter((like) => like === true).length
 

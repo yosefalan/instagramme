@@ -19,10 +19,6 @@ const Post = ({
   profile_image,
 }) => {
 
-const post_likes = useSelector((state) => Object.values(state.posts[id].likes))
-
-const total_likes = post_likes.filter((like) => like === true).length
-
 
 
 console.log("LIKES:", likes)
@@ -59,7 +55,7 @@ const unlike = (id) => {
       {/* // } */}
       <img src={comment} className="comment-icon"></img>
       </div>
-      <div className="likes">{total_likes} likes</div>
+      <div className="likes">{likes} likes</div>
       <div className="comments">{comments} comments</div>
     </div>
   );
