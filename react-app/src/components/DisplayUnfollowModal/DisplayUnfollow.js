@@ -1,6 +1,7 @@
 // import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { removeOneFollowed, getFollowing } from "../../store/following";
+import { getFollowers } from "../../store/followers";
 // import DisplayBlockFollowerModal from '../DisplayBlockFollowerModal';
 import "./DisplayUnfollow.css";
 
@@ -17,9 +18,11 @@ function DisplayUnfollow({ userId, sessionUserId, unfollowId, setUnfollowId, unf
     const handleUnfollowClick = async (userId, sessionUserId, blockFollowerId) => {
         await dispatch(removeOneFollowed(sessionUserId, blockFollowerId));
         dispatch(getFollowing(userId));
+        dispatch(getFollowers(userId));
         setUnfollowId("");
         setUnfollowName("");
         setShowUnfollowModal(false);
+        window.location.reload(false);
         // NEED ERROR HANDLING?
     }
 
