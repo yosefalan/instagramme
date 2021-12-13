@@ -16,6 +16,8 @@ function DisplayPost({ postId, setShowModal }) {
   const post = posts[postId];
   const [description, setDescription] = useState(post.description);
   const dispatch = useDispatch();
+  const post_likes = useSelector((state) => state.posts[postId].likes)
+  const total_likes = new Set(post_likes.filter((like) => like[2] === true).map((like) => like[0]))
 
   const handleEdit = async (id, description) => {
     dispatch(editPost(id, description));
@@ -109,7 +111,7 @@ function DisplayPost({ postId, setShowModal }) {
           </div>
           {/* <div className="right-column-div">Button Bar</div> */}
           <div className="right-column-div">
-            {post.likes} {post.likes === 1 ? "like" : "likes"}
+            {total_likes.size} {total_likes.size === 1 ? "like" : "likes"}
           </div>
           <div className="right-column-div">
             <CommentForm pid={post.id} />

@@ -5,6 +5,7 @@ const LOAD_POSTS = "posts/LOAD_POSTS";
 const ADD_POST = "posts/ADD_POST";
 const UPDATE_POST = "posts/UPDATE_POST";
 const REMOVE_POST = "posts/REMOVE_POST";
+const ADD_LIKE = "likes/ADD_LIKE";
 
 //action creators
 const load = (posts) => ({
@@ -131,6 +132,11 @@ const postsReducer = (state = initialState, action) => {
     case REMOVE_POST:
       newState = { ...state };
       delete newState[action.postId];
+      return newState;
+    case ADD_LIKE:
+      newState = { ...state };
+      newState[action.payload.post_id].likes.push([action.payload.user_id, action.payload.post_id, action.payload.like]);
+      console.log("123456*****", action.payload);
       return newState;
     default:
       return state;
