@@ -41,8 +41,8 @@ const Comment = ({ post_id }) => {
           </div>
           {sessionUser.id === user_id && (
             <div>
-            <button onClick={() => setEditableComment(true)}>Edit</button>
-            <button onClick={() => {handleDelete(post_id, id,)}}>Delete</button>
+            <button className='postBtn' onClick={() => setEditableComment(true)}>Edit</button>
+            <button className='postBtn' onClick={() => {handleDelete(post_id, id,)}}>Delete</button>
             </div>
           )}
           {editableComment && (
@@ -53,7 +53,7 @@ const Comment = ({ post_id }) => {
                 type="text"
                 onChange={(e) => setCommContent(e.target.value)}
               ></input>
-              <button onClick={() => handleEdit(post_id, id, commContent)}>
+              <button className='postBtn' onClick={() => handleEdit(post_id, id, commContent)}>
                 Submit
               </button>
             </>
