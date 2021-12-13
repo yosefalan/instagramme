@@ -199,8 +199,16 @@ React.js and Redux for the front end and Python with Flask for the backend.
 # To-Do List
 >Like/unlike posts and comments
 
->Report questions or answers for offensiveness
-
 >Continously refine css to look modern
 
 >Search feature
+
+>Explore feature
+
+# Screen Candy
+<img src='https://i.imgur.com/lvFusuh.png'>
+<img src='https://i.imgur.com/JfMl4ez.png'>
+<img src='https://i.imgur.com/5gYDYdr.png'>
+<img src='https://i.imgur.com/QiwmMzc.png'>
+<img src='https://i.imgur.com/DAuh3IA.png'>
+<img src='https://i.imgur.com/5dEhv4X.jpg'>
