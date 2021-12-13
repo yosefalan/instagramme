@@ -44,16 +44,6 @@
   font-size: 14px;
   line-height: 20px;
 }
-
-.post-icons {
-  width: 568px;
-  height: 40px;
-  padding: 6px 16px 8px 16px;
-}
-
-.like-icon {
-  margin-right: 10px;
-}
 .profile-image-post {
   width: 40px;
   margin: 10px;
@@ -63,3 +53,6 @@
   padding: 3px;
   background: linear-gradient(45deg, rgb(255, 230, 0), rgb(255, 0, 128) 80%);
 }
+
+
+

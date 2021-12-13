@@ -3,9 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./post.css";
 import DisplayPostModal from "../User";
-import like from './images/likes.png'
-import liked from './images/likes_filled_red.png'
-import comment from './images/comment.png'
 
 const Post = ({
   id,
@@ -17,8 +14,6 @@ const Post = ({
   photos,
   profile_image,
 }) => {
-
-
   return (
     <div className="post-box">
       <div className="user">
@@ -31,10 +26,7 @@ const Post = ({
         <img className="photo" src={photos} alt="post-photo" />
       </div>
       <div className="description">{description}</div>
-      <div className="post-icons">
-      <img src={like} className="like-icon"></img>
-      <img src={comment} className="comment-icon"></img>
-      </div>
+      d
       <div className="likes">{likes} likes</div>
       <div className="comments">{comments} comments</div>
     </div>

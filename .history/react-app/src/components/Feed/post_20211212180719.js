@@ -18,6 +18,8 @@ const Post = ({
   profile_image,
 }) => {
 
+conole.log(id)
+
 
   return (
     <div className="post-box">
