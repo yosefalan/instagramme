@@ -3,7 +3,6 @@ import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
 import { addFollowed } from "../store/following";
-import { authenticate } from "../store/session";
 
 import "./User.css";
 import Footer from "./Footer/Footer";
