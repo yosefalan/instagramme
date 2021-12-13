@@ -48,7 +48,7 @@ const Feed = () => {
             photos,
             profile_image,
           }) => (
-            // <div onClick={() => handleClick(id)}>
+            <div onClick={() => handleClick(id)}>
               <Post
                 id={id}
                 user_id={user_id}
@@ -59,7 +59,7 @@ const Feed = () => {
                 photos={photos}
                 profile_image={profile_image}
                 />
-            // </div>
+            </div>
             )
             )}
         </div>

@@ -6,7 +6,7 @@ import DisplayPostModal from "../User";
 import like_empty from './images/likes.png'
 import liked from './images/likes_filled_red.png'
 import comment from './images/comment.png'
-import { addLike, addUnlike } from "../../store/likes";
+import { addLike } from "../../store/likes";
 
 const Post = ({
   id,
@@ -19,15 +19,11 @@ const Post = ({
   profile_image,
 }) => {
 
-console.log("LIKES:", likes)
+  console.log(likes)
 const dispatch = useDispatch();
 
-const like = (id, user_id) => {
-  dispatch(addLike(id, user_id))
-};
-
-const unlike = (id) => {
-  dispatch(addUnlike(id))
+const like = (id) => {
+  dispatch(addLike(id))
 };
 
   return (
@@ -44,12 +40,10 @@ const unlike = (id) => {
       </div>
       <div className="description">{description}</div>
       <div className="post-icons">
-      {/* {likes.find((like) => like.user_id === user_id) > -1 ? */}
-      <img src={like_empty}
-      className="like-icon"
-      onClick={() => like(id, user_id)}></img>
-      {/* <img src={liked} className="like-icon"></img> */}
-      {/* // } */}
+      {likes.find((like) => like.user_id === user_id) > -1 ?
+      <img src={like_empty} className="like-icon"></img> :
+      <img src={liked} className="like-icon"></img>
+      }
       <img src={comment} className="comment-icon"></img>
       </div>
       <div className="likes">{likes} likes</div>

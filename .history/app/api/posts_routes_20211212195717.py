@@ -167,7 +167,7 @@ def delete_comment(id, comment_id):
     else:
         return "Post not found", 404
 
-# CREATE A LIKE
-# @posts_routes.route('/<int:id>/likes', methods=["POST"])
-# @login_required
-# def create_comment(id):
+# ADD A LIKE
+@posts_routes.route('/<int:id>/comments', methods=["POST"])
+@login_required
+def create_comment(id):

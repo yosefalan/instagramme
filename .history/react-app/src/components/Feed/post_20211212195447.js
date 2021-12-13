@@ -19,15 +19,15 @@ const Post = ({
   profile_image,
 }) => {
 
-console.log("LIKES:", likes)
+  console.log("LIKES:", likes)
 const dispatch = useDispatch();
 
-const like = (id, user_id) => {
-  dispatch(addLike(id, user_id))
+const like = (id) => {
+  dispatch(addLike(id))
 };
 
 const unlike = (id) => {
-  dispatch(addUnlike(id))
+  dispatch(addUnLike(id))
 };
 
   return (
@@ -47,7 +47,7 @@ const unlike = (id) => {
       {/* {likes.find((like) => like.user_id === user_id) > -1 ? */}
       <img src={like_empty}
       className="like-icon"
-      onClick={() => like(id, user_id)}></img>
+      onClick={() => like(id, user_id)}
       {/* <img src={liked} className="like-icon"></img> */}
       {/* // } */}
       <img src={comment} className="comment-icon"></img>

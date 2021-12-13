@@ -36,10 +36,9 @@ export const addLike = (id, user_id) => async (dispatch) => {
   const res = await csrfFetch(`/api/posts/${id}/likes`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: data,
   });
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", data)
   if (res.ok) {
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     const like = await res.json();
     dispatch(addALike(like));
     return like;

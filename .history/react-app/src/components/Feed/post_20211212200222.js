@@ -19,7 +19,7 @@ const Post = ({
   profile_image,
 }) => {
 
-console.log("LIKES:", likes)
+  console.log("LIKES:", likes)
 const dispatch = useDispatch();
 
 const like = (id, user_id) => {
@@ -49,7 +49,7 @@ const unlike = (id) => {
       className="like-icon"
       onClick={() => like(id, user_id)}></img>
       {/* <img src={liked} className="like-icon"></img> */}
-      {/* // } */}
+      // {/* // } */}
       <img src={comment} className="comment-icon"></img>
       </div>
       <div className="likes">{likes} likes</div>

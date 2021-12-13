@@ -37,8 +37,8 @@ export const addLike = (id, user_id) => async (dispatch) => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: data,
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
   });
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", data)
   if (res.ok) {
     const like = await res.json();
     dispatch(addALike(like));

@@ -31,14 +31,11 @@ export const fetchLikes = () => async (dispatch) => {
 };
 
 
-export const addLike = (id, user_id) => async (dispatch) => {
-  const data = { id, user_id}
-  const res = await csrfFetch(`/api/posts/${id}/likes`, {
+export const addLike = (data, postId) => async (dispatch) => {
+  const res = await csrfFetch(`/api/posts/${postId}/likes`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: data,
   });
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", data)
   if (res.ok) {
     const like = await res.json();
     dispatch(addALike(like));
@@ -46,7 +43,7 @@ export const addLike = (id, user_id) => async (dispatch) => {
   }
 };
 
-export const addUnlike = (postId, id) => async (dispatch) => {
+export const addUnike = (postId, id) => async (dispatch) => {
   const response = await csrfFetch(`/api/posts/${postId}/likes/${id}`, {
     method: "PUT",
   });

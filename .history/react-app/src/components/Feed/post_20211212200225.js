@@ -19,7 +19,7 @@ const Post = ({
   profile_image,
 }) => {
 
-console.log("LIKES:", likes)
+  console.log("LIKES:", likes)
 const dispatch = useDispatch();
 
 const like = (id, user_id) => {
