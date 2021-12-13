@@ -26,7 +26,7 @@ function FollowingFeed () {
        {following?.map((followee) => {
                         return (
                           <div className="following-feed-tile" key={followee.id}>
-                                <div className="following-feed-pic-container"><img className="following-feed-profile-pic" src={followee.profile_image} alt=""></img>
+                            <div className="following-feed-pic-container"><img className="following-feed-profile-pic" src={followee.profile_image} alt="" onClick={() => { handleClick(followee.id) }}></img>
                                 </div>
                                 <div className="following-feed-username">
                                   <div className="following-feed-username-link" onClick={() => { handleClick(followee.id) }}>{followee.username}
