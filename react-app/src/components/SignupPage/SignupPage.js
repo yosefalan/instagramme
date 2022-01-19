@@ -15,7 +15,7 @@ const SignupPage = () => {
           <div className="centerContainer">
             <div className="mainFormContainer">
               <div className="upperFormContainer">
-                <img className="formLogo" src={instagramme_logo}></img>
+                <img className="formLogo" src={instagramme_logo} alt=""></img>
 
                 <SignUpForm />
               </div>

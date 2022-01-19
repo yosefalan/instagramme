@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./post.css";
 
-import DisplayPostModal from "../User";
+// import DisplayPostModal from "../User";
 import like_empty from './images/likes.png'
 
 import liked from './images/likes_filled_red.png'
@@ -53,23 +53,23 @@ const like = (id, user_id) => {
         <DisplayPostModal postId={postId} setShowModal={setShowModal} />
       )} */}
       <div className="user">
-        <img className="profile-image-post" src={profile_image}/>
+        <img className="profile-image-post" src={profile_image} alt=""/>
         <NavLink className="username_link" to={`/users/${user_id}`}>
           {username}
         </NavLink>
       </div>
       <div className="photo-holder">
         <img className="photo"
-        src={photos} alt="post-photo"
+        src={photos} alt=""
         onClick={handleClick}/>
       </div>
       <div className="description">{description}</div>
       <div className="post-icons">
 
-        {total_likes.has(sessionUser.id) ? <img src={liked} className="like-icon"></img> : <img src={like_empty}
+        {total_likes.has(sessionUser.id) ? <img src={liked} alt="" className="like-icon"></img> : <img src={like_empty} alt=""
       className="like-icon" onClick={() => like(id, user_id)}></img>}
       {/* <img src={liked} className="like-icon"></img> */}
-        <img src={comment}
+        <img src={comment} alt=""
         className="comment-icon"
         onClick={handleClick}></img>
       </div>

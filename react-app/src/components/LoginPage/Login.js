@@ -12,7 +12,7 @@ const LoginPage = () => {
           <div className="centerContainer">
             <div className="mainFormContainer">
               <div className="upperFormContainer">
-                <img className="formLogo" src={instagramme_logo}></img>
+                <img className="formLogo" src={instagramme_logo} alt=""></img>
                 <LoginForm />
               </div>
               <div className="lowerFormContainer">

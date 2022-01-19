@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { resetFollowers } from '../../store/followers';
-import { getFollowing, addFollowed, resetFollowing } from "../../store/following";
-import { getSuserFollows, addSuserFollowed } from '../../store/follows';
+import { getFollowing, resetFollowing } from "../../store/following";
+import { addSuserFollowed } from '../../store/follows';
 import DisplayUnfollowModal from '../DisplayUnfollowModal'
 import "./DisplayFollowing.css";
 

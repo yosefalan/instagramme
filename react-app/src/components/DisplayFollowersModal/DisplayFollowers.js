@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import { getFollowers, resetFollowers } from "../../store/followers";
-import { addFollowed, resetFollowing } from "../../store/following";
-import { getSuserFollows, addSuserFollowed } from '../../store/follows';
+// import { addFollowed, resetFollowing } from "../../store/following";
+import { addSuserFollowed } from '../../store/follows';
 import DisplayBlockFollowerModal from '../DisplayBlockFollowerModal';
 import DisplayUnfollowModal from '../DisplayUnfollowModal';
 import "./DisplayFollowers.css";
@@ -48,12 +48,15 @@ function DisplayFollowers({userId, setShowFollowersModal, setUser }) {
         setShowUnfollowModal(true);
     }
 
-    const handleFollowClick = (followedId) => {
+    const handleFollowClick = async (followedId) => {
         // await dispatch(addFollowed(sessionUserId, followedId));
         // await dispatch(getFollowers(userId));
-        dispatch(addSuserFollowed(followedId));
+        await dispatch(addSuserFollowed(followedId));
         // console.log("HANDLEFOLLOWCLICK");
         // window.location.reload(false);
+        const response = await fetch(`/api/users/${userId}`);
+        const user = await response.json();
+        setUser(user);
     }
 
     return (
@@ -65,7 +68,7 @@ function DisplayFollowers({userId, setShowFollowersModal, setUser }) {
                         <DisplayBlockFollowerModal userId={userId} sessionUserId={sessionUser.id} blockFollowerId={blockFollowerId} setBlockFollowerId={setBlockFollowerId} blockFollowerName={blockFollowerName} setBlockFollowerName={setBlockFollowerName} setShowBlockFollowerModal={setShowBlockFollowerModal} setUser={setUser} />
                     )}
                     {showUnfollowModal && (
-                        <DisplayUnfollowModal userId={userId} sessionUserId={sessionUser.id} unfollowId={unfollowId} setUnfollowId={setUnfollowId} unfollowName={unfollowName} setUnfollowName={setUnfollowName} setShowUnfollowModal={setShowUnfollowModal} />
+                        <DisplayUnfollowModal userId={userId} sessionUserId={sessionUser.id} unfollowId={unfollowId} setUnfollowId={setUnfollowId} unfollowName={unfollowName} setUnfollowName={setUnfollowName} setShowUnfollowModal={setShowUnfollowModal} setUser={setUser}/>
                     )}
                 </div>
                 <div className="follows-modal-list">
@@ -75,9 +78,9 @@ function DisplayFollowers({userId, setShowFollowersModal, setUser }) {
                                 <div className="follows-modal-profile-pic-container"><img id="follower-profile-pic" src={follower.profile_image} alt=""></img></div>
                                 <div className="follows-modal-username"><div className="follows-modal-username-link" onClick={() => {handleClick(follower.id)}}>{follower.username}</div></div>
                                 <div className="follows-modal-list-button-container">
-                                    {sessionUser.id == userId && follower.id != sessionUser.id && <button className="follows-modal-remove-button" onClick={() => {handleRemoveClick(follower.id, follower.username)}}>Remove</button>}
-                                    {sessionUser.id != userId && (suserFollowing.length === 0 || suserFollowing.indexOf(follower.id) === -1) && sessionUser.id !== follower.id && <button className="follows-modal-follow-button" onClick={() => { handleFollowClick(follower.id)}}>Follow</button>}
-                                    {sessionUser.id != userId && (suserFollowing.indexOf(follower.id) >= 0) && sessionUser.id != follower.id && <button className="follows-modal-following-button" onClick={() => { handleUnfollowClick(follower.id, follower.username) }}>Following</button>}
+                                    {sessionUser.id === +userId && follower.id !== sessionUser.id && <button className="follows-modal-remove-button" onClick={() => {handleRemoveClick(follower.id, follower.username)}}>Remove</button>}
+                                    {sessionUser.id !== +userId && (suserFollowing.length === 0 || suserFollowing.indexOf(follower.id) === -1) && sessionUser.id !== follower.id && <button className="follows-modal-follow-button" onClick={() => { handleFollowClick(follower.id)}}>Follow</button>}
+                                    {sessionUser.id !== +userId && (suserFollowing.indexOf(follower.id) >= 0) && sessionUser.id !== follower.id && <button className="follows-modal-following-button" onClick={() => { handleUnfollowClick(follower.id, follower.username) }}>Following</button>}
                                 </div>
                             </div>
                         )
