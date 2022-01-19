@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
-import { addFollowed } from "../store/following";
-import { getSuserFollows, addSuserFollowed, deleteSuserFollowed } from '../store/follows';
+// import { addFollowed } from "../store/following";
+import { getSuserFollows, addSuserFollowed } from '../store/follows';
 
 import "./User.css";
 import Footer from "./Footer/Footer";
@@ -33,18 +33,18 @@ function User() {
 
   const checkProfile = () => {
     // console.log(suserObj);
-    console.log(suser);
+    // console.log(suser);
     // console.log("suser[3]:", suser[3]);
     // console.log("suser[2]:", suser[2]);
-    console.log("userId:", userId);
-    console.log("+userId:", +userId);
-    console.log("suser.id:", suser.id);
-    console.log("+(suser.id):", +(suser.id));
-    console.log("suser.following:", suser.following);
-    console.log("follows.following:", follows.following);
-    console.log("follows.following[userId]:", follows.following)
-    console.log("followsLoaded:", followsLoaded)
-    console.log("user.followers", user.followers)
+    // console.log("userId:", userId);
+    // console.log("+userId:", +userId);
+    // console.log("suser.id:", suser.id);
+    // console.log("+(suser.id):", +(suser.id));
+    // console.log("suser.following:", suser.following);
+    // console.log("follows.following:", follows.following);
+    // console.log("follows.following[userId]:", follows.following)
+    // console.log("followsLoaded:", followsLoaded)
+    // console.log("user.followers", user.followers)
     // if session user id is not equal to the userId of the user whose profile the session user is looking at,
     // and if that user's id isn't on the session user's following list,
     if (!followsLoaded) {
@@ -66,7 +66,7 @@ function User() {
       const response = await fetch(`/api/users/${userId}`);
       const user = await response.json();
       setUser(user);
-      console.log("SETPROFILE", user);
+      // console.log("SETPROFILE", user);
     })();
   }, [userId]);
 

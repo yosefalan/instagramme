@@ -38,12 +38,12 @@ function ProfileButton({ user }) {
       <div className="profileImageContainer" onClick={openMenu}>
         {user ? (
           user.profile_image ? (
-            <img src={user.profile_image} className="profileImage"></img>
+            <img src={user.profile_image} className="profileImage" alt=""></img>
           ) : (
-            <img src={profileImage} className="profileImage"></img>
+            <img src={profileImage} className="profileImage" alt=""></img>
           )
         ) : (
-          <img src={profileImage} className="profileImage"></img>
+          <img src={profileImage} className="profileImage" alt=""></img>
         )}
       </div>
       {showMenu && (

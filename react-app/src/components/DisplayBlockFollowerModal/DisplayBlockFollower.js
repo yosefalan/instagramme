@@ -1,7 +1,7 @@
 // import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
-import { removeFollower, getFollowers } from "../../store/followers";
-import { getSuserFollows, deleteSuserFollower } from "../../store/follows";
+import { getFollowers } from "../../store/followers";
+import { deleteSuserFollower } from "../../store/follows";
 // import DisplayBlockFollowerModal from '../DisplayBlockFollowerModal';
 import "./DisplayBlockFollower.css";
 

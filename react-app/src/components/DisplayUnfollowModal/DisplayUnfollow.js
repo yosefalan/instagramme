@@ -1,10 +1,10 @@
 // import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
-import { removeOneFollowed, getFollowing } from "../../store/following";
-import { getFollowers } from "../../store/followers";
+import { getFollowing } from "../../store/following";
+// import { getFollowers } from "../../store/followers";
 // import DisplayBlockFollowerModal from '../DisplayBlockFollowerModal';
 import "./DisplayUnfollow.css";
-import { deleteSuserFollowed, getSuserFollows } from "../../store/follows";
+import { deleteSuserFollowed } from "../../store/follows";
 
 function DisplayUnfollow({ userId, sessionUserId, unfollowId, setUnfollowId, unfollowName, setUnfollowName, setShowUnfollowModal, setUser}) {
     const dispatch = useDispatch();
