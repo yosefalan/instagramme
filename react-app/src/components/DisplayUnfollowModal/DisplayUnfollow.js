@@ -6,7 +6,7 @@ import { getFollowers } from "../../store/followers";
 import "./DisplayUnfollow.css";
 import { deleteSuserFollowed, getSuserFollows } from "../../store/follows";
 
-function DisplayUnfollow({ userId, sessionUserId, unfollowId, setUnfollowId, unfollowName, setUnfollowName, setShowUnfollowModal }) {
+function DisplayUnfollow({ userId, sessionUserId, unfollowId, setUnfollowId, unfollowName, setUnfollowName, setShowUnfollowModal, setUser}) {
     const dispatch = useDispatch();
 
 
@@ -26,10 +26,13 @@ function DisplayUnfollow({ userId, sessionUserId, unfollowId, setUnfollowId, unf
         if (+userId === sessionUserId) {
             await dispatch(getFollowing(userId));
         }
-        await setUnfollowId("");
-        await setUnfollowName("");
+        const response = await fetch(`/api/users/${userId}`);
+        const user = await response.json();
+        setUser(user);
+        setUnfollowId("");
+        setUnfollowName("");
         // await dispatch(getSuserFollows());
-        await setShowUnfollowModal(false);
+        setShowUnfollowModal(false);
         // window.location.reload(false);
         // NEED ERROR HANDLING?
     }

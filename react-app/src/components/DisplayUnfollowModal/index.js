@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal } from '../../context/modal'
 import DisplayUnfollow from './DisplayUnfollow';
 
-function DisplayUnfollowModal({ userId, sessionUserId, unfollowId, setUnfollowId, unfollowName, setUnfollowName, setShowUnfollowModal }) {
+function DisplayUnfollowModal({ userId, sessionUserId, unfollowId, setUnfollowId, unfollowName, setUnfollowName, setShowUnfollowModal, setUser }) {
 
     return (
         <>
@@ -11,7 +11,7 @@ function DisplayUnfollowModal({ userId, sessionUserId, unfollowId, setUnfollowId
             <Modal onClose={(e) => {
                 setShowUnfollowModal(false);
             }}>
-                <DisplayUnfollow userId={userId} sessionUserId={sessionUserId} unfollowId={unfollowId} setUnfollowId={setUnfollowId} unfollowName={unfollowName} setUnfollowName={setUnfollowName} setShowUnfollowModal={setShowUnfollowModal} />
+                <DisplayUnfollow userId={userId} sessionUserId={sessionUserId} unfollowId={unfollowId} setUnfollowId={setUnfollowId} unfollowName={unfollowName} setUnfollowName={setUnfollowName} setShowUnfollowModal={setShowUnfollowModal} setUser={setUser}/>
             </Modal>
         </>
     );

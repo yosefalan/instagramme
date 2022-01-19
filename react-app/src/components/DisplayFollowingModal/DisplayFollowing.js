@@ -9,7 +9,7 @@ import "./DisplayFollowing.css";
 
 // import { } from '../../store/followers'
 
-function DisplayFollowing({ userId, setShowFollowingModal }) {
+function DisplayFollowing({ userId, setShowFollowingModal, setUser }) {
     const [showUnfollowModal, setShowUnfollowModal] = useState(false);
     const [unfollowId, setUnfollowId] = useState("");
     const [unfollowName, setUnfollowName] = useState("");
@@ -41,7 +41,10 @@ function DisplayFollowing({ userId, setShowFollowingModal }) {
         // await dispatch(addFollowed(sessionUserId, followedId));
         // await dispatch(getSuserFollows());
         // setShowFollowingModal(true);
-        dispatch(addSuserFollowed(followedId));
+        await dispatch(addSuserFollowed(followedId));
+        const response = await fetch(`/api/users/${userId}`);
+        const user = await response.json();
+        setUser(user);
     }
 
     return (
@@ -50,7 +53,7 @@ function DisplayFollowing({ userId, setShowFollowingModal }) {
                 <div className='follows-modal-heading'>
                     <div className='follows-modal-heading-text'>Following</div>
                     {showUnfollowModal && (
-                        <DisplayUnfollowModal userId={userId} sessionUserId={sessionUser.id} unfollowId={unfollowId} setUnfollowId={setUnfollowId} unfollowName={unfollowName} setUnfollowName={setUnfollowName} setShowUnfollowModal={setShowUnfollowModal} />
+                        <DisplayUnfollowModal userId={userId} sessionUserId={sessionUser.id} unfollowId={unfollowId} setUnfollowId={setUnfollowId} unfollowName={unfollowName} setUnfollowName={setUnfollowName} setShowUnfollowModal={setShowUnfollowModal} setUser={setUser}/>
                     )}
                 </div>
                 <div className="follows-modal-list">
