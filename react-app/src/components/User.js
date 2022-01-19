@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
 import { addFollowed } from "../store/following";
+import { getSuserFollows, addSuserFollowed, deleteSuserFollowed } from '../store/follows';
 
 import "./User.css";
 import Footer from "./Footer/Footer";
@@ -18,16 +19,41 @@ function User() {
   const [allowFollow, setAllowFollow] = useState(false);
   const { userId } = useParams();
   const dispatch = useDispatch();
-  const suser = useSelector((state) => Object.values(state.session.user));
+  const suser = useSelector((state) => state.session.user);
+  const follows = useSelector((state) => state.follows);
+  // const suserObj = useSelector((state) => state.session.user);
   const posts = useSelector((state) => Object.values(state.posts));
+  // const follows = useSelector((state) => state.follows)
   const [showFollowersModal, setShowFollowersModal] = useState(false);
   const [showFollowingModal, setShowFollowingModal] = useState(false);
+  const [followsLoaded, setFollowsLoaded] = useState(false);
 
   // let sessionUser = {};
   // sessionUser["id"] = 0;
 
   const checkProfile = () => {
-    if (suser[3] !== +userId && !suser[2].includes(+userId)) {
+    // console.log(suserObj);
+    console.log(suser);
+    // console.log("suser[3]:", suser[3]);
+    // console.log("suser[2]:", suser[2]);
+    console.log("userId:", userId);
+    console.log("+userId:", +userId);
+    console.log("suser.id:", suser.id);
+    console.log("+(suser.id):", +(suser.id));
+    console.log("suser.following:", suser.following);
+    console.log("follows.following:", follows.following);
+    console.log("follows.following[userId]:", follows.following)
+    console.log("followsLoaded:", followsLoaded)
+    console.log("user.followers", user.followers)
+    // if session user id is not equal to the userId of the user whose profile the session user is looking at,
+    // and if that user's id isn't on the session user's following list,
+    if (!followsLoaded) {
+    // if (!followsLoaded && suser.id !== +userId && !suser.following.includes(+userId)) {
+      setAllowFollow(false);
+      // && !follows.following[String(userId)]
+    } else if (followsLoaded && user.followers.indexOf(suser["id"]) === -1) {
+      setAllowFollow(true);
+    } else if (followsLoaded && suser.id !== +userId && !follows.following[userId]) {
       setAllowFollow(true);
     }
   };
@@ -40,13 +66,27 @@ function User() {
       const response = await fetch(`/api/users/${userId}`);
       const user = await response.json();
       setUser(user);
+      console.log("SETPROFILE", user);
     })();
   }, [userId]);
 
+useEffect(() => {
+  setAllowFollow(false);
+  checkProfile();
+}, [user, followsLoaded])
+
   useEffect(() => {
-    checkProfile();
-    dispatch(getUserPosts(userId));
+    (async () => {
+      await dispatch(getUserPosts(userId));
+      await dispatch(getSuserFollows());
+      setFollowsLoaded(true);
+    })()
   }, [dispatch, userId]);
+
+  // useEffect(() => {
+  //   const sFollowers = Object.values(follows.followers).map(follower => follower.id);
+  //   const sFollowing = Object.values(follows.following).map(followee => followee.id);
+  // }, [follows])
 
   const handleClick = (postId) => {
     setPostId(postId);
@@ -54,8 +94,10 @@ function User() {
   };
 
   const handleFollow = async (sessionUserId, followedId) => {
-    dispatch(addFollowed(sessionUserId, followedId));
-    window.location.reload(false);
+    await dispatch(addSuserFollowed(followedId));
+    // dispatch(addFollowed(sessionUserId, followedId));
+    // window.location.reload(false);
+    setAllowFollow(false);
   };
 
   const handleFollowingClick = (userId) => {
@@ -94,12 +136,14 @@ function User() {
                 <DisplayFollowingModal
                   userId={userId}
                   setShowFollowingModal={setShowFollowingModal}
+                  setUser={setUser}
                 />
               )}
               {showFollowersModal && (
                 <DisplayFollowersModal
                   userId={userId}
                   setShowFollowersModal={setShowFollowersModal}
+                  setUser={setUser}
                 />
               )}
               {showModal && (

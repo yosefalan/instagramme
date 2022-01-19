@@ -1,10 +1,11 @@
 // import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { removeFollower, getFollowers } from "../../store/followers";
+import { getSuserFollows, deleteSuserFollower } from "../../store/follows";
 // import DisplayBlockFollowerModal from '../DisplayBlockFollowerModal';
 import "./DisplayBlockFollower.css";
 
-function DisplayBlockFollower({ userId, sessionUserId, blockFollowerId, setBlockFollowerId, blockFollowerName, setBlockFollowerName, setShowBlockFollowerModal }) {
+function DisplayBlockFollower({ userId, sessionUserId, blockFollowerId, setBlockFollowerId, blockFollowerName, setBlockFollowerName, setShowBlockFollowerModal, setUser }) {
     const dispatch = useDispatch();
 
     
@@ -15,8 +16,14 @@ function DisplayBlockFollower({ userId, sessionUserId, blockFollowerId, setBlock
     }
 
     const handleRemoveClick = async (userId, sessionUserId, blockFollowerId) => {
-        await dispatch(removeFollower(sessionUserId, blockFollowerId));
-        dispatch(getFollowers(userId));
+        await dispatch(deleteSuserFollower(blockFollowerId));
+        // await dispatch(removeFollower(sessionUserId, blockFollowerId));
+        await dispatch(getFollowers(userId));
+        const response = await fetch(`/api/users/${userId}`)
+        const user = await response.json();
+        setUser(user);
+        // dispatch(deleteSuserFollower(blockFollowerId));
+        // dispatch(getSuserFollows());
         setBlockFollowerId("");
         setBlockFollowerName("");
         setShowBlockFollowerModal(false);

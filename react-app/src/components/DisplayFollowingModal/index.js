@@ -3,7 +3,7 @@ import { Modal } from '../../context/modal'
 import DisplayFollowing from './DisplayFollowing';
 import './DisplayFollowing.css';
 
-function DisplayFollowingModal({ userId, setShowFollowingModal }) {
+function DisplayFollowingModal({ userId, setShowFollowingModal, setUser}) {
     // const [showModal, setShowModal] = useState(false);
 
     return (
@@ -11,7 +11,7 @@ function DisplayFollowingModal({ userId, setShowFollowingModal }) {
             {/* HTML ELEMENT
             <button onClick={() => setShowModal(true)}>Show Post</button> */}
             <Modal onClose={() => setShowFollowingModal(false)}>
-                <DisplayFollowing userId={userId} setShowFollowingModal={setShowFollowingModal} />
+                <DisplayFollowing userId={userId} setShowFollowingModal={setShowFollowingModal} setUser={setUser} />
             </Modal>
         </>
     );
