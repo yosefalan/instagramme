@@ -63,3 +63,19 @@ class User(db.Model, UserMixin):
             'followers': followers,
             'following': following,
         }
+
+    def to_mydict(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'profile_image': self.profile_image if self.profile_image else None,
+            'following': [followed.to_safe() for followed in self.following],
+            'followers': [follower.to_safe() for follower in self.followers],
+        }
+
+    def to_safe(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'profile_image': self.profile_image
+        }

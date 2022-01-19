@@ -4,6 +4,7 @@ import { removeOneFollowed, getFollowing } from "../../store/following";
 import { getFollowers } from "../../store/followers";
 // import DisplayBlockFollowerModal from '../DisplayBlockFollowerModal';
 import "./DisplayUnfollow.css";
+import { deleteSuserFollowed, getSuserFollows } from "../../store/follows";
 
 function DisplayUnfollow({ userId, sessionUserId, unfollowId, setUnfollowId, unfollowName, setUnfollowName, setShowUnfollowModal }) {
     const dispatch = useDispatch();
@@ -15,14 +16,21 @@ function DisplayUnfollow({ userId, sessionUserId, unfollowId, setUnfollowId, unf
         setShowUnfollowModal(false);
     }
 
-    const handleUnfollowClick = async (userId, sessionUserId, blockFollowerId) => {
-        await dispatch(removeOneFollowed(sessionUserId, blockFollowerId));
-        dispatch(getFollowing(userId));
-        dispatch(getFollowers(userId));
-        setUnfollowId("");
-        setUnfollowName("");
-        setShowUnfollowModal(false);
-        window.location.reload(false);
+    const handleUnfollowClick = async (userId, sessionUserId, unfollowId) => {
+        // await dispatch(removeOneFollowed(sessionUserId, blockFollowerId));
+        // await dispatch(getFollowing(userId));
+        // await dispatch(getFollowers(userId));
+        await dispatch(deleteSuserFollowed(unfollowId));
+        // console.log("userId:", userId);
+        // console.log("sessionUserId:", sessionUserId);
+        if (+userId === sessionUserId) {
+            await dispatch(getFollowing(userId));
+        }
+        await setUnfollowId("");
+        await setUnfollowName("");
+        // await dispatch(getSuserFollows());
+        await setShowUnfollowModal(false);
+        // window.location.reload(false);
         // NEED ERROR HANDLING?
     }
 

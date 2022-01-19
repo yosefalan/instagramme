@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPosts } from "../store/posts";
 import { addFollowed } from "../store/following";
+import { getSuserFollows, addSuserFollowed, deleteSuserFollowed } from '../store/follows';
 
 import "./User.css";
 import Footer from "./Footer/Footer";
@@ -19,7 +20,9 @@ function User() {
   const { userId } = useParams();
   const dispatch = useDispatch();
   const suser = useSelector((state) => Object.values(state.session.user));
+  const suserObj = useSelector((state) => state.session.user);
   const posts = useSelector((state) => Object.values(state.posts));
+  // const follows = useSelector((state) => state.follows)
   const [showFollowersModal, setShowFollowersModal] = useState(false);
   const [showFollowingModal, setShowFollowingModal] = useState(false);
 
@@ -27,6 +30,14 @@ function User() {
   // sessionUser["id"] = 0;
 
   const checkProfile = () => {
+    console.log(suserObj);
+    console.log(suser);
+    console.log("suser[3]:", suser[3]);
+    console.log("suser[2]:", suser[2]);
+    console.log("+userId:", +userId);
+    console.log("userId:", userId);
+    // if session user id is not equal to the userId of the user whose profile the session user is looking at,
+    // and if that user's id isn't on the session user's following list,
     if (suser[3] !== +userId && !suser[2].includes(+userId)) {
       setAllowFollow(true);
     }
@@ -40,13 +51,20 @@ function User() {
       const response = await fetch(`/api/users/${userId}`);
       const user = await response.json();
       setUser(user);
+      console.log(user);
     })();
   }, [userId]);
 
   useEffect(() => {
     checkProfile();
     dispatch(getUserPosts(userId));
+    dispatch(getSuserFollows());
   }, [dispatch, userId]);
+
+  // useEffect(() => {
+  //   const sFollowers = Object.values(follows.followers).map(follower => follower.id);
+  //   const sFollowing = Object.values(follows.following).map(followee => followee.id);
+  // }, [follows])
 
   const handleClick = (postId) => {
     setPostId(postId);
@@ -100,6 +118,7 @@ function User() {
                 <DisplayFollowersModal
                   userId={userId}
                   setShowFollowersModal={setShowFollowersModal}
+                  setUser={setUser}
                 />
               )}
               {showModal && (
