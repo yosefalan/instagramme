@@ -56,11 +56,11 @@ const Comment = ({ post_id }) => {
                       </div>
                     </h3>
                     <span className="comment-text-span">{content}</span>
-                    <div className="comment-timestamp-container">
+                    {/* <div className="comment-timestamp-container">
                       <div className="comment-timestamp-container-2">
                         <time>[timestamp]</time>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 {sessionUser.id === user_id && (
