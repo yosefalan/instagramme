@@ -149,22 +149,26 @@ function DisplayPost({ postId, setShowModal }) {
                                     </div>
                                     <div id="post-description-text-container">
                                       <h2 id="post-description-text-username">
-                                        <div>
-                                          <span>
-                                            <a>
+                                        <div id="post-description-text-username-2">
+                                          <span id="post-description-text-username-span">
+                                            <a id="post-description-text-username-link">
                                               {post.username}
                                             </a>
                                           </span>
                                         </div>
                                       </h2>
                                       <span id="post-description-text-span">{post.description}</span>
-                                      <div id="post-description-timestamp">[timestamp]</div>
+                                      <div id="post-description-timestamp-container">
+                                        <div id="post-description-timestamp-container-2">
+                                          <time>[timestamp]</time>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </li>
                             </div>
-                            <div id="comments-row">
+                            <div>
                               <Comment post_id={postId} />
                             </div>
                           </div>
