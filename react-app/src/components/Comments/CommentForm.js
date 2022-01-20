@@ -6,9 +6,7 @@ import './CommentForm.css'
 
 export default function CommentForm({ pid }) {
   const sessionUser = useSelector((state) => state.session.user);
-
   const dispatch = useDispatch();
-
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState([]);
 
@@ -19,13 +17,14 @@ export default function CommentForm({ pid }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (body.length >= 0) {
+    if (body.length > 0) {
       setErrors([]);
       dispatch(addAComment(pid, sessionUser.id, body));
     }
 
     reset();
   };
+
   if (!sessionUser) {
     return (
       <>
@@ -38,22 +37,22 @@ export default function CommentForm({ pid }) {
   return (
     <>
       <div id="comment-form-container">
-        <form onSubmit={handleSubmit}
-        id="comment-form-form">
-          <ul>
-            {errors.map((error, idx) => (
-              <li key={idx}>{error}</li>
-            ))}
-          </ul>
+        {errors.length !== 0 && <ul>
+          {errors.map((error, idx) => (
+            <li key={idx}>{error}</li>
+          ))}
+        </ul>}
+        <form onSubmit={handleSubmit} id="comment-form-form">
+          <div id="dummy-emoji-placeholder"></div>
           <textarea
             id="comment-form-textarea"
-            rows="2"
+            // style={{height: "18px"}}
             value={body}
             onChange={(e) => setBody(e.target.value)}
             name="body"
             placeholder="Add a comment..."
           ></textarea>
-          <button className="postBtn" type="submit">
+          <button className="postBtn" id="post-comment-button" type="submit">
             Post
           </button>
         </form>

@@ -20,10 +20,16 @@
   position:relative;
 }
 
+#dummy-emoji-placeholder {
+  padding:8px 16px 8px 0;
+  box-sizing:content-box;
+  height:24px;
+  width:24px;
+}
+
 #comment-form-textarea {
   /* border: none;
   width: 330px; */
-  height:18px;
   background:0 0;
   border:0;
   color:rgb(38, 38, 38);
@@ -36,19 +42,26 @@
   resize:none;
   line-height: 18px;
   outline-offset: 0;
+  width:0;
+  overflow-y:scroll;
+  /* height:fit-content; */
 }
 
 
-.commentBox {
+/* .commentBox {
   height: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   word-wrap: break-word;
-}
+} */
 
 
-.commentContent {
+/* .commentContent {
   max-width: 330px;
+} */
+
+#post-comment-button {
+  top:0;
 }
