@@ -45,21 +45,30 @@ const Comment = ({ post_id }) => {
                       </a>
                     </div>
                   </div>
-                  <div>
-                    <div className="username_link">
-                      <NavLink className="comment-username" to={`/users/${user_id}`}>
-                        {username}
-                      </NavLink>
-                    </div>
-                    <div className="commentContent">{content}</div>
-                    {sessionUser.id === user_id && (
-                      <div>
-                      <button className='postBtn' onClick={() => setEditableComment(true)}>Edit</button>
-                      <button className='postBtn' onClick={() => {handleDelete(post_id, id,)}}>Delete</button>
+                  <div className="comment-text-container">
+                    <h3 className="comment-text-username">
+                      <div className="comment-text-username-2">
+                        <span className="comment-text-username-span">
+                          <NavLink className="comment-text-username-link" to={`/users/${user_id}`}>
+                            {username}
+                          </NavLink>
+                        </span>
                       </div>
-                    )}
+                    </h3>
+                    <span className="comment-text-span">{content}</span>
+                    <div className="comment-timestamp-container">
+                      <div className="comment-timestamp-container-2">
+                        <time>[timestamp]</time>
+                      </div>
+                    </div>
                   </div>
                 </div>
+                {sessionUser.id === user_id && (
+                  <div>
+                    <button className='postBtn' onClick={() => setEditableComment(true)}>Edit</button>
+                    <button className='postBtn' onClick={() => { handleDelete(post_id, id,) }}>Delete</button>
+                  </div>
+                )}
               </div>
 
               {editableComment && (

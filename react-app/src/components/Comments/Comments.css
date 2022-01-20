@@ -86,3 +86,87 @@
     width:100%;
     cursor: pointer;
 }
+
+.comment-text-container {
+    display: inline-block;
+    flex-shrink: 1;
+    min-width:0;
+    align-items: stretch;
+    box-sizing: border-box;
+    flex-direction: column;
+    position: relative;
+}
+
+.comment-text-username {
+    align-items: center;
+    display: inline-flex;
+    margin:0;
+    padding:0;
+    font-size:14px;
+    font-style:normal;
+    font-weight:400;
+    line-height: 18px;
+}
+
+.comment-text-username-2 {
+  margin-right:4px;
+  flex:0 0 auto;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.comment-text-username-span {
+  display: inline;
+  position:relative;
+}
+
+.comment-text-username-link {
+  color:rgb(38,38,38);
+  display:inline-block;
+  padding:0;
+  position:relative;
+  background-color: transparent;
+  cursor:pointer;
+  font-size:14px;
+  font-weight: 600;
+  text-align:center;
+  text-overflow: ellipsis;
+  width:auto;
+  text-decoration: none;
+}
+
+.comment-text-span {
+    margin:0;
+    padding:0;
+    border:0;
+    font:inherit;
+    vertical-align: baseline;
+    word-wrap: break-word; 
+}
+
+.comment-timestamp-container {
+  margin-top:16px;
+  margin-bottom:4px;
+  flex:0 0 auto;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.comment-timestamp-container-2 {
+  display: block;
+  color: rgb(142,142,142);
+  font-weight: 400;
+  font-size:12px;
+  line-height: 16px;
+  margin:-2px 0 -3px;
+  align-items: stretch;
+  position:relative
+}
