@@ -31,7 +31,7 @@ const Comment = ({ post_id }) => {
 
   return (
     <>
-      {comments?.reverse().map(({ id, user_id, content, username }) => (
+      {comments?.reverse().map(({ id, user_id, content, username, profile_image }) => (
         <ul className="comment-container" key={id}>
           <div className="comment-container-2">
             <li className="comment-container-3">
@@ -41,7 +41,7 @@ const Comment = ({ post_id }) => {
                   <div className="comment-pic-container">
                     <div className="comment-pic-container-2">
                       <a className="comment-pic-link">
-                        <img className="comment-pic-img" alt=""></img>
+                        <img className="comment-pic-img" src={profile_image} alt=""></img>
                       </a>
                     </div>
                   </div>

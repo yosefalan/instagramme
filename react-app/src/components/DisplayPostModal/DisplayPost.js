@@ -8,6 +8,8 @@ import { deletePost, editPost } from "../../store/posts";
 import Comment from "../Comments/Comments";
 import CommentForm from "../Comments/CommentForm";
 
+import like from "../NavigationBar/images/like.png";
+
 function DisplayPost({ postId, setShowModal }) {
   const sessionUser = useSelector((state) => state.session.user);
   const posts = useSelector((state) => state.posts);
@@ -51,8 +53,6 @@ function DisplayPost({ postId, setShowModal }) {
           <div id="post-modal-container-content-2">
             <div id="post-modal-container-content-3">
               <div id="post-modal-container-content-4">
-
-
                 <div id="post-modal-image-container">
                   <div id="post-modal-image-wrapper">
                     <div id="inner-div">
@@ -60,13 +60,9 @@ function DisplayPost({ postId, setShowModal }) {
                     </div>
                   </div>
                 </div>
-
                 <div id="post-modal-right-container">
                   <div id="post-modal-right-container-2">
                     <div id="post-modal-right-container-3">
-
-
-                  
                       <div id="top-right-container">
                         <div id="top-right-container-2">
                           <header id="post-modal-header">
@@ -126,13 +122,26 @@ function DisplayPost({ postId, setShowModal }) {
                           </div>
                         </div>
                       </div>
-
                       <div id="right-section-main">
                         <section id="like-button-section">
-                          [Like Button]
+                          <span id="post-like-button-container">
+                            <button id="post-like-button">
+                              <div id="post-like-button-inner-div">
+                                <span id="post-like-button-inner-span">
+                                  <img id="post-like-button-img" src={like} alt=""></img>
+                                </span>
+                              </div>
+                            </button>
+                          </span>
                         </section>
                         <section id="like-count-section">
-                          {total_likes.size} {total_likes.size === 1 ? "like" : "likes"}
+                          <div id="like-count-container">
+                            <div id="like-count-container-2">
+                              <span id="like-count-span">
+                                {total_likes.size} {total_likes.size === 1 ? "like" : "likes"}
+                              </span>
+                            </div>
+                          </div>
                         </section>
                         <div id="right-section-description-and-comments">
                           <div id="right-section-description-and-comments-2">
@@ -158,11 +167,11 @@ function DisplayPost({ postId, setShowModal }) {
                                         </div>
                                       </h2>
                                       <span id="post-description-text-span">{post.description}</span>
-                                      <div id="post-description-timestamp-container">
+                                      {/* <div id="post-description-timestamp-container">
                                         <div id="post-description-timestamp-container-2">
-                                          <time>[timestamp]</time>
+                                          <time id="post-description-timestamp">[timestamp]</time>
                                         </div>
-                                      </div>
+                                      </div> */}
                                     </div>
                                   </div>
                                 </div>
@@ -173,8 +182,12 @@ function DisplayPost({ postId, setShowModal }) {
                             </div>
                           </div>
                         </div>
-                        <div id="timestamp-section">
-                          Posted XX hours ago
+                        <div id="post-timestamp-section">
+                          <a id="post-timestamp-link">
+                            <time id="post-timestamp">
+                              {post.createdAt.split(" ").slice(0, 4).join(" ")}
+                            </time>
+                          </a>
                         </div>
                         <section id="add-comment-section">
                           <CommentForm pid={post.id} />

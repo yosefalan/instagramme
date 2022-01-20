@@ -1,11 +1,41 @@
+#comment-form-container {
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin:0;
+  padding:0;
+  position:relative;
+}
+
 #comment-form-form {
-  position: absolute;
-  bottom: 5px;;
+  /* position: absolute;
+  bottom: 5px;; */
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-grow:1;
+  flex-shrink:1;
+  position:relative;
 }
 
 #comment-form-textarea {
-  border: none;
-  width: 330px;
+  /* border: none;
+  width: 330px; */
+  height:18px;
+  background:0 0;
+  border:0;
+  color:rgb(38, 38, 38);
+  display: flex;
+  flex-grow: 1;
+  font-size: inherit;
+  max-height: 80px;
+  outline:0;
+  padding:0;
+  resize:none;
+  line-height: 18px;
+  outline-offset: 0;
 }
 
 

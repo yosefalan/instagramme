@@ -37,7 +37,7 @@ export default function CommentForm({ pid }) {
   }
   return (
     <>
-
+      <div id="comment-form-container">
         <form onSubmit={handleSubmit}
         id="comment-form-form">
           <ul>
@@ -57,7 +57,7 @@ export default function CommentForm({ pid }) {
             Post
           </button>
         </form>
-
+      </div>
     </>
   );
 }

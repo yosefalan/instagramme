@@ -355,6 +355,48 @@
   position: relative;
 }
 
+#post-like-button-container {
+  display: inline-block;
+  margin-left: -8px;
+}
+
+#post-like-button {
+  align-items: center;
+  background:0 0;
+  border:0;
+  cursor:pointer;
+  display: flex;
+  justify-content: center;
+  padding:8px;
+  box-sizing: border-box;
+}
+
+#post-like-button-inner-div {
+  align-items: center;
+  justify-content: center;
+  display: block;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin:0;
+  padding:0;
+  position: relative;
+}
+
+#post-like-button-inner-span {
+
+}
+
+#post-like-button-img {
+  display:block;
+  position: relative;
+  color:rgb(38,38,38);
+  fill:rgb(38,38,38);
+  /* height:24;
+  width:24; */
+  overflow:hidden;
+}
+
+
 #like-count-section {
   padding-left: 16px;
   padding-right: 16px;
@@ -367,6 +409,37 @@
   display: flex;
   flex-shrink: 0;
   position: relative;
+}
+
+#like-count-container {
+  flex:1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+  display: flex;
+}
+
+#like-count-container-2 {
+  align-items: center;
+  display: flex;
+  flex:1 1 auto;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+  white-space: pre;
+}
+
+#like-count-span {
+  color:rgb(38,38,38);
+  font-weight: 600;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size:14px;
+  line-height: 18px;
 }
 
 #right-section-description-and-comments {
@@ -571,11 +644,11 @@
   position:relative
 }
 
-time {
+#post-description-timestamp {
   margin-right:12px;
 }
 
-#timestamp-section {
+#post-timestamp-section {
   padding-left: 16px;
   margin-bottom: 0;
   order:5;
@@ -587,10 +660,25 @@ time {
   position: relative;
 }
 
+#post-timestamp-link {
+  text-transform: uppercase;
+  color:rgb(142,142,142);
+  margin-bottom:5px;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+#post-timestamp {
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: .2px;
+}
+
+
 #add-comment-section {
   margin-top: 14px;
-  margin-left: 16px;
-  margin-right: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
   order:6;
   padding-bottom: 6px;
   padding-top:6px;
@@ -613,7 +701,7 @@ time {
   overflow-y: scroll;
 } */
 
-#likes-button-bar {
+/* #likes-button-bar {
   height:fit-content;
   padding: .8em;
 }
@@ -622,7 +710,7 @@ time {
   height: 100px;
   box-sizing: border-box;
   padding: 20px;
-}
+} */
 
 .postBtn {
   border: none;
