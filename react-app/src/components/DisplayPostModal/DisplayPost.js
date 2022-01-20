@@ -129,14 +129,41 @@ function DisplayPost({ postId, setShowModal }) {
 
                       <div id="right-section-main">
                         <section id="like-button-section">
-                          Like Button
+                          [Like Button]
                         </section>
                         <section id="like-count-section">
                           {total_likes.size} {total_likes.size === 1 ? "like" : "likes"}
                         </section>
                         <div id="right-section-description-and-comments">
-                          <div id="post-description-edit">
-                            {post.description}
+                          <div id="right-section-description-and-comments-2">
+                            <div id="post-description-container">
+                              <li id="post-description-container-2">
+                                <div id="post-description-container-3">
+                                  <div id="post-description-container-4">
+                                    <div id="post-description-pic-container">
+                                      <div id="post-description-pic-wrapper">
+                                        <a id="post-description-pic-link">
+                                          <img id="post-description-pic-img" src={post.profile_image} alt=""></img>
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div id="post-description-text-container">
+                                      <h2 id="post-description-text-username">
+                                        <div>
+                                          <span>
+                                            <a>
+                                              {post.username}
+                                            </a>
+                                          </span>
+                                        </div>
+                                      </h2>
+                                      <span id="post-description-text-span">{post.description}</span>
+                                      <div id="post-description-timestamp">[timestamp]</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </div>
                             <div id="comments-row">
                               <Comment post_id={postId} />
                             </div>

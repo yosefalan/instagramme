@@ -132,25 +132,8 @@ useEffect(() => {
               </div>
             </div>
             <section className="profile-section">
-              {showFollowingModal && (
-                <DisplayFollowingModal
-                  userId={userId}
-                  setShowFollowingModal={setShowFollowingModal}
-                  setUser={setUser}
-                />
-              )}
-              {showFollowersModal && (
-                <DisplayFollowersModal
-                  userId={userId}
-                  setShowFollowersModal={setShowFollowersModal}
-                  setUser={setUser}
-                />
-              )}
-              {showModal && (
-                <DisplayPostModal postId={postId} setShowModal={setShowModal} />
-              )}
               <div className="profile-name-wrapper">
-                <h2 className="profile-name"> {user.username}</h2>
+                <h2 className="profile-name">{user.username}</h2>
                 {allowFollow && (
                   <button id="profile-page-follow-button"
                     onClick={() => {
@@ -207,7 +190,23 @@ useEffect(() => {
                 </li>
               </ul>
               <div>
-                {/* <h1 className="profile-first-last-name">Firstname Lastname</h1> */}
+                {showFollowingModal && (
+                  <DisplayFollowingModal
+                    userId={userId}
+                    setShowFollowingModal={setShowFollowingModal}
+                    setUser={setUser}
+                  />
+                )}
+                {showFollowersModal && (
+                  <DisplayFollowersModal
+                    userId={userId}
+                    setShowFollowersModal={setShowFollowersModal}
+                    setUser={setUser}
+                  />
+                )}
+                {showModal &&
+                  <DisplayPostModal postId={postId} setShowModal={setShowModal} />
+                }
                 <br></br>
               </div>
             </section>
