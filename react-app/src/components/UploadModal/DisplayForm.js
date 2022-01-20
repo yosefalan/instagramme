@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import { createPost } from "../../store/posts";
 import { useDispatch, useSelector } from "react-redux";
-import './UploadModal.css'
+import './UploadModal.css';
+import './DisplayForm.css';
 import logo from './images/instagramme_logo_black.png'
 
 function DisplayForm({ preview, file, hideForm }) {
@@ -36,16 +37,16 @@ function DisplayForm({ preview, file, hideForm }) {
 
     return (
         <>
-            <div id="post-modal-container">
-                <div id="post-modal-image-container">
-                    <div id="post-modal-image-wrapper">
+            <div id="form-modal-container">
+                <div id="form-modal-image-container">
+                    <div id="form-modal-image-wrapper">
                         <div className="image-div">
                             <img className="previewImage" src={preview} alt=""></img>
                         </div>
                         {/* <div id="inner-div-two">Hello from other inner div!</div> */}
                     </div>
                 </div>
-                <div id="post-modal-right-container">
+                <div id="form-modal-right-container">
                     <div className="displayFormContainer">
                         <form
                         onSubmit={handleSubmit}
