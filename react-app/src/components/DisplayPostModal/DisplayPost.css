@@ -340,6 +340,15 @@
   box-sizing: border-box;
 }
 
+#edit-post {
+  padding:1em;
+}
+
+#edit-post-description-textarea {
+  height: 62px;
+  width: calc(100% - 6px);
+}
+
 #like-button-section {
   padding-left: 16px;
   padding-right: 16px;

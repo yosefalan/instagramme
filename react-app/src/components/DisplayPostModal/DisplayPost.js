@@ -98,24 +98,6 @@ function DisplayPost({ postId, setShowModal }) {
                                 Edit
                               </button>
                             )}{" "}
-                            {editable && (
-                              <div className="edit-post">
-                                <textarea
-                                  value={description}
-                                  onChange={(e) => setDescription(e.target.value)}
-                                  className="edit-description-input"
-                                />
-                                <button
-                                  className="postBtn"
-                                  onClick={() => handleEdit(postId, description)}
-                                >
-                                  Submit
-                                </button>
-                                <button className="postBtn" onClick={() => isEditable(false)}>
-                                  Cancel
-                                </button>
-                              </div>
-                            )}
                             {post.user_id === sessionUser.id && (
                               <button
                                 className="postBtn"
@@ -128,6 +110,25 @@ function DisplayPost({ postId, setShowModal }) {
                         </div>
                       </div>
                       <div id="right-section-main">
+                        {editable && (
+                          <div id="edit-post">
+                            <textarea
+                              id = "edit-post-description-textarea"
+                              value={description}
+                              onChange={(e) => setDescription(e.target.value)}
+                            />
+                            <br></br>
+                            <button
+                              className="postBtn"
+                              onClick={() => handleEdit(postId, description)}
+                            >
+                              Submit
+                            </button>
+                            <button className="postBtn" onClick={() => isEditable(false)}>
+                              Cancel
+                            </button>
+                          </div>
+                        )}
                         <section id="like-button-section">
                           <span id="post-like-button-container">
                             <button id="post-like-button">
