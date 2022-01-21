@@ -13,8 +13,8 @@ export default function CommentForm({ pid }) {
   const validate = () => {
     const validationErrors = [];
 
-    if (body.length < 2) validationErrors.push("Comment must be at least 2 characters long.");
-    if (body.length > 255) validationErrors.push("Comment cannot exceed 255 characters in length.");
+    if (body.length < 2) validationErrors.push("Comments must be at least 2 characters long.");
+    if (body.length > 255) validationErrors.push("Comments cannot exceed 255 characters in length.");
 
     return validationErrors;
   }

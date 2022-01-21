@@ -42,7 +42,7 @@
 .comment-container-5 {
     display:flex;
     flex-direction: row;
-    width: calc(100% - 58px);
+    width: calc(100% - 62px);
     align-items: stretch;
     box-sizing: border-box;
     flex-shrink: 0;
@@ -146,6 +146,12 @@
     font:inherit;
     vertical-align: baseline;
     word-wrap: break-word; 
+}
+
+.comment-edit-buttons {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .comment-timestamp-container {

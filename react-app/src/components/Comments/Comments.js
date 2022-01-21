@@ -64,7 +64,7 @@ const Comment = ({ post_id }) => {
                   </div>
                 </div>
                 {sessionUser.id === user_id && (
-                  <div>
+                  <div className="comment-edit-buttons">
                     <button className='postBtn' onClick={() => setEditableComment(true)}>Edit</button>
                     <button className='postBtn' onClick={() => { handleDelete(post_id, id,) }}>Delete</button>
                   </div>
