@@ -93,7 +93,7 @@ useEffect(() => {
     setShowModal(true);
   };
 
-  const handleFollow = async (sessionUserId, followedId) => {
+  const handleFollow = async (followedId) => {
     await dispatch(addSuserFollowed(followedId));
     // dispatch(addFollowed(sessionUserId, followedId));
     // window.location.reload(false);
@@ -150,7 +150,7 @@ useEffect(() => {
                 {allowFollow && (
                   <button id="profile-page-follow-button"
                     onClick={() => {
-                      handleFollow(suser[3], userId);
+                      handleFollow(userId);
                     }}
                   >
                     Follow
