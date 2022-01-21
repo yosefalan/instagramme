@@ -7,8 +7,8 @@
 
 
 .uploadFormMain {
-  height: 830px;
-  width: 788px;
+  height: 80vh;
+  width: 38vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,27 +18,26 @@
 .uploadFormTop {
   position: absolute;
   top: 0px;
-  margin-bottom: 500px;
+  /* margin-bottom: 500px; */
   display: flex;
   justify-content: center;
-  width: 788px;
+  width: 100%;
+  height: 6%;
   color: #2D2D2D;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   border-bottom: 1px solid #DBDBDB;
 }
 
-/* .uploadFormSpacer {
-  width: 100%;
-  height: 500px;
-} */
+
 
 .uploadFormBtm {
   display: flex;
-  height: 300px;
+  /* height: 93%; */
+  width: 100%;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 250px;
+  /* margin-bottom: 250px; */
 }
 
 .mediaImgContainer {
@@ -68,22 +67,36 @@
 }
 
 .buttonWrapper {
-  position: flex;
+  display: flex;
+  justify-content: center;
   position: relative;
   width: 260px;
   height: 30px;
 }
 
 .fileUploadBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  width: 260px;
-  height: 30px;
+  width: 150px;
+  height: 25px;
   background-color: #0095F6;
   color: #FFFFFF;
   border: none;
   border-radius: 2px;
   font-weight: 700;
-  width: 80%
+  font-size: 12px;
+  justify-self: center;
+}
+
+#fileUpload {
+  display: none;
+}
+
+
+.fileUploadBtn:hover {
+  cursor: pointer;
 }
 
 .uploadBtnContainer {
@@ -100,24 +113,107 @@
 
 /**********************display form  styling*****************************************/
 
-.image-div {
+
+
+.upload-form-main-display {
+  height: 80vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* margin: 0; */
+}
+
+.upload-form-top-display {
+  position: absolute;
   display: flex;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 6%;
+  color: #2D2D2D;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 1px solid #DBDBDB;
+  top: 0;
+}
 
+
+.upload-form-bottom {
+  height: 94%;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+}
+
+
+.upload-form-bottom-left {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.image-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .previewImage {
-  max-width: 100%;
-  max-height: 100%;
-  /* object-fit: contain */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
+
+/*******************************/
+
+.upload-form-bottom-right {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+}
+
+
+.user_info {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#user_img_container {
+  height: 100%;
+  width: 20%;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#user_img {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+}
+
+#user_name {
+  font-weight: 700;
+  width: 80%;
+}
+
 
 .displayFormContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 30%;
+
 }
 
 .displayForm {
@@ -126,32 +222,32 @@
   width: 100%;
   height: 100%;
 }
-.textAreaContainer {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-}
 
 .displayTextArea {
-  width: 80%;
-  height: 80%;
+  width: 95%;
+  height: 100%;
+  padding: 5% 0% 0% 5%;
+  border: none;
 }
 
 .submitBtnContainer {
-  width: 100%;
+  display: relative;
+  height: 100%;
+  width: 10%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  top: 0;
+  align-self: flex-end;
 }
+
 .submitFormBtn {
-  width: 166px;
-  height: 30px;
-  background-color: #0095F6;
-  color: #FFFFFF;
+  position: relative;
+  color: #0095F6;
+  background-color: transparent;
   border: none;
-  border-radius: 2px;
   font-weight: 700;
-  width: 80%
+  margin-top: 15%;
 }
 
 .uploadBtnContainer {
@@ -164,3 +260,105 @@
 .field {
   width: 250px;
 }
+
+/******************************/
+/*
+#post-modal-container {
+  width: 89vw;
+  height: 55vw;
+  display: flex;
+}
+#post-modal-image-container {
+  width: 62%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+#post-modal-image-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#inner-div {
+  color: white;
+}
+.display-photo {
+  width: 100%;
+  height: 100%;
+}
+#inner-div-two {
+  color: white;
+}
+#post-modal-right-container {
+  position: relative;
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-size: 14px;
+}
+#top-right-container {
+  position:absolute;
+  top: 30px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+#top-right-container-left {
+  width: 60px;
+}
+#top-right-container-right {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 350px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+.display-profile-pic {
+  width: 100%;
+  height: 100%;
+}
+#post-description-edit {
+  margin-top: 100px;
+  border-top: 1px solid #DFDFDF;
+  height: 320px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+#comments-row {
+  height: 200px;
+  overflow-y: scroll;
+}
+#likes-button-bar {
+  height:fit-content;
+  padding: .8em;
+}
+#profile-pic-holder {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profile-pic {
+  object-fit: cover;
+  width: 28px;
+  height: 28px;
+}
+#right-column-likes {
+  height: 100px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.postBtn {
+  border: none;
+  color: rgb(60, 142, 230);
+  background-color: white;
+} */

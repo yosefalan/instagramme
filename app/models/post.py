@@ -35,4 +35,5 @@ class Post(db.Model):
             'likes': [list((like.user_id, like.post_id, like.like)) for like in self.likes],
             'comments': len(self.comments),
             'profile_image': self.user.profile_image,
+            'createdAt': self.createdAt,
         }

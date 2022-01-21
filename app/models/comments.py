@@ -21,4 +21,5 @@ class Comment(db.Model):
             'content': self.content,
             'id': self.id,
             'username': self.user.username,
+            'profile_image': self.user.profile_image,
         }

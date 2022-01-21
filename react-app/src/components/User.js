@@ -93,7 +93,7 @@ useEffect(() => {
     setShowModal(true);
   };
 
-  const handleFollow = async (sessionUserId, followedId) => {
+  const handleFollow = async (followedId) => {
     await dispatch(addSuserFollowed(followedId));
     // dispatch(addFollowed(sessionUserId, followedId));
     // window.location.reload(false);
@@ -107,6 +107,19 @@ useEffect(() => {
   const handleFollowersClick = (userId) => {
     setShowFollowersModal(true);
   };
+
+  // const handleShowModal = () => {
+  //   setShowModal(!showModal);
+  // }
+
+  // useEffect(() => {
+  //   if (showModal) {
+  //     document.addEventListener('click', handleShowModal);
+  //     return () => document.removeEventListener('click', handleShowModal);
+  //   } else {
+  //     return;
+  //   }
+  // }, [showModal]);
 
   if (!user) {
     return null;
@@ -132,29 +145,12 @@ useEffect(() => {
               </div>
             </div>
             <section className="profile-section">
-              {showFollowingModal && (
-                <DisplayFollowingModal
-                  userId={userId}
-                  setShowFollowingModal={setShowFollowingModal}
-                  setUser={setUser}
-                />
-              )}
-              {showFollowersModal && (
-                <DisplayFollowersModal
-                  userId={userId}
-                  setShowFollowersModal={setShowFollowersModal}
-                  setUser={setUser}
-                />
-              )}
-              {showModal && (
-                <DisplayPostModal postId={postId} setShowModal={setShowModal} />
-              )}
               <div className="profile-name-wrapper">
-                <h2 className="profile-name"> {user.username}</h2>
+                <h2 className="profile-name">{user.username}</h2>
                 {allowFollow && (
                   <button id="profile-page-follow-button"
                     onClick={() => {
-                      handleFollow(suser[3], userId);
+                      handleFollow(userId);
                     }}
                   >
                     Follow
@@ -207,7 +203,23 @@ useEffect(() => {
                 </li>
               </ul>
               <div>
-                {/* <h1 className="profile-first-last-name">Firstname Lastname</h1> */}
+                {showFollowingModal && (
+                  <DisplayFollowingModal
+                    userId={userId}
+                    setShowFollowingModal={setShowFollowingModal}
+                    setUser={setUser}
+                  />
+                )}
+                {showFollowersModal && (
+                  <DisplayFollowersModal
+                    userId={userId}
+                    setShowFollowersModal={setShowFollowersModal}
+                    setUser={setUser}
+                  />
+                )}
+                {showModal &&
+                  <DisplayPostModal postId={postId} setShowModal={setShowModal} />
+                }
                 <br></br>
               </div>
             </section>

@@ -16,7 +16,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     username = db.Column(db.String(40), nullable=False, unique=True)
-    profile_image = db.Column(db.String(255))
+    profile_image = db.Column(db.String(255), default="http://mamba-instagramme.s3.amazonaws.com/profile_copy.jpg")
     hashed_password = db.Column(db.String(255), nullable=False)
     createdAt = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
     updatedAt = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
