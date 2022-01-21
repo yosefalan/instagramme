@@ -182,3 +182,13 @@ def add_like(uid, pid):
     db.session.commit()
     return like.to_dict()
 
+@posts_routes.route("/<int:pid>/likes/<int:uid>", methods=["PUT"])
+def update_like(uid, pid):
+    req= request.get_json()
+    like = Like.query.filter(Like.user_id == uid, Like.post_id == pid).first()
+    if like:
+        like.like=req['like'],
+        db.session.commit()
+        return like.to_dict()
+    else:
+        return "Like does not exist", 404
