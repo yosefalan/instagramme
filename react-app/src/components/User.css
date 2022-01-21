@@ -92,7 +92,7 @@ body {
 
 .profile-button {
     border: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
     align-items: flex-start;
     box-sizing: border-box;
     display: block;
@@ -110,7 +110,7 @@ body {
     position: absolute;
     margin: 0;
     padding: 0;
-    cursor:pointer;
+    /* cursor:pointer; */
 }
 
 .profile-section {
