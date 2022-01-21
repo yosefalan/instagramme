@@ -108,6 +108,19 @@ useEffect(() => {
     setShowFollowersModal(true);
   };
 
+  // const handleShowModal = () => {
+  //   setShowModal(!showModal);
+  // }
+
+  // useEffect(() => {
+  //   if (showModal) {
+  //     document.addEventListener('click', handleShowModal);
+  //     return () => document.removeEventListener('click', handleShowModal);
+  //   } else {
+  //     return;
+  //   }
+  // }, [showModal]);
+
   if (!user) {
     return null;
   }

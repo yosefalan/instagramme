@@ -10,6 +10,15 @@ export default function CommentForm({ pid }) {
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState([]);
 
+  const validate = () => {
+    const validationErrors = [];
+
+    if (body.length < 2) validationErrors.push("Comment must be at least 2 characters long.");
+    if (body.length > 255) validationErrors.push("Comment cannot exceed 255 characters in length.");
+
+    return validationErrors;
+  }
+
   const reset = () => {
     setBody("");
   };
@@ -17,12 +26,16 @@ export default function CommentForm({ pid }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (body.length > 0) {
+    const errors = validate();
+
+    if (errors.length > 0) {
+      setErrors(errors);
+    } else {
       setErrors([]);
       dispatch(addAComment(pid, sessionUser.id, body));
+      reset();
     }
 
-    reset();
   };
 
   if (!sessionUser) {
@@ -39,7 +52,7 @@ export default function CommentForm({ pid }) {
       <div id="comment-form-container">
         {errors.length !== 0 && <ul>
           {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
+            <li key={idx} style={{color: "red"}}>{error}</li>
           ))}
         </ul>}
         <form onSubmit={handleSubmit} id="comment-form-form">

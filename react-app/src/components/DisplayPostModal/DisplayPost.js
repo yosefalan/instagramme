@@ -30,6 +30,7 @@ function DisplayPost({ postId, setShowModal }) {
     dispatch(deletePost(id));
     setShowModal(false);
   };
+
   // if (isPostLoaded) {
   //   const editableDescription = document.getElementById(
   //     "post-description-edit"
@@ -46,11 +47,15 @@ function DisplayPost({ postId, setShowModal }) {
   //   setIsPostLoaded(true);
   // }, []);
 
+  const handleCloseModalClick = () => {
+    setShowModal(false);
+  }
+
   return (
     <>
-      <div id="post-modal-container">
+      <div id="post-modal-container" onClick={handleCloseModalClick}>
         <div id="post-modal-container-content">
-          <div id="post-modal-container-content-2">
+          <div id="post-modal-container-content-2" onClick={(e) => e.stopPropagation()}>
             <div id="post-modal-container-content-3">
               <div id="post-modal-container-content-4">
                 <div id="post-modal-image-container">
