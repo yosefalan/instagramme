@@ -1,45 +1,199 @@
+body {
+   background-color: #FAFAFA;
+}
+
+
 
 .footer_div {
+    position: fixed;
+    background-color: transparent;
     display: flex;
     width: 100%;
+    height: 100px;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
 }
-.footer {
-    display: flex;
-    background-color: #FAFAFA;
-}
-.footer_list {
+
+
+.footer_info {
+    /* background-color: rgba(0, 0, 0, .05); */
+    margin-bottom: 10px;
+    width: 300px;
+    height: 80px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #ffffff, #e1e1e1);
+    box-shadow:  3px 3px 6px #949494,
+             -3px -3px 6px #ffffff;
 }
+
+
+.footer_info_inset {
+    background-color: transparent;
+    position: relative;
+    width: 280px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 25px;
+    /* border-style: ridge; */
+    /* border: 5px solid rgba(0, 0, 0, .15) */
+    /* box-shadow:
+    12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset,
+    -8px -8px 12px 0 rgba(0, 0, 0, .25) inset; */
+    /* box-shadow: inset 10px 0px 30px 3px rgba(0,0,0, 0.2); */
+}
+
+.name_inset {
+    height: 40px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #fafafa;
+    box-shadow: inset 5px 5px 10px rgba(100, 100, 100, .5),
+            inset -5px -5px 10px #ffffff;
+}
+
+p {
+    background-color: #565656;
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(255,255,255,0.8),
+    0px 2px 3px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+}
+
 a{
     text-decoration: none;
-    color: slategray;
-    font-size: small;
 }
-p{
-    color: slategray;
-    font-size: small;
+
+#g {
+    color: rgba(0, 0, 0, .3);
+
 }
-.footer_info {
+
+#l {
+    color:rgba(250, 250, 250, 1);
+    /* color: rgb(250, 250, 250) */
+}
+
+#ig {
+    text-shadow: 0px 2px 1px rgba(255,255,255,1),
+    0px 1px 1px rgba(0,0,0,1);
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+}
+
+.llogo_div:active {
+    box-shadow: inset 5px 5px 16px #04294e,
+    inset -5px -5px 10px #10a3ff;
+  }
+
+.glogo_div:active {
+    background: #fafafa;
+    box-shadow: inset 5px 5px 16px #646464,
+    inset -5px -5px 10px #ffffff;
+}
+
+.glogo_div:hover
+~ .name_inset {
+
+    background: linear-gradient(145deg, #ffffff, #e1e1e1);
+    box-shadow:  5px 5px 5px #646464,
+    -5px -5px 5px #ffffff;
+}
+
+
+.llogo_div:hover
+~ .name_inset {
+
+    background: linear-gradient(145deg, #ffffff, #e1e1e1);
+    box-shadow:  5px 5px 5px #646464,
+    -5px -5px 5px #ffffff;
+}
+
+.llogo_div:active
+~ .name_inset {
+
+    background: #fafafa;
+    box-shadow: inset 5px 5px 10px rgba(100, 100, 100, .5),
+    inset -5px -5px 10px #ffffff;
+}
+
+
+.glogo_div:active
+~ .name_inset {
+
+    background: #fafafa;
+    box-shadow: inset 5px 5px 10px rgba(100, 100, 100, .5),
+    inset -5px -5px 10px #ffffff;
+}
+
+
+#il {
+    margin-top: 6px;
+    text-shadow:
+    0px 1px 1px rgba(255,255,255, .5),
+    0px -1px 2px rgba(0,0,0,1);
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+}
+
+.glogo_div {
     display: flex;
-    flex-direction: row;
     align-items: center;
-}
-.copyright_div {
-    display: flex;
     justify-content: center;
-    font-size: small;
-    color: slategray;
-    width: 100vw;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding: .1em;
+    font-size: 38px;
+    background: linear-gradient(145deg, #ffffff, #e1e1e1);
+    box-shadow:  5px 5px 6px #646464,
+             -5px -5px 6px #ffffff;
 }
-.lLogo{
+
+.llogo_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    height:40px;
+    width: 40px;
+    padding: .1em;
+    font-size: 36px;
+    /* background: linear-gradient(145deg, #0b6dd0, #095caf); */
+    background:
+    linear-gradient(145deg,
+    rgba(11, 109, 208, .7),
+    rgba(9, 92, 175, .7)
+    );
+    box-shadow:
+    5px 5px 6px #646464,
+    -5px -5px 6px #ffffff;
+}
+
+
+
+
+
+
+.llgo{
     width: 30px;
 }
-.gLogo{
+.glogo{
     width: 50px;
 }
