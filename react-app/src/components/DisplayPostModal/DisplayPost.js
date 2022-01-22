@@ -8,7 +8,9 @@ import { deletePost, editPost } from "../../store/posts";
 import Comment from "../Comments/Comments";
 import CommentForm from "../Comments/CommentForm";
 
-import like from "../NavigationBar/images/like.png";
+import liked from "../Feed/images/likes_filled_red.png";
+import like_empty from "../Feed/images/likes.png";
+import { addLike, deleteLike } from "../../store/likes";
 
 function DisplayPost({ postId, setShowModal }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -18,8 +20,18 @@ function DisplayPost({ postId, setShowModal }) {
   const post = posts[postId];
   const [description, setDescription] = useState(post.description);
   const dispatch = useDispatch();
-  const post_likes = useSelector((state) => state.posts[postId].likes)
-  const total_likes = new Set(post_likes.filter((like) => like[2] === true).map((like) => like[0]))
+  const post_likes = useSelector((state) => state.posts[postId].likes);
+
+  const [Liked, SetLiked] = useState(false);
+  const like = (id, user_id) => {
+    dispatch(addLike(id, sessionUser.id));
+    SetLiked(true);
+  };
+  const unlike = (id) => {
+    let user_like = post_likes.filter((like) => like[0] === sessionUser.id);
+    dispatch(deleteLike(id, sessionUser.id, user_like.id));
+    SetLiked(false);
+  };
 
   const handleEdit = async (id, description) => {
     dispatch(editPost(id, description));
@@ -49,19 +61,26 @@ function DisplayPost({ postId, setShowModal }) {
 
   const handleCloseModalClick = () => {
     setShowModal(false);
-  }
+  };
 
   return (
     <>
       <div id="post-modal-container" onClick={handleCloseModalClick}>
         <div id="post-modal-container-content">
-          <div id="post-modal-container-content-2" onClick={(e) => e.stopPropagation()}>
+          <div
+            id="post-modal-container-content-2"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div id="post-modal-container-content-3">
               <div id="post-modal-container-content-4">
                 <div id="post-modal-image-container">
                   <div id="post-modal-image-wrapper">
                     <div id="inner-div">
-                      <img className="display-photo" src={post["photos"]} alt=""></img>
+                      <img
+                        className="display-photo"
+                        src={post["photos"]}
+                        alt=""
+                      ></img>
                     </div>
                   </div>
                 </div>
@@ -74,9 +93,11 @@ function DisplayPost({ postId, setShowModal }) {
                             <div id="profile-pic-holder">
                               <div id="profile-pic-holder-2">
                                 <a id="profile-pic-link">
-                                  <img id="top-right-container-img"
-                                    src={post.profile_image} alt="">
-                                  </img>
+                                  <img
+                                    id="top-right-container-img"
+                                    src={post.profile_image}
+                                    alt=""
+                                  ></img>
                                 </a>
                               </div>
                             </div>
@@ -94,7 +115,10 @@ function DisplayPost({ postId, setShowModal }) {
                           </header>
                           <div id="post-edit-buttons-container">
                             {post.user_id === sessionUser.id && (
-                              <button className="postBtn" onClick={() => isEditable(true)}>
+                              <button
+                                className="postBtn"
+                                onClick={() => isEditable(true)}
+                              >
                                 Edit
                               </button>
                             )}{" "}
@@ -113,7 +137,7 @@ function DisplayPost({ postId, setShowModal }) {
                         {editable && (
                           <div id="edit-post">
                             <textarea
-                              id = "edit-post-description-textarea"
+                              id="edit-post-description-textarea"
                               value={description}
                               onChange={(e) => setDescription(e.target.value)}
                             />
@@ -124,7 +148,10 @@ function DisplayPost({ postId, setShowModal }) {
                             >
                               Submit
                             </button>
-                            <button className="postBtn" onClick={() => isEditable(false)}>
+                            <button
+                              className="postBtn"
+                              onClick={() => isEditable(false)}
+                            >
                               Cancel
                             </button>
                           </div>
@@ -134,7 +161,23 @@ function DisplayPost({ postId, setShowModal }) {
                             <button id="post-like-button">
                               <div id="post-like-button-inner-div">
                                 <span id="post-like-button-inner-span">
-                                  <img id="post-like-button-img" src={like} alt=""></img>
+                                  {Liked ? (
+                                    <img
+                                      src={liked}
+                                      alt=""
+                                      className="like-icon"
+                                      onClick={() => unlike(postId)}
+                                    ></img>
+                                  ) : (
+                                    <img
+                                      src={like_empty}
+                                      alt=""
+                                      className="like-icon"
+                                      onClick={() =>
+                                        like(postId, sessionUser.id)
+                                      }
+                                    ></img>
+                                  )}
                                 </span>
                               </div>
                             </button>
@@ -144,7 +187,8 @@ function DisplayPost({ postId, setShowModal }) {
                           <div id="like-count-container">
                             <div id="like-count-container-2">
                               <span id="like-count-span">
-                                {total_likes.size} {total_likes.size === 1 ? "like" : "likes"}
+                                {post_likes.length}{" "}
+                                {post_likes.length === 1 ? "like" : "likes"}
                               </span>
                             </div>
                           </div>
@@ -158,7 +202,11 @@ function DisplayPost({ postId, setShowModal }) {
                                     <div id="post-description-pic-container">
                                       <div id="post-description-pic-wrapper">
                                         <a id="post-description-pic-link">
-                                          <img id="post-description-pic-img" src={post.profile_image} alt=""></img>
+                                          <img
+                                            id="post-description-pic-img"
+                                            src={post.profile_image}
+                                            alt=""
+                                          ></img>
                                         </a>
                                       </div>
                                     </div>
@@ -172,7 +220,9 @@ function DisplayPost({ postId, setShowModal }) {
                                           </span>
                                         </div>
                                       </h2>
-                                      <span id="post-description-text-span">{post.description}</span>
+                                      <span id="post-description-text-span">
+                                        {post.description}
+                                      </span>
                                       {/* <div id="post-description-timestamp-container">
                                         <div id="post-description-timestamp-container-2">
                                           <time id="post-description-timestamp">[timestamp]</time>
@@ -199,7 +249,6 @@ function DisplayPost({ postId, setShowModal }) {
                           <CommentForm pid={post.id} />
                         </section>
                       </div>
-
                     </div>
                   </div>
                 </div>

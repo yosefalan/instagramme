@@ -6,6 +6,7 @@ const ADD_POST = "posts/ADD_POST";
 const UPDATE_POST = "posts/UPDATE_POST";
 const REMOVE_POST = "posts/REMOVE_POST";
 const ADD_LIKE = "likes/ADD_LIKE";
+const REMOVE_LIKE = "likes/REMOVE_LIKE";
 
 //action creators
 const load = (posts) => ({
@@ -131,7 +132,18 @@ const postsReducer = (state = initialState, action) => {
       return newState;
     case ADD_LIKE:
       newState = { ...state };
-      newState[action.payload.post_id].likes.push([action.payload.user_id, action.payload.post_id, action.payload.like]);
+      newState[action.payload.post_id].likes.push([
+        action.payload.user_id,
+        action.payload.post_id,
+        action.payload.like,
+      ]);
+      return newState;
+    case REMOVE_LIKE:
+      newState = { ...state };
+      let postLike = newState[action.payload.postId].likes.indexOf(
+        action.payload.lid
+      );
+      newState[action.payload.postId].likes.splice(postLike, 1);
       return newState;
     default:
       return state;

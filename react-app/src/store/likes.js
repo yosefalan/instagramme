@@ -30,14 +30,12 @@ export const fetchLikes = () => async (dispatch) => {
   }
 };
 
-
-
 export const addLike = (id, user_id) => async (dispatch) => {
-  const data = { id, user_id}
+  const data = { id, user_id };
   const res = await csrfFetch(`/api/posts/${id}/likes/${user_id}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({like: true}),
+    body: JSON.stringify({ like: true }),
   });
   if (res.ok) {
     const like = await res.json();
@@ -46,12 +44,12 @@ export const addLike = (id, user_id) => async (dispatch) => {
   }
 };
 
-export const deleteLike = (postId, id) => async (dispatch) => {
+export const deleteLike = (postId, id, lid) => async (dispatch) => {
   const response = await csrfFetch(`/api/posts/${postId}/likes/${id}`, {
-    method: "PUT",
+    method: "DELETE",
   });
   if (response.ok) {
-    dispatch(removeLike(id));
+    dispatch(removeLike({ postId, id, lid }));
   }
 };
 
@@ -69,14 +67,14 @@ const likesReducer = (state = initialState, action) => {
       // },{})
     }
 
-    case ADD_LIKE:
-      newState = { ...state, [action.payload.post_id]: action.payload.like};
-      return newState;
+    // case ADD_LIKE:
+    //   newState = { ...state, [action.payload.post_id]: action.payload.like };
+    //   return newState;
 
-    case REMOVE_LIKE:
-      newState = { ...state };
-      delete newState[action.payload.id];
-      return newState;
+    // case REMOVE_LIKE:
+    //   newState = { ...state };
+    //   delete newState[action.payload.postId].likes[action.payload.lid];
+    //   return newState;
     default:
       return state;
   }
