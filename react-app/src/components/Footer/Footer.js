@@ -5,6 +5,7 @@ import '../Footer/Footer.css'
 
 const Footer = () => {
   return (
+    <>
     <div className="footer_div">
       <ul className="footer_list">
         <div className="footer_info">
@@ -46,6 +47,7 @@ const Footer = () => {
         No © 2021 Instagramme by Four Random Dudes, No Rights Reserved
       </div>
     </div>
+    </>
   );
 };
 
