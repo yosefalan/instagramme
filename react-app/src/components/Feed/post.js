@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./post.css";
@@ -28,12 +28,8 @@ const Post = ({
     showPost();
     passId();
   };
-
-  const post_likes = useSelector((state) => state.posts[id].likes);
-
-  const total_likes = new Set(
-    post_likes.filter((like) => like[2] === true).map((like) => like[0])
-  );
+  const [Liked, SetLiked] = useState(false);
+  let post_likes = useSelector((state) => state.posts[id].likes);
 
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -41,9 +37,12 @@ const Post = ({
 
   const like = (id, user_id) => {
     dispatch(addLike(id, sessionUser.id));
+    SetLiked(true);
   };
   const unlike = (id) => {
-    dispatch(deleteLike(id, sessionUser.id));
+    let user_like = post_likes.filter((like) => like[0] === sessionUser.id);
+    dispatch(deleteLike(id, sessionUser.id, user_like.id));
+    SetLiked(false);
   };
 
   return (
@@ -62,7 +61,7 @@ const Post = ({
       </div>
       <div className="description">{description}</div>
       <div className="post-icons">
-        {total_likes.has(sessionUser.id) ? (
+        {Liked ? (
           <img
             src={liked}
             alt=""
@@ -85,7 +84,7 @@ const Post = ({
           onClick={handleClick}
         ></img>
       </div>
-      <div className="likes">{total_likes.size} likes</div>
+      <div className="likes">{post_likes.length} likes</div>
       <div className="comments">{comments} comments</div>
     </div>
   );

@@ -46,13 +46,10 @@ export const addLike = (id, user_id) => async (dispatch) => {
 
 export const deleteLike = (postId, id, lid) => async (dispatch) => {
   const response = await csrfFetch(`/api/posts/${postId}/likes/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ like: false }),
+    method: "DELETE",
   });
   if (response.ok) {
-    const like = await res.json();
-    dispatch(removeLike(like));
+    dispatch(removeLike({ postId, id, lid }));
   }
 };
 
@@ -70,13 +67,14 @@ const likesReducer = (state = initialState, action) => {
       // },{})
     }
 
-    case ADD_LIKE:
-      newState = { ...state, [action.payload.post_id]: action.payload.like };
-      return newState;
+    // case ADD_LIKE:
+    //   newState = { ...state, [action.payload.post_id]: action.payload.like };
+    //   return newState;
 
-    case REMOVE_LIKE:
-      newState = { ...state, [action.payload.post_id]: action.payload.like };
-      return newState;
+    // case REMOVE_LIKE:
+    //   newState = { ...state };
+    //   delete newState[action.payload.postId].likes[action.payload.lid];
+    //   return newState;
     default:
       return state;
   }
