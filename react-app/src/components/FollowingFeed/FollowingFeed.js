@@ -29,7 +29,7 @@ function FollowingFeed () {
                             <div className="following-feed-pic-container"><img className="following-feed-profile-pic" src={followee.profile_image} alt="" onClick={() => { handleClick(followee.id) }}></img>
                                 </div>
                                 <div className="following-feed-username">
-                                  <div className="following-feed-username-link" onClick={() => { handleClick(followee.id) }}>{followee.username}
+                              <div className="following-feed-username-link" onClick={() => { handleClick(followee.id) }}><span className="followee-username-span">{followee.username}</span>
                                   </div>
                               </div>
                             </div>
