@@ -21,14 +21,14 @@ function DisplayPost({ postId, setShowModal }) {
   const [description, setDescription] = useState(post.description);
   const dispatch = useDispatch();
   const post_likes = useSelector((state) => state.posts[postId].likes);
+  let user_like = post_likes.filter((like) => like[0] === sessionUser.id);
 
-  const [Liked, SetLiked] = useState(false);
+  const [Liked, SetLiked] = useState(user_like.length > 0 ? true : false);
   const like = (id, user_id) => {
     dispatch(addLike(id, sessionUser.id));
     SetLiked(true);
   };
   const unlike = (id) => {
-    let user_like = post_likes.filter((like) => like[0] === sessionUser.id);
     dispatch(deleteLike(id, sessionUser.id, user_like.id));
     SetLiked(false);
   };
