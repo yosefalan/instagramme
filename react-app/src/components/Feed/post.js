@@ -24,23 +24,23 @@ const Post = ({
 }) => {
   // const [showModal, setShowModal] = useState(false);
   // const [postId, setPostId] = useState(id);
+  const dispatch = useDispatch();
   const handleClick = () => {
     showPost();
     passId();
   };
-  const [Liked, SetLiked] = useState(false);
   let post_likes = useSelector((state) => state.posts[id].likes);
 
   const sessionUser = useSelector((state) => state.session.user);
+  let user_like = post_likes.filter((like) => like[0] === sessionUser.id);
 
-  const dispatch = useDispatch();
+  const [Liked, SetLiked] = useState(user_like.length > 0 ? true : false);
 
   const like = (id, user_id) => {
     dispatch(addLike(id, sessionUser.id));
     SetLiked(true);
   };
   const unlike = (id) => {
-    let user_like = post_likes.filter((like) => like[0] === sessionUser.id);
     dispatch(deleteLike(id, sessionUser.id, user_like.id));
     SetLiked(false);
   };
