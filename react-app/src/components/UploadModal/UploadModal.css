@@ -197,8 +197,8 @@
 }
 
 #user_img {
-  width: 60%;
-  height: 60%;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 
@@ -228,6 +228,7 @@
   height: 100%;
   padding: 5% 0% 0% 5%;
   border: none;
+  font-size: 18px;
 }
 
 .submitBtnContainer {
@@ -247,7 +248,8 @@
   background-color: transparent;
   border: none;
   font-weight: 700;
-  margin-top: 15%;
+  margin-top: 12%;
+  font-size: 18px;
 }
 
 .uploadBtnContainer {
@@ -260,105 +262,3 @@
 .field {
   width: 250px;
 }
-
-/******************************/
-/*
-#post-modal-container {
-  width: 89vw;
-  height: 55vw;
-  display: flex;
-}
-#post-modal-image-container {
-  width: 62%;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-}
-#post-modal-image-wrapper {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: black;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-#inner-div {
-  color: white;
-}
-.display-photo {
-  width: 100%;
-  height: 100%;
-}
-#inner-div-two {
-  color: white;
-}
-#post-modal-right-container {
-  position: relative;
-  width: 38%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  font-size: 14px;
-}
-#top-right-container {
-  position:absolute;
-  top: 30px;
-  display: flex;
-  align-items: center;
-  height: 50px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-#top-right-container-left {
-  width: 60px;
-}
-#top-right-container-right {
-  display: flex;
-  align-items: center;
-  height: 60px;
-  width: 350px;
-  padding-left: 15px;
-  padding-bottom: 15px;
-  font-size: 20px;
-}
-.display-profile-pic {
-  width: 100%;
-  height: 100%;
-}
-#post-description-edit {
-  margin-top: 100px;
-  border-top: 1px solid #DFDFDF;
-  height: 320px;
-  overflow-y: scroll;
-  padding: 10px;
-}
-#comments-row {
-  height: 200px;
-  overflow-y: scroll;
-}
-#likes-button-bar {
-  height:fit-content;
-  padding: .8em;
-}
-#profile-pic-holder {
-  width: 50px;
-  height: 50px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-.profile-pic {
-  object-fit: cover;
-  width: 28px;
-  height: 28px;
-}
-#right-column-likes {
-  height: 100px;
-  box-sizing: border-box;
-  padding: 20px;
-}
-.postBtn {
-  border: none;
-  color: rgb(60, 142, 230);
-  background-color: white;
-} */
