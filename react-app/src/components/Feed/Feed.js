@@ -7,7 +7,6 @@ import Post from "./post";
 import DisplayPostModal from "../DisplayPostModal/index";
 import FollowingFeed from "../FollowingFeed/FollowingFeed";
 import "./Feed.css";
-import Footer from "../Footer/Footer";
 
 const Feed = () => {
   // const sessionUser = useSelector((state) => state.session.user);
@@ -15,6 +14,9 @@ const Feed = () => {
   const posts = useSelector((state) => Object.values(state.posts));
   const [showModal, setShowModal] = useState(false);
   const [postId, setPostId] = useState("");
+
+
+  const sorted_posts = posts.sort((a, b) => (a.createdAt > b.createdAt) ? 1 : -1)
 
   // const photos = useSelector((state) => Object.values(state.photos));
   const handleClick = (id) => {
@@ -32,9 +34,8 @@ const Feed = () => {
         )}
       <div className="feed-center-container">
         <FollowingFeed />
-        {posts
-        ?.reverse()
-        .map(
+        {sorted_posts
+        ?.map(
           ({
             id,
             user_id,
@@ -63,7 +64,6 @@ const Feed = () => {
             )
             )}
         </div>
-        <Footer />
     </div>
   );
 };

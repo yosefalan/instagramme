@@ -6,7 +6,7 @@ import { getUserPosts } from "../store/posts";
 import { getSuserFollows, addSuserFollowed } from '../store/follows';
 
 import "./User.css";
-import Footer from "./Footer/Footer";
+
 
 import DisplayPostModal from "./DisplayPostModal/index";
 import DisplayFollowersModal from "./DisplayFollowersModal";
@@ -250,7 +250,7 @@ useEffect(() => {
           </div>
         </div>
       </main>
-      <Footer />
+
     </>
 
     // <ul>

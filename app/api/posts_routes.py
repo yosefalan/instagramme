@@ -48,6 +48,7 @@ def posts():
         user["following"])).order_by(Post.createdAt.desc()).all()
 
     results_dict = {post.id: post.to_dict() for post in results}
+    print("$$$$$$$$$", results_dict)
     return results_dict
 
 
