@@ -1,12 +1,66 @@
 .following-feed-container {
+  position: relative;
   display: flex;
-  width: 576px;
+  justify-content: flex-start;
+  width: 600px;
   height: 118px;
   background-color: #FFFFFF;
   border: 1px solid #dfdfdf;
-  padding: 10px;
-  overflow-y: scroll;
+  /* overflow-x: scroll; */
+  /* padding: 10px; */
+  overfloW: hidden;
   gap: 12px;
+}
+
+
+.chevron_left {
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1%;
+  height: 100px;
+  padding: 10px;
+}
+
+#chev_l{
+  width: 20px;
+  height: 20px;
+}
+
+#chev_r{
+  width: 20px;
+  height: 20px;
+}
+
+.chevron_right {
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1%;
+  height: 100px;
+  padding: 10px;
+}
+
+
+.following-feed-inner-container {
+  scroll-behavior: smooth;
+  position: relative;
+  display: flex;
+  height: 118px;
+  border: 1px solid #dfdfdf;
+  /* padding: 10px; */
+  overflow: hidden;
+  overflow-x: scroll;
+  gap: 12px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.following-feed-inner-container::-webkit-scrollbar {
+  display: none;
 }
 
 .following-feed-tile {
