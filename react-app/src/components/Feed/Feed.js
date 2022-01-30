@@ -15,6 +15,9 @@ const Feed = () => {
   const [showModal, setShowModal] = useState(false);
   const [postId, setPostId] = useState("");
 
+
+  const sorted_posts = posts.sort((a, b) => (a.createdAt > b.createdAt) ? 1 : -1)
+
   // const photos = useSelector((state) => Object.values(state.photos));
   const handleClick = (id) => {
     setPostId(id);
@@ -31,9 +34,8 @@ const Feed = () => {
         )}
       <div className="feed-center-container">
         <FollowingFeed />
-        {posts
-        ?.reverse()
-        .map(
+        {sorted_posts
+        ?.map(
           ({
             id,
             user_id,
