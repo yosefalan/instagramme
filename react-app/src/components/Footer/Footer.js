@@ -24,7 +24,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="name_inset">
-            <p>Greg Gomes</p>
+            <p id="name">Greg Gomes</p>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="name_inset">
-            <p>Jake Payne</p>
+            <p id="name">Jake Payne</p>
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="name_inset">
-            <p>Joseph Nackman</p>
+            <p id="name">Joseph Nackman</p>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="name_inset">
-            <p>Tony Hauck</p>
+            <p id="name">Tony Hauck</p>
           </div>
         </div>
       </div>
