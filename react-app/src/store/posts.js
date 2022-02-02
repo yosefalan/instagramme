@@ -32,7 +32,7 @@ const remove = (postId) => ({
 //thunk action dispatchers
 
 export const getPosts = () => async (dispatch) => {
-  const response = await csrfFetch("/api/posts/");
+  const response = await csrfFetch("/api/posts");
 
   if (response.ok) {
     const posts = await response.json();
@@ -83,7 +83,7 @@ export const createPost = (postData) => async (dispatch) => {
   form.append("description", description);
   form.append("file", file);
 
-  const res = await fetch("/api/posts/", {
+  const res = await fetch("/api/posts", {
     method: "POST",
     body: form,
   });
