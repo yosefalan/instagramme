@@ -1,4 +1,4 @@
-import { csrfFetch } from "./csrf";
+// import { csrfFetch } from "./csrf";
 
 // action types
 const LOAD_POSTS = "posts/LOAD_POSTS";
@@ -32,7 +32,8 @@ const remove = (postId) => ({
 //thunk action dispatchers
 
 export const getPosts = () => async (dispatch) => {
-  const response = await csrfFetch("/api/posts");
+  console.log("trying to get posts");
+  const response = await fetch("/api/posts/");
 
   if (response.ok) {
     const posts = await response.json();
@@ -42,7 +43,7 @@ export const getPosts = () => async (dispatch) => {
 };
 
 export const getUserPosts = (userId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/users/${userId}/posts`);
+  const response = await fetch(`/api/users/${userId}/posts`);
 
   if (response.ok) {
     const posts = await response.json();
@@ -90,7 +91,7 @@ export const createPost = (postData) => async (dispatch) => {
 };
 
 export const editPost = (id, postData) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${id}`, {
+  const response = await fetch(`/api/posts/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(postData),
@@ -103,7 +104,7 @@ export const editPost = (id, postData) => async (dispatch) => {
 };
 
 export const deletePost = (postId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${postId}`, {
+  const response = await fetch(`/api/posts/${postId}`, {
     method: "DELETE",
   });
 

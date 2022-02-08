@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getPosts,
-} from "../../store/posts";
+import { getPosts } from "../../store/posts";
 import Post from "./post";
 import DisplayPostModal from "../DisplayPostModal/index";
 import FollowingFeed from "../FollowingFeed/FollowingFeed";
@@ -49,6 +47,7 @@ const Feed = () => {
             // <div onClick={() => handleClick(id)}>
 
               <Post
+                key={id}
                 id={id}
                 user_id={user_id}
                 description={description}
@@ -58,7 +57,7 @@ const Feed = () => {
                 photos={photos}
                 profile_image={profile_image}
                 showPost={() => setShowModal(true)}
-                passId={() =>setPostId(id)}
+                passId={() => setPostId(id)}
                 />
             // </div>
             )

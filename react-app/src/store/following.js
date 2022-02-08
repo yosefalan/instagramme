@@ -1,4 +1,4 @@
-import { csrfFetch } from "./csrf";
+// import { csrfFetch } from "./csrf";
 
 //action types
 const LOAD_FOLLOWING = "following/LOAD_FOLLOWING";
@@ -26,7 +26,7 @@ const reset = () => ({
 })
 
 export const getFollowing = (id) => async (dispatch) => {
-    const response = await csrfFetch(`/api/users/${id}/following`);
+    const response = await fetch(`/api/users/${id}/following`);
     
     if (response.ok) {
         const following = await response.json();
@@ -35,7 +35,7 @@ export const getFollowing = (id) => async (dispatch) => {
 }
 
 export const removeOneFollowed = (userId, followedId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/users/${userId}/following/${followedId}`, {
+    const response = await fetch(`/api/users/${userId}/following/${followedId}`, {
         method: "DELETE"
     })
 
@@ -45,7 +45,7 @@ export const removeOneFollowed = (userId, followedId) => async (dispatch) => {
 }
 
 export const addFollowed = (userId, followedId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/users/${userId}/following/${followedId}`, {
+    const response = await fetch(`/api/users/${userId}/following/${followedId}`, {
         method: "PUT"
     })
 

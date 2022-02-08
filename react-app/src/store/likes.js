@@ -1,4 +1,4 @@
-import { csrfFetch } from "./csrf";
+// import { csrfFetch } from "./csrf";
 
 // action types
 const LOAD_LIKES = "likes/LOAD_LIKES";
@@ -21,7 +21,7 @@ const removeLike = (id) => ({
 });
 
 export const fetchLikes = () => async (dispatch) => {
-  const res = await csrfFetch("/api/likes");
+  const res = await fetch("/api/likes");
   if (res.ok) {
     const likes = await res.json();
     dispatch(getLikes(likes));
@@ -32,7 +32,7 @@ export const fetchLikes = () => async (dispatch) => {
 
 export const addLike = (id, user_id) => async (dispatch) => {
   const data = { id, user_id };
-  const res = await csrfFetch(`/api/posts/${id}/likes/${user_id}`, {
+  const res = await fetch(`/api/posts/${id}/likes/${user_id}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ like: true }),
@@ -45,7 +45,7 @@ export const addLike = (id, user_id) => async (dispatch) => {
 };
 
 export const deleteLike = (postId, id, lid) => async (dispatch) => {
-  const response = await csrfFetch(`/api/posts/${postId}/likes/${id}`, {
+  const response = await fetch(`/api/posts/${postId}/likes/${id}`, {
     method: "DELETE",
   });
   if (response.ok) {
