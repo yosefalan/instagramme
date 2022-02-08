@@ -56,36 +56,59 @@ const Post = ({
           {username}
         </NavLink>
       </div>
-      <div className="photo-holder">
-        <img className="photo" src={photos} alt="" onClick={handleClick} />
+      <div className="photo-container-1">
+        <div className="photo-container-2">
+          <div className="photo-container-3">
+            <div className="photo-holder">
+              <img className="photo" src={photos} alt="" onClick={handleClick} />
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="description">{description}</div>
-      <div className="post-icons">
-        {Liked ? (
-          <img
+      <div className="textcontent-container">
+        <div className="post-icons">
+          {Liked ? (
+            <img
             src={liked}
             alt=""
             className="like-icon"
             onClick={() => unlike(id)}
-          ></img>
-        ) : (
+            ></img>
+            ) : (
+              <img
+              src={like_empty}
+              alt=""
+              className="like-icon"
+              onClick={() => like(id, user_id)}
+              ></img>
+              )}
+          {/* <img src={liked} className="like-icon"></img> */}
           <img
-            src={like_empty}
+            src={comment}
             alt=""
-            className="like-icon"
-            onClick={() => like(id, user_id)}
+            className="comment-icon"
+            onClick={handleClick}
           ></img>
-        )}
-        {/* <img src={liked} className="like-icon"></img> */}
-        <img
-          src={comment}
-          alt=""
-          className="comment-icon"
-          onClick={handleClick}
-        ></img>
+        </div>
+        {post_likes.length === 1 && <div className="likes-section">{post_likes.length} like</div>}
+        {post_likes.length > 1 && <div className="likes-section">{post_likes.length} likes</div>}
+        {description &&
+          <div className="description-section">
+            <div className="description-section-2">
+              <div className="description-text-wrapper">
+                <span className="description-username-span">{username}</span>
+                {description}
+              </div>
+              {Number(comments) !== 0 &&
+                <div className="comments-wrapper">
+                  {Number(comments) === 1 && <span className="comments-count-text" onClick={handleClick}>View 1 comment</span>}
+                  {Number(comments) > 1 && <span className="comments-count-text" onClick={handleClick}>View all {comments} comments</span>}
+                </div>
+              }
+            </div>
+          </div>
+        }
       </div>
-      <div className="likes">{post_likes.length} likes</div>
-      <div className="comments">{comments} comments</div>
     </div>
   );
 };

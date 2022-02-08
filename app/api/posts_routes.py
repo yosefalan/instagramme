@@ -41,6 +41,7 @@ def get_one_post(id):
 
 
 @posts_routes.route('/')
+@login_required
 def posts():
     userId = current_user.id
     user = User.query.get(userId).to_dict()

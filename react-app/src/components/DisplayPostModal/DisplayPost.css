@@ -76,7 +76,7 @@
 
 #post-modal-image-container {
   /* width: 62%; */
-  background-color: black;
+  /* background-color: black;
   display: flex;
   flex-direction: column;
   max-height: 773px;
@@ -85,26 +85,48 @@
   flex-grow:1;
   justify-content: center;
   min-height: 450px;
-  overflow:hidden;
+  overflow:hidden; */
 }
 
-#post-modal-image-wrapper {
-  overflow: hidden;
+#post-modal-image-wrapper-1 {
+  
+}
+
+#post-modal-image-wrapper-2 {
+  /* overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: black;
   margin-top: auto;
-  margin-bottom: auto;
+  margin-bottom: auto; */
+  background-color: rgba(239, 239, 239, 1);
+  display: block;
+  width:100%;
 }
 
 #inner-div {
-  color: white;
+  padding-bottom:125%;
+  display:block;
+  overflow:hidden;
+  box-sizing: border-box;
+  position:relative;
+  align-items: stretch;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin:0;
+  padding:0;
 }
 
 .display-photo {
-  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top:0;
+  left:0;
   height: 100%;
+  width:100%;
+  margin:0;
+  padding:0;
 }
 
 #inner-div-two {

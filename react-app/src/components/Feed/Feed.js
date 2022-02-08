@@ -21,6 +21,7 @@ const Feed = () => {
     setPostId(id);
     setShowModal(true);
   };
+  
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
@@ -31,38 +32,53 @@ const Feed = () => {
         <DisplayPostModal postId={postId} setShowModal={setShowModal} />
         )}
       <div className="feed-center-container">
-        <FollowingFeed />
-        {sorted_posts
-        ?.map(
-          ({
-            id,
-            user_id,
-            description,
-            username,
-            likes,
-            comments,
-            photos,
-            profile_image,
-          }) => (
-            // <div onClick={() => handleClick(id)}>
+        <div className="feed-column">
+          <FollowingFeed />
+          <div className="posts-container">
+            {sorted_posts
+            ?.map(
+              ({
+                id,
+                user_id,
+                description,
+                username,
+                likes,
+                comments,
+                photos,
+                profile_image,
+              }) => (
+                // <div onClick={() => handleClick(id)}>
 
-              <Post
-                key={id}
-                id={id}
-                user_id={user_id}
-                description={description}
-                username={username}
-                likes={likes}
-                comments={comments}
-                photos={photos}
-                profile_image={profile_image}
-                showPost={() => setShowModal(true)}
-                passId={() => setPostId(id)}
-                />
-            // </div>
-            )
+                  <Post
+                    key={id}
+                    id={id}
+                    user_id={user_id}
+                    description={description}
+                    username={username}
+                    likes={likes}
+                    comments={comments}
+                    photos={photos}
+                    profile_image={profile_image}
+                    showPost={() => setShowModal(true)}
+                    passId={() => setPostId(id)}
+                    />
+                // </div>
+              )
             )}
+          </div>
         </div>
+        <div className="about-column">
+          <div>
+              [Profile]
+          </div>
+          <div>
+              [Suggested follows]
+          </div>
+          <div>
+              [About]
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
