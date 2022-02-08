@@ -33,27 +33,27 @@ def seed_photos():
     photo13 = Photo(
     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo13.jpeg', user_id=3, post_id=13)
     photo14= Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=14)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo14.jpeg', user_id=3, post_id=14)
     photo15 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=15)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo15.jpeg', user_id=3, post_id=15)
     photo16 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=16)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo16.jpeg', user_id=3, post_id=16)
     photo17 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=17)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo17.jpeg', user_id=3, post_id=17)
     photo18 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=18)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo18.jpeg', user_id=3, post_id=18)
     photo19 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=19)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo19.jpeg', user_id=3, post_id=19)
     photo20 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=20)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo20.jpeg', user_id=3, post_id=20)
     photo21 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=21)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo21.jpeg', user_id=3, post_id=21)
     photo22 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=22)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo22.jpeg', user_id=3, post_id=22)
     photo23 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=23)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo23.jpeg', user_id=3, post_id=23)
     photo24 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo01.jpeg', user_id=3, post_id=24)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo24.jpeg', user_id=3, post_id=24)
 
    #**********************************8th Damon**************************************
     # photo25 = Photo(

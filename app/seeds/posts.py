@@ -1,4 +1,5 @@
 from app.models import db, Post
+import datetime
 
 # Adds a demo user, you can add other users here if you want
 def seed_posts():

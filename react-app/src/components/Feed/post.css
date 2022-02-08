@@ -126,6 +126,7 @@
   flex-shrink: 0;
   min-width: 335px;
   width:100%;
+  margin-bottom:16px;
 
 }
 
@@ -202,7 +203,7 @@
 .comments-wrapper {
   /* font-weight: bold;
   margin-left: 10px; */
-  margin-bottom:16px;
+  margin-bottom:8px;
   flex:0 0 auto;
   justify-content: flex-start;
   align-items: stretch;
