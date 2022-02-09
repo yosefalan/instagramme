@@ -73,6 +73,8 @@ function DisplayPost({ postId, setShowModal }) {
           >
             <div id="post-modal-container-content-3">
               <div id="post-modal-container-content-4">
+
+
                 <div id="post-modal-image-container">
                   <div id="post-modal-image-wrapper-1">
                     <div id="post-modal-image-wrapper-2">
@@ -82,6 +84,7 @@ function DisplayPost({ postId, setShowModal }) {
                           src={post["photos"]}
                           alt=""
                         />
+                        <div id="innermost-div"></div>
                       </div>
                     </div>
                   </div>

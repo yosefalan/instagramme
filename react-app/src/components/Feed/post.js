@@ -92,6 +92,7 @@ const Post = ({
         </div>
         {post_likes.length === 1 && <div className="likes-section">{post_likes.length} like</div>}
         {post_likes.length > 1 && <div className="likes-section">{post_likes.length} likes</div>}
+        {/* {post_likes.length === 0 && <div className="likes-section"><span style={{ "font-weight": "normal" }}>Be the first to <span style={{"font-weight": "bold"}}>like this</span></span></div>} */}
         {description &&
           <div className="description-section">
             <div className="description-section-2">
