@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { useSelector } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "./DisplayPost.css";
@@ -13,6 +13,79 @@ import like_empty from "../Feed/images/likes.png";
 import { addLike, deleteLike } from "../../store/likes";
 
 function DisplayPost({ postId, setShowModal }) {
+  const [aspectRatio, setAspectRatio] = useState("");
+  const [style, setStyle] = useState({});
+
+  useEffect(() => {
+    const img = document.getElementById('post-photo')
+    console.log("IMG:", img);
+    if (img) {
+      setAspectRatio(img.naturalWidth / img.naturalHeight);
+      console.log(aspectRatio);
+      console.log("aspectRatio?", img.naturalWidth / img.naturalHeight);
+      if (aspectRatio && aspectRatio === 1) {
+        console.log("LINE27 aspectRatio:", aspectRatio);
+        return;
+      };
+      if (aspectRatio && aspectRatio < 1) {
+        console.log("aspectRatio:", aspectRatio);
+        setPadding(tall);
+        console.log("padding is TALL");
+        console.log("img.naturalWidth:", img.naturalWidth);
+        console.log("img.naturalHeight:", img.naturalHeight);
+        return;
+      }
+      if (aspectRatio && aspectRatio > 1) {
+        console.log("aspectRatio:", aspectRatio);
+        setPadding({
+          paddingBottom: `${String(img.naturalHeight / img.naturalWidth * 100)}%`
+        });
+        console.log("padding is SHORT");
+        return;
+      }
+    }
+    return;
+  }, [postId, aspectRatio]);
+  
+  useEffect(() => {
+    if (aspectRatio) {
+      if (aspectRatio >= 1) {
+        console.log("aspectRatio >= 1");
+        console.log("aspectRation===", aspectRatio)
+        setStyle({
+          maxHeight: `${window.innerHeight - 48}px`,
+          maxWidth: `${window.innerHeight - 48}px`,
+          aspectRatio: "1 / 1",
+          flexBasis: `${window.innerHeight - 48}px`,
+        });
+      } else if (aspectRatio < 1) {
+        console.log("aspectRation < 1");
+        console.log("aspectRation===", aspectRatio)
+        setStyle({
+          maxHeight: `${window.innerHeight - 48}px`,
+          maxWidth: `${(window.innerHeight - 48) * aspectRatio}px`,
+          aspectRatio: `${aspectRatio}`,
+          flexBasis: `${(window.innerHeight - 48) * aspectRatio}px`,
+        });
+      }
+    }
+    return;
+  }, [aspectRatio]);
+
+  const square = {
+    paddingBottom: "100%"
+  }
+
+  const tall = {
+    paddingBottom: "125%"
+  }
+
+  // const short = {
+  //   paddingBottom: `${String(document.getElementById("post-photo").naturalHeight / document.getElementById("post-photo").naturalWidth * 100)}%`
+  // }
+
+  const [padding, setPadding] = useState(square);
+
   const sessionUser = useSelector((state) => state.session.user);
   const posts = useSelector((state) => state.posts);
   const [editable, isEditable] = useState(false);
@@ -22,8 +95,14 @@ function DisplayPost({ postId, setShowModal }) {
   const dispatch = useDispatch();
   const post_likes = useSelector((state) => state.posts[postId].likes);
   let user_like = post_likes.filter((like) => like[0] === sessionUser.id);
-
   const [Liked, SetLiked] = useState(user_like.length > 0 ? true : false);
+
+
+
+  // useEffect(() => {
+  //   console.log(post["photos"])
+  // }, [post]);
+
   const like = (id, user_id) => {
     dispatch(addLike(id, sessionUser.id));
     SetLiked(true);
@@ -63,24 +142,24 @@ function DisplayPost({ postId, setShowModal }) {
     setShowModal(false);
   };
 
+
+
   return (
     <>
       <div id="post-modal-container" onClick={handleCloseModalClick}>
         <div id="post-modal-container-content">
-          <div
-            id="post-modal-container-content-2"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div id="post-modal-container-content-2">
             <div id="post-modal-container-content-3">
-              <div id="post-modal-container-content-4">
+              <div id="post-modal-container-content-4" onClick={handleCloseModalClick}>
 
 
-                <div id="post-modal-image-container">
+                <div id="post-modal-image-container" style={style} onClick={(e) => e.stopPropagation()}>
                   <div id="post-modal-image-wrapper-1">
                     <div id="post-modal-image-wrapper-2">
-                      <div id="inner-div">
+                      <div id="inner-div" style={padding}>
                         <img
                           className="display-photo"
+                          id="post-photo"
                           src={post["photos"]}
                           alt=""
                         />
@@ -89,7 +168,8 @@ function DisplayPost({ postId, setShowModal }) {
                     </div>
                   </div>
                 </div>
-                <div id="post-modal-right-container">
+
+                <div id="post-modal-right-container" onClick={(e) => e.stopPropagation()}>
                   <div id="post-modal-right-container-2">
                     <div id="post-modal-right-container-3">
                       <div id="top-right-container">
