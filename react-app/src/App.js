@@ -13,6 +13,7 @@ import SignupPage from "./components/SignupPage/SignupPage";
 import LoginPage from "./components/LoginPage/Login";
 import Feed from "./components/Feed/Feed";
 import NavigationBar from './components/NavigationBar/NavigationBar';
+import './App.css';
 
 function App() {
   // const [loaded, setLoaded] = useState(false);
