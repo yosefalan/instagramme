@@ -1,5 +1,3 @@
-Hi
-
 # Mambas - Instagramme (Instagram) - Flask React Group Project
 <img src='https://i.imgur.com/OBiiMKY.png'>
 
