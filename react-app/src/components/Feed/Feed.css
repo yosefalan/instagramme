@@ -69,5 +69,18 @@
 }
 
 .about-column {
-
+  position: fixed;
+  top:calc(34px + 60px);
+  left:769px;
+  height:100vh;
+  max-width: 293px;
+  margin-bottom: 30px;
+  padding:0;
+  right:0;
+  width:100%;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
 }
