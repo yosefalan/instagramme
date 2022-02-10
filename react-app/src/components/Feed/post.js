@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./post.css";
@@ -29,10 +29,10 @@ const Post = ({
     showPost();
     passId();
   };
-  let post_likes = useSelector((state) => state.posts[id].likes);
+  // let post_likes = useSelector((state) => state.posts[id].likes);
 
   const sessionUser = useSelector((state) => state.session.user);
-  let user_like = post_likes.filter((like) => like[0] === sessionUser.id);
+  let user_like = likes.filter((like) => like[0] === sessionUser.id);
 
   const [Liked, SetLiked] = useState(user_like.length > 0 ? true : false);
 
@@ -40,10 +40,15 @@ const Post = ({
     dispatch(addLike(id, sessionUser.id));
     SetLiked(true);
   };
+
   const unlike = (id) => {
     dispatch(deleteLike(id, sessionUser.id, user_like.id));
     SetLiked(false);
   };
+
+  useEffect(() => {
+    SetLiked(user_like.length > 0 ? true : false);
+  }, [user_like.length]);
 
   return (
     <div className="post-box">
@@ -90,8 +95,8 @@ const Post = ({
             onClick={handleClick}
           ></img>
         </div>
-        {post_likes.length === 1 && <div className="likes-section">{post_likes.length} like</div>}
-        {post_likes.length > 1 && <div className="likes-section">{post_likes.length} likes</div>}
+        {likes.length === 1 && <div className="likes-section">{likes.length} like</div>}
+        {likes.length > 1 && <div className="likes-section">{likes.length} likes</div>}
         {/* {post_likes.length === 0 && <div className="likes-section"><span style={{ "font-weight": "normal" }}>Be the first to <span style={{"font-weight": "bold"}}>like this</span></span></div>} */}
         {description &&
           <div className="description-section">
@@ -100,10 +105,10 @@ const Post = ({
                 <span className="description-username-span">{username}</span>
                 {description}
               </div>
-              {Number(comments) !== 0 &&
+              {comments !== 0 &&
                 <div className="comments-wrapper">
-                  {Number(comments) === 1 && <span className="comments-count-text" onClick={handleClick}>View 1 comment</span>}
-                  {Number(comments) > 1 && <span className="comments-count-text" onClick={handleClick}>View all {comments} comments</span>}
+                  {comments === 1 && <span className="comments-count-text" onClick={handleClick}>View 1 comment</span>}
+                  {comments > 1 && <span className="comments-count-text" onClick={handleClick}>View all {comments} comments</span>}
                 </div>
               }
             </div>

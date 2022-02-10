@@ -19,10 +19,10 @@ const Feed = () => {
   const sorted_posts = posts.sort((a, b) => (a.createdAt > b.createdAt) ? 1 : -1)
 
   // const photos = useSelector((state) => Object.values(state.photos));
-  const handleClick = (id) => {
-    setPostId(id);
-    setShowModal(true);
-  };
+  // const handleClick = (id) => {
+  //   setPostId(id);
+  //   setShowModal(true);
+  // };
   
   useEffect(() => {
     dispatch(getPosts());
