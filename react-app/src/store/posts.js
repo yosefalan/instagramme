@@ -51,14 +51,14 @@ export const getUserPosts = (userId) => async (dispatch) => {
   }
 };
 
-// export const getOnePost = (postId) => async (dispatch) => {
-//   const response = await csrfFetch(`/api/posts/${postId}/`);
+export const getOnePost = (postId) => async (dispatch) => {
+  const response = await fetch(`/api/posts/${postId}`);
 
-//   if (response.ok) {
-//     const post = await response.json();
-//     dispatch(add(post));
-//   }
-// };
+  if (response.ok) {
+    const post = await response.json();
+    dispatch(update(post));
+  }
+};
 
 // export const createPost = (postData) => async (dispatch) => {
 //   console.log("***************", postData)
@@ -133,6 +133,7 @@ const postsReducer = (state = initialState, action) => {
       delete newState[action.postId];
       return newState;
     case ADD_LIKE:
+      console.log("Hi from ADD_LIKE in Posts store!");
       newState = { ...state };
       newState[action.payload.post_id].likes.push([
         action.payload.user_id,
@@ -141,9 +142,13 @@ const postsReducer = (state = initialState, action) => {
       ]);
       return newState;
     case REMOVE_LIKE:
+      console.log("Hi from REMOVE_LIKE in Posts store!");
       newState = { ...state };
       let postLike = newState[action.payload.postId].likes.indexOf(
-        action.payload.lid
+        [action.payload.user_id,
+        action.payload.post_id,
+        true]
+        // action.payload.lid
       );
       newState[action.payload.postId].likes.splice(postLike, 1);
       return newState;

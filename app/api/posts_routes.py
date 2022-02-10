@@ -173,9 +173,9 @@ def delete_comment(id, comment_id):
 # CREATE A LIKE
 @posts_routes.route("/<int:pid>/likes/<int:uid>", methods=["POST"])
 def add_like(uid, pid):
-    req = request.get_json()
+    # req = request.get_json()
     like = Like(
-        like=req['like'],
+        like=True,
         user_id=uid,
         post_id=pid,
     )
