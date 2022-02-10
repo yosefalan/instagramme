@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 // import './CommentForm.css'
 import { updateAComment, deleteAComment } from "../../store/comments";
+import { getOnePost } from "../../store/posts";
 // import CommentForm from "./CommentForm";
 import './Comments.css';
 
@@ -18,12 +19,14 @@ const Comment = ({ post_id }) => {
     dispatch(updateAComment(pid, id, content));
     setEditableComment(false);
   };
+  
   useEffect(() => {
     dispatch(getAllComments(post_id));
   }, [dispatch, post_id]);
 
   const handleDelete = async (pid, id) => {
-    dispatch(deleteAComment(pid, id));
+    await dispatch(deleteAComment(pid, id));
+    await dispatch(getOnePost(pid));
     setEditableComment(false);
   };
 

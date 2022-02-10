@@ -51,14 +51,14 @@ export const getUserPosts = (userId) => async (dispatch) => {
   }
 };
 
-// export const getOnePost = (postId) => async (dispatch) => {
-//   const response = await csrfFetch(`/api/posts/${postId}/`);
+export const getOnePost = (postId) => async (dispatch) => {
+  const response = await fetch(`/api/posts/${postId}`);
 
-//   if (response.ok) {
-//     const post = await response.json();
-//     dispatch(add(post));
-//   }
-// };
+  if (response.ok) {
+    const post = await response.json();
+    dispatch(update(post));
+  }
+};
 
 // export const createPost = (postData) => async (dispatch) => {
 //   console.log("***************", postData)

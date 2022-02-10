@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addAComment } from "../../store/comments";
+import { getOnePost } from "../../store/posts";
 import './CommentForm.css'
 
 
@@ -32,7 +33,8 @@ export default function CommentForm({ pid }) {
       setErrors(errors);
     } else {
       setErrors([]);
-      dispatch(addAComment(pid, sessionUser.id, body));
+      await dispatch(addAComment(pid, sessionUser.id, body));
+      await dispatch(getOnePost(pid));
       reset();
     }
 
