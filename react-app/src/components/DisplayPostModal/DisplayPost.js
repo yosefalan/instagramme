@@ -145,7 +145,7 @@ function DisplayPost({ postId, setShowModal }) {
 
 
   return (
-    <>
+    <div>
       <div id="post-modal-container" onClick={handleCloseModalClick}>
         <div id="post-modal-container-content">
           <div id="post-modal-container-content-2">
@@ -342,7 +342,7 @@ function DisplayPost({ postId, setShowModal }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default DisplayPost;
