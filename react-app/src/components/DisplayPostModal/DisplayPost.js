@@ -17,7 +17,7 @@ function DisplayPost({ postId, setShowModal }) {
   const [style, setStyle] = useState({});
 
   useEffect(() => {
-    const img = document.getElementById('post-photo')
+    const img = document.getElementById('post-photo');
     console.log("IMG:", img);
     if (img) {
       setAspectRatio(img.naturalWidth / img.naturalHeight);
