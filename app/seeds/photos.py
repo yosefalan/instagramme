@@ -167,11 +167,11 @@ def seed_photos():
     photo69 = Photo(
     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo69.jpg', user_id=7, post_id=69)
     photo70 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=7, post_id=70)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo70.jpeg', user_id=7, post_id=70)
     photo71 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=7, post_id=71)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo71.jpeg', user_id=7, post_id=71)
     photo72 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=7, post_id=72)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo72.jpeg', user_id=7, post_id=72)
 
     #    #**********************************humz 8**************************************
     photo73 = Photo(
