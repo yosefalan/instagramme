@@ -57,7 +57,7 @@ def seed_photos():
 
    #**********************************8th Damon**************************************
     photo25 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=3, post_id=25)
+    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=4, post_id=25)
     photo26 = Photo(
     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo26.jpeg', user_id=4, post_id=26)
     photo27 = Photo(
