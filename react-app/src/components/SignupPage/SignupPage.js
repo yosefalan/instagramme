@@ -27,7 +27,7 @@ const SignupPage = () => {
           {/* <h1>Landing Page</h1> */}
           <div className="centerContainer">
             <div className="mainFormContainer">
-              <div className="upperFormContainer">
+              <div className="upperFormContainer signup-page">
                 <img className="formLogo" src={instagramme_logo} alt=""></img>
 
                 <SignUpForm />

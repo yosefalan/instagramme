@@ -65,10 +65,15 @@
   margin-bottom: 10px;
 }
 
+.upperFormContainer.signup-page {
+  height:fit-content;
+}
+
 .formLogo {
   width: 350px;
   height: auto;
 }
+
 .profileLogo {
   height: 100px;
   width: 100px;
