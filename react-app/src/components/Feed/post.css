@@ -140,10 +140,12 @@
 .like-icon {
   margin-left:-8px;
   padding:8px;
+  cursor:pointer;
 }
 
 .comment-icon {
   padding:8px;
+  cursor: pointer;
 }
 
 .likes-section {
