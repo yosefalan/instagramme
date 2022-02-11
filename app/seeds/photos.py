@@ -83,214 +83,214 @@ def seed_photos():
 
     # #**********************************arch_hunter**************************************
 
-    photo37 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo37.jpeg', user_id=5, post_id=37)
-    photo38 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo38.jpeg', user_id=5, post_id=38)
-    photo39 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo39.jpeg', user_id=5, post_id=39)
-    photo40 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo40.jpeg', user_id=5, post_id=40)
-    photo41 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo41.jpeg', user_id=5, post_id=41)
+#     photo37 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo37.jpeg', user_id=5, post_id=37)
+#     photo38 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo38.jpeg', user_id=5, post_id=38)
+#     photo39 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo39.jpeg', user_id=5, post_id=39)
+#     photo40 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo40.jpeg', user_id=5, post_id=40)
+#     photo41 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo41.jpeg', user_id=5, post_id=41)
+
+# #new
+#     photo42 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo42.jpeg', user_id=5, post_id=42)
 
 
-    # photo42 = Photo(
-    # url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/download.jfif', user_id=5, post_id=42)
+#     photo43 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo43.jpeg', user_id=5, post_id=43)
+#     photo44 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo44.jpeg', user_id=5, post_id=44)
+#     photo45 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo45.jpeg', user_id=5, post_id=45)
+    
+# #new    
+#     photo46 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo46.jpeg', user_id=5, post_id=46)
+    
+    
+#     photo47 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo47.jpeg', user_id=5, post_id=47)
+#     photo48 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo48.jpeg', user_id=5, post_id=48)
 
 
-    photo43 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo43.jpeg', user_id=5, post_id=43)
-    photo44 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo44.jpeg', user_id=5, post_id=44)
-    photo45 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo45.jpeg', user_id=5, post_id=45)
-    
-    
-    # photo46 = Photo(
-    # url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/arch_hunter/main-qimg-b3b17085787b9914052851d6defd6ddf-c.jfif', user_id=5, post_id=46)
-    
-    
-    photo47 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo47.jpeg', user_id=5, post_id=47)
-    photo48 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo48.jpeg', user_id=5, post_id=48)
+#     #  #**********************************beaut_dest6**************************************
+#     photo49 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo49.jpeg', user_id=6, post_id=49)
+#     photo50 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo50.jpeg', user_id=6, post_id=50)
+#     photo51 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo51.jpeg', user_id=6, post_id=51)
+#     photo52 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo52.png', user_id=6, post_id=52)
+#     photo53 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo53.png', user_id=6, post_id=53)
+#     photo54 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo54.png', user_id=6, post_id=54)
+#     photo55 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo55.png', user_id=6, post_id=55)
+#     photo56 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo56.png', user_id=6, post_id=56)
+#     photo57 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo57.png', user_id=6, post_id=57)
+#     photo58 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo58.png', user_id=6, post_id=58)
+#     photo59 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo59.png', user_id=6, post_id=59)
+#     photo60 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo60.png', user_id=6, post_id=60)
 
+#     #   #**********************************cory 7**************************************
+#     photo61 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo61.jpeg', user_id=7, post_id=61)
+#     photo62 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo62.jpeg', user_id=7, post_id=62)
+#     photo63 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo63.jpeg', user_id=7, post_id=63)
+#     photo64 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo64.jpeg', user_id=7, post_id=64)
+    
+#   #new  
+#     photo65 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo65.jpg', user_id=7, post_id=65)
+    
+    
+#     photo66 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo66.jpeg', user_id=7, post_id=66)
+#     photo67 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo67.jpeg', user_id=7, post_id=67)
+#     photo68 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo68.jpg', user_id=7, post_id=68)
+#     photo69 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo69.jpg', user_id=7, post_id=69)
+#     photo70 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=7, post_id=70)
+#     photo71 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=7, post_id=71)
+#     photo72 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=7, post_id=72)
 
-    #  #**********************************beaut_dest6**************************************
-    photo49 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo49.jpeg', user_id=6, post_id=49)
-    photo50 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo50.jpeg', user_id=6, post_id=50)
-    photo51 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo51.jpeg', user_id=6, post_id=51)
-    photo52 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo52.png', user_id=6, post_id=52)
-    photo53 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo53.png', user_id=6, post_id=53)
-    photo54 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo54.png', user_id=6, post_id=54)
-    photo55 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo55.png', user_id=6, post_id=55)
-    photo56 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo56.png', user_id=6, post_id=56)
-    photo57 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo57.png', user_id=6, post_id=57)
-    photo58 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo58.png', user_id=6, post_id=58)
-    photo59 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo59.png', user_id=6, post_id=59)
-    photo60 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo60.png', user_id=6, post_id=60)
+#     #    #**********************************humz 8**************************************
+#     photo73 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo73.jpeg', user_id=8, post_id=73)
+#     photo74 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo74.jpeg', user_id=8, post_id=74)
+#     photo75 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo75.jpeg', user_id=8, post_id=75)
+#     photo76 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo76.jpeg', user_id=8, post_id=76)
+    
+# #new    
+#     photo77 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo77.jpeg', user_id=8, post_id=77)
+    
+    
+#     photo78 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo78.jpeg', user_id=8, post_id=78)
+#     photo79 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo79.jpeg', user_id=8, post_id=79)
+#     photo80 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo80.jpeg', user_id=8, post_id=80)
+    
+# #new    
+#     photo81 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo81.jpeg', user_id=8, post_id=81)
+    
+    
+#     photo82 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo82.jpeg', user_id=8, post_id=82)
+#     photo83 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo83.jpeg', user_id=8, post_id=83)
+#     photo84 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo84.jpeg', user_id=8, post_id=84)
 
-    #   #**********************************cory 7**************************************
-    photo61 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo61.jpeg', user_id=7, post_id=61)
-    photo62 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo62.jpeg', user_id=7, post_id=62)
-    photo63 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo63.jpeg', user_id=7, post_id=63)
-    photo64 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo64.jpeg', user_id=7, post_id=64)
+#         #**********************************photified 9**************************************
+#     photo85 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo85.jpeg', user_id=9, post_id=85)
+#     photo86 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo86.jpeg', user_id=9, post_id=86)
+#     photo87 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo87.jpeg', user_id=9, post_id=87)
+#     photo88 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo88.jpeg', user_id=9, post_id=88)
+#     photo89 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo89.jpeg', user_id=9, post_id=89)
     
     
-    # photo65 = Photo(
-    # url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/cory_richards/coryrichards_186056030_772268636983337_5457627371526622457_n.jpg', user_id=7, post_id=65)
+# #new
+#     photo90 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo90.jpeg', user_id=9, post_id=90)
+#     photo91 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo91.jpeg', user_id=9, post_id=91)
     
     
-    photo66 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo66.jpeg', user_id=7, post_id=66)
-    photo67 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo67.jpeg', user_id=7, post_id=67)
-    photo68 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo68.jpg', user_id=7, post_id=68)
-    photo69 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo69.jpg', user_id=7, post_id=69)
-    photo70 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=7, post_id=70)
-    photo71 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=7, post_id=71)
-    photo72 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo25.jpeg', user_id=7, post_id=72)
+    
+#     photo92 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo92.jpeg', user_id=9, post_id=92)
+#     photo93 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo93.jpeg', user_id=9, post_id=93)
+#     photo94 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo94.jpeg', user_id=9, post_id=94)
+#     photo95 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo95.jpeg', user_id=9, post_id=95)
+#     photo96 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo96.jpeg', user_id=9, post_id=96)
 
-    #    #**********************************humz 8**************************************
-    photo73 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo73.jpeg', user_id=8, post_id=73)
-    photo74 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo74.jpeg', user_id=8, post_id=74)
-    photo75 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo75.jpeg', user_id=8, post_id=75)
-    photo76 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo76.jpeg', user_id=8, post_id=76)
-    
-    
-    # photo77 = Photo(
-    # url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/humzadeas/humzadeas_263237182_1033191617254356_6720229301992995189_n.jpg', user_id=8, post_id=77)
-    
-    
-    photo78 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo78.jpeg', user_id=8, post_id=78)
-    photo79 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo79.jpeg', user_id=8, post_id=79)
-    photo80 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo80.jpeg', user_id=8, post_id=80)
-    
-    
-    # photo81 = Photo(
-    # url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/humzadeas/humzadeas_243338958_374114194258083_4016833406340422382_n.jpg', user_id=8, post_id=81)
-    
-    
-    photo82 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo82.jpeg', user_id=8, post_id=82)
-    photo83 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo83.jpeg', user_id=8, post_id=83)
-    photo84 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo84.jpeg', user_id=8, post_id=84)
+#     #     #**********************************street_art 10**************************************
+#     photo97 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo97.jpeg', user_id=10, post_id=97)
+#     photo98 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo98.jpeg', user_id=10, post_id=98)
+#     photo99 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo99.jpeg', user_id=10, post_id=99)
+#     photo100 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo100.jpeg', user_id=10, post_id=100)
+#     photo101 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo101.jpeg', user_id=10, post_id=101)
+#     photo102 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo102.jpeg', user_id=10, post_id=102)
+#     photo103 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo103.jpeg', user_id=10, post_id=103)
+#     photo104 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo104.jpeg', user_id=10, post_id=104)
+#     photo105 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo105.jpeg', user_id=10, post_id=105)
+#     photo106 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo106.jpeg', user_id=10, post_id=106)
+#     photo107 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo107.jpeg', user_id=10, post_id=107)
+#     photo108 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo108.jpeg', user_id=10, post_id=108)
 
-        #**********************************photified 9**************************************
-    photo85 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo85.jpeg', user_id=9, post_id=85)
-    photo86 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo86.jpeg', user_id=9, post_id=86)
-    photo87 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo87.jpeg', user_id=9, post_id=87)
-    photo88 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo88.jpeg', user_id=9, post_id=88)
-    photo89 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo89.jpeg', user_id=9, post_id=89)
-    
-    
+#     #     #**********************************toshi**************************************
 
-    # photo90 = Photo(
-    # url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/photified/6.jpg', user_id=9, post_id=90)
-    # photo91 = Photo(
-    # url='https://mamba-instagramme.s3.us-east-2.amazonaws.com/seed_photos/photified/7.jpg', user_id=9, post_id=91)
-    
-    
-    
-    photo92 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo92.jpeg', user_id=9, post_id=92)
-    photo93 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo93.jpeg', user_id=9, post_id=93)
-    photo94 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo94.jpeg', user_id=9, post_id=94)
-    photo95 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo95.jpeg', user_id=9, post_id=95)
-    photo96 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo96.jpeg', user_id=9, post_id=96)
-
-    #     #**********************************street_art 10**************************************
-    photo97 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo97.jpeg', user_id=10, post_id=97)
-    photo98 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo98.jpeg', user_id=10, post_id=98)
-    photo99 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo99.jpeg', user_id=10, post_id=99)
-    photo100 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo100.jpeg', user_id=10, post_id=100)
-    photo101 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo101.jpeg', user_id=10, post_id=101)
-    photo102 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo102.jpeg', user_id=10, post_id=102)
-    photo103 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo103.jpeg', user_id=10, post_id=103)
-    photo104 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo104.jpeg', user_id=10, post_id=104)
-    photo105 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo105.jpeg', user_id=10, post_id=105)
-    photo106 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo106.jpeg', user_id=10, post_id=106)
-    photo107 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo107.jpeg', user_id=10, post_id=107)
-    photo108 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo108.jpeg', user_id=10, post_id=108)
-
-    #     #**********************************toshi**************************************
-
-    photo109 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo109.jpeg', user_id=11, post_id=109)
-    photo110 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo110.jpeg', user_id=11, post_id=110)
-    photo111 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo111.jpeg', user_id=11, post_id=111)
-    photo112 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo112.jpeg', user_id=11, post_id=112)
-    photo113 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo113.jpeg', user_id=11, post_id=113)
-    photo114 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo114.jpeg', user_id=11, post_id=114)
-    photo115 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo115.jpeg', user_id=11, post_id=115)
-    photo116 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo116.jpeg', user_id=11, post_id=116)
-    photo117 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo117.jpeg', user_id=11, post_id=117)
-    photo118 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo118.jpeg', user_id=11, post_id=118)
-    photo119 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo119.jpeg', user_id=11, post_id=119)
-    photo120 = Photo(
-    url='https://instagramme415.s3.us-west-1.amazonaws.com/photo120.jpeg', user_id=11, post_id=120)
+#     photo109 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo109.jpeg', user_id=11, post_id=109)
+#     photo110 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo110.jpeg', user_id=11, post_id=110)
+#     photo111 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo111.jpeg', user_id=11, post_id=111)
+#     photo112 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo112.jpeg', user_id=11, post_id=112)
+#     photo113 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo113.jpeg', user_id=11, post_id=113)
+#     photo114 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo114.jpeg', user_id=11, post_id=114)
+#     photo115 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo115.jpeg', user_id=11, post_id=115)
+#     photo116 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo116.jpeg', user_id=11, post_id=116)
+#     photo117 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo117.jpeg', user_id=11, post_id=117)
+#     photo118 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo118.jpeg', user_id=11, post_id=118)
+#     photo119 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo119.jpeg', user_id=11, post_id=119)
+#     photo120 = Photo(
+#     url='https://instagramme415.s3.us-west-1.amazonaws.com/photo120.jpeg', user_id=11, post_id=120)
 
     db.session.add(photo1)
     db.session.add(photo2)
@@ -316,18 +316,18 @@ def seed_photos():
     db.session.add(photo22)
     db.session.add(photo23)
     db.session.add(photo24)
-    # db.session.add(photo25)
-    # db.session.add(photo26)
-    # db.session.add(photo27)
-    # db.session.add(photo28)
-    # db.session.add(photo29)
-    # db.session.add(photo30)
-    # db.session.add(photo31)
-    # db.session.add(photo32)
-    # db.session.add(photo33)
-    # db.session.add(photo34)
-    # db.session.add(photo35)
-    # db.session.add(photo36)
+    db.session.add(photo25)
+    db.session.add(photo26)
+    db.session.add(photo27)
+    db.session.add(photo28)
+    db.session.add(photo29)
+    db.session.add(photo30)
+    db.session.add(photo31)
+    db.session.add(photo32)
+    db.session.add(photo33)
+    db.session.add(photo34)
+    db.session.add(photo35)
+    db.session.add(photo36)
     # db.session.add(photo37)
     # db.session.add(photo38)
     # db.session.add(photo39)
