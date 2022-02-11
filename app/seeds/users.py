@@ -52,11 +52,7 @@ def seed_users():
     u1.following.append(u4)
     u1.following.append(u5)
     u1.following.append(u6)
-    u1.followers.append(u3)
-    u1.followers.append(u4)
-    u1.followers.append(u7)
-    u1.followers.append(u8)
-    u1.followers.append(u9)
+    u1.following.append(u10)
 
     u2.following.append(u3)
     u2.following.append(u5)
