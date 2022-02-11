@@ -15,11 +15,11 @@ const LandingPage = () => {
     <div className="fullContainer">
       <div className="mainContainer">
         <div className="centerContainer">
-          {/* <div className="landingImgContainer">
+          <div className="landingImgContainer">
 
             <img className='phoneImg' src={phones} alt=""></img>
             <img className='snowImg' src={snow_pic} alt=""></img>
-          </div> */}
+          </div>
           <div className="mainFormContainer">
             <div className="upperFormContainer">
               <img className="formLogo" src={instagramme_logo} alt=""></img>
