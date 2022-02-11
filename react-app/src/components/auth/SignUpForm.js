@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import { signUp, demoLogin } from "../../store/session";
 import "./SignUpForm.css";
 
@@ -10,7 +10,7 @@ const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
-  const user = useSelector((state) => state.session.user);
+  // const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
@@ -42,10 +42,6 @@ const SignUpForm = () => {
   const handleDemoLogin= (e) => {
     e.preventDefault();
     return dispatch(demoLogin())
-  }
-
-  if (user) {
-    return <Redirect to="/" />;
   }
 
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -50,10 +50,10 @@ function App() {
       <div className="top-container">
         <Switch>
           <Route path="/login" exact={true}>
-            <LoginForm />
+            <Redirect to="/" />
           </Route>
-          <Route path="/sign-up" exact={true}>
-            <SignUpForm />
+          <Route path="/signup" exact={true}>
+            <Redirect to="/" />
           </Route>
           <ProtectedRoute path="/users" exact={true}>
             <UsersList />
