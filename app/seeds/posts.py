@@ -121,22 +121,22 @@ def seed_posts():
 
         Want to know what Hubble discovered? Head over to the @NASAHubble page.""", createdAt=datetime.datetime(2021, 11, 18), updatedAt=datetime.datetime(2021, 11, 18))
 
-    p25 = Post(user_id=4, description='Felt like this stock photo deserved a dreamy version.', createdAt=datetime.datetime(2020, 6, 25), updatedAt=datetime.datetime(2020, 6, 25))
-    p26 = Post(user_id=4, description="""Last chance to gain access to my exclusive Facebook group that goes live tomorrow!
+#     p25 = Post(user_id=4, description='Felt like this stock photo deserved a dreamy version.', createdAt=datetime.datetime(2020, 6, 25), updatedAt=datetime.datetime(2020, 6, 25))
+#     p26 = Post(user_id=4, description="""Last chance to gain access to my exclusive Facebook group that goes live tomorrow!
 
-Those of you who get in will get a lifetime access to the group where I'll be teaching everything I learned over the years - FOR FREE. It's a one time opportunity since starting tomorrow the group will be accesible only for my paid course students.
-For a chance to get in, tag one of your friends in the comments and I'll randomly pick 2 of you tomorrow. It's a chance for you to learn EVERYTHING I know. (The group will be updated with valuable content on a daily basis.) Good luck!""", createdAt=datetime.datetime(2020, 6, 26), updatedAt=datetime.datetime(2020, 6, 26))
-    p27 = Post(user_id=4, description="""How close fantasy actually is to reality, how little does it take for the whole world to change forever?""", createdAt=datetime.datetime(2020, 8, 26), updatedAt=datetime.datetime(2020, 8, 26))
-    p28 = Post(user_id=4, description='Louvre', createdAt=datetime.datetime(2016, 4, 25), updatedAt=datetime.datetime(2016, 4, 25))
-    p29 = Post(user_id=4, description='', createdAt=datetime.datetime(2016, 6, 14), updatedAt=datetime.datetime(2016, 6, 14))
-    p30 = Post(user_id=4, description=""""Under the weather" is now available""", createdAt=datetime.datetime(2021, 4, 16), updatedAt=datetime.datetime(2021, 4, 16))
-    p31 = Post(user_id=4, description="""Really excited to put this one on my feed. Huge thank you to Netflix for partnering with me regarding the release of the new Netflix horror series - Midnight Mass. Got to see the show early and really enjoyed it. Would definitely recommend it! So here's a little 8thdamon spin on the series.""", createdAt=datetime.datetime(2021, 10, 2), updatedAt=datetime.datetime(2021, 10, 2))
-    p32 = Post(user_id=4, description="""8thdamon, Paris, France 2021.""", createdAt=datetime.datetime(2021, 10, 5), updatedAt=datetime.datetime(2021, 10, 5))
-    p33 = Post(user_id=4, description="""Bitchin.""", createdAt=datetime.datetime(2018, 8, 25), updatedAt=datetime.datetime(2018, 8, 25))
-    p34 = Post(user_id=4, description='Framed prints of all my photos will be available for purchase soon', createdAt=datetime.datetime(2017, 8, 18), updatedAt=datetime.datetime(2017, 8, 18))
-    p35 = Post(user_id=4, description="""Created this edit in a little more than half an hour using just the enlightphotofox app (available on iOS - link is in the bio if you wanna try it). 👩🏼‍🚀🌎🧻 It's been a few years since I tried making these on my phone and it was really clumsy, apps were not comfortable to use at all and the effects looked cheap, now I couldn't believe how far layer editing has come on phones. It's so easy to control each layer by itself now, adding blur to each layer separately to control the depth of my edit as well.
-The time we live in is just amazing!""", createdAt=datetime.datetime(2020, 5, 19), updatedAt=datetime.datetime(2020, 5, 19))
-    p36 = Post(user_id=4, description='Dreamy Cappadocia', createdAt=datetime.datetime(2020, 5, 23), updatedAt=datetime.datetime(2020, 5, 23))
+# Those of you who get in will get a lifetime access to the group where I'll be teaching everything I learned over the years - FOR FREE. It's a one time opportunity since starting tomorrow the group will be accesible only for my paid course students.
+# For a chance to get in, tag one of your friends in the comments and I'll randomly pick 2 of you tomorrow. It's a chance for you to learn EVERYTHING I know. (The group will be updated with valuable content on a daily basis.) Good luck!""", createdAt=datetime.datetime(2020, 6, 26), updatedAt=datetime.datetime(2020, 6, 26))
+#     p27 = Post(user_id=4, description="""How close fantasy actually is to reality, how little does it take for the whole world to change forever?""", createdAt=datetime.datetime(2020, 8, 26), updatedAt=datetime.datetime(2020, 8, 26))
+#     p28 = Post(user_id=4, description='Louvre', createdAt=datetime.datetime(2016, 4, 25), updatedAt=datetime.datetime(2016, 4, 25))
+#     p29 = Post(user_id=4, description='', createdAt=datetime.datetime(2016, 6, 14), updatedAt=datetime.datetime(2016, 6, 14))
+#     p30 = Post(user_id=4, description=""""Under the weather" is now available""", createdAt=datetime.datetime(2021, 4, 16), updatedAt=datetime.datetime(2021, 4, 16))
+#     p31 = Post(user_id=4, description="""Really excited to put this one on my feed. Huge thank you to Netflix for partnering with me regarding the release of the new Netflix horror series - Midnight Mass. Got to see the show early and really enjoyed it. Would definitely recommend it! So here's a little 8thdamon spin on the series.""", createdAt=datetime.datetime(2021, 10, 2), updatedAt=datetime.datetime(2021, 10, 2))
+#     p32 = Post(user_id=4, description="""8thdamon, Paris, France 2021.""", createdAt=datetime.datetime(2021, 10, 5), updatedAt=datetime.datetime(2021, 10, 5))
+#     p33 = Post(user_id=4, description="""Bitchin.""", createdAt=datetime.datetime(2018, 8, 25), updatedAt=datetime.datetime(2018, 8, 25))
+#     p34 = Post(user_id=4, description='Framed prints of all my photos will be available for purchase soon', createdAt=datetime.datetime(2017, 8, 18), updatedAt=datetime.datetime(2017, 8, 18))
+#     p35 = Post(user_id=4, description="""Created this edit in a little more than half an hour using just the enlightphotofox app (available on iOS - link is in the bio if you wanna try it). 👩🏼‍🚀🌎🧻 It's been a few years since I tried making these on my phone and it was really clumsy, apps were not comfortable to use at all and the effects looked cheap, now I couldn't believe how far layer editing has come on phones. It's so easy to control each layer by itself now, adding blur to each layer separately to control the depth of my edit as well.
+# The time we live in is just amazing!""", createdAt=datetime.datetime(2020, 5, 19), updatedAt=datetime.datetime(2020, 5, 19))
+#     p36 = Post(user_id=4, description='Dreamy Cappadocia', createdAt=datetime.datetime(2020, 5, 23), updatedAt=datetime.datetime(2020, 5, 23))
 
 
 
