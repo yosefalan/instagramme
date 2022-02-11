@@ -10,8 +10,8 @@ def seed_users():
         username='natgeo', email='natgeo@mail.com', profile_image='https://instagramme415.s3.us-west-1.amazonaws.com/user02.jpeg', password='password')
     u3 = User(
         username='nasa', email='nasa@mail.com', profile_image='https://instagramme415.s3.us-west-1.amazonaws.com/user03.jpeg', password='password')
-    # u4 = User(
-    #     username='8thdamon', email='8thdamon@mail.com', profile_image='https://instagramme415.s3.us-west-1.amazonaws.com/user04.jpeg', password='password')
+    u4 = User(
+        username='8thdamon', email='8thdamon@mail.com', profile_image='https://instagramme415.s3.us-west-1.amazonaws.com/user04.jpeg', password='password')
     # u5 = User(
     #     username='architecture_hunter', email='architecture_hunter@mail.com', profile_image='https://instagramme415.s3.us-west-1.amazonaws.com/user05.png', password='password')
     # u6 = User(
@@ -35,7 +35,7 @@ def seed_users():
     db.session.add(u1)
     db.session.add(u2)
     db.session.add(u3)
-    # db.session.add(u4)
+    db.session.add(u4)
     # db.session.add(u5)
     # db.session.add(u6)
     # db.session.add(u7)
@@ -49,7 +49,7 @@ def seed_users():
 
     u1.following.append(u2)
     u1.following.append(u3)
-    # u1.following.append(u4)
+    u1.following.append(u4)
     # u1.following.append(u5)
     # u1.following.append(u6)
     # u1.followers.append(u3)
@@ -66,7 +66,7 @@ def seed_users():
 
     u3.following.append(u1)
     u3.following.append(u2)
-    # u3.following.append(u4)
+    u3.following.append(u4)
     # u3.following.append(u5)
     # u3.following.append(u6)
     # u3.following.append(u7)
