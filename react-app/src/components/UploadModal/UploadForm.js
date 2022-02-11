@@ -77,7 +77,7 @@ function UploadForm({ hideForm }) {
           >
             <div className="buttonWrapper">
               <input type="file" id="fileUpload" onChange={handleFile} />
-              <label for="fileUpload" className="fileUploadBtn">
+              <label htmlFor="fileUpload" className="fileUploadBtn">
                 Select from Computer
               </label>
             </div>

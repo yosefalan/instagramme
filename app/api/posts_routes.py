@@ -56,6 +56,7 @@ def posts():
 @posts_routes.route('/', methods=["POST"])
 @login_required
 def create_post():
+    print("3333333333333333", "trying to create post")
     form = PostForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     file = request.files["file"]
