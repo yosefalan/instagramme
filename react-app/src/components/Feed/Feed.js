@@ -16,7 +16,7 @@ const Feed = () => {
   // const [style, setStyle] = useState({});
 
 
-  const sorted_posts = posts.sort((a, b) => (a.createdAt > b.createdAt) ? 1 : -1)
+  const sorted_posts = posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
   // const photos = useSelector((state) => Object.values(state.photos));
   // const handleClick = (id) => {
