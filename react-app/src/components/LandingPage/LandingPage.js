@@ -18,7 +18,9 @@ const LandingPage = () => {
           <div className="landingImgContainer">
 
             <img className='phoneImg' src={phones} alt=""></img>
-            <img className='snowImg' src={snow_pic} alt=""></img>
+            <div id="snowImg-container">
+              <img className='snowImg' src={snow_pic} alt=""></img>
+            </div>
           </div>
           <div className="mainFormContainer">
             <div className="upperFormContainer">

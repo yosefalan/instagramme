@@ -9,13 +9,23 @@
 .phoneImg{
   position: relative;
 }
-.snowImg{
+
+#snowImg-container {
   position: absolute;
   top: 96px;
   right: 60px;
   width: 245px;
   height: 434px;
+  overflow:hidden;
 }
+
+.snowImg{
+  object-fit: cover;
+  object-position: center center;
+  height:100%;
+  width:100%;
+}
+
 .storeImg{
   width: 50%;
   margin-top: 20px;
