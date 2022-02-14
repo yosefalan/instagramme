@@ -15,7 +15,7 @@
   border-radius:3px;
   margin-bottom:24px;
   margin-top:0;
-  padding:16px 0;
+  padding:16px 0 0 0;
   display:block;
   overflow-y: hidden;
 }
@@ -65,7 +65,7 @@
   gap: 12px;
   -ms-overflow-style: none;
   scrollbar-width: none; */
-  height:92px;
+  height:108px;
   overflow-y:hidden;
   align-items: stretch;
   box-sizing: border-box;
