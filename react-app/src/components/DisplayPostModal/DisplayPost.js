@@ -18,29 +18,29 @@ function DisplayPost({ postId, setShowModal }) {
 
   useEffect(() => {
     const img = document.getElementById('post-photo');
-    console.log("IMG:", img);
+    // console.log("IMG:", img);
     if (img) {
       setAspectRatio(img.naturalWidth / img.naturalHeight);
-      console.log(aspectRatio);
-      console.log("aspectRatio?", img.naturalWidth / img.naturalHeight);
+      // console.log(aspectRatio);
+      // console.log("aspectRatio?", img.naturalWidth / img.naturalHeight);
       if (aspectRatio && aspectRatio === 1) {
-        console.log("LINE27 aspectRatio:", aspectRatio);
+        // console.log("LINE27 aspectRatio:", aspectRatio);
         return;
       };
       if (aspectRatio && aspectRatio < 1) {
-        console.log("aspectRatio:", aspectRatio);
+        // console.log("aspectRatio:", aspectRatio);
         setPadding(tall);
-        console.log("padding is TALL");
-        console.log("img.naturalWidth:", img.naturalWidth);
-        console.log("img.naturalHeight:", img.naturalHeight);
+        // console.log("padding is TALL");
+        // console.log("img.naturalWidth:", img.naturalWidth);
+        // console.log("img.naturalHeight:", img.naturalHeight);
         return;
       }
       if (aspectRatio && aspectRatio > 1) {
-        console.log("aspectRatio:", aspectRatio);
+        // console.log("aspectRatio:", aspectRatio);
         setPadding({
           paddingBottom: `${String(img.naturalHeight / img.naturalWidth * 100)}%`
         });
-        console.log("padding is SHORT");
+        // console.log("padding is SHORT");
         return;
       }
     }
@@ -50,8 +50,8 @@ function DisplayPost({ postId, setShowModal }) {
   useEffect(() => {
     if (aspectRatio) {
       if (aspectRatio >= 1) {
-        console.log("aspectRatio >= 1");
-        console.log("aspectRation===", aspectRatio)
+        // console.log("aspectRatio >= 1");
+        // console.log("aspectRation===", aspectRatio)
         setStyle({
           maxHeight: `${window.innerHeight - 48}px`,
           maxWidth: `${window.innerHeight - 48}px`,
@@ -59,8 +59,8 @@ function DisplayPost({ postId, setShowModal }) {
           flexBasis: `${window.innerHeight - 48}px`,
         });
       } else if (aspectRatio < 1) {
-        console.log("aspectRation < 1");
-        console.log("aspectRation===", aspectRatio)
+        // console.log("aspectRation < 1");
+        // console.log("aspectRation===", aspectRatio)
         setStyle({
           maxHeight: `${window.innerHeight - 48}px`,
           maxWidth: `${(window.innerHeight - 48) * aspectRatio}px`,
