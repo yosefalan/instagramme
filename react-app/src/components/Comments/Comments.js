@@ -11,13 +11,13 @@ import './Comments.css';
 const Comment = ({ post_id }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const comments = useSelector((state) => Object.values(state.comments));
-  const [editableComment, setEditableComment] = useState(false);
+  const [editableComment, setEditableComment] = useState("");
   const dispatch = useDispatch();
   const [commContent, setCommContent] = useState("");
 
   const handleEdit = async (pid, id, content) => {
     dispatch(updateAComment(pid, id, content));
-    setEditableComment(false);
+    setEditableComment("");
   };
   
   useEffect(() => {
@@ -27,7 +27,7 @@ const Comment = ({ post_id }) => {
   const handleDelete = async (pid, id) => {
     await dispatch(deleteAComment(pid, id));
     await dispatch(getOnePost(pid));
-    setEditableComment(false);
+    setEditableComment("");
   };
 
 
@@ -43,9 +43,9 @@ const Comment = ({ post_id }) => {
                 <div className="comment-container-5">
                   <div className="comment-pic-container">
                     <div className="comment-pic-container-2">
-                      <a className="comment-pic-link">
+                      <NavLink className="comment-pic-link" to={`/users/${user_id}`}>
                         <img className="comment-pic-img" src={profile_image} alt=""></img>
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                   <div className="comment-text-container">
@@ -68,17 +68,21 @@ const Comment = ({ post_id }) => {
                 </div>
                 {sessionUser.id === user_id && (
                   <div className="comment-edit-buttons">
-                    <button className='postBtn' onClick={() => setEditableComment(true)}>Edit</button>
-                    <button className='postBtn' onClick={() => { handleDelete(post_id, id,) }}>Delete</button>
+                    <button className='postBtn' onClick={() => {
+                      setCommContent(content);
+                      setEditableComment(id);
+                    }}
+                    >Edit</button>
+                    <button className='postBtn' onClick={() => { handleDelete(post_id, id) }}>Delete</button>
                   </div>
                 )}
               </div>
 
-              {editableComment && (
+              {editableComment && editableComment === id && sessionUser.id === user_id && (
                 <>
                   <input
                     className="edit-comment-field"
-                    defaultValue={content}
+                    value={commContent}
                     type="text"
                     onChange={(e) => setCommContent(e.target.value)}
                   ></input>
