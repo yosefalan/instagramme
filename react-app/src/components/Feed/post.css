@@ -65,6 +65,7 @@
   padding:0;
   position:relative;
   flex-direction: column;
+  cursor:pointer;
 }
 
 .photo-container-2 {

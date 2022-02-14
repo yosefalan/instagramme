@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./post.css";
 
 // import DisplayPostModal from "../User";
@@ -56,7 +56,9 @@ const Post = ({
         <DisplayPostModal postId={postId} setShowModal={setShowModal} />
       )} */}
       <div className="user">
-        <img className="profile-image-post" src={profile_image} alt="" />
+        <NavLink to={`/users/${user_id}`}>
+          <img className="profile-image-post" src={profile_image} alt="" />
+        </NavLink>
         <NavLink className="username_link" to={`/users/${user_id}`}>
           {username}
         </NavLink>
