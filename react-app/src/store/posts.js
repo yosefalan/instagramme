@@ -88,6 +88,11 @@ export const createPost = (postData) => async (dispatch) => {
     method: "POST",
     body: form,
   });
+
+  if (res.ok) {
+    const post = await res.json();
+    dispatch(update(post));
+  }
 };
 
 export const editPost = (id, postData) => async (dispatch) => {

@@ -33,7 +33,7 @@ function DisplayForm({ preview, file, hideForm }) {
                 }
             });
         hideForm();
-        history.push('/')
+        // history.push('/')
     };
 
 
