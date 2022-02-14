@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { useSelector } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "./DisplayPost.css";
 
@@ -177,22 +177,22 @@ function DisplayPost({ postId, setShowModal }) {
                           <header id="post-modal-header">
                             <div id="profile-pic-holder">
                               <div id="profile-pic-holder-2">
-                                <a id="profile-pic-link">
+                                <Link id="profile-pic-link" to={`/users/${post.user_id}`}>
                                   <img
                                     id="top-right-container-img"
                                     src={post.profile_image}
                                     alt=""
                                   ></img>
-                                </a>
+                                </Link>
                               </div>
                             </div>
                             <div id="top-right-header-text-container">
                               <div id="header-text-wrapper">
                                 <div id="header-text-wrapper-2">
                                   <span id="header-text-span">
-                                    <a id="posting-user-link">
+                                    <Link id="posting-user-link" to={`/users/${post.user_id}`}>
                                       {post.username}
-                                    </a>
+                                    </Link>
                                   </span>
                                 </div>
                               </div>
@@ -286,22 +286,22 @@ function DisplayPost({ postId, setShowModal }) {
                                   <div id="post-description-container-4">
                                     <div id="post-description-pic-container">
                                       <div id="post-description-pic-wrapper">
-                                        <a id="post-description-pic-link">
+                                        <Link id="post-description-pic-link" to={`/users/${post.user_id}`}>
                                           <img
                                             id="post-description-pic-img"
                                             src={post.profile_image}
                                             alt=""
                                           ></img>
-                                        </a>
+                                        </Link>
                                       </div>
                                     </div>
                                     <div id="post-description-text-container">
                                       <h2 id="post-description-text-username">
                                         <div id="post-description-text-username-2">
                                           <span id="post-description-text-username-span">
-                                            <a id="post-description-text-username-link">
+                                            <Link id="post-description-text-username-link" to={`/users/${post.user_id}`}>
                                               {post.username}
-                                            </a>
+                                            </Link>
                                           </span>
                                         </div>
                                       </h2>
