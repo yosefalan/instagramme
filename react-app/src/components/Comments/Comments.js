@@ -14,10 +14,29 @@ const Comment = ({ post_id }) => {
   const [editableComment, setEditableComment] = useState("");
   const dispatch = useDispatch();
   const [commContent, setCommContent] = useState("");
+  const [errors, setErrors] = useState([]);
+
+  const validate = () => {
+    const validationErrors = [];
+
+    if (commContent.length < 2) validationErrors.push("Comments must be at least 2 characters long.");
+    if (commContent.length > 255) validationErrors.push("Comments cannot exceed 255 characters in length.");
+
+    return validationErrors;
+  }
 
   const handleEdit = async (pid, id, content) => {
-    dispatch(updateAComment(pid, id, content));
-    setEditableComment("");
+
+    const errors = validate();
+
+    if (errors.length > 0) {
+      setErrors(errors);
+    } else {
+      setErrors([]);
+      await dispatch(updateAComment(pid, id, content));
+      setEditableComment("");
+    }
+
   };
   
   useEffect(() => {
@@ -29,8 +48,6 @@ const Comment = ({ post_id }) => {
     await dispatch(getOnePost(pid));
     setEditableComment("");
   };
-
-
 
   return (
     <>
@@ -80,6 +97,11 @@ const Comment = ({ post_id }) => {
 
               {editableComment && editableComment === id && sessionUser.id === user_id && (
                 <>
+                  {errors.length !== 0 && <ul>
+                    {errors.map((error) => (
+                      <li key={error} style={{ color: "red" }}>{error}</li>
+                    ))}
+                  </ul>}
                   <input
                     className="edit-comment-field"
                     value={commContent}
